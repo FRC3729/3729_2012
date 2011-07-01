@@ -1,0 +1,110 @@
+/*!
+ /file Controller.cpp
+ /brief File containing implementations of functions found in the \a Controller class (found in Controller.h)
+ /authors Matthew Haney, Drew Lazzeri
+ 
+ */
+
+#include "Controller.h"
+#include "WPILib.h"
+#include "macros.h"
+
+
+RJFRC2011::Controller::Controller()
+{
+	this->_controller = new Joystick(1);
+}
+
+RJFRC2011::Controller::~Controller()
+{
+	delete _controller;
+}
+
+float RJFRC2011::Controller::getManipulatorElevation()
+{
+	// Y-axis left; manipulator elevation controls
+	return normalize(controller->GetRawAxis(5), ROTMIN, ROTMAX);
+}
+
+float RJFRC2011::Controller::getDriveSpeed()
+{
+	// Y-axis right; speed
+	return expo(normalize(controller->GetY(), YMIN, YMAX) * -1.0, YEXPO);
+}
+
+float RJFRC2011::Controller::getDriveTurn()
+{
+	// X-axis right; turn
+	return expo(normalize(controller->GetX(), XMIN, XMAX), XEXPO);
+}
+
+float RJFRC2011::Controller::getManipulatorAction()
+{
+	// X-axis left; manipulator receive/eject controls
+	return normalize(controller->GetZ(), ZMIN, ZMAX) * -1.0;	
+}
+
+int RJFRC2011::Controller::getMinibotSwitches()
+{
+	// Right trigger switch; minibot shelf out
+	int rightSwitch = controller->GetRawButton(2);
+	// Left trigger switch; minibot shelf in
+	int leftSwitch = controller->GetRawButton(1);
+	int switches = 0;
+	// First bit is right switch value
+	switches |= (rightSwitch << 0);
+	// Second bit is left switch value
+	switches |= (leftSwitch << 1);
+	return switches;
+}
+
+//! A function that "normalizes" inputs from the joysticks (because they don't give perfect -1.0 to 1.0 values).
+/*!
+ \param joyVal the input from the joystick
+ \param min the minimun joystick value
+ \param max the maximum joystick value
+ \return the normalized value
+ \author Adam Bryant
+ */
+float RJFRC2011::Controller::normalize(float joyVal, float min, float max)
+{
+	float retVal = 0.0;
+	
+	if (joyVal < 0.0)
+		retVal = abs(joyVal) / min;
+	else if (joyVal > 0.0)
+		retVal = abs(joyVal) / max;
+	if (retVal < -1.0)
+		retVal = -1.0;
+	else if (retVal > 1.0)
+		retVal = 1.0;
+	
+	return retVal;
+}
+//! An exponential function used to make joysticks less sensitive near the center and more sensitive towards the edges
+/*!
+ \param x the value to be exponentiated
+ \param a a predefined exponential factor
+ \return the "expo-ed" value
+ \author Adam Bryant
+ */
+float RJFRC2011::Controller::expo(float x, float a)
+{
+	return (a * (x * x * x) + (1 - a) * x);
+}
+
+//! Absolute value of a float, since I'm not sure if we can import the <cmath> library onto the cRIO
+/*!
+ \param initial the initial value
+ \return the absolute value of the passed value; if it's negative, make it positive
+ \author Matthew Haney
+ */
+float RJFRC2011::Controller::abs(float initial)
+{
+	if (initial < 0)
+		return (initial * -1.0);
+	else if (initial > 0)
+		return initial;
+	else 
+		return 0.0;
+}

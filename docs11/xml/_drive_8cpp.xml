@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="_drive_8cpp" kind="file">
+    <compoundname>Drive.cpp</compoundname>
+    <includes refid="_drive_8h" local="yes">Drive.h</includes>
+    <includes local="yes">WPILib.h</includes>
+    <incdepgraph>
+      <node id="79">
+        <label>Drive.cpp</label>
+        <link refid="Drive.cpp"/>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>string</label>
+      </node>
+      <node id="80">
+        <label>Drive.h</label>
+        <link refid="_drive_8h"/>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+      </node>
+      <node id="84">
+        <label>sstream</label>
+      </node>
+      <node id="82">
+        <label>macros.h</label>
+        <link refid="macros_8h"/>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>WPILib.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+<para>File containing definitions of functions declared in class <emphasis>Drive</emphasis> (declared in <ref refid="_drive_8h" kindref="compound">Drive.h</ref>). </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>RJFRC<sp/>-<sp/>The<sp/>code<sp/>used<sp/>by<sp/>Regis<sp/>Jesuit<sp/>High<sp/>School&apos;s<sp/>FIRST<sp/>Robotics<sp/>Competition<sp/>team<sp/>#3729<sp/>over<sp/>the<sp/>years,<sp/>starting<sp/>from<sp/>2011<sp/>(rookie<sp/>year).</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2011<sp/>Regis<sp/>Jesuit<sp/>High<sp/>School</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_drive_8h" kindref="compound" tooltip="File containing definition of Drive class, which is used in the main program to drive the robot in bo...">Drive.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;WPILib.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">RJFRC2011;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><ref refid="class_r_j_f_r_c2011_1_1_drive_1a6633c3e2ff4c7d3803a1b87947d872a3" kindref="member" tooltip="Constructor.">RJFRC2011::Drive::Drive</ref>()</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Create<sp/>a<sp/>robot<sp/>using<sp/>standard<sp/>left/right<sp/>robot<sp/>drive<sp/>on<sp/>PWMS<sp/>1,<sp/>2,<sp/>3,<sp/>and<sp/>#4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_drive<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>RobotDrive(<ref refid="macros_8h_1aa5f262ae81a4bc71833be5df15b49ec1" kindref="member" tooltip="Port # of the front left Jaguar on the drive train.">DRIVE_FRONT_LEFT_JAGUAR_PORT</ref>,<sp/><ref refid="macros_8h_1aa1d31f972d08b33df2300a0434ecedf7" kindref="member" tooltip="Port # of the front right Jaguar on the drive train.">DRIVE_FRONT_RIGHT_JAGUAR_PORT</ref>,<sp/><ref refid="macros_8h_1a7e31d84902c3f5a88dfe615bb3d7d365" kindref="member" tooltip="Port # of the back left Jaguar on the drive train.">DRIVE_BACK_LEFT_JAGUAR_PORT</ref>,<sp/><ref refid="macros_8h_1a66215ddced4940c9de38365d6a839841" kindref="member" tooltip="Port # of the back right Jaguar on the drive train.">DRIVE_BACK_RIGHT_JAGUAR_PORT</ref>);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_speed_prev<sp/>=<sp/>this-&gt;_turn_prev<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">RJFRC2011::Drive::~Drive()</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>this-&gt;_drive;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_j_f_r_c2011_1_1_drive_1aa246cbe7cdecc4e72af60d5d9a87bcdb" kindref="member" tooltip="Drive the robot, ramping as you go.">RJFRC2011::Drive::drive</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>speed,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>turn)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ramp<sp/>speed<sp/>and<sp/>turn</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>turn<sp/>=<sp/>ramp(turn,<sp/>_turn_prev);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>speed<sp/>=<sp/>ramp(speed,<sp/>_speed_prev);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((speed<sp/>&lt;=<sp/>0.1<sp/>&amp;&amp;<sp/>speed<sp/>&gt;<sp/>0)<sp/>||<sp/>(speed<sp/>&gt;=<sp/>-0.1<sp/>&amp;&amp;<sp/>speed<sp/>&lt;<sp/>0))</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_drive-&gt;TankDrive(turn<sp/>*<sp/>0.75,<sp/>-turn<sp/>*<sp/>0.75);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_drive-&gt;Drive(speed,<sp/>turn);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_speed_prev<sp/>=<sp/>speed;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_turn_prev<sp/>=<sp/>turn;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_j_f_r_c2011_1_1_drive_1a033624d88429de64fe3d954680157c44" kindref="member" tooltip="Drive without ramping. Used ONLY in Autonomous, since we don&amp;#39;t trust our drivers ;)...">RJFRC2011::Drive::drive_noramp</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>speed,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>turn)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((speed<sp/>&lt;=<sp/>0.1<sp/>&amp;&amp;<sp/>speed<sp/>&gt;<sp/>0)<sp/>||<sp/>(speed<sp/>&gt;=<sp/>-0.1<sp/>&amp;&amp;<sp/>speed<sp/>&lt;<sp/>0))</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_drive-&gt;TankDrive(turn<sp/>*<sp/>0.75,<sp/>-turn<sp/>*<sp/>0.75);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_drive-&gt;Drive(speed,<sp/>turn);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_j_f_r_c2011_1_1_drive_1a731a3b7d782c3f75287b97db93f489d6" kindref="member" tooltip="Drive robot from values given for the speed of each wheel; used in autonomous. Regrettably, no ramping here; however, since it won&amp;#39;t be sporadic, we don&amp;#39;t need it.">RJFRC2011::Drive::tank_drive</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>left,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>right)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_drive-&gt;TankDrive(left,<sp/>right);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_r_j_f_r_c2011_1_1_drive_1ad816025f2d8dbbed3049f611a6e63a90" kindref="member" tooltip="A function that &amp;quot;ramps&amp;quot; input from a joystick to motors so that an overzealous driver doesn...">RJFRC2011::Drive::ramp</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>desired_output,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>current_output)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>increment<sp/>=<sp/>.1;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(desired_output<sp/><sp/>&lt;=<sp/>.1<sp/>&amp;&amp;<sp/>desired_output<sp/>&gt;=<sp/>-.1);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>increment<sp/>=<sp/>.05;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(desired_output<sp/>&lt;<sp/>current_output)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>current_output<sp/>-<sp/>increment;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(desired_output<sp/>&gt;<sp/>current_output)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>increment<sp/>+<sp/>current_output;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>current_output;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.cpp"/>
+  </compounddef>
+</doxygen>

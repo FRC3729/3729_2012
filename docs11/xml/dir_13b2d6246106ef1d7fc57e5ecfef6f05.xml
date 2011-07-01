@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="dir_13b2d6246106ef1d7fc57e5ecfef6f05" kind="dir">
+    <compoundname>workspace11/BuiltinDefaultCode/PPC603gnu/BuiltinDefaultCode_partialImage/Debug/Objects/BuiltinDefaultCode/</compoundname>
+    <innerfile refid="_autonomous_8d">Autonomous.d</innerfile>
+    <innerfile refid="_axis_camera_8d">AxisCamera.d</innerfile>
+    <innerfile refid="_axis_camera_params_8d">AxisCameraParams.d</innerfile>
+    <innerfile refid="_builtin_default_code_8d">BuiltinDefaultCode.d</innerfile>
+    <innerfile refid="_controller_8d">Controller.d</innerfile>
+    <innerfile refid="_drive_8d">Drive.d</innerfile>
+    <innerfile refid="_manipulator_8d">Manipulator.d</innerfile>
+    <innerfile refid="_teleoperated_8d">Teleoperated.d</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/PPC603gnu/BuiltinDefaultCode_partialImage/Debug/Objects/BuiltinDefaultCode/"/>
+  </compounddef>
+</doxygen>

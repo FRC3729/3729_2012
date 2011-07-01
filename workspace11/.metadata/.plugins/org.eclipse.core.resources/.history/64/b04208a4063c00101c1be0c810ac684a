@@ -1,0 +1,332 @@
+/*!
+ \file Autonomous.cpp
+ \brief File containing implementations of functions found in the \a Autonomous class (found in Autonomous.h)
+ \authors Matthew Haney, Drew Lazzeri
+ 
+ */
+
+#include "macros.h"
+#include "WPILib.h"
+#include "Autonomous.h"
+using namespace RJFRC2011;
+
+/*!
+ \brief Construct from a drive system, manipulator, and controller.
+ \param drive Pointer to a \a Drive variable that will be used in both Autonomous and Teleoperated periods.
+ \param manip Pointer to a \a Manipulator variable that will be used in both Autonomous and Teleoperated periods.
+ \param controller Pointer to \a Controller variable that will be used in both Autonomous and Teleoperated periods.
+ */
+RJFRC2011::Autonomous::Autonomous(Drive * drive, Manipulator * manip, Controller * controller, DriverStationLCD * screen)
+{\
+	this->_currentState = 0;
+	lightLeft = lightRight = lightCenter = 0;
+	
+	// Make locally-owned pointers point to same addresses as passed pointers
+	this->_drive = drive;
+	this->_manip = manip;
+	this->_controller = controller;
+	this->_screen = screen;
+	
+	// Initialize sensors
+	lightSensorRight = new DigitalInput(LIGHT_SENSOR_RIGHT_PORT);
+	lightSensorCenter = new DigitalInput(LIGHT_SENSOR_CENTER_PORT);
+	lightSensorLeft = new DigitalInput(LIGHT_SENSOR_LEFT_PORT);
+	
+	// Initialize physical switches
+	autonomousLaneSwitch = new DigitalInput(AUTONOMOUS_LANE_SWITCH_PORT);
+	autonomousForkSwitch = new DigitalInput(AUTONOMOUS_FORK_SWITCH_PORT);
+}
+
+//! Destructor.
+RJFRC2011::Autonomous::~Autonomous()
+{
+	delete autonomousForkSwitch;
+	delete autonomousLaneSwitch;
+	delete lightSensorLeft;
+	delete lightSensorRight;
+	delete lightSensorCenter;
+}
+
+// States
+
+/*!
+ \brief The initial state of the robot.
+ \details Read input from the switches and set variables accordingly.  If lane switch is off, we're in a side lane; if it's on, we're in the center one.  If we're in the center, read the second fork switch: if it's on, go left; if not, go right.  When done, switch to state \a checkForLines().
+ */
+void RJFRC2011::Autonomous::initialState()			// state 0
+{
+	if (autonomousLaneSwitch->Get() == 0)			// Left or right lane
+	{
+		lane = 0;
+	}
+	else if (autonomousLaneSwitch->Get() == 1)		// Center lane
+	{
+		lane = 1;
+		if (autonomousForkSwitch->Get() == 1)		// Left @ fork
+		{
+			forkDirection = 'l';
+		}
+		else if (autonomousForkSwitch->Get() == 0)	//Right @ fork
+		{
+			forkDirection = 'r';
+		}
+	}
+	lightLeft = lightRight = lightCenter = 0;
+}
+
+/*!
+ \\brief
+  The state in which the robot is looking for tape lines on the floor
+ \details Read input from the 3 light sensors and store the results in a single variable.  When done, switch states based on input.
+ */
+void RJFRC2011::Autonomous::checkForLines()		// state 1
+{
+	lightLeft = lightCenter = lightRight = 0;
+	// First bit of lightVals is value of left light
+	lightLeft = lightSensorLeft->Get();
+	// Second bit is value of center light
+	lightCenter = lightSensorCenter->Get();
+	// Third is value of right light
+	lightRight = lightSensorRight->Get(); 
+}
+
+/*!
+ \brief State in which the robot moves forward 
+ \details When done, switch to \a checkForLines() state.
+ */
+void RJFRC2011::Autonomous::move()					// state 2
+{
+	this->_drive->drive(AUTO_DRIVE_SPEED, 0);
+}
+
+/*!
+ \brief State in which the robot moves slightly to the right
+ \details When done, switch to \a move() state.
+ */
+void RJFRC2011::Autonomous::correctRight()			// state 3
+{
+	this->_drive->drive(AUTO_DRIVE_SPEED / 2, AUTO_TURN_SPEED);
+}
+
+/*!
+ \brief State in which the robot moves slightly to the left.
+ \details When done, switch to \a move() state.
+ */
+void RJFRC2011::Autonomous::correctLeft()			// state 4
+{
+	this->_drive->drive(AUTO_DRIVE_SPEED / 2, -AUTO_TURN_SPEED);
+}
+
+/*!
+ \brief State in which the robot ejects the tube (ideally onto a peg)
+ \details When done, switch to \a retreat() state.
+ */
+void RJFRC2011::Autonomous::placeTube()				// state 5
+{
+	_manip->ejectTube();
+	Wait(0.5);
+	_manip->stopManipulatorAction();
+}
+
+/*!
+ \brief State in which the robot retreats from the pegs and goes... somewhere.
+ \details We don't switch from this state; we stay in it until the end of Autonomous.
+ */
+void RJFRC2011::Autonomous::retreat()				// state 6
+{
+	_manip->stopManipulatorAction();
+	_manip->stopManipulatorElevation();
+	_drive->drive(0, 0);
+}
+
+// Conditions
+/*!
+ \brief Conditional function called after \a checkForLines().
+ \details Operates on the \a lightVals variable, the last three bits of which are the inputs from the left, center, and right light sensors, respectively.  This gives the variable \a lightVals a value between 0 (...000) and 7 (...111), with 0 indicating that the sensor saw nothing and 1 indicating that the sensor detected something (ideally the tape).  We then use a \a switch statement to change to the appropriate state.
+ */
+void RJFRC2011::Autonomous::Go()
+{
+	checkForLines();																	// L, C, R
+	
+	if ((lightLeft == 0) && (lightRight == 0) && (lightCenter == 0))					// 000
+	{
+		// Can't see the line
+		move();
+	}
+	else if ((lightLeft == 0) && (lightRight == 1) && (lightCenter == 0))				// 001
+	{
+		// Way far left
+		correctRight();
+		move();
+	}
+	else if ((lightLeft == 0) && (lightRight == 0) && (lightCenter == 1))				// 010
+	{
+		// Ideal; right on line
+		move();
+	}
+	else if ((lightLeft == 0) && (lightRight == 1) && (lightCenter == 1))				// 011
+	{
+		// a little left
+		correctRight();
+		move();
+	}
+	else if ((lightLeft == 1) && (lightRight == 0) && (lightCenter == 1))				// 110
+	{
+		// A little to the right
+		correctLeft();
+		move();
+	}
+	else if ((lightLeft == 1) && (lightRight == 0) && (lightCenter == 0))				// 100
+	{
+		// Way far right
+		correctLeft();
+		move();
+	}
+	else if ((lightLeft == 1) && (lightRight == 1) && (lightCenter == 0))				// 101
+	{
+		// Pick a direction! We're at the fork
+		if (forkDirection == 'l')
+		{
+			correctLeft();
+			move();
+		}
+		else
+		{
+			correctRight();
+			move();
+		}
+	}
+	else if ((lightLeft == 1) && (lightRight == 1) && (lightCenter == 1))				// 111
+	{
+		// We're done; we've reached the 'T'
+		placeTube();
+		retreat();
+	}
+	else																				// ???
+	{
+		// Reset and try again
+		lightCenter = lightLeft = lightRight = 0;
+	}
+	/*
+	 // The old version
+	 switch (lightVals)
+	 {
+	 case 0:
+	 // can't see the line				// 000
+	 return 2;
+	 break;
+	 case 1:
+	 // way far left						// 001
+	 return 3;
+	 break;
+	 case 2:
+	 // ideal; we're on the line			// 010
+	 return 2;
+	 break;
+	 case 3:
+	 // a little to the left				// 011
+	 return 3;
+	 break;
+	 case 4:
+	 // way far right					// 100
+	 return 4;
+	 break;
+	 case 5:									// 101
+	 return 6;
+	 break;
+	 case 6:
+	 // a little to the right			// 110
+	 return 4;
+	 break;
+	 case 7:
+	 // at end							// 111
+	 return 5;
+	 break;
+	 default:
+	 // Reset leftmost bits and try again
+	 lightVals &= 7;
+	 return getNextState();
+	 break;
+	 }
+	 */
+}
+
+void RJFRC2011::Autonomous::Init()
+{
+	this->initialState();
+}
+/*
+void RJFRC2011::Autonomous::Go()
+{
+	getNextState();
+	switch (getNextState())
+	{
+		case 0:
+			initialState();
+			break;
+		case 1:
+			checkForLines();
+			break;
+		case 2:
+			move();
+			break;
+		case 3:
+			correctRight();
+			move();
+			break;
+		case 4:
+			correctLeft();
+			move();
+			break;
+		case 5:
+			placeTube();
+			retreat();
+			break;
+		case 6:
+			if (forkDirection == 'l')
+			{
+				correctLeft();
+				move();
+			}
+			else
+			{
+				correctRight();
+				move();
+			}
+			break;
+		default:
+			// ...?
+			Init();
+			break;
+	}
+}
+*/
+
+void RJFRC2011::Autonomous::testLightSensors()
+{
+	//checkForLines();
+	_screen->PrintfLine(DriverStationLCD::kUser_Line3, int2str(lightLeft));
+	_screen->PrintfLine(DriverStationLCD::kUser_Line4, int2str(lightCenter));
+	_screen->PrintfLine(DriverStationLCD::kUser_Line5, int2str(lightRight));
+	_screen->UpdateLCD();
+}
+
+int RJFRC2011::Autonomous::flip(int x)
+{
+	if (x == 0)
+		return 1;
+	else if (x == 1)
+		return 0;
+	else
+		return x;
+}
+
+const char * RJFRC2011::Autonomous::int2str(int val)
+{
+	if (val == 0)
+		return "0";
+	else if (val == 1)
+		return "1";
+	else
+		return "GRR...";
+}

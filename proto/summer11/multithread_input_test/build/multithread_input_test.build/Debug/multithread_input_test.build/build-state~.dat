@@ -1,0 +1,103 @@
+Tmultithread_input_test
+v7
+r0
+t331000011.332765
+cCheck dependencies
+cCompileC build/multithread_input_test.build/Debug/multithread_input_test.build/Objects-normal/x86_64/main.o /Users/matthewhaney/Desktop/multithread_input_test/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cLd /Users/matthewhaney/Desktop/multithread_input_test/build/Debug/multithread_input_test normal x86_64
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004CAA740B00000000000000EE
+t1286239243
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/pthread.h
+c000000004BBD2CE900000000000038F0
+t1270689001
+s14576
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/unistd.h
+c000000004BBD2CE9000000000000563E
+t1270689001
+s22078
+
+N/Users/matthewhaney/Desktop/multithread_input_test/build/Debug/multithread_input_test
+t1309307211
+s51576
+
+N/Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/Objects-normal/x86_64/main.o
+t1309307193
+s206048
+
+N/Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/Objects-normal/x86_64/multithread_input_test.LinkFileList
+c000000004E0A714A0000000000000096
+t1309307210
+s150
+
+N/Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/Objects-normal/x86_64/multithread_input_test.o
+t2
+s0
+
+N/Users/matthewhaney/Desktop/multithread_input_test/env.h
+c000000004DFC077A00000000000009BA
+t1308362618
+s2490
+i<map>
+i<string>
+i"exception.h"
+
+N/Users/matthewhaney/Desktop/multithread_input_test/exception.h
+c000000004DFC04140000000000000299
+t1308361748
+s665
+
+N/Users/matthewhaney/Desktop/multithread_input_test/main.cpp
+c000000004E0A714A00000000000003D8
+t1309307210
+s984
+i<unistd.h>
+i<pthread.h>
+i<iostream>
+i"env.h"
+i<fstream>
+
+N/Users/matthewhaney/Desktop/multithread_input_test/multithread_input_test.cpp
+c000000004E0A65E600000000000003F8
+t1309304294
+s1016
+i<unistd.h>
+i<pthread.h>
+i<iostream>
+i"env.h"
+i<fstream>
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies331000010#331000010#0(0"0(0#1#0"8101528638113014784#0"0#
+
+CCompileC build/multithread_input_test.build/Debug/multithread_input_test.build/Objects-normal/x86_64/main.o /Users/matthewhaney/Desktop/multithread_input_test/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s331000010.959588
+e331000010.991995
+r1
+xCompileC
+xbuild/multithread_input_test.build/Debug/multithread_input_test.build/Objects-normal/x86_64/main.o
+x/Users/matthewhaney/Desktop/multithread_input_test/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@67"Compile /Users/matthewhaney/Desktop/multithread_input_test/main.cpp331000010#331000010#0(663"In file included from /Users/matthewhaney/Desktop/multithread_input_test/env.h:3,                 from /Users/matthewhaney/Desktop/multithread_input_test/main.cpp:4:/Users/matthewhaney/Desktop/multithread_input_test/exception.h: In function 'std::ostream& operator<<(std::ostream&, EXCEPTION<T>)':/Users/matthewhaney/Desktop/multithread_input_test/exception.h:24: warning: no return statement in function returning non-void/Users/matthewhaney/Desktop/multithread_input_test/main.cpp: In function 'int reload_bindings(std::string)':/Users/matthewhaney/Desktop/multithread_input_test/main.cpp:37: warning: deprecated conversion from string constant to 'char*'2(22@50"No return statement in function returning non-void331000010#300#127#3(7@81"In file included from /Users/matthewhaney/Desktop/multithread_input_test/main.cpp331000010#18446744073709551615#0#0(6@59"/Users/matthewhaney/Desktop/multithread_input_test/main.cpp331000010#4#0#4#0#0"0(7@78"In file included from /Users/matthewhaney/Desktop/multithread_input_test/env.h331000010#18446744073709551615#0#0(6@56"/Users/matthewhaney/Desktop/multithread_input_test/env.h330055418#3#0#3#0#0"0(13@116"No return statement in function returning non-void in /Users/matthewhaney/Desktop/multithread_input_test/exception.h331000010#18446744073709551615#0#0(6@62"/Users/matthewhaney/Desktop/multithread_input_test/exception.h330054548#24#0#24#0#0"0(6@62"/Users/matthewhaney/Desktop/multithread_input_test/exception.h330054548#24#0#24#0#50"no return statement in function returning non-void0(22@53"Deprecated conversion from string constant to 'char*'331000010#536#127#0(6@59"/Users/matthewhaney/Desktop/multithread_input_test/main.cpp331000010#37#0#37#0#49"deprecated conversion from string constant to '*'0(0#0#59"/Users/matthewhaney/Desktop/multithread_input_test/main.cpp8101822259509150720#1693"    cd /Users/matthewhaney/Desktop/multithread_input_test    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/multithread_input_test-generated-files.hmap -I/Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/multithread_input_test-own-target-headers.hmap -I/Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/multithread_input_test-all-target-headers.hmap -iquote /Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/multithread_input_test-project-headers.hmap -F/Users/matthewhaney/Desktop/multithread_input_test/build/Debug -I/Users/matthewhaney/Desktop/multithread_input_test/build/Debug/include -I/Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/DerivedSources/x86_64 -I/Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/DerivedSources -c /Users/matthewhaney/Desktop/multithread_input_test/main.cpp -o /Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/Objects-normal/x86_64/main.o0#
+
+CCompileC build/multithread_input_test.build/Debug/multithread_input_test.build/Objects-normal/x86_64/multithread_input_test.o /Users/matthewhaney/Desktop/multithread_input_test/multithread_input_test.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+r0
+
+CLd /Users/matthewhaney/Desktop/multithread_input_test/build/Debug/multithread_input_test normal x86_64
+s331000010.992083
+e331000011.332700
+r1
+xLd
+x/Users/matthewhaney/Desktop/multithread_input_test/build/Debug/multithread_input_test
+xnormal
+xx86_64
+lSLF07#2@90"Link /Users/matthewhaney/Desktop/multithread_input_test/build/Debug/multithread_input_test331000010#331000011#0(0"0(0#0#0"8605609984#618"    cd /Users/matthewhaney/Desktop/multithread_input_test    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/matthewhaney/Desktop/multithread_input_test/build/Debug -F/Users/matthewhaney/Desktop/multithread_input_test/build/Debug -filelist /Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/Objects-normal/x86_64/multithread_input_test.LinkFileList -mmacosx-version-min=10.6 -o /Users/matthewhaney/Desktop/multithread_input_test/build/Debug/multithread_input_test0#
+

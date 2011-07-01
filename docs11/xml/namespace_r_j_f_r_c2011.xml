@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="namespace_r_j_f_r_c2011" kind="namespace">
+    <compoundname>RJFRC2011</compoundname>
+    <innerclass refid="class_r_j_f_r_c2011_1_1_autonomous" prot="public">RJFRC2011::Autonomous</innerclass>
+    <innerclass refid="class_r_j_f_r_c2011_1_1_controller" prot="public">RJFRC2011::Controller</innerclass>
+    <innerclass refid="class_r_j_f_r_c2011_1_1_drive" prot="public">RJFRC2011::Drive</innerclass>
+    <innerclass refid="class_r_j_f_r_c2011_1_1_manipulator" prot="public">RJFRC2011::Manipulator</innerclass>
+    <innerclass refid="class_r_j_f_r_c2011_1_1_teleoperated" prot="public">RJFRC2011::Teleoperated</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="30"/>
+  </compounddef>
+</doxygen>

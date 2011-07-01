@@ -1,0 +1,151 @@
+/*!
+ /file Autonomous.cpp
+ /brief File containing implementations of functions found in the \a Autonomous class (found in Autonomous.h)
+ /authors Matthew Haney, Drew Lazzeri
+ 
+ */
+
+#include "macros.h"
+#include "Autonomous.h"
+#include "Controller.h"
+using namespace RJFRC2011;
+
+RJFRC2011::Autonomous::Autonomous(Drive * drive, Manipulator * manip, Controller * controller)
+{
+	this->_states = new state[7];
+	_states[0] = initalState;
+	checkForLines, move, correctRight, correctLeft, placeTube, retreat };
+	this->_conditions = new condition[7];
+	_conditions = { initialStateCondition, checkForLinesCondition, moveCondition, correctRightCondition, correctLeftCondition, placeTubeCondition, retreatCondition };
+	this->setState(0);
+	
+	this->_drive = drive;
+	this->_manip = manip;
+	this->_controller = controller;
+	
+	lightSensorRight = new DigitalInput(LIGHT_SENSOR_RIGHT_PORT);
+	lightSensorCenter = new DigitalInput(LIGHT_SENSOR_CENTER_PORT);
+	lightSensorLeft = new DigitalInput(LIGHT_SENSOR_LEFT_PORT);
+	
+	autonomousLaneSwitch = new DigitalInput(AUTONOMOUS_LANE_SWITCH_PORT);
+	autonomousForkSwitch = new DigitalInput(AUTONOMOUS_FORK_SWITCH_PORT);
+}
+
+RJFRC2011:Autonomous::~Autonomous()
+{
+	delete autonomousForkSwitch;
+	delete autonomousLaneSwitch;
+	delete lightSensorLeft;
+	delete lightSensorRight;
+	delete lightSensorCenter;
+}
+
+// States
+
+void RJFRC2011::Autonomous::initialState()			// state 0
+{
+	if (autonomousLaneSwitch->Get() == 0)			// Left or right lane
+	{
+		lane = 0;
+	}
+	else if (autonomousLaneSwitch->Get() == 1)		// Center lane
+	{
+		lane = 1;
+		if (autonomousForkSwitch->Get() == 1)		// Left @ fork
+		{
+			forkDirection = 'l';
+		}
+		else if (autonomousForkSwitch->Get() == 0)	//Right @ fork
+		{
+			forkDirection = 'r';
+		}
+	}
+	lightVals = 0;
+}
+
+void RJFRC2011::Autonomous::checkForLines();		// state 1
+{
+	// First bit of lightVals is value of left light
+	lightVals |= (lightSensorLeft->Get() << 0);
+	// Second bit is value of center light
+	lightVals |= (lightSensorCenter->Get() << 1);
+	// Third is value of right light
+	lightVals |= (lightSensorRight->Get() << 2);
+}
+
+void RJFRC2011::Autonomous::move();					// state 2
+{
+	this->_drive->Drive(AUTO_DRIVE_SPEED, 0);
+}
+
+void RJFRC2011::Autonomous::correctRight();			// state 3
+{
+	this->_drive->Drive(AUTO_DRIVE_SPEED / 2, 0.1);
+}
+
+void RJFRC2011::Autonomous::correctLeft();			// state 4
+{
+	this->_drive->Drive(AUTO_DRIVE_SPEED / 2, -0.1);
+}
+
+void RJFRC2011::Autonomous::placeTube();			// state 5
+{
+	_manip->ejectTube();
+	Wait(0.5);
+	_manip->stopManipulatorAction();
+}
+
+void RJFRC2011::Autonomous::retreat();				// state 6
+{
+	// THIS HERE will be the most complicated part
+	// With nothing in it, the robot will sit idle by the tube rack
+	// until the end of autonomous
+}
+
+// Conditions
+int RJFRC2011::Autonomous::checkForLinesCondition()
+{
+	switch (lightVals)
+	{
+		case 0:
+			// can't see the line				// 000
+			return 2;
+			break;
+		case 1:
+			// way far left						// 001
+			return 3;
+			break;
+		case 2:
+			// ideal; we're on the line			// 010
+			return 2;
+			break;
+		case 3:
+			// a little to the left				// 011
+			return 3;
+			break;
+		case 4:
+			// way far right					// 100
+			return 4
+			break;
+		case 5:
+			// at fork							// 101
+			if (forkDirection == 'l')
+				return 4;
+			else
+				return 3;
+			break;
+		case 6:
+			// a little to the right			// 110
+			return 4;
+			break;
+		case 7:
+			// at end							// 111
+			return 5;
+			break;
+		default:
+			// SOMETHING WENT VERY WRONG: RESET STUFF
+			lightVals = 0;
+			return -1;
+			break;
+	}
+}

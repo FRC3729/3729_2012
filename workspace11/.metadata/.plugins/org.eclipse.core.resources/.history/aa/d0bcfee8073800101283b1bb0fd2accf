@@ -1,0 +1,202 @@
+/*!
+ \file Teleoperated.cpp
+ \brief File containing definitions of functions declared in class \a Teleoperated (declared in Teleoperated.h).
+ \authors Matthew Haney, Drew Lazzeri
+ */
+
+#include "Teleoperated.h"
+using namespace RJFRC2011;
+
+/*!
+ \brief Construct from a drive system, a manipulator, and a controller.
+ \details Set up pointers to passed adresses.  Initialize state and condition pointers.
+ */
+RJFRC2011::Teleoperated::Teleoperated(Drive * drive, Manipulator * manip, Controller * controller)
+{
+	this->_drive = drive;
+	this->_manip = manip;
+	this->_controller = controller;	
+	this->minibotShelf = new Relay(MINIBOT_SHELF_RELAY_PORT, Relay::kBothDirections);
+	
+	// Set up states
+	this->_states = new state[8];
+	this->_states[0] = &RJFRC2011::Teleoperated::initial;
+	this->_states[1] = &RJFRC2011::Teleoperated::getDriverInput;
+	this->_states[2] = &RJFRC2011::Teleoperated::moveRobot;
+	this->_states[3] = &RJFRC2011::Teleoperated::elevateManipulator;
+	this->_states[4] = &RJFRC2011::Teleoperated::inputTube;
+	this->_states[5] = &RJFRC2011::Teleoperated::rotateTube;
+	this->_states[6] = &RJFRC2011::Teleoperated::ejectTube;
+	this->_states[7] = &RJFRC2011::Teleoperated::moveMinibotShelf;
+	
+	// Set up conditions
+	this->_conditions = new condition[8];
+	this->_conditions[0] = &RJFRC2011::Teleoperated::initialCondition;
+	this->_conditions[1] = &RJFRC2011::Teleoperated::genericCondition;
+	this->_conditions[2] = &RJFRC2011::Teleoperated::genericCondition;
+	this->_conditions[3] = &RJFRC2011::Teleoperated::genericCondition;
+	this->_conditions[4] = &RJFRC2011::Teleoperated::genericCondition;
+	this->_conditions[5] = &RJFRC2011::Teleoperated::genericCondition;
+	this->_conditions[6] = &RJFRC2011::Teleoperated::genericCondition;
+	this->_conditions[7] = &RJFRC2011::Teleoperated::genericCondition;
+}
+
+//! Destructor.
+RJFRC2011::Teleoperated::~Teleoperated()
+{
+	delete [] _conditions;
+	delete [] _states;
+	delete minibotShelf;
+}
+
+/*!
+ \brief Set up for Teleoperated mode.
+ \details Set all input values to zero.
+ */
+void RJFRC2011::Teleoperated::initial()					// state 0
+{
+	manipulatorElevation = driveSpeed = driveTurn = manipulatorAction = 0.0;
+	minibotSwitches = 0;
+	_nextState = 1;
+	rotateTubeDownFlag = false;
+}
+
+/*!
+ \brief Read input from controller.
+ \details Store input from controller in local variables, which will be later used in \a getDriverInputCondition().
+ */
+void RJFRC2011::Teleoperated::getDriverInput()			// state 1
+{
+	manipulatorElevation = this->_controller->getManipulatorElevation();
+	driveSpeed = this->_controller->getDriveSpeed();
+	driveTurn = this->_controller->getDriveTurn();
+	manipulatorAction = this->_controller->getManipulatorAction();
+	minibotSwitches = this->_controller->getMinibotSwitches();
+	_nextState = 2;
+}
+
+/*!
+ \brief Move the robot based on user input.
+ \details Basically just a call to \a Drive::drive(speed, turn);
+ */
+void RJFRC2011::Teleoperated::moveRobot()				// state 2
+{
+	this->_drive->drive(driveSpeed, driveTurn);
+}
+
+/*!
+ \brief Elevate the manipulator up or down.
+ \details If user is pushing hard left or hard right, elevate accordingly (with \a Manipulator::elevate(val)).  Otherwise, stop the elevation.
+ */
+void RJFRC2011::Teleoperated::elevateManipulator()		// state 3
+{
+	if ((manipulatorElevation > 0.35) || (manipulatorElevation < -0.35))
+		this->_manip->elevate(manipulatorElevation);
+	else
+		this->_manip->stopManipulatorElevation();
+}
+
+//! Suck in the tube.  Basically a call to \a Manipulator::inputTube().
+void RJFRC2011::Teleoperated::inputTube()				// state 4
+{
+	if (manipulatorAction > 0.35)
+	{
+		this->_manip->inputTube();
+		rotateTubeDownFlag = true;
+	}
+	else if ((manipulatorAction < 0.35) && (manipulatorAction > -0.35))
+	{
+		this->_manip->stopManipulatorAction();
+	}
+}
+
+//! Rotate the tube down.  Basically a call to \a Manipulator::rotateTube().
+void RJFRC2011::Teleoperated::rotateTube()				// state 5
+{
+	if (rotateTubeDownFlag)
+	{
+		this->_manip->rotateTube();
+		rotateTubeDownFlag = false;
+	}
+}
+
+//! Eject the tube.  Basically a call to \a Manipulator::ejectTube().
+void RJFRC2011::Teleoperated::ejectTube()				// state 6
+{
+	if (manipulatorAction < -0.35)
+		this->_manip->ejectTube();
+	else if ((manipulatorAction < 0.35) && (manipulatorAction > -0.35))
+	{
+		this->_manip->stopManipulatorAction();
+	}
+}
+
+/*!
+ \brief Move the minibot shelf.
+ \details Based on values of minibot switches, move the shelf in or out (or stop it).
+ */
+void RJFRC2011::Teleoperated::moveMinibotShelf()		// state 7
+{
+	if (minibotSwitches == 2)						// 10
+	{
+		minibotShelf->Set(Relay::kForward);			// Set the relay to forward if the right switch is on...
+	}
+	else if (minibotSwitches == 1)					// 01
+	{
+		minibotShelf->Set(Relay::kReverse);			// ...forward if the left switch is on...
+	}
+	else if (minobotSwitches == 0)					// 00
+	{
+		minibotShelf->Set(Relay::kOff);				// ..or off if the switch is off
+	}
+	else//if (minibotSwitches == 3)					// 11
+	{
+		minibotShelf->Set(Relay::kOff);
+	}
+}
+
+/*!
+ \brief So named because it is used for multiple states.  Used to execute several states in order.
+ \details Uses a switch block and the variable _nextState to get user input and then execute every other state sequestially before again getting user input.
+ \return The next state
+ */
+ int RJFRC2011::Teleoperated::genericCondition()
+{
+	switch (_nextState)
+	{
+		case 0:
+			return 0;
+			break;
+		case 1:
+			return 1;
+			break;
+		case 2:
+			_nextState = 3;
+			return 2;
+			break;
+		case 3:
+			_nextState = 4;
+			return 3;
+			break;
+		case 4:
+			_nextState = 5;
+			return 4;
+			break;
+		case 5:
+			_nextState = 6;
+			return 5;
+			break;
+		case 6:
+			_nextState = 7;
+			return 6;
+			break;
+		case 7:
+			_nextState = 1;
+			return 7;
+			break;
+		default:
+			return 0;
+			break;
+	}
+}
+

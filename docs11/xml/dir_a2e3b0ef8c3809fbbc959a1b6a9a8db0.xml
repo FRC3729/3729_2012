@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="dir_a2e3b0ef8c3809fbbc959a1b6a9a8db0" kind="dir">
+    <compoundname>workspace11/BuiltinDefaultCode/PPC603gnu/BuiltinDefaultCode_partialImage/</compoundname>
+    <innerdir refid="dir_9c858e5b509a3bcc4b62f16f50fbdb79">workspace11/BuiltinDefaultCode/PPC603gnu/BuiltinDefaultCode_partialImage/Debug/</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/PPC603gnu/BuiltinDefaultCode_partialImage/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,207 @@
+.TH "RJFRC2011::Controller" 7 "Mon May 30 2011" "RJHS FRC Software Documentation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RJFRC2011::Controller \- 
+.PP
+Class abstracting the controller(s) used by our driver(s)  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Controller.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBController\fP ()"
+.br
+.RI "\fIConstructor. \fP"
+.ti -1c
+.RI "\fB~Controller\fP ()"
+.br
+.RI "\fIDestructor. Kill stuff. \fP"
+.ti -1c
+.RI "float \fBgetManipulatorElevation\fP ()"
+.br
+.RI "\fIGet user-requested manipulator elevation. \fP"
+.ti -1c
+.RI "float \fBgetDriveSpeed\fP ()"
+.br
+.RI "\fIGet user-requested drive speed. \fP"
+.ti -1c
+.RI "float \fBgetDriveTurn\fP ()"
+.br
+.RI "\fIGet user-requested drive turn speed. \fP"
+.ti -1c
+.RI "int \fBgetMinibotSwitches\fP ()"
+.br
+.RI "\fIGet user-requested minibot shelf action (in/out). \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBgetManipulatorAction\fP ()"
+.br
+.RI "\fIGet user-requested manipulator action (input, rotate, or eject). \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "float \fBabs\fP (float initial)"
+.br
+.RI "\fIAbsolute value of a float, since I'm not sure if we can import the <cmath> library onto the cRIO. EDIT: turns out we can, but I'll leave this here to conserve memory. \fP"
+.ti -1c
+.RI "float \fBexpo\fP (float x, float a)"
+.br
+.RI "\fIAn exponential function used to make joysticks less sensitive near the center and more sensitive towards the edges. \fP"
+.ti -1c
+.RI "float \fBnormalize\fP (float joyVal, float min, float max)"
+.br
+.RI "\fIA function that 'normalizes' inputs from the joysticks (because they don't give perfect -1.0 to 1.0 values). \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Joystick * \fB_controller\fP"
+.br
+.RI "\fIObject abstracting our InterLink Elite controller, which WIPLib seems to think is a joystick. \fP"
+.ti -1c
+.RI "Joystick * \fB_joystick\fP"
+.br
+.RI "\fIObject abstracting our legitimate Logitech Attack3 joystick. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class abstracting the controller(s) used by our driver(s) 
+
+Get input from a pair of joysticks (one of which is physically a flight simulator controller) and return those inputs. A class like this is useful because we can modify a few lines of code to change the inputs for functions throughout the entire code. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RJFRC2011::Controller::Controller ()"
+.PP
+Constructor. Basically, initialize the controllers to USB ports 1 and 2. 
+.SH "Member Function Documentation"
+.PP 
+.SS "float RJFRC2011::Controller::abs (floatinitial)\fC [private]\fP"
+.PP
+Absolute value of a float, since I'm not sure if we can import the <cmath> library onto the cRIO. EDIT: turns out we can, but I'll leave this here to conserve memory. \fBParameters:\fP
+.RS 4
+\fIinitial\fP the initial value 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the absolute value of the passed value; if it's negative, make it positive 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Matthew Haney 
+.RE
+.PP
+
+.SS "float RJFRC2011::Controller::expo (floatx, floata)\fC [private]\fP"
+.PP
+An exponential function used to make joysticks less sensitive near the center and more sensitive towards the edges. Basically, plug the value requested by the user and a predefined constant into an exponential equation and return the result. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP the value to be exponentiated 
+.br
+\fIa\fP a predefined exponential factor 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the 'expo-ed' value 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Adam Bryant 
+.RE
+.PP
+
+.SS "float RJFRC2011::Controller::getDriveSpeed ()"
+.PP
+Get user-requested drive speed. Reads input from the y-axis on the right stick, normalizes it to a value between -1.0 and 1.0, and then exponentiates it (so the stick's less sensitive in the center and more sensitive at the edges). 
+.PP
+\fBReturns:\fP
+.RS 4
+The received, normalized, and expo-ed value (inverted [if the inversion switch {button #2} is thrown]). 
+.RE
+.PP
+
+.SS "float RJFRC2011::Controller::getDriveTurn ()"
+.PP
+Get user-requested drive turn speed. Reads input from the x-axis on the right stick, normalizes it to a value between -1.0 and 1.0, and then exponentiates it (so the stick's less sensitive in the center and more sensitive at the edges). 
+.PP
+\fBReturns:\fP
+.RS 4
+The received, normalized, and expo-ed value(inverted [if the inversion switch {button #2} is thrown]). 
+.RE
+.PP
+
+.SS "Controller::getManipulatorAction ()\fC [static]\fP"
+.PP
+Get user-requested manipulator action (input, rotate, or eject). Read input from three buttons on the joystick: the trigger (1) and two thumb buttons (2 and 3). If any one of them is pressed, return that button's ID. If multiple are pressed, or none are pressed, return 0. 
+.PP
+\fBReturns:\fP
+.RS 4
+The ID of the received button. 
+.RE
+.PP
+
+.SS "float RJFRC2011::Controller::getManipulatorElevation ()"
+.PP
+Get user-requested manipulator elevation. Reads input from the y-axis on the joystick. 
+.PP
+\fBReturns:\fP
+.RS 4
+The received value (inverted). 
+.RE
+.PP
+
+.SS "int RJFRC2011::Controller::getMinibotSwitches ()"
+.PP
+Get user-requested minibot shelf action (in/out). Read input from two thumb buttons on the joystick (buttons 4 and 5) and return ther states in a single variable. 
+.PP
+\fBReturns:\fP
+.RS 4
+An integer with the last two bits being the right and left button inputs, respectively. 
+.RE
+.PP
+
+.SS "float RJFRC2011::Controller::normalize (floatjoyVal, floatmin, floatmax)\fC [private]\fP"
+.PP
+A function that 'normalizes' inputs from the joysticks (because they don't give perfect -1.0 to 1.0 values). If the requested value is negative, return its percentage of the minimum possible value; if it's possible, do the same with the max. If it's zero, of course, return zero. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIjoyVal\fP the input from the joystick 
+.br
+\fImin\fP the minimun joystick value 
+.br
+\fImax\fP the maximum joystick value 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the normalized value 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Adam Bryant 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RJHS FRC Software Documentation from the source code.

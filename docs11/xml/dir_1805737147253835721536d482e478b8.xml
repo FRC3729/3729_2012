@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="dir_1805737147253835721536d482e478b8" kind="dir">
+    <compoundname>workspace11/</compoundname>
+    <innerdir refid="dir_e877071fafb212b1b7bcff07df658564">workspace11/BuiltinDefaultCode/</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/matthewhaney/rjfrc/workspace11/"/>
+  </compounddef>
+</doxygen>

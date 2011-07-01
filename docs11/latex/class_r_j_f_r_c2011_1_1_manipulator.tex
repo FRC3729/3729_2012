@@ -1,0 +1,210 @@
+\hypertarget{class_r_j_f_r_c2011_1_1_manipulator}{
+\section{RJFRC2011::Manipulator Class Reference}
+\label{class_r_j_f_r_c2011_1_1_manipulator}\index{RJFRC2011::Manipulator@{RJFRC2011::Manipulator}}
+}
+
+
+Abstracts the manipulator.  
+
+
+
+
+{\ttfamily \#include $<$Manipulator.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_r_j_f_r_c2011_1_1_manipulator_a6038d65cea681e5d561be874c4aa8446}{Manipulator} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_r_j_f_r_c2011_1_1_manipulator_a8672c9e940c5d0fe61906fa4f0f74ab3}{
+\hyperlink{class_r_j_f_r_c2011_1_1_manipulator_a8672c9e940c5d0fe61906fa4f0f74ab3}{$\sim$Manipulator} ()}
+\label{class_r_j_f_r_c2011_1_1_manipulator_a8672c9e940c5d0fe61906fa4f0f74ab3}
+
+\begin{DoxyCompactList}\small\item\em Destructor. Kill stuff. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_r_j_f_r_c2011_1_1_manipulator_a46b06044e8821d6df6d7d57b8c82b1fc}{inputTube} ()
+\begin{DoxyCompactList}\small\item\em Suck in the tube. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_r_j_f_r_c2011_1_1_manipulator_a315e58939a97c9a0516bab7a92161a1e}{rotateTube} ()
+\begin{DoxyCompactList}\small\item\em Rotate the tube downward. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_r_j_f_r_c2011_1_1_manipulator_aa2aad5b415a79d3cbf2d416e7dd4d6b4}{ejectTube} ()
+\begin{DoxyCompactList}\small\item\em Spit out the tube. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_r_j_f_r_c2011_1_1_manipulator_ab5c4959ca6900ef7332713158d5567b6}{elevate} (float val)
+\begin{DoxyCompactList}\small\item\em Elevate or lower the manipulator. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_r_j_f_r_c2011_1_1_manipulator_a1f643a0a143871d0f0b123ea0f273bd7}{stopManipulatorAction} ()
+\begin{DoxyCompactList}\small\item\em Stop all movement of the manipulator. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_r_j_f_r_c2011_1_1_manipulator_a086407a628311ecab83795fbc6fcfee6}{stopManipulatorElevation} ()
+\begin{DoxyCompactList}\small\item\em Stop all elevation of the manipulator. \item\end{DoxyCompactList}\item 
+DigitalInput $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_manipulator_a6dba7837dfa9ac7d5bce335b1a108846}{GetTopLimitSwitchAddress} () const 
+\begin{DoxyCompactList}\small\item\em Safely return address of the top limit switch. \item\end{DoxyCompactList}\item 
+DigitalInput $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_manipulator_ac81dd27510073450a5e741c7af963bb7}{GetBottomLimitSwitchAddress} () const 
+\begin{DoxyCompactList}\small\item\em Safely return address of the bottom limit switch. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_r_j_f_r_c2011_1_1_manipulator_a1bb5fb2c9c0dbc0964134726cf9b6a1d}{
+Relay $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_manipulator_a1bb5fb2c9c0dbc0964134726cf9b6a1d}{manipulatorTop}}
+\label{class_r_j_f_r_c2011_1_1_manipulator_a1bb5fb2c9c0dbc0964134726cf9b6a1d}
+
+\begin{DoxyCompactList}\small\item\em Forwards/backwards relay controlling motion of the top two wheels of the manipulator. \item\end{DoxyCompactList}\item 
+\hypertarget{class_r_j_f_r_c2011_1_1_manipulator_a15dbc0986585acad7d9c32c3e88298d6}{
+Relay $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_manipulator_a15dbc0986585acad7d9c32c3e88298d6}{manipulatorBottom}}
+\label{class_r_j_f_r_c2011_1_1_manipulator_a15dbc0986585acad7d9c32c3e88298d6}
+
+\begin{DoxyCompactList}\small\item\em Forwards/backwards relay controlling motion of the bottom two wheels of the manipulator. \item\end{DoxyCompactList}\item 
+\hypertarget{class_r_j_f_r_c2011_1_1_manipulator_ab2cff9a8829393c2eb5b69563b6f7fe6}{
+Relay $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_manipulator_ab2cff9a8829393c2eb5b69563b6f7fe6}{manipulatorElevation}}
+\label{class_r_j_f_r_c2011_1_1_manipulator_ab2cff9a8829393c2eb5b69563b6f7fe6}
+
+\begin{DoxyCompactList}\small\item\em Forwards/backwards relay controlling position of the manipulator. \item\end{DoxyCompactList}\item 
+\hypertarget{class_r_j_f_r_c2011_1_1_manipulator_a451901f7adf2e95371f10a7c8b6c7e3f}{
+DigitalInput $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_manipulator_a451901f7adf2e95371f10a7c8b6c7e3f}{manipulatorElevationBottomLimitSwitch}}
+\label{class_r_j_f_r_c2011_1_1_manipulator_a451901f7adf2e95371f10a7c8b6c7e3f}
+
+\begin{DoxyCompactList}\small\item\em Limit switch at the bottom of the manipulator elevator. \item\end{DoxyCompactList}\item 
+\hypertarget{class_r_j_f_r_c2011_1_1_manipulator_ae1b1ea4f57a0ae540290d91bd78dcf21}{
+DigitalInput $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_manipulator_ae1b1ea4f57a0ae540290d91bd78dcf21}{manipulatorElevationTopLimitSwitch}}
+\label{class_r_j_f_r_c2011_1_1_manipulator_ae1b1ea4f57a0ae540290d91bd78dcf21}
+
+\begin{DoxyCompactList}\small\item\em Limit switch at the top of the manipulator elevator. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstracts the manipulator. Custom class interfacing with the manipulator on our robot through various relays and digitl inputs. Provides multiple methods for easily manipulating the... err... manipulator. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_r_j_f_r_c2011_1_1_manipulator_a6038d65cea681e5d561be874c4aa8446}{
+\index{RJFRC2011::Manipulator@{RJFRC2011::Manipulator}!Manipulator@{Manipulator}}
+\index{Manipulator@{Manipulator}!RJFRC2011::Manipulator@{RJFRC2011::Manipulator}}
+\subsubsection[{Manipulator}]{\setlength{\rightskip}{0pt plus 5cm}RJFRC2011::Manipulator::Manipulator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_r_j_f_r_c2011_1_1_manipulator_a6038d65cea681e5d561be874c4aa8446}
+
+
+Constructor. 
+
+Initialize the relays and limit switches to their appropriate ports: see {\itshape MANIPULATOR\_\-TOP\_\-RELAY\_\-PORT\/} , {\itshape MANIPULATOR\_\-BOTTOM\_\-RELAY\_\-PORT\/} , {\itshape MANIPULATOR\_\-ELEVATION\_\-RELAY\_\-PORT\/} , {\itshape MANIPULATOR\_\-ELEVATION\_\-BOTTOM\_\-LIMIT\_\-SWITCH\_\-PORT\/} , and {\itshape MANIPULATOR\_\-ELEVATION\_\-TOP\_\-LIMIT\_\-SWITCH\_\-PORT\/} . 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_r_j_f_r_c2011_1_1_manipulator_aa2aad5b415a79d3cbf2d416e7dd4d6b4}{
+\index{RJFRC2011::Manipulator@{RJFRC2011::Manipulator}!ejectTube@{ejectTube}}
+\index{ejectTube@{ejectTube}!RJFRC2011::Manipulator@{RJFRC2011::Manipulator}}
+\subsubsection[{ejectTube}]{\setlength{\rightskip}{0pt plus 5cm}void RJFRC2011::Manipulator::ejectTube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_r_j_f_r_c2011_1_1_manipulator_aa2aad5b415a79d3cbf2d416e7dd4d6b4}
+
+
+Spit out the tube. 
+
+Set both manipulator relays forward to spit out the tube. \hypertarget{class_r_j_f_r_c2011_1_1_manipulator_ab5c4959ca6900ef7332713158d5567b6}{
+\index{RJFRC2011::Manipulator@{RJFRC2011::Manipulator}!elevate@{elevate}}
+\index{elevate@{elevate}!RJFRC2011::Manipulator@{RJFRC2011::Manipulator}}
+\subsubsection[{elevate}]{\setlength{\rightskip}{0pt plus 5cm}void RJFRC2011::Manipulator::elevate (
+\begin{DoxyParamCaption}
+\item[{float}]{val}
+\end{DoxyParamCaption}
+)}}
+\label{class_r_j_f_r_c2011_1_1_manipulator_ab5c4959ca6900ef7332713158d5567b6}
+
+
+Elevate or lower the manipulator. 
+
+If the user is pushing the joystick forward, go down until the lower limit switch is tripped. If they're pulling it backward, go up until the upper limit switch is triggered. 
+\begin{DoxyParams}{Parameters}
+{\em val} & The user input. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_r_j_f_r_c2011_1_1_manipulator_ac81dd27510073450a5e741c7af963bb7}{
+\index{RJFRC2011::Manipulator@{RJFRC2011::Manipulator}!GetBottomLimitSwitchAddress@{GetBottomLimitSwitchAddress}}
+\index{GetBottomLimitSwitchAddress@{GetBottomLimitSwitchAddress}!RJFRC2011::Manipulator@{RJFRC2011::Manipulator}}
+\subsubsection[{GetBottomLimitSwitchAddress}]{\setlength{\rightskip}{0pt plus 5cm}DigitalInput$\ast$ RJFRC2011::Manipulator::GetBottomLimitSwitchAddress (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_r_j_f_r_c2011_1_1_manipulator_ac81dd27510073450a5e741c7af963bb7}
+
+
+Safely return address of the bottom limit switch. 
+
+\begin{DoxyReturn}{Returns}
+The address, as a pointer-\/to-\/DigitalInput 
+\end{DoxyReturn}
+\hypertarget{class_r_j_f_r_c2011_1_1_manipulator_a6dba7837dfa9ac7d5bce335b1a108846}{
+\index{RJFRC2011::Manipulator@{RJFRC2011::Manipulator}!GetTopLimitSwitchAddress@{GetTopLimitSwitchAddress}}
+\index{GetTopLimitSwitchAddress@{GetTopLimitSwitchAddress}!RJFRC2011::Manipulator@{RJFRC2011::Manipulator}}
+\subsubsection[{GetTopLimitSwitchAddress}]{\setlength{\rightskip}{0pt plus 5cm}DigitalInput$\ast$ RJFRC2011::Manipulator::GetTopLimitSwitchAddress (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_r_j_f_r_c2011_1_1_manipulator_a6dba7837dfa9ac7d5bce335b1a108846}
+
+
+Safely return address of the top limit switch. 
+
+\begin{DoxyReturn}{Returns}
+The address, as a pointer-\/to-\/DigitalInput 
+\end{DoxyReturn}
+\hypertarget{class_r_j_f_r_c2011_1_1_manipulator_a46b06044e8821d6df6d7d57b8c82b1fc}{
+\index{RJFRC2011::Manipulator@{RJFRC2011::Manipulator}!inputTube@{inputTube}}
+\index{inputTube@{inputTube}!RJFRC2011::Manipulator@{RJFRC2011::Manipulator}}
+\subsubsection[{inputTube}]{\setlength{\rightskip}{0pt plus 5cm}void RJFRC2011::Manipulator::inputTube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_r_j_f_r_c2011_1_1_manipulator_a46b06044e8821d6df6d7d57b8c82b1fc}
+
+
+Suck in the tube. 
+
+Set both manipulator relays to reverse to suck in the tube. \hypertarget{class_r_j_f_r_c2011_1_1_manipulator_a315e58939a97c9a0516bab7a92161a1e}{
+\index{RJFRC2011::Manipulator@{RJFRC2011::Manipulator}!rotateTube@{rotateTube}}
+\index{rotateTube@{rotateTube}!RJFRC2011::Manipulator@{RJFRC2011::Manipulator}}
+\subsubsection[{rotateTube}]{\setlength{\rightskip}{0pt plus 5cm}void RJFRC2011::Manipulator::rotateTube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_r_j_f_r_c2011_1_1_manipulator_a315e58939a97c9a0516bab7a92161a1e}
+
+
+Rotate the tube downward. 
+
+Set the top manipulator relay to reverse and the bottom one forward. \hypertarget{class_r_j_f_r_c2011_1_1_manipulator_a1f643a0a143871d0f0b123ea0f273bd7}{
+\index{RJFRC2011::Manipulator@{RJFRC2011::Manipulator}!stopManipulatorAction@{stopManipulatorAction}}
+\index{stopManipulatorAction@{stopManipulatorAction}!RJFRC2011::Manipulator@{RJFRC2011::Manipulator}}
+\subsubsection[{stopManipulatorAction}]{\setlength{\rightskip}{0pt plus 5cm}void RJFRC2011::Manipulator::stopManipulatorAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_r_j_f_r_c2011_1_1_manipulator_a1f643a0a143871d0f0b123ea0f273bd7}
+
+
+Stop all movement of the manipulator. 
+
+Turn off the manipulator relays. \hypertarget{class_r_j_f_r_c2011_1_1_manipulator_a086407a628311ecab83795fbc6fcfee6}{
+\index{RJFRC2011::Manipulator@{RJFRC2011::Manipulator}!stopManipulatorElevation@{stopManipulatorElevation}}
+\index{stopManipulatorElevation@{stopManipulatorElevation}!RJFRC2011::Manipulator@{RJFRC2011::Manipulator}}
+\subsubsection[{stopManipulatorElevation}]{\setlength{\rightskip}{0pt plus 5cm}void RJFRC2011::Manipulator::stopManipulatorElevation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_r_j_f_r_c2011_1_1_manipulator_a086407a628311ecab83795fbc6fcfee6}
+
+
+Stop all elevation of the manipulator. 
+
+Turn off the manipulator elevation relays. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_manipulator_8h}{Manipulator.h}\item 
+\hyperlink{_manipulator_8cpp}{Manipulator.cpp}\end{DoxyCompactItemize}

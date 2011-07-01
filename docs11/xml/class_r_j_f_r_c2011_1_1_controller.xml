@@ -1,0 +1,270 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="class_r_j_f_r_c2011_1_1_controller" kind="class" prot="public">
+    <compoundname>RJFRC2011::Controller</compoundname>
+    <includes refid="_controller_8h" local="no">Controller.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_controller_1af6484856a3ffd56d9201186d3f96341a" prot="private" static="no" mutable="no">
+        <type>Joystick *</type>
+        <definition>Joystick* RJFRC2011::Controller::_controller</definition>
+        <argsstring></argsstring>
+        <name>_controller</name>
+        <briefdescription>
+<para>Object abstracting our InterLink Elite controller, which WIPLib seems to think is a joystick. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.h" line="42" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_controller_1aa9347538d57c8e3ee63610bdfe4fea9e" prot="private" static="no" mutable="no">
+        <type>Joystick *</type>
+        <definition>Joystick* RJFRC2011::Controller::_joystick</definition>
+        <argsstring></argsstring>
+        <name>_joystick</name>
+        <briefdescription>
+<para>Object abstracting our legitimate Logitech Attack3 joystick. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.h" line="44" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_controller_1ac2c90813eff8dbebc38210c605d4b2d2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float RJFRC2011::Controller::abs</definition>
+        <argsstring>(float initial)</argsstring>
+        <name>abs</name>
+        <param>
+          <type>float</type>
+          <declname>initial</declname>
+        </param>
+        <briefdescription>
+<para>Absolute value of a float, since I&apos;m not sure if we can import the &lt;cmath&gt; library onto the cRIO. EDIT: turns out we can, but I&apos;ll leave this here to conserve memory. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>initial</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the initial value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the absolute value of the passed value; if it&apos;s negative, make it positive </para></simplesect>
+<simplesect kind="author"><para>Matthew Haney </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.h" line="45" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.cpp" bodystart="166" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_controller_1a70def9152e72c1745dccce7c3121f5ac" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float RJFRC2011::Controller::expo</definition>
+        <argsstring>(float x, float a)</argsstring>
+        <name>expo</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+<para>An exponential function used to make joysticks less sensitive near the center and more sensitive towards the edges. </para>        </briefdescription>
+        <detaileddescription>
+<para>Basically, plug the value requested by the user and a predefined constant into an exponential equation and return the result. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to be exponentiated </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a predefined exponential factor </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the &quot;expo-ed&quot; value </para></simplesect>
+<simplesect kind="author"><para>Adam Bryant </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.h" line="46" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.cpp" bodystart="155" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_controller_1ac2e4beb60add909ce7c0716551501fcf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float RJFRC2011::Controller::normalize</definition>
+        <argsstring>(float joyVal, float min, float max)</argsstring>
+        <name>normalize</name>
+        <param>
+          <type>float</type>
+          <declname>joyVal</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+<para>A function that &quot;normalizes&quot; inputs from the joysticks (because they don&apos;t give perfect -1.0 to 1.0 values). </para>        </briefdescription>
+        <detaileddescription>
+<para>If the requested value is negative, return its percentage of the minimum possible value; if it&apos;s possible, do the same with the max. If it&apos;s zero, of course, return zero. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>joyVal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the input from the joystick </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the minimun joystick value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the maximum joystick value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the normalized value </para></simplesect>
+<simplesect kind="author"><para>Adam Bryant </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.h" line="47" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.cpp" bodystart="133" bodyend="145"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_controller_1ace98163d9d5fc6deec6bdc294c2ef593" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RJFRC2011::Controller::Controller</definition>
+        <argsstring>()</argsstring>
+        <name>Controller</name>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Basically, initialize the controllers to USB ports 1 and 2. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.h" line="49" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.cpp" bodystart="29" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_controller_1a56d34929cf6b8e9f277728404ff67d5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RJFRC2011::Controller::~Controller</definition>
+        <argsstring>()</argsstring>
+        <name>~Controller</name>
+        <briefdescription>
+<para>Destructor. Kill stuff. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.h" line="50" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.cpp" bodystart="38" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_controller_1afc9c35671f9791605d7c6a55d5c0375b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float RJFRC2011::Controller::getManipulatorElevation</definition>
+        <argsstring>()</argsstring>
+        <name>getManipulatorElevation</name>
+        <briefdescription>
+<para>Get user-requested manipulator elevation. </para>        </briefdescription>
+        <detaileddescription>
+<para>Reads input from the y-axis on the joystick. <simplesect kind="return"><para>The received value (inverted). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.h" line="51" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.cpp" bodystart="49" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_controller_1abee0ec4f9aa51ded688943dab941221e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float RJFRC2011::Controller::getDriveSpeed</definition>
+        <argsstring>()</argsstring>
+        <name>getDriveSpeed</name>
+        <briefdescription>
+<para>Get user-requested drive speed. </para>        </briefdescription>
+        <detaileddescription>
+<para>Reads input from the y-axis on the right stick, normalizes it to a value between -1.0 and 1.0, and then exponentiates it (so the stick&apos;s less sensitive in the center and more sensitive at the edges). <simplesect kind="return"><para>The received, normalized, and expo-ed value (inverted [if the inversion switch {button #2} is thrown]). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.h" line="52" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.cpp" bodystart="61" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_controller_1a08f649d3f9e8cd04e4096186949b7920" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float RJFRC2011::Controller::getDriveTurn</definition>
+        <argsstring>()</argsstring>
+        <name>getDriveTurn</name>
+        <briefdescription>
+<para>Get user-requested drive turn speed. </para>        </briefdescription>
+        <detaileddescription>
+<para>Reads input from the x-axis on the right stick, normalizes it to a value between -1.0 and 1.0, and then exponentiates it (so the stick&apos;s less sensitive in the center and more sensitive at the edges). <simplesect kind="return"><para>The received, normalized, and expo-ed value(inverted [if the inversion switch {button #2} is thrown]). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.h" line="53" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.cpp" bodystart="75" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_controller_1aac5a08c91980af6d162c0661b5bfde8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int RJFRC2011::Controller::getMinibotSwitches</definition>
+        <argsstring>()</argsstring>
+        <name>getMinibotSwitches</name>
+        <briefdescription>
+<para>Get user-requested minibot shelf action (in/out). </para>        </briefdescription>
+        <detaileddescription>
+<para>Read input from two thumb buttons on the joystick (buttons 4 and 5) and return ther states in a single variable. <simplesect kind="return"><para>An integer with the last two bits being the right and left button inputs, respectively. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.h" line="55" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.cpp" bodystart="114" bodyend="122"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_controller_1a19a25438de68dc0284862e2347bb576c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>Controller::getManipulatorAction</definition>
+        <argsstring>()</argsstring>
+        <name>getManipulatorAction</name>
+        <briefdescription>
+<para>Get user-requested manipulator action (input, rotate, or eject). </para>        </briefdescription>
+        <detaileddescription>
+<para>Read input from three buttons on the joystick: the trigger (1) and two thumb buttons (2 and 3). If any one of them is pressed, return that button&apos;s ID. If multiple are pressed, or none are pressed, return 0. <simplesect kind="return"><para>The ID of the received button. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.h" line="54" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.cpp" bodystart="89" bodyend="107"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class abstracting the controller(s) used by our driver(s) </para>    </briefdescription>
+    <detaileddescription>
+<para>Get input from a pair of joysticks (one of which is physically a flight simulator controller) and return those inputs. A class like this is useful because we can modify a few lines of code to change the inputs for functions throughout the entire code. </para>    </detaileddescription>
+    <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.h" line="39" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Controller.h" bodystart="38" bodyend="56"/>
+    <listofallmembers>
+      <member refid="class_r_j_f_r_c2011_1_1_controller_1af6484856a3ffd56d9201186d3f96341a" prot="private" virt="non-virtual"><scope>RJFRC2011::Controller</scope><name>_controller</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_controller_1aa9347538d57c8e3ee63610bdfe4fea9e" prot="private" virt="non-virtual"><scope>RJFRC2011::Controller</scope><name>_joystick</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_controller_1ac2c90813eff8dbebc38210c605d4b2d2" prot="private" virt="non-virtual"><scope>RJFRC2011::Controller</scope><name>abs</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_controller_1ace98163d9d5fc6deec6bdc294c2ef593" prot="public" virt="non-virtual"><scope>RJFRC2011::Controller</scope><name>Controller</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_controller_1a70def9152e72c1745dccce7c3121f5ac" prot="private" virt="non-virtual"><scope>RJFRC2011::Controller</scope><name>expo</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_controller_1abee0ec4f9aa51ded688943dab941221e" prot="public" virt="non-virtual"><scope>RJFRC2011::Controller</scope><name>getDriveSpeed</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_controller_1a08f649d3f9e8cd04e4096186949b7920" prot="public" virt="non-virtual"><scope>RJFRC2011::Controller</scope><name>getDriveTurn</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_controller_1a19a25438de68dc0284862e2347bb576c" prot="public" virt="non-virtual"><scope>RJFRC2011::Controller</scope><name>getManipulatorAction</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_controller_1afc9c35671f9791605d7c6a55d5c0375b" prot="public" virt="non-virtual"><scope>RJFRC2011::Controller</scope><name>getManipulatorElevation</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_controller_1aac5a08c91980af6d162c0661b5bfde8d" prot="public" virt="non-virtual"><scope>RJFRC2011::Controller</scope><name>getMinibotSwitches</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_controller_1ac2e4beb60add909ce7c0716551501fcf" prot="private" virt="non-virtual"><scope>RJFRC2011::Controller</scope><name>normalize</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_controller_1a56d34929cf6b8e9f277728404ff67d5f" prot="public" virt="non-virtual"><scope>RJFRC2011::Controller</scope><name>~Controller</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

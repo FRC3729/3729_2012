@@ -1,0 +1,114 @@
+/*!
+ \file StateMachine.h
+ \brief File containing definition of \a state_machine class, which is used as a superclass for state machines for both Autonomous and Teleoperated modes.
+ \author Matthew Haney, Drew Lazzeri
+ 
+ */
+
+#ifndef _RJHS_FRC_2011_STATE_MACHINE_H
+#define _RJHS_FRC_2011_STATE_MACHINE_H
+
+/*!
+ \namespace RJFRC2011
+ \brief Pretty much everything is stored in here for ease of access.
+ \details Also, this way we can distinguish between code from different years if we name things the same (e.g. classes \a RJFRC2011::Autonomous and \a RJFRC2012::Autonomous).
+ */
+namespace RJFRC2011
+{
+	/*!
+	 \class state_machine<state_return_type = void>
+	 \brief Class abstracting a system of interchanging "states", which guide program flow.
+	 \details Manages two arrays of function pointers: "states" and "conditions".  Each time \a Go() is called, the current state function is executed.  Each time \a Next() (or \a Check()) is called, the current conditional function is executed and the state is changed appropriately. 
+	 */
+	template <typename state_return_type=void>
+	class state_machine
+	{
+	public:
+		//! Now we can use 'state' as a type.  What type, you ask?  A pointer to a function taking no arguments and returning nothing.
+		typedef state_return_type (state_machine::*state)();
+		//! Function that returns negative if condition false; any other is the value of the next state.
+		typedef int (state_machine::*condition)();
+		//! The current state of the machine.
+		unsigned int _currentState;
+		//! The total number of states on the machine.
+		unsigned int _nStates;
+		/*!
+		 \brief Constructor.
+		 \details Construct from array of state functions and number of states.
+		 \param states An array of state functions
+		 \param nStates The number of states (since this isn't Java)
+		 */
+		state_machine(state states[], unsigned int nStates);
+		/*!
+		 \brief Constructor.
+		 \details Do nothing.  Yup...
+		 */
+		state_machine() { }
+		//! Array of state functions.
+		state * _states;
+		//! Array of conditional functions
+		condition * _conditions;
+		//! Destructor.
+		virtual ~state_machine() { }
+		unsigned int getState() { return _currentState; } const
+		unsigned int State() { return _currentState; } const
+		void setState(unsigned int s);
+		state_return_type Go();
+		void Next();
+		//! Same thing as Next; convenience method.
+		void Check();
+	};
+};
+
+template <typename state_return_type>
+RJFRC2011::state_machine<state_return_type>::state_machine(state states[], unsigned int nStates)
+{
+	_states = states;
+	_nStates = nStates;
+}
+
+/*!
+ \brief Change the current state.
+ \details Change \a _currentState to the specified value.  If it's above \a _nStates, change to state 0.  I don't recommend calling this for any other reason than to reset the current state to 0; swapping states should be handled by \a Next() (or \a Check()).
+ \param s The state to which to change
+ */
+template <typename state_return_type>
+const void RJFRC2011::state_machine<state_return_type>::setState(unsigned int s)
+{
+	if (s > _nStates)
+		_currentState = 0;
+	else
+		_currentState = s;
+}
+
+/*!
+ \brief Execute the current state function.
+ */
+template <typename state_return_type>
+state_return_type RJFRC2011::state_machine<state_return_type>::Go()
+{
+	(this->*_states[this->_currentState])();
+	return;
+}
+
+/*!
+ \brief Change states if necessary.
+ \details Execute conditional function corresponding with the current state.  If it returns a negative value, don't change states.  For any other value, change to that state.
+ */
+template <typename state_return_type>
+void RJFRC2011::state_machine<state_return_type>::Next()
+{
+	int temp = (this->*_conditions[this->_currentState])();
+	if (temp >= 0)
+	{
+		_currentState = temp;
+	}
+}
+
+template <typename state_return_type>
+void RJFRC2011::state_machine<state_return_type>::Check()
+{
+	Next();
+}
+
+#endif

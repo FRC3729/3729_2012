@@ -1,0 +1,77 @@
+/*!
+ /file StateMachine.h
+ /brief File containing definition of \a state_machine class, which is used as a superclass for state machines for both Autonomous and Teleoperated modes.
+ /author Matthew Haney, Drew Lazzeri
+ 
+ */
+
+#ifndef _RJHS_FRC_2011_STATE_MACHINE_H
+#define _RJHS_FRC_2011_STATE_MACHINE_H
+
+namespace RJFRC2011
+{
+	template <typename state_return_type=void>
+	class state_machine
+	{
+		// Now we can use 'state' as a type.  What type, you ask?  A pointer to a function taking no arguments and returning nothing.
+		typedef state_return_type (state_machine::*state)();
+		// Returns negative if condition false; any other is the value of the next state.
+		typedef int (state_machine::*condition)();
+	private:
+		unsigned int _currentState;
+		unsigned int _nStates;
+	public:
+		state * _states;
+		condition * _conditions;
+		state_machine(state states[], unsigned int nStates);
+		state_machine() { }
+		virtual ~state_machine() { }
+		unsigned int getState() { return _currentState; } const
+		unsigned int State() { return _currentState; } const
+		void setState(unsigned int s);
+		state_return_type Go();
+		void Next();
+		// Same thing; convenience method
+		void Check();
+	};
+};
+
+template <typename state_return_type>
+RJFRC2011::state_machine<state_return_type>::state_machine(state states[], unsigned int nStates)
+{
+	_states = states;
+	_nStates = nStates;
+}
+
+template <typename state_return_type>
+const void RJFRC2011::state_machine<state_return_type>::setState(unsigned int s)
+{
+	if (s > _nStates)
+		_currentState = 0;
+	else
+		_currentState = s;
+}
+
+template <typename state_return_type>
+state_return_type RJFRC2011::state_machine<state_return_type>::Go()
+{
+	return this->_states[_currentState]();
+}
+
+template <typename state_return_type>
+void RJFRC2011::state_machine<state_return_type>::Next()
+{
+	int temp = this->_conditions[_currentState]();
+	if (temp >= 0)
+	{
+		_currentState = temp;
+	}
+}
+
+template <typename state_return_type>
+void RJFRC2011::state_machine<state_return_type>::Check()
+{
+	Next();
+}
+
+#endif

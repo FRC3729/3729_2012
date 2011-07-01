@@ -1,0 +1,126 @@
+\hypertarget{class_builtin_default_code}{
+\section{BuiltinDefaultCode Class Reference}
+\label{class_builtin_default_code}\index{BuiltinDefaultCode@{BuiltinDefaultCode}}
+}
+
+
+Our big class that does everything. We didn't bother renaming it.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_builtin_default_code_a5f72b929d98fe4193e1a7d8e351a7837}{BuiltinDefaultCode} (void)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_builtin_default_code_a04c696dab5af274ca086d8903eb02134}{
+\hyperlink{class_builtin_default_code_a04c696dab5af274ca086d8903eb02134}{$\sim$BuiltinDefaultCode} ()}
+\label{class_builtin_default_code_a04c696dab5af274ca086d8903eb02134}
+
+\begin{DoxyCompactList}\small\item\em Destructor. Called when a class object expires. Used so we don't waste memory. \item\end{DoxyCompactList}\item 
+\hypertarget{class_builtin_default_code_a522b7e1b11f160868900a01a7f5609b6}{
+void \hyperlink{class_builtin_default_code_a522b7e1b11f160868900a01a7f5609b6}{RobotInit} (void)}
+\label{class_builtin_default_code_a522b7e1b11f160868900a01a7f5609b6}
+
+\begin{DoxyCompactList}\small\item\em Actions which would be performed once (and only once) upon initialization of the robot. \item\end{DoxyCompactList}\item 
+\hypertarget{class_builtin_default_code_a1df5e366a588086aedab2510393a9ac6}{
+void \hyperlink{class_builtin_default_code_a1df5e366a588086aedab2510393a9ac6}{DisabledInit} (void)}
+\label{class_builtin_default_code_a1df5e366a588086aedab2510393a9ac6}
+
+\begin{DoxyCompactList}\small\item\em Code called at the beginning of Disabled Mode. \item\end{DoxyCompactList}\item 
+\hypertarget{class_builtin_default_code_a727ebabf0678af822d53f90f96bfd679}{
+void \hyperlink{class_builtin_default_code_a727ebabf0678af822d53f90f96bfd679}{AutonomousInit} (void)}
+\label{class_builtin_default_code_a727ebabf0678af822d53f90f96bfd679}
+
+\begin{DoxyCompactList}\small\item\em Code called at the beginning of Autonomous Mode. \item\end{DoxyCompactList}\item 
+\hypertarget{class_builtin_default_code_ab3d70e0754e54bab03b130e6c042e0b5}{
+void \hyperlink{class_builtin_default_code_ab3d70e0754e54bab03b130e6c042e0b5}{TeleopInit} (void)}
+\label{class_builtin_default_code_ab3d70e0754e54bab03b130e6c042e0b5}
+
+\begin{DoxyCompactList}\small\item\em Code called at the beginning of Teleoperated Mode. \item\end{DoxyCompactList}\item 
+\hypertarget{class_builtin_default_code_a504e7d9b01a66635c31597f9a58cf478}{
+void \hyperlink{class_builtin_default_code_a504e7d9b01a66635c31597f9a58cf478}{DisabledPeriodic} (void)}
+\label{class_builtin_default_code_a504e7d9b01a66635c31597f9a58cf478}
+
+\begin{DoxyCompactList}\small\item\em The code called in a loop during Disabled Mode. Left as the default, minus the loop counter. \item\end{DoxyCompactList}\item 
+\hypertarget{class_builtin_default_code_a26da787e2abf683077e266ad44049ca0}{
+void \hyperlink{class_builtin_default_code_a26da787e2abf683077e266ad44049ca0}{AutonomousPeriodic} (void)}
+\label{class_builtin_default_code_a26da787e2abf683077e266ad44049ca0}
+
+\begin{DoxyCompactList}\small\item\em The code called in a loop during Autonomous Mode. \item\end{DoxyCompactList}\item 
+\hypertarget{class_builtin_default_code_a79dd68c3dba134d041413df30862aae2}{
+void \hyperlink{class_builtin_default_code_a79dd68c3dba134d041413df30862aae2}{TeleopPeriodic} (void)}
+\label{class_builtin_default_code_a79dd68c3dba134d041413df30862aae2}
+
+\begin{DoxyCompactList}\small\item\em The code called in a loop during Teleoperated Mode. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_builtin_default_code_a2d4ed2369361dcd5b02e74dac9b3f4dd}{
+\hyperlink{class_r_j_f_r_c2011_1_1_drive}{Drive} $\ast$ \hyperlink{class_builtin_default_code_a2d4ed2369361dcd5b02e74dac9b3f4dd}{drive}}
+\label{class_builtin_default_code_a2d4ed2369361dcd5b02e74dac9b3f4dd}
+
+\begin{DoxyCompactList}\small\item\em Class abstracting drive system. \item\end{DoxyCompactList}\item 
+\hypertarget{class_builtin_default_code_ac2ed56fdb661e5c24cd9b012f9d09b63}{
+\hyperlink{class_r_j_f_r_c2011_1_1_manipulator}{Manipulator} $\ast$ \hyperlink{class_builtin_default_code_ac2ed56fdb661e5c24cd9b012f9d09b63}{manipulator}}
+\label{class_builtin_default_code_ac2ed56fdb661e5c24cd9b012f9d09b63}
+
+\begin{DoxyCompactList}\small\item\em Class abstracting manipulator. \item\end{DoxyCompactList}\item 
+\hypertarget{class_builtin_default_code_af8e1d3aaa175d9d8091438a00b4b1556}{
+\hyperlink{class_r_j_f_r_c2011_1_1_controller}{Controller} $\ast$ \hyperlink{class_builtin_default_code_af8e1d3aaa175d9d8091438a00b4b1556}{controller}}
+\label{class_builtin_default_code_af8e1d3aaa175d9d8091438a00b4b1556}
+
+\begin{DoxyCompactList}\small\item\em Class abstracting the controller. \item\end{DoxyCompactList}\item 
+\hypertarget{class_builtin_default_code_ac09bfa871751a5c092c1db9cb3ad37e9}{
+DriverStationLCD $\ast$ \hyperlink{class_builtin_default_code_ac09bfa871751a5c092c1db9cb3ad37e9}{screen}}
+\label{class_builtin_default_code_ac09bfa871751a5c092c1db9cb3ad37e9}
+
+\begin{DoxyCompactList}\small\item\em The screen. Yup. \item\end{DoxyCompactList}\item 
+\hypertarget{class_builtin_default_code_a39f6383c7d191eeca78ab4a9865d6664}{
+DriverStation $\ast$ \hyperlink{class_builtin_default_code_a39f6383c7d191eeca78ab4a9865d6664}{ds}}
+\label{class_builtin_default_code_a39f6383c7d191eeca78ab4a9865d6664}
+
+\begin{DoxyCompactList}\small\item\em Driver Station object; used so we can send info back to the user (at least, in theory) \item\end{DoxyCompactList}\item 
+\hypertarget{class_builtin_default_code_aef2c4c3029fc5446af5117125ffdc555}{
+AxisCamera $\ast$ \hyperlink{class_builtin_default_code_aef2c4c3029fc5446af5117125ffdc555}{cam}}
+\label{class_builtin_default_code_aef2c4c3029fc5446af5117125ffdc555}
+
+\begin{DoxyCompactList}\small\item\em Our rear-\/mounted camera, used to see stuff in style. \item\end{DoxyCompactList}\item 
+\hypertarget{class_builtin_default_code_a23fafbc7100e3b5b50408d010b5f609b}{
+\hyperlink{class_r_j_f_r_c2011_1_1_autonomous}{Autonomous} $\ast$ \hyperlink{class_builtin_default_code_a23fafbc7100e3b5b50408d010b5f609b}{auto\_\-machine}}
+\label{class_builtin_default_code_a23fafbc7100e3b5b50408d010b5f609b}
+
+\begin{DoxyCompactList}\small\item\em Class running the Autonomous period. \item\end{DoxyCompactList}\item 
+\hypertarget{class_builtin_default_code_ad31f83ef30fd7bbb3bbe22895dfb9c99}{
+\hyperlink{class_r_j_f_r_c2011_1_1_teleoperated}{Teleoperated} $\ast$ \hyperlink{class_builtin_default_code_ad31f83ef30fd7bbb3bbe22895dfb9c99}{teleop\_\-machine}}
+\label{class_builtin_default_code_ad31f83ef30fd7bbb3bbe22895dfb9c99}
+
+\begin{DoxyCompactList}\small\item\em Class running the Teleoperated period. \item\end{DoxyCompactList}\item 
+\hypertarget{class_builtin_default_code_aaf59606d706817c312686afcd1f8f527}{
+Timer $\ast$ \hyperlink{class_builtin_default_code_aaf59606d706817c312686afcd1f8f527}{timer}}
+\label{class_builtin_default_code_aaf59606d706817c312686afcd1f8f527}
+
+\begin{DoxyCompactList}\small\item\em Used to time movements in Autonomous. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Our big class that does everything. We didn't bother renaming it. \hyperlink{class_builtin_default_code}{BuiltinDefaultCode} is technically the name of the example class that we first opened, but once we started coding we realized that we couldn't rename the project and didn't want to reconfigure all the build settings from scratch. So here we are. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_builtin_default_code_a5f72b929d98fe4193e1a7d8e351a7837}{
+\index{BuiltinDefaultCode@{BuiltinDefaultCode}!BuiltinDefaultCode@{BuiltinDefaultCode}}
+\index{BuiltinDefaultCode@{BuiltinDefaultCode}!BuiltinDefaultCode@{BuiltinDefaultCode}}
+\subsubsection[{BuiltinDefaultCode}]{\setlength{\rightskip}{0pt plus 5cm}BuiltinDefaultCode::BuiltinDefaultCode (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_builtin_default_code_a5f72b929d98fe4193e1a7d8e351a7837}
+
+
+Constructor. 
+
+Set up things before robot does anything; mostly this allocates memory for things. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_builtin_default_code_8cpp}{BuiltinDefaultCode.cpp}\end{DoxyCompactItemize}

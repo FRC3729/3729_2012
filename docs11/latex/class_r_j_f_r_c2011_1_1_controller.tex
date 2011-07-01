@@ -1,0 +1,247 @@
+\hypertarget{class_r_j_f_r_c2011_1_1_controller}{
+\section{RJFRC2011::Controller Class Reference}
+\label{class_r_j_f_r_c2011_1_1_controller}\index{RJFRC2011::Controller@{RJFRC2011::Controller}}
+}
+
+
+Class abstracting the controller(s) used by our driver(s)  
+
+
+
+
+{\ttfamily \#include $<$Controller.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_r_j_f_r_c2011_1_1_controller_ace98163d9d5fc6deec6bdc294c2ef593}{Controller} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_r_j_f_r_c2011_1_1_controller_a56d34929cf6b8e9f277728404ff67d5f}{
+\hyperlink{class_r_j_f_r_c2011_1_1_controller_a56d34929cf6b8e9f277728404ff67d5f}{$\sim$Controller} ()}
+\label{class_r_j_f_r_c2011_1_1_controller_a56d34929cf6b8e9f277728404ff67d5f}
+
+\begin{DoxyCompactList}\small\item\em Destructor. Kill stuff. \item\end{DoxyCompactList}\item 
+float \hyperlink{class_r_j_f_r_c2011_1_1_controller_afc9c35671f9791605d7c6a55d5c0375b}{getManipulatorElevation} ()
+\begin{DoxyCompactList}\small\item\em Get user-\/requested manipulator elevation. \item\end{DoxyCompactList}\item 
+float \hyperlink{class_r_j_f_r_c2011_1_1_controller_abee0ec4f9aa51ded688943dab941221e}{getDriveSpeed} ()
+\begin{DoxyCompactList}\small\item\em Get user-\/requested drive speed. \item\end{DoxyCompactList}\item 
+float \hyperlink{class_r_j_f_r_c2011_1_1_controller_a08f649d3f9e8cd04e4096186949b7920}{getDriveTurn} ()
+\begin{DoxyCompactList}\small\item\em Get user-\/requested drive turn speed. \item\end{DoxyCompactList}\item 
+int \hyperlink{class_r_j_f_r_c2011_1_1_controller_aac5a08c91980af6d162c0661b5bfde8d}{getMinibotSwitches} ()
+\begin{DoxyCompactList}\small\item\em Get user-\/requested minibot shelf action (in/out). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{class_r_j_f_r_c2011_1_1_controller_a19a25438de68dc0284862e2347bb576c}{getManipulatorAction} ()
+\begin{DoxyCompactList}\small\item\em Get user-\/requested manipulator action (input, rotate, or eject). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{class_r_j_f_r_c2011_1_1_controller_ac2c90813eff8dbebc38210c605d4b2d2}{abs} (float initial)
+\begin{DoxyCompactList}\small\item\em Absolute value of a float, since I'm not sure if we can import the $<$cmath$>$ library onto the cRIO. EDIT: turns out we can, but I'll leave this here to conserve memory. \item\end{DoxyCompactList}\item 
+float \hyperlink{class_r_j_f_r_c2011_1_1_controller_a70def9152e72c1745dccce7c3121f5ac}{expo} (float x, float a)
+\begin{DoxyCompactList}\small\item\em An exponential function used to make joysticks less sensitive near the center and more sensitive towards the edges. \item\end{DoxyCompactList}\item 
+float \hyperlink{class_r_j_f_r_c2011_1_1_controller_ac2e4beb60add909ce7c0716551501fcf}{normalize} (float joyVal, float min, float max)
+\begin{DoxyCompactList}\small\item\em A function that \char`\"{}normalizes\char`\"{} inputs from the joysticks (because they don't give perfect -\/1.0 to 1.0 values). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_r_j_f_r_c2011_1_1_controller_af6484856a3ffd56d9201186d3f96341a}{
+Joystick $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_controller_af6484856a3ffd56d9201186d3f96341a}{\_\-controller}}
+\label{class_r_j_f_r_c2011_1_1_controller_af6484856a3ffd56d9201186d3f96341a}
+
+\begin{DoxyCompactList}\small\item\em Object abstracting our InterLink Elite controller, which WIPLib seems to think is a joystick. \item\end{DoxyCompactList}\item 
+\hypertarget{class_r_j_f_r_c2011_1_1_controller_aa9347538d57c8e3ee63610bdfe4fea9e}{
+Joystick $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_controller_aa9347538d57c8e3ee63610bdfe4fea9e}{\_\-joystick}}
+\label{class_r_j_f_r_c2011_1_1_controller_aa9347538d57c8e3ee63610bdfe4fea9e}
+
+\begin{DoxyCompactList}\small\item\em Object abstracting our legitimate Logitech Attack3 joystick. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class abstracting the controller(s) used by our driver(s) Get input from a pair of joysticks (one of which is physically a flight simulator controller) and return those inputs. A class like this is useful because we can modify a few lines of code to change the inputs for functions throughout the entire code. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_r_j_f_r_c2011_1_1_controller_ace98163d9d5fc6deec6bdc294c2ef593}{
+\index{RJFRC2011::Controller@{RJFRC2011::Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!RJFRC2011::Controller@{RJFRC2011::Controller}}
+\subsubsection[{Controller}]{\setlength{\rightskip}{0pt plus 5cm}RJFRC2011::Controller::Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_r_j_f_r_c2011_1_1_controller_ace98163d9d5fc6deec6bdc294c2ef593}
+
+
+Constructor. 
+
+Basically, initialize the controllers to USB ports 1 and 2. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_r_j_f_r_c2011_1_1_controller_ac2c90813eff8dbebc38210c605d4b2d2}{
+\index{RJFRC2011::Controller@{RJFRC2011::Controller}!abs@{abs}}
+\index{abs@{abs}!RJFRC2011::Controller@{RJFRC2011::Controller}}
+\subsubsection[{abs}]{\setlength{\rightskip}{0pt plus 5cm}float RJFRC2011::Controller::abs (
+\begin{DoxyParamCaption}
+\item[{float}]{initial}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_r_j_f_r_c2011_1_1_controller_ac2c90813eff8dbebc38210c605d4b2d2}
+
+
+Absolute value of a float, since I'm not sure if we can import the $<$cmath$>$ library onto the cRIO. EDIT: turns out we can, but I'll leave this here to conserve memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em initial} & the initial value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the absolute value of the passed value; if it's negative, make it positive 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Matthew Haney 
+\end{DoxyAuthor}
+\hypertarget{class_r_j_f_r_c2011_1_1_controller_a70def9152e72c1745dccce7c3121f5ac}{
+\index{RJFRC2011::Controller@{RJFRC2011::Controller}!expo@{expo}}
+\index{expo@{expo}!RJFRC2011::Controller@{RJFRC2011::Controller}}
+\subsubsection[{expo}]{\setlength{\rightskip}{0pt plus 5cm}float RJFRC2011::Controller::expo (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_r_j_f_r_c2011_1_1_controller_a70def9152e72c1745dccce7c3121f5ac}
+
+
+An exponential function used to make joysticks less sensitive near the center and more sensitive towards the edges. 
+
+Basically, plug the value requested by the user and a predefined constant into an exponential equation and return the result. 
+\begin{DoxyParams}{Parameters}
+{\em x} & the value to be exponentiated \\
+\hline
+{\em a} & a predefined exponential factor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \char`\"{}expo-\/ed\char`\"{} value 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Adam Bryant 
+\end{DoxyAuthor}
+\hypertarget{class_r_j_f_r_c2011_1_1_controller_abee0ec4f9aa51ded688943dab941221e}{
+\index{RJFRC2011::Controller@{RJFRC2011::Controller}!getDriveSpeed@{getDriveSpeed}}
+\index{getDriveSpeed@{getDriveSpeed}!RJFRC2011::Controller@{RJFRC2011::Controller}}
+\subsubsection[{getDriveSpeed}]{\setlength{\rightskip}{0pt plus 5cm}float RJFRC2011::Controller::getDriveSpeed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_r_j_f_r_c2011_1_1_controller_abee0ec4f9aa51ded688943dab941221e}
+
+
+Get user-\/requested drive speed. 
+
+Reads input from the y-\/axis on the right stick, normalizes it to a value between -\/1.0 and 1.0, and then exponentiates it (so the stick's less sensitive in the center and more sensitive at the edges). \begin{DoxyReturn}{Returns}
+The received, normalized, and expo-\/ed value (inverted \mbox{[}if the inversion switch \{button \#2\} is thrown\mbox{]}). 
+\end{DoxyReturn}
+\hypertarget{class_r_j_f_r_c2011_1_1_controller_a08f649d3f9e8cd04e4096186949b7920}{
+\index{RJFRC2011::Controller@{RJFRC2011::Controller}!getDriveTurn@{getDriveTurn}}
+\index{getDriveTurn@{getDriveTurn}!RJFRC2011::Controller@{RJFRC2011::Controller}}
+\subsubsection[{getDriveTurn}]{\setlength{\rightskip}{0pt plus 5cm}float RJFRC2011::Controller::getDriveTurn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_r_j_f_r_c2011_1_1_controller_a08f649d3f9e8cd04e4096186949b7920}
+
+
+Get user-\/requested drive turn speed. 
+
+Reads input from the x-\/axis on the right stick, normalizes it to a value between -\/1.0 and 1.0, and then exponentiates it (so the stick's less sensitive in the center and more sensitive at the edges). \begin{DoxyReturn}{Returns}
+The received, normalized, and expo-\/ed value(inverted \mbox{[}if the inversion switch \{button \#2\} is thrown\mbox{]}). 
+\end{DoxyReturn}
+\hypertarget{class_r_j_f_r_c2011_1_1_controller_a19a25438de68dc0284862e2347bb576c}{
+\index{RJFRC2011::Controller@{RJFRC2011::Controller}!getManipulatorAction@{getManipulatorAction}}
+\index{getManipulatorAction@{getManipulatorAction}!RJFRC2011::Controller@{RJFRC2011::Controller}}
+\subsubsection[{getManipulatorAction}]{\setlength{\rightskip}{0pt plus 5cm}Controller::getManipulatorAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_r_j_f_r_c2011_1_1_controller_a19a25438de68dc0284862e2347bb576c}
+
+
+Get user-\/requested manipulator action (input, rotate, or eject). 
+
+Read input from three buttons on the joystick: the trigger (1) and two thumb buttons (2 and 3). If any one of them is pressed, return that button's ID. If multiple are pressed, or none are pressed, return 0. \begin{DoxyReturn}{Returns}
+The ID of the received button. 
+\end{DoxyReturn}
+\hypertarget{class_r_j_f_r_c2011_1_1_controller_afc9c35671f9791605d7c6a55d5c0375b}{
+\index{RJFRC2011::Controller@{RJFRC2011::Controller}!getManipulatorElevation@{getManipulatorElevation}}
+\index{getManipulatorElevation@{getManipulatorElevation}!RJFRC2011::Controller@{RJFRC2011::Controller}}
+\subsubsection[{getManipulatorElevation}]{\setlength{\rightskip}{0pt plus 5cm}float RJFRC2011::Controller::getManipulatorElevation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_r_j_f_r_c2011_1_1_controller_afc9c35671f9791605d7c6a55d5c0375b}
+
+
+Get user-\/requested manipulator elevation. 
+
+Reads input from the y-\/axis on the joystick. \begin{DoxyReturn}{Returns}
+The received value (inverted). 
+\end{DoxyReturn}
+\hypertarget{class_r_j_f_r_c2011_1_1_controller_aac5a08c91980af6d162c0661b5bfde8d}{
+\index{RJFRC2011::Controller@{RJFRC2011::Controller}!getMinibotSwitches@{getMinibotSwitches}}
+\index{getMinibotSwitches@{getMinibotSwitches}!RJFRC2011::Controller@{RJFRC2011::Controller}}
+\subsubsection[{getMinibotSwitches}]{\setlength{\rightskip}{0pt plus 5cm}int RJFRC2011::Controller::getMinibotSwitches (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_r_j_f_r_c2011_1_1_controller_aac5a08c91980af6d162c0661b5bfde8d}
+
+
+Get user-\/requested minibot shelf action (in/out). 
+
+Read input from two thumb buttons on the joystick (buttons 4 and 5) and return ther states in a single variable. \begin{DoxyReturn}{Returns}
+An integer with the last two bits being the right and left button inputs, respectively. 
+\end{DoxyReturn}
+\hypertarget{class_r_j_f_r_c2011_1_1_controller_ac2e4beb60add909ce7c0716551501fcf}{
+\index{RJFRC2011::Controller@{RJFRC2011::Controller}!normalize@{normalize}}
+\index{normalize@{normalize}!RJFRC2011::Controller@{RJFRC2011::Controller}}
+\subsubsection[{normalize}]{\setlength{\rightskip}{0pt plus 5cm}float RJFRC2011::Controller::normalize (
+\begin{DoxyParamCaption}
+\item[{float}]{joyVal, }
+\item[{float}]{min, }
+\item[{float}]{max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_r_j_f_r_c2011_1_1_controller_ac2e4beb60add909ce7c0716551501fcf}
+
+
+A function that \char`\"{}normalizes\char`\"{} inputs from the joysticks (because they don't give perfect -\/1.0 to 1.0 values). 
+
+If the requested value is negative, return its percentage of the minimum possible value; if it's possible, do the same with the max. If it's zero, of course, return zero. 
+\begin{DoxyParams}{Parameters}
+{\em joyVal} & the input from the joystick \\
+\hline
+{\em min} & the minimun joystick value \\
+\hline
+{\em max} & the maximum joystick value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the normalized value 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Adam Bryant 
+\end{DoxyAuthor}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_controller_8h}{Controller.h}\item 
+\hyperlink{_controller_8cpp}{Controller.cpp}\end{DoxyCompactItemize}

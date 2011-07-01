@@ -1,0 +1,36 @@
+/*!
+ \file Controller.h
+ \brief File containing definition of \a Controller class, which is used in both Autonomous and Teleoperated modes to get user input.
+ \authors Matthew Haney, Drew Lazzeri
+ 
+ */
+
+#ifndef _RJHS_FRC_2011_CONTROLLER_H_
+#define _RJHS_FRC_2011_CONTROLLER_H_
+
+#include "macros.h"
+#include "WPILib.h"
+
+namespace RJFRC2011
+{
+	class Controller
+	{
+	private:
+		//! Object abstracting our controller, which WIPLib seems to think is a joystick.
+		Joystick * _controller;
+		Joystick * _joystick;
+		float abs(float initial);
+		float expo(float x, float a);
+		float normalize(float joyVal, float min, float max);
+	public:
+		Controller();
+		~Controller();
+		float getManipulatorElevation();
+		float getDriveSpeed();
+		float getDriveTurn();
+		char * getManipulatorAction();
+		int getMinibotSwitches();
+	};
+};
+
+#endif

@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.7.3">
+  <compound refid="class_r_j_f_r_c2011_1_1_autonomous" kind="class"><name>RJFRC2011::Autonomous</name>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a250e8a5a9a38ae5bba7457df67e05462" kind="variable"><name>lane</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1abcfa4840dd66568b3e263a36d9941bbc" kind="variable"><name>forkDirection</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a15f4f4554332e90259e12aec3baa827b" kind="variable"><name>_drive</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1acaeb4cd9803595987b7fa237247ecd70" kind="variable"><name>_manip</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1ad5f5bd5da92e33c84b1227d98fe9db47" kind="variable"><name>_controller</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a45427a812f865b5d200b2642e53d44b0" kind="variable"><name>_screen</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1ae6c458fcfb8244e4e112c6a836bb5609" kind="variable"><name>lightSensorLeft</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a4b9f4445f2514da0e59f9129b1b247d3" kind="variable"><name>lightSensorCenter</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a8ada7ae26d2b78274febe96a415c7fb0" kind="variable"><name>lightSensorRight</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1afa181f57e25cab35aa5eeffdbc1bd43d" kind="variable"><name>autonomousLaneSwitch</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1aff3688fd6c4119516863947014e17aca" kind="variable"><name>autonomousForkSwitch</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1afe58d24469fe990d5b9a118cff3b22b2" kind="variable"><name>leftOut</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a2b55b6b2e73c92c232ff006476920252" kind="variable"><name>rightOut</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1abf795083a6b3c1a4fddd5add146a627e" kind="variable"><name>centerOut</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a0d2ee271a5351656f47ed253ff46c82e" kind="variable"><name>hasEjectedTube</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1adb590e5cc03f8f653187aee454991a81" kind="variable"><name>lastCorrectDirection</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a307fc0bab39e0418a12f405b5a35f0a7" kind="variable"><name>lightLeft</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a6c06942f52db320c861fdb2efb088f82" kind="variable"><name>lightCenter</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a8a1dff8f5e71c096660d122aea8edd21" kind="variable"><name>lightRight</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a0d767ab0cfb4de715e0085a12a20c54d" kind="variable"><name>DONE</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a1f04427d07d9569a9f746445c82b8173" kind="function"><name>initialState</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a19885a005434b857e127132a8b871cbe" kind="function"><name>checkForLines</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1aa3128360e2ac480a3e3ed89e2aeda31b" kind="function"><name>move</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1acf0141adb70da7e5fe52c5597c0ad34f" kind="function"><name>correctRight</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a04da5791b6204403806e04d6a02ad48f" kind="function"><name>correctLeft</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1af0c3a743192b8ba41280999752a1e7da" kind="function"><name>placeTube</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a71e3ba11ca9e1f84b324a785d1f7985a" kind="function"><name>flip</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a747bcf35b9790d7b69b14f4303496418" kind="function"><name>Autonomous</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a556fc6fc020f18c7bbe6cde03ef81ea4" kind="function"><name>~Autonomous</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1ab7959f947b71d84b03f53c8e91a542f6" kind="function"><name>Go</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a8cae3af2e3d40459b013583ccec77da6" kind="function"><name>Init</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_autonomous_1ae35c0e29665ed5812645bec8acbbd965" kind="function"><name>printLightSensors</name></member>
+  </compound>
+  <compound refid="class_builtin_default_code" kind="class"><name>BuiltinDefaultCode</name>
+    <member refid="class_builtin_default_code_1a2d4ed2369361dcd5b02e74dac9b3f4dd" kind="variable"><name>drive</name></member>
+    <member refid="class_builtin_default_code_1ac2ed56fdb661e5c24cd9b012f9d09b63" kind="variable"><name>manipulator</name></member>
+    <member refid="class_builtin_default_code_1af8e1d3aaa175d9d8091438a00b4b1556" kind="variable"><name>controller</name></member>
+    <member refid="class_builtin_default_code_1ac09bfa871751a5c092c1db9cb3ad37e9" kind="variable"><name>screen</name></member>
+    <member refid="class_builtin_default_code_1a39f6383c7d191eeca78ab4a9865d6664" kind="variable"><name>ds</name></member>
+    <member refid="class_builtin_default_code_1aef2c4c3029fc5446af5117125ffdc555" kind="variable"><name>cam</name></member>
+    <member refid="class_builtin_default_code_1a432ff1c2f998228b0e74532fc9862a76" kind="variable"><name>timerHasStarted</name></member>
+    <member refid="class_builtin_default_code_1af71f9b1053b320fb4f8152d99b8af42e" kind="variable"><name>dseio</name></member>
+    <member refid="class_builtin_default_code_1a23fafbc7100e3b5b50408d010b5f609b" kind="variable"><name>auto_machine</name></member>
+    <member refid="class_builtin_default_code_1ad31f83ef30fd7bbb3bbe22895dfb9c99" kind="variable"><name>teleop_machine</name></member>
+    <member refid="class_builtin_default_code_1aaf59606d706817c312686afcd1f8f527" kind="variable"><name>timer</name></member>
+    <member refid="class_builtin_default_code_1a583cc9b63da187ec33d4becbcc282e4f" kind="variable"><name>nAutoLoops</name></member>
+    <member refid="class_builtin_default_code_1a96b42562447a335304a4e9b8ff78e9e6" kind="variable"><name>nTeleLoops</name></member>
+    <member refid="class_builtin_default_code_1a6cb5a9f66f7b86ce9bc2c892d1fb51d1" kind="variable"><name>nDisabledLoops</name></member>
+    <member refid="class_builtin_default_code_1a6f073cb2c577764d0202428eaf3b9cf5" kind="variable"><name>end_loops</name></member>
+    <member refid="class_builtin_default_code_1a5f72b929d98fe4193e1a7d8e351a7837" kind="function"><name>BuiltinDefaultCode</name></member>
+    <member refid="class_builtin_default_code_1a04c696dab5af274ca086d8903eb02134" kind="function"><name>~BuiltinDefaultCode</name></member>
+    <member refid="class_builtin_default_code_1a522b7e1b11f160868900a01a7f5609b6" kind="function"><name>RobotInit</name></member>
+    <member refid="class_builtin_default_code_1a1df5e366a588086aedab2510393a9ac6" kind="function"><name>DisabledInit</name></member>
+    <member refid="class_builtin_default_code_1a727ebabf0678af822d53f90f96bfd679" kind="function"><name>AutonomousInit</name></member>
+    <member refid="class_builtin_default_code_1ab3d70e0754e54bab03b130e6c042e0b5" kind="function"><name>TeleopInit</name></member>
+    <member refid="class_builtin_default_code_1a504e7d9b01a66635c31597f9a58cf478" kind="function"><name>DisabledPeriodic</name></member>
+    <member refid="class_builtin_default_code_1a26da787e2abf683077e266ad44049ca0" kind="function"><name>AutonomousPeriodic</name></member>
+    <member refid="class_builtin_default_code_1a79dd68c3dba134d041413df30862aae2" kind="function"><name>TeleopPeriodic</name></member>
+  </compound>
+  <compound refid="class_r_j_f_r_c2011_1_1_controller" kind="class"><name>RJFRC2011::Controller</name>
+    <member refid="class_r_j_f_r_c2011_1_1_controller_1af6484856a3ffd56d9201186d3f96341a" kind="variable"><name>_controller</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_controller_1aa9347538d57c8e3ee63610bdfe4fea9e" kind="variable"><name>_joystick</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_controller_1ac2c90813eff8dbebc38210c605d4b2d2" kind="function"><name>abs</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_controller_1a70def9152e72c1745dccce7c3121f5ac" kind="function"><name>expo</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_controller_1ac2e4beb60add909ce7c0716551501fcf" kind="function"><name>normalize</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_controller_1ace98163d9d5fc6deec6bdc294c2ef593" kind="function"><name>Controller</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_controller_1a56d34929cf6b8e9f277728404ff67d5f" kind="function"><name>~Controller</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_controller_1afc9c35671f9791605d7c6a55d5c0375b" kind="function"><name>getManipulatorElevation</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_controller_1abee0ec4f9aa51ded688943dab941221e" kind="function"><name>getDriveSpeed</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_controller_1a08f649d3f9e8cd04e4096186949b7920" kind="function"><name>getDriveTurn</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_controller_1aac5a08c91980af6d162c0661b5bfde8d" kind="function"><name>getMinibotSwitches</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_controller_1a19a25438de68dc0284862e2347bb576c" kind="function"><name>getManipulatorAction</name></member>
+  </compound>
+  <compound refid="class_r_j_f_r_c2011_1_1_drive" kind="class"><name>RJFRC2011::Drive</name>
+    <member refid="class_r_j_f_r_c2011_1_1_drive_1a869d7df0f00c2f9b5c62abe8ade90298" kind="variable"><name>_drive</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_drive_1a242653143f6cd0b7e35a3249ab14a9d1" kind="variable"><name>_speed_prev</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_drive_1a0cd549eb20982cfeea32e197d3c613e9" kind="variable"><name>_turn_prev</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_drive_1a6633c3e2ff4c7d3803a1b87947d872a3" kind="function"><name>Drive</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_drive_1aced8eae560776e6e8f063fd29d887cdf" kind="function"><name>~Drive</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_drive_1aa246cbe7cdecc4e72af60d5d9a87bcdb" kind="function"><name>drive</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_drive_1a033624d88429de64fe3d954680157c44" kind="function"><name>drive_noramp</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_drive_1a731a3b7d782c3f75287b97db93f489d6" kind="function"><name>tank_drive</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_drive_1ad816025f2d8dbbed3049f611a6e63a90" kind="function"><name>ramp</name></member>
+  </compound>
+  <compound refid="class_r_j_f_r_c2011_1_1_manipulator" kind="class"><name>RJFRC2011::Manipulator</name>
+    <member refid="class_r_j_f_r_c2011_1_1_manipulator_1a1bb5fb2c9c0dbc0964134726cf9b6a1d" kind="variable"><name>manipulatorTop</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_manipulator_1a15dbc0986585acad7d9c32c3e88298d6" kind="variable"><name>manipulatorBottom</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_manipulator_1ab2cff9a8829393c2eb5b69563b6f7fe6" kind="variable"><name>manipulatorElevation</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_manipulator_1a451901f7adf2e95371f10a7c8b6c7e3f" kind="variable"><name>manipulatorElevationBottomLimitSwitch</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_manipulator_1ae1b1ea4f57a0ae540290d91bd78dcf21" kind="variable"><name>manipulatorElevationTopLimitSwitch</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_manipulator_1a6038d65cea681e5d561be874c4aa8446" kind="function"><name>Manipulator</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_manipulator_1a8672c9e940c5d0fe61906fa4f0f74ab3" kind="function"><name>~Manipulator</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_manipulator_1a46b06044e8821d6df6d7d57b8c82b1fc" kind="function"><name>inputTube</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_manipulator_1a315e58939a97c9a0516bab7a92161a1e" kind="function"><name>rotateTube</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_manipulator_1aa2aad5b415a79d3cbf2d416e7dd4d6b4" kind="function"><name>ejectTube</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_manipulator_1ab5c4959ca6900ef7332713158d5567b6" kind="function"><name>elevate</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_manipulator_1a1f643a0a143871d0f0b123ea0f273bd7" kind="function"><name>stopManipulatorAction</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_manipulator_1a086407a628311ecab83795fbc6fcfee6" kind="function"><name>stopManipulatorElevation</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_manipulator_1a6dba7837dfa9ac7d5bce335b1a108846" kind="function"><name>GetTopLimitSwitchAddress</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_manipulator_1ac81dd27510073450a5e741c7af963bb7" kind="function"><name>GetBottomLimitSwitchAddress</name></member>
+  </compound>
+  <compound refid="class_r_j_f_r_c2011_1_1_teleoperated" kind="class"><name>RJFRC2011::Teleoperated</name>
+    <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1acf24bc9abe43a00df74559378f5eef09" kind="variable"><name>_drive</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a79579c70472b11af4938659c19c246a0" kind="variable"><name>_manip</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a7ebf1a9b8ed5f9ac5174c524f50babc0" kind="variable"><name>_controller</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a6a158c8efb6eb673ef4aceb89c614ba6" kind="variable"><name>_screen</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1addd1786ca5cf7b7ddcccb2096aa2d934" kind="variable"><name>minibotShelf</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1abb83059ecad14dc769094bfabc77399d" kind="variable"><name>top</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a3daa75d78f5d01924876ef42c99ca7a1" kind="variable"><name>bottom</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1ae73746c690998c02e4b5bd1912e83585" kind="variable"><name>manipulatorElevation</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1af78f94699cab83d5936d4b783bf29ed7" kind="variable"><name>driveSpeed</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1ad2a716aacf9ab3d2379c0255bb193638" kind="variable"><name>driveTurn</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a84e0dd4584d3c97475a0dde1242d485f" kind="variable"><name>manipulatorAction</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1ae1d4ce201074832575f6a5dbe34a7c78" kind="variable"><name>minibotSwitches</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a8a3025d8bc20673eb7db70db765fa1ff" kind="variable"><name>_nextState</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a68b5dd3cb2442b6b722de3aa75e9dfee" kind="variable"><name>rotateTubeDownFlag</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a4faee78835700892307b89c9977f523e" kind="function"><name>Teleoperated</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a19603fc214137c80b292de4ccf5fd3ec" kind="function"><name>~Teleoperated</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a12d319115a887d3308c5f0a74d0df10f" kind="function"><name>Init</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a22fa5b99fdf48c16e4f86db0bb0f4c02" kind="function"><name>Go</name></member>
+    <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a885303324836622da915a1204ac5e9bf" kind="function"><name>testLimitSwitches</name></member>
+  </compound>
+  <compound refid="namespace_r_j_f_r_c2011" kind="namespace"><name>RJFRC2011</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="_autonomous_8cpp" kind="file"><name>Autonomous.cpp</name>
+  </compound>
+  <compound refid="_autonomous_8d" kind="file"><name>Autonomous.d</name>
+  </compound>
+  <compound refid="_autonomous_8h" kind="file"><name>Autonomous.h</name>
+  </compound>
+  <compound refid="_axis_camera_8cpp" kind="file"><name>AxisCamera.cpp</name>
+    <member refid="_axis_camera_8cpp_1ab13f1e7df92dd9fac9062be70e8584b9" kind="define"><name>kMaxPacketSize</name></member>
+    <member refid="_axis_camera_8cpp_1a6b06f9a0fb4fbd5003bd5b8da9e0f877" kind="define"><name>kImageBufferAllocationIncrement</name></member>
+    <member refid="_axis_camera_8cpp_1aa3b2efb1b6e050331e44cfaf0c7ba43e" kind="function"><name>Priv_ReadJPEGString_C</name></member>
+    <member refid="_axis_camera_8cpp_1ac5e2f623d5c21d4df91943d7393bdecd" kind="function"><name>AxisCameraStart</name></member>
+    <member refid="_axis_camera_8cpp_1aa55b277d90f20c96a1628f1b3226e89a" kind="function"><name>AxisCameraGetImage</name></member>
+    <member refid="_axis_camera_8cpp_1a18a544fa9b0112b0ffebf8437a21953f" kind="function"><name>AxisCameraWriteBrightness</name></member>
+    <member refid="_axis_camera_8cpp_1ad99b34fc089f0993088714dbc47dfca0" kind="function"><name>AxisCameraGetBrightness</name></member>
+    <member refid="_axis_camera_8cpp_1a8fc3732fd0bfd18ba629b509b9f2087f" kind="function"><name>AxisCameraWriteWhiteBalance</name></member>
+    <member refid="_axis_camera_8cpp_1a42dba9665ec543032ec0fa4ab0aa642b" kind="function"><name>AxisCameraGetWhiteBalance</name></member>
+    <member refid="_axis_camera_8cpp_1ae7a3a2d2c5be64c171cf3688b6606491" kind="function"><name>AxisCameraWriteColorLevel</name></member>
+    <member refid="_axis_camera_8cpp_1af58ba42708392b2e7f30cf78c3473f49" kind="function"><name>AxisCameraGetColorLevel</name></member>
+    <member refid="_axis_camera_8cpp_1a75bc50244e8564c37c49831eda9a17ad" kind="function"><name>AxisCameraWriteExposureControl</name></member>
+    <member refid="_axis_camera_8cpp_1aa969289b2433fc0fd71058065d7de1dc" kind="function"><name>AxisCameraGetExposureControl</name></member>
+    <member refid="_axis_camera_8cpp_1a3790d2940e7f02c8b362f136cc73f65d" kind="function"><name>AxisCameraWriteExposurePriority</name></member>
+    <member refid="_axis_camera_8cpp_1a36a33c58699aa9d068c1456da2722c14" kind="function"><name>AxisCameraGetExposurePriority</name></member>
+    <member refid="_axis_camera_8cpp_1a4e0d492753e77cb8b2e40507dbdf7ab2" kind="function"><name>AxisCameraWriteMaxFPS</name></member>
+    <member refid="_axis_camera_8cpp_1afcd2c02aad6ad2126c2675d85e887346" kind="function"><name>AxisCameraGetMaxFPS</name></member>
+    <member refid="_axis_camera_8cpp_1a6ddc4460d341196a29d9057c687e0f7c" kind="function"><name>AxisCameraWriteResolution</name></member>
+    <member refid="_axis_camera_8cpp_1acda823667aa84deb5767878102621d49" kind="function"><name>AxisCameraGetResolution</name></member>
+    <member refid="_axis_camera_8cpp_1a376971e0aa3f75daf0eeb6c99b13b2e0" kind="function"><name>AxisCameraWriteCompression</name></member>
+    <member refid="_axis_camera_8cpp_1a097c697a9aa564643d00255483548183" kind="function"><name>AxisCameraGetCompression</name></member>
+    <member refid="_axis_camera_8cpp_1a679ea5e7b9dff60ac1fca70405eb7dd1" kind="function"><name>AxisCameraWriteRotation</name></member>
+    <member refid="_axis_camera_8cpp_1a4db0cf6684ff51e0e99b9a2372dacbf9" kind="function"><name>AxisCameraGetRotation</name></member>
+    <member refid="_axis_camera_8cpp_1abeaa5910fe8777d7910f20ee59e142ee" kind="function"><name>AxisCameraDeleteInstance</name></member>
+    <member refid="_axis_camera_8cpp_1a7fc9397ffa026df80ef29f323b6c682f" kind="function"><name>AxisCameraFreshImage</name></member>
+  </compound>
+  <compound refid="_axis_camera_8d" kind="file"><name>AxisCamera.d</name>
+  </compound>
+  <compound refid="_axis_camera_params_8cpp" kind="file"><name>AxisCameraParams.cpp</name>
+    <member refid="_axis_camera_params_8cpp_1a8ff65149b74c1deef4de32af78ffab0f" kind="variable"><name>kRotationChoices</name></member>
+    <member refid="_axis_camera_params_8cpp_1a52491c249c755a7b25c7c168686aa6b4" kind="variable"><name>kResolutionChoices</name></member>
+    <member refid="_axis_camera_params_8cpp_1a065c4338a8470d29bbaa849b1e7feb1b" kind="variable"><name>kExposureControlChoices</name></member>
+    <member refid="_axis_camera_params_8cpp_1a6ea7619ed25589bc542fb95ce227bba8" kind="variable"><name>kWhiteBalanceChoices</name></member>
+  </compound>
+  <compound refid="_axis_camera_params_8d" kind="file"><name>AxisCameraParams.d</name>
+  </compound>
+  <compound refid="_builtin_default_code_8cpp" kind="file"><name>BuiltinDefaultCode.cpp</name>
+    <member refid="_builtin_default_code_8cpp_1a2ddcb504b5411fe04da15ca1afa8e6d8" kind="function"><name>START_ROBOT_CLASS</name></member>
+  </compound>
+  <compound refid="_builtin_default_code_8d" kind="file"><name>BuiltinDefaultCode.d</name>
+  </compound>
+  <compound refid="_controller_8cpp" kind="file"><name>Controller.cpp</name>
+  </compound>
+  <compound refid="_controller_8d" kind="file"><name>Controller.d</name>
+  </compound>
+  <compound refid="_controller_8h" kind="file"><name>Controller.h</name>
+    <member refid="_controller_8h_1a9ffc5bebd7faae22ab022e23045986ae" kind="variable"><name>c</name></member>
+    <member refid="_controller_8h_1af137ffcce5f4488e467514ea900fdfdb" kind="function"><name>getManipulatorAction</name></member>
+  </compound>
+  <compound refid="ctdt_8c" kind="file"><name>ctdt.c</name>
+    <member refid="ctdt_8c_1aabb4767bc8df1adc6b128930130dfb9c" kind="variable"><name>_ctors</name></member>
+    <member refid="ctdt_8c_1a2f27b3cf852e0980f07d4675ff3753b7" kind="variable"><name>_dtors</name></member>
+    <member refid="ctdt_8c_1a406cce8e2d99d0a31d6f044d9c4c0acc" kind="function"><name>_GLOBAL__I__Z20FRC_userClassFactoryv</name></member>
+    <member refid="ctdt_8c_1a02a64c96753ba72d2741948d83736472" kind="function"><name>_GLOBAL__I__ZN9RJFRC201110AutonomousC2EPNS_5DriveEPNS_11ManipulatorEPNS_10ControllerEP16DriverStationLCD</name></member>
+    <member refid="ctdt_8c_1a4f5bb758539aa70f3c0d53283117530e" kind="function"><name>_GLOBAL__I__ZN9RJFRC201110ControllerC2Ev</name></member>
+    <member refid="ctdt_8c_1a466585f51cd29d4d35dd82c3ac0f6adf" kind="function"><name>_GLOBAL__I__ZN9RJFRC201111ManipulatorC2Ev</name></member>
+    <member refid="ctdt_8c_1afacbc5f4f0827df6ce2419ff8e52bf7a" kind="function"><name>_GLOBAL__I__ZN9RJFRC201112TeleoperatedC2EPNS_5DriveEPNS_11ManipulatorEPNS_10ControllerEP16DriverStationLCD</name></member>
+    <member refid="ctdt_8c_1a2cdd5c9300322f08ba2183433bebf33a" kind="function"><name>_GLOBAL__I__ZN9RJFRC20115DriveC2Ev</name></member>
+    <member refid="ctdt_8c_1abfdfb49b280738121cb446a6a44fbda8" kind="function"><name>_GLOBAL__I__ZN9ErrorBase16globalErrorMutexE</name></member>
+    <member refid="ctdt_8c_1a5c8206d49c76e2e8d38cef4b4fb918b7" kind="function"><name>_GLOBAL__I__ZN9RobotBase10m_instanceE</name></member>
+    <member refid="ctdt_8c_1afbe84fd84832632577e5076fd853f330" kind="function"><name>_GLOBAL__I__ZN14SmartDashboard11BUFFER_SIZEE</name></member>
+    <member refid="ctdt_8c_1aad372b745849dce3fabee19c6fa0c2e1" kind="function"><name>_GLOBAL__I__ZN10Ultrasonic9kPingTimeE</name></member>
+    <member refid="ctdt_8c_1a5ba456d925dc2f611c1bf8532038b086" kind="function"><name>_GLOBAL__I_AxisCamera_debugFlag</name></member>
+    <member refid="ctdt_8c_1a72fb505e692b923da142d79da5c1f2b4" kind="function"><name>_GLOBAL__D__Z20FRC_userClassFactoryv</name></member>
+    <member refid="ctdt_8c_1acf2bd8eae99756779c3f480483e55c22" kind="function"><name>_GLOBAL__D__ZN9RJFRC201110AutonomousC2EPNS_5DriveEPNS_11ManipulatorEPNS_10ControllerEP16DriverStationLCD</name></member>
+    <member refid="ctdt_8c_1a7a5f93181a3b77611a1961e7ae8a20e5" kind="function"><name>_GLOBAL__D__ZN9RJFRC201110ControllerC2Ev</name></member>
+    <member refid="ctdt_8c_1ae06ddc82ac1ffde65e8b1ae1e0f95343" kind="function"><name>_GLOBAL__D__ZN9RJFRC201111ManipulatorC2Ev</name></member>
+    <member refid="ctdt_8c_1ab8ea3bb45c0f89fc329dd45a3c40a762" kind="function"><name>_GLOBAL__D__ZN9RJFRC201112TeleoperatedC2EPNS_5DriveEPNS_11ManipulatorEPNS_10ControllerEP16DriverStationLCD</name></member>
+    <member refid="ctdt_8c_1a85367da938589c540371795096c9e08f" kind="function"><name>_GLOBAL__D__ZN9RJFRC20115DriveC2Ev</name></member>
+    <member refid="ctdt_8c_1a7ea2f02e991631801b36a9fd8b5101d8" kind="function"><name>_GLOBAL__D__ZN9ErrorBase16globalErrorMutexE</name></member>
+    <member refid="ctdt_8c_1a4444a24c22c120d38013b72140280a85" kind="function"><name>_GLOBAL__D__ZN9RobotBase10m_instanceE</name></member>
+    <member refid="ctdt_8c_1aa7c9f06047c255ce1cd01d37e850435d" kind="function"><name>_GLOBAL__D__ZN10Ultrasonic9kPingTimeE</name></member>
+    <member refid="ctdt_8c_1ad1234f9c543d0086d1d521c68086ed1a" kind="function"><name>_GLOBAL__D_AxisCamera_debugFlag</name></member>
+  </compound>
+  <compound refid="_drive_8cpp" kind="file"><name>Drive.cpp</name>
+  </compound>
+  <compound refid="_drive_8d" kind="file"><name>Drive.d</name>
+  </compound>
+  <compound refid="_drive_8h" kind="file"><name>Drive.h</name>
+  </compound>
+  <compound refid="macros_8h" kind="file"><name>macros.h</name>
+    <member refid="macros_8h_1a244c5fd1d94aa1f4f4b65d3c79d9c72c" kind="define"><name>YCENTER</name></member>
+    <member refid="macros_8h_1a127f99ac79d5012d50317daf88e7f1a6" kind="define"><name>ROTCENTER</name></member>
+    <member refid="macros_8h_1a6aee779504f876f9bed834f36b392da9" kind="define"><name>XMIN</name></member>
+    <member refid="macros_8h_1a0312cb6d6cbc719075d4e5380c387ab3" kind="define"><name>XMAX</name></member>
+    <member refid="macros_8h_1aa025181dff552575490c5148a493ff65" kind="define"><name>YMIN</name></member>
+    <member refid="macros_8h_1a610d6ad95b18966b70b6845de2a9c56b" kind="define"><name>YMAX</name></member>
+    <member refid="macros_8h_1aea4c8e7fa16752c56ffad3be5e533de5" kind="define"><name>ZMIN</name></member>
+    <member refid="macros_8h_1a131010b0d7e64a592f782aec28c6a4d8" kind="define"><name>ZMAX</name></member>
+    <member refid="macros_8h_1ad105605859fafc75c6093a346292aa19" kind="define"><name>ROTMIN</name></member>
+    <member refid="macros_8h_1a2b7548b633da844f977399a2fd77ef24" kind="define"><name>ROTMAX</name></member>
+    <member refid="macros_8h_1abca3e52dd0360248580f75b2280f7df0" kind="define"><name>XEXPO</name></member>
+    <member refid="macros_8h_1a58fb3136b9073b46d4f23aa16e5d14ce" kind="define"><name>YEXPO</name></member>
+    <member refid="macros_8h_1a464292d5bd5af44d16fc1049b775f434" kind="define"><name>ROTEXPO</name></member>
+    <member refid="macros_8h_1af5c294bdd73073d40b59b5fb680da1f5" kind="define"><name>AUTONOMOUS_LANE_SWITCH_PORT</name></member>
+    <member refid="macros_8h_1ad7ded68c32af86b724dfafe66b920ce9" kind="define"><name>AUTONOMOUS_FORK_SWITCH_PORT</name></member>
+    <member refid="macros_8h_1a2c9350fc206ba58641929e083648be11" kind="define"><name>MANIPULATOR_ELEVATION_TOP_LIMIT_SWITCH_PORT</name></member>
+    <member refid="macros_8h_1a5e22437986eee9a1fe8f44cf98b32483" kind="define"><name>MANIPULATOR_ELEVATION_BOTTOM_LIMIT_SWITCH_PORT</name></member>
+    <member refid="macros_8h_1a4bc5e8af53eacd86a8333b2f148b7445" kind="define"><name>LIGHT_SENSOR_LEFT_PORT</name></member>
+    <member refid="macros_8h_1a94797b3ebdf03143368647b3581de19d" kind="define"><name>LIGHT_SENSOR_CENTER_PORT</name></member>
+    <member refid="macros_8h_1a25d468051abadf3dfbed13ffab7a4833" kind="define"><name>LIGHT_SENSOR_RIGHT_PORT</name></member>
+    <member refid="macros_8h_1ad7f9276864c8d3024ac469978baf1f05" kind="define"><name>MINIBOT_SHELF_RELAY_PORT</name></member>
+    <member refid="macros_8h_1ac1b9b0f3b1b26567061f78a109415cd2" kind="define"><name>MANIPULATOR_TOP_RELAY_PORT</name></member>
+    <member refid="macros_8h_1a001642e6e62eedc685167a8bdc5cfccd" kind="define"><name>MANIPULATOR_BOTTOM_RELAY_PORT</name></member>
+    <member refid="macros_8h_1a5982744ec70c5708a0a66ed629cf526d" kind="define"><name>MANIPULATOR_ELEVATION_RELAY_PORT</name></member>
+    <member refid="macros_8h_1aa5f262ae81a4bc71833be5df15b49ec1" kind="define"><name>DRIVE_FRONT_LEFT_JAGUAR_PORT</name></member>
+    <member refid="macros_8h_1aa1d31f972d08b33df2300a0434ecedf7" kind="define"><name>DRIVE_FRONT_RIGHT_JAGUAR_PORT</name></member>
+    <member refid="macros_8h_1a7e31d84902c3f5a88dfe615bb3d7d365" kind="define"><name>DRIVE_BACK_LEFT_JAGUAR_PORT</name></member>
+    <member refid="macros_8h_1a66215ddced4940c9de38365d6a839841" kind="define"><name>DRIVE_BACK_RIGHT_JAGUAR_PORT</name></member>
+    <member refid="macros_8h_1a35dd9359c9b8461811401247cd10753b" kind="define"><name>DEFAULT_WATCHDOG_TIME</name></member>
+    <member refid="macros_8h_1ae746c51c6037381961c9313e8b62529c" kind="define"><name>AUTO_DRIVE_SPEED</name></member>
+    <member refid="macros_8h_1aba3f3add9147af90e29a0d50ba3d16e8" kind="define"><name>AUTO_TURN_SPEED</name></member>
+    <member refid="macros_8h_1af4d4038d993d1f32b9cae705ed987fbf" kind="define"><name>AUTO_BRAKE_SPEED</name></member>
+    <member refid="macros_8h_1a70a742af36a2c566aee2804be7ae2ec4" kind="function"><name>topchar</name></member>
+  </compound>
+  <compound refid="_manipulator_8cpp" kind="file"><name>Manipulator.cpp</name>
+  </compound>
+  <compound refid="_manipulator_8d" kind="file"><name>Manipulator.d</name>
+  </compound>
+  <compound refid="_manipulator_8h" kind="file"><name>Manipulator.h</name>
+  </compound>
+  <compound refid="_teleoperated_8cpp" kind="file"><name>Teleoperated.cpp</name>
+  </compound>
+  <compound refid="_teleoperated_8d" kind="file"><name>Teleoperated.d</name>
+  </compound>
+  <compound refid="_teleoperated_8h" kind="file"><name>Teleoperated.h</name>
+  </compound>
+  <compound refid="dir_4b34e4af5885c2f13f4fdafb96eca0b3" kind="dir"><name>workspace11/BuiltinDefaultCode/PPC603gnu/BuiltinDefaultCode/</name>
+  </compound>
+  <compound refid="dir_13b2d6246106ef1d7fc57e5ecfef6f05" kind="dir"><name>workspace11/BuiltinDefaultCode/PPC603gnu/BuiltinDefaultCode_partialImage/Debug/Objects/BuiltinDefaultCode/</name>
+  </compound>
+  <compound refid="dir_e877071fafb212b1b7bcff07df658564" kind="dir"><name>workspace11/BuiltinDefaultCode/</name>
+  </compound>
+  <compound refid="dir_a2e3b0ef8c3809fbbc959a1b6a9a8db0" kind="dir"><name>workspace11/BuiltinDefaultCode/PPC603gnu/BuiltinDefaultCode_partialImage/</name>
+  </compound>
+  <compound refid="dir_d21719ddb9a3bb926eb8c980a9f9dbfe" kind="dir"><name>workspace11/BuiltinDefaultCode/PPC603gnu/BuiltinDefaultCode/Debug/</name>
+  </compound>
+  <compound refid="dir_9c858e5b509a3bcc4b62f16f50fbdb79" kind="dir"><name>workspace11/BuiltinDefaultCode/PPC603gnu/BuiltinDefaultCode_partialImage/Debug/</name>
+  </compound>
+  <compound refid="dir_6bfae61d99e4ce2ab33032f41f430d7f" kind="dir"><name>workspace11/BuiltinDefaultCode/PPC603gnu/BuiltinDefaultCode_partialImage/Debug/Objects/</name>
+  </compound>
+  <compound refid="dir_791f48bfdc40792f6614cbb4e55761fe" kind="dir"><name>workspace11/BuiltinDefaultCode/PPC603gnu/</name>
+  </compound>
+  <compound refid="dir_1805737147253835721536d482e478b8" kind="dir"><name>workspace11/</name>
+  </compound>
+</doxygenindex>

@@ -1,0 +1,113 @@
+/*!
+ \file Manipulator.cpp
+ \brief File containing implementations of functions found in the \a Manipulator class (found in Manipulator.h)
+ \authors Matthew Haney, Drew Lazzeri
+ 
+ */
+
+#include "Manipulator.h"
+#include "WPILib.h"
+#include "macros.h"
+using namespace RJFRC2011;
+
+/*!
+ \brief Constructor.
+ \details Basically, initialize the relays for the manipulator and the digital I/O ports for the limit switches.
+*/
+RJFRC2011::Manipulator::Manipulator()
+{
+	manipulatorTop = new Relay(MANIPULATOR_TOP_RELAY_PORT, Relay::kBothDirections);
+	manipulatorBottom = new Relay(MANIPULATOR_BOTTOM_RELAY_PORT, Relay::kBothDirections);
+	manipulatorElevation = new Relay(MANIPULATOR_ELEVATION_RELAY_PORT, Relay::kBothDirections);
+	
+	manipulatorElevationBottomLimitSwitch = new DigitalInput(MANIPULATOR_ELEVATION_BOTTOM_LIMIT_SWITCH_PORT);
+	manipulatorElevationTopLimitSwitch = new DigitalInput(MANIPULATOR_ELEVATION_TOP_LIMIT_SWITCH_PORT);
+}
+
+/*!
+ \brief Destructor.
+ \details Free up memory.  Yup...
+ */
+RJFRC2011::Manipulator::~Manipulator()
+{
+	delete manipulatorElevationTopLimitSwitch;
+	delete manipulatorElevationBottomLimitSwitch;
+	delete manipulatorTop;
+	delete manipulatorBottom;
+	delete manipulatorElevation;
+}
+
+/*!
+ \brief Suck in the tube.
+ \details Move the manipulator relays in reverse to suck in the tube.  Eventually, they'll turn off once the limit switch has been pressed.
+ */
+void RJFRC2011::Manipulator::inputTube()
+{
+	manipulatorTop->Set(Relay::kReverse);		// top part backward
+	manipulatorBottom->Set(Relay::kReverse);	// bottom part backward
+}
+
+/*!
+ \brief Rotate the tube downward
+ \details Set the top manipulator relay to reverse and the bottom one forward, then wait for a predetermined time before turning them off (so you don't crush the tube).
+ \param rotateTime how long you want to rotate the tube (tweak based on motor speed so you don't crush the tube).  Defaults to 0.75 seconds.
+ */
+void RJFRC2011::Manipulator::rotateTube(float rotateTime)
+{
+	manipulatorTop->Set(Relay::kForward);		// turn top part forward
+	manipulatorBottom->Set(Relay::kReverse);	//turn bottom part backward
+}
+
+/*!
+ \brief Spit out the tube.
+ \details Set the manipulator relays forward to spit out the tube.
+ */
+void RJFRC2011::Manipulator::ejectTube()
+{
+	manipulatorTop->Set(Relay::kForward);		// top part forward
+	manipulatorBottom->Set(Relay::kForward);	// bottom part forward
+}
+
+/*!
+ \brief Elevate the manipulator.
+ \details If the user is pushing the joystick left, go down until the lower limit switch is tripped.  IF they're pushing it right, go up until the upper limit switch is triggered.
+ \param val The user input.
+ */
+void RJFRC2011::Manipulator::elevate(float val)
+{
+	// move shelf up/down with y_r
+	// if user wants to go up, and we haven't hit the top limit switch yet, go up
+	if (val > 0.35)// && manipulatorElevationTopLimitSwitch->Get() != 1)
+	{
+		manipulatorElevation->Set(Relay::kForward);
+	}
+	// if user wants to go down, and we haven't hit the bottom limit switch yet, go down
+	else if (val < -0.35)// && manipulatorElevationBottomLimitSwitch->Get() != 1)
+	{
+		manipulatorElevation->Set(Relay::kReverse);
+	}
+	// if no response from driver, turn it off
+	else
+	{
+		manipulatorElevation->Set(Relay::kOff);
+	}
+}
+
+/*!
+ \brief Stop all movement of the manipulator.
+ \details Turn off the manipulator relays.
+ */
+void RJFRC2011::Manipulator::stopManipulatorAction()
+{
+	manipulatorTop->Set(Relay::kOff);
+	manipulatorBottom->Set(Relay::kOff);
+}
+
+/*!
+ \brief Stop all elevation of the manipulator.
+ \details Turn off the manipulator elevation relays.
+ */
+void RJFRC2011::Manipulator::stopManipulatorElevation()
+{
+	manipulatorElevation->Set(Relay::kOff);
+}

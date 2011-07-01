@@ -1,0 +1,24 @@
+/*
+ * RJRobot.cpp
+ *
+ *  Created on: Feb 17, 2011
+ *      Author: Developer
+ */
+
+#include "RJRobot.h"
+
+/*
+ * Default constructor
+ */
+RJRobot::RJRobot()
+{
+	
+}
+
+/*
+ * Default destructor
+ */
+RJRobot::~RJRobot()
+{
+	
+}

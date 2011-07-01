@@ -1,0 +1,178 @@
+.TH "RJFRC2011::Autonomous" 7 "Thu Jun 23 2011" "Version 2011" "RJHS FRC Software Documentation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RJFRC2011::Autonomous \- 
+.PP
+Class managing the \fBAutonomous\fP period of the competition.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Autonomous.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAutonomous\fP (\fBDrive\fP *drive, \fBManipulator\fP *manip, \fBController\fP *controller, DriverStationLCD *screen)"
+.br
+.RI "\fIConstruct from the addresses of a drive system, a manipulator, a controller, and an LCD screen. \fP"
+.ti -1c
+.RI "\fB~Autonomous\fP ()"
+.br
+.RI "\fIDestructor. Kill stuff. \fP"
+.ti -1c
+.RI "void \fBGo\fP ()"
+.br
+.RI "\fIState machine function that decides which state to go into. \fP"
+.ti -1c
+.RI "void \fBInit\fP ()"
+.br
+.RI "\fIConvenience method. Same as \fI\fBinitialState()\fP\fP \fP"
+.ti -1c
+.RI "void \fBprintLightSensors\fP ()"
+.br
+.RI "\fIDebug info. Prints the values of lightLeft, lightCenter, and lightRight on the screen. \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinitialState\fP ()"
+.br
+.RI "\fIThe initial state of the robot. \fP"
+.ti -1c
+.RI "void \fBcheckForLines\fP ()"
+.br
+.RI "\fIThe state in which the robot is looking for tape lines on the floor. \fP"
+.ti -1c
+.RI "void \fBmove\fP ()"
+.br
+.RI "\fIState in which the robot moves forward. \fP"
+.ti -1c
+.RI "void \fBcorrectRight\fP ()"
+.br
+.RI "\fIState in which the robot moves slightly to the right. \fP"
+.ti -1c
+.RI "void \fBcorrectLeft\fP ()"
+.br
+.RI "\fIState in which the robot moves slightly to the left. \fP"
+.ti -1c
+.RI "void \fBplaceTube\fP ()"
+.br
+.RI "\fIState in which the robot ejects the tube (ideally onto a peg) \fP"
+.ti -1c
+.RI "int \fBflip\fP (int x)"
+.br
+.RI "\fIIf x is 0, return 1! If x is 1, return 0! \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "UINT8 \fBlane\fP"
+.br
+.RI "\fIThe starting lane of the robot; 1 for center, 0 for left or right. \fP"
+.ti -1c
+.RI "char \fBforkDirection\fP"
+.br
+.RI "\fIIf we're in the center lane: do we go left or right at the fork? \fP"
+.ti -1c
+.RI "\fBDrive\fP * \fB_drive\fP"
+.br
+.RI "\fIPointer to object abstracting drive mechanism. \fP"
+.ti -1c
+.RI "\fBManipulator\fP * \fB_manip\fP"
+.br
+.RI "\fIPointer to object abstracting manipulator. \fP"
+.ti -1c
+.RI "\fBController\fP * \fB_controller\fP"
+.br
+.RI "\fIPointer to object abstracting controller. \fP"
+.ti -1c
+.RI "DriverStationLCD * \fB_screen\fP"
+.br
+.RI "\fIPointer to object representing LCD screen on the Driver Station. Used toprint feedback to the screen. \fP"
+.ti -1c
+.RI "DigitalInput * \fBlightSensorLeft\fP"
+.br
+.RI "\fIPointer to object interfacing with leftmost light sensor. \fP"
+.ti -1c
+.RI "DigitalInput * \fBlightSensorCenter\fP"
+.br
+.RI "\fIPointer to object interfacing with center light sensor. \fP"
+.ti -1c
+.RI "DigitalInput * \fBlightSensorRight\fP"
+.br
+.RI "\fIPointer to object interfacing with rightmost light sensor. \fP"
+.ti -1c
+.RI "DigitalInput * \fBautonomousLaneSwitch\fP"
+.br
+.RI "\fIPhysical switch controlling which lane our robot starts out in. \fP"
+.ti -1c
+.RI "DigitalInput * \fBautonomousForkSwitch\fP"
+.br
+.RI "\fIPhysical switch controlling which direction our robot is to take if it's in the center lane. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class managing the \fBAutonomous\fP period of the competition. 
+
+Manages a 'state machine' (essentially a \fIswitch\fP block) that defines which of a number of 'states' to execute based on inputs from three light sensors. These states are: check light sensors, move, correct left, correct right, place tube. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RJFRC2011::Autonomous::Autonomous (\fBDrive\fP *drive, \fBManipulator\fP *manip, \fBController\fP *controller, DriverStationLCD *screen)"
+.PP
+Construct from the addresses of a drive system, a manipulator, a controller, and an LCD screen. \fBParameters:\fP
+.RS 4
+\fIdrive\fP Pointer to a \fI\fBDrive\fP\fP variable that will be used in both \fBAutonomous\fP and \fBTeleoperated\fP periods. 
+.br
+\fImanip\fP Pointer to a \fI\fBManipulator\fP\fP variable that will be used in both \fBAutonomous\fP and \fBTeleoperated\fP periods. 
+.br
+\fIcontroller\fP Pointer to a \fI\fBController\fP\fP variable that will be used in both \fBAutonomous\fP and \fBTeleoperated\fP periods. 
+.br
+\fIscreen\fP Pointer to a \fIDriverStationLCD\fP variable that will be used in \fBAutonomous\fP, \fBTeleoperated\fP, and Disabled periods to write to the screen. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void RJFRC2011::Autonomous::checkForLines ()\fC [private]\fP"
+.PP
+The state in which the robot is looking for tape lines on the floor. Read input from the 3 light sensors and store the results in three variables. 
+.SS "void RJFRC2011::Autonomous::correctLeft ()\fC [private]\fP"
+.PP
+State in which the robot moves slightly to the left. Print to the screen that we're in \fI\fBcorrectLeft()\fP\fP and turn left by driving the left wheels at -.15 and the right wheels at \fIAUTO_TURN_SPEED\fP. 
+.SS "void RJFRC2011::Autonomous::correctRight ()\fC [private]\fP"
+.PP
+State in which the robot moves slightly to the right. Print to the screen that we're in \fI\fBcorrectRight()\fP\fP and turn right by driving the left wheels at \fIAUTO_TURN_SPEED\fP and the right wheels at -.15. 
+.SS "int RJFRC2011::Autonomous::flip (intx)\fC [private]\fP"
+.PP
+If x is 0, return 1! If x is 1, return 0! \fBParameters:\fP
+.RS 4
+\fIx\fP The value to be flipped 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The flipped value 
+.RE
+.PP
+
+.SS "void RJFRC2011::Autonomous::Go ()"
+.PP
+State machine function that decides which state to go into. Operates on the \fIlightX\fP variables to tell where the line is, with 0 indicating that the sensor saw nothing and 1 indicating that the sensor detected something (ideally the tape). We then use a sereis of \fIif\fP statements to change to the appropriate state. 
+.SS "void RJFRC2011::Autonomous::initialState ()\fC [private]\fP"
+.PP
+The initial state of the robot. Read input from the switches and set variables accordingly. If lane switch is off, we're in a side lane; if it's on, we're in the center one. If we're in the center, read the second fork switch: if it's on, go left; if not, go right. 
+.SS "void RJFRC2011::Autonomous::move ()\fC [private]\fP"
+.PP
+State in which the robot moves forward. Print to the screen that we're in \fI\fBmove()\fP\fP and drive forward at \fIAUTO_DRIVE_SPEED\fP 
+.SS "void RJFRC2011::Autonomous::placeTube ()\fC [private]\fP"
+.PP
+State in which the robot ejects the tube (ideally onto a peg) Brake the robot to a stop, print that we're in \fI\fBplaceTube()\fP\fP, and run the ejection wheels for one second. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RJHS FRC Software Documentation from the source code.

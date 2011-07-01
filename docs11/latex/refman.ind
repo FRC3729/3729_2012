@@ -1,0 +1,168 @@
+\begin{theindex}
+
+  \item {abs}
+    \subitem {RJFRC2011::Controller}, \hyperpage{13}
+  \item {Autonomous}
+    \subitem {RJFRC2011::Autonomous}, \hyperpage{7}
+  \item {Autonomous.cpp}, \hyperpage{25}
+  \item {Autonomous.h}, \hyperpage{25}
+  \item {AxisCamera.cpp}, \hyperpage{26}
+  \item {AxisCameraParams.cpp}, \hyperpage{26}
+
+  \indexspace
+
+  \item {BuiltinDefaultCode}, \hyperpage{9}
+    \subitem {BuiltinDefaultCode}, \hyperpage{11}
+  \item {BuiltinDefaultCode.cpp}, \hyperpage{27}
+
+  \indexspace
+
+  \item {checkForLines}
+    \subitem {RJFRC2011::Autonomous}, \hyperpage{8}
+  \item {Controller}
+    \subitem {RJFRC2011::Controller}, \hyperpage{13}
+  \item {Controller.cpp}, \hyperpage{28}
+  \item {Controller.h}, \hyperpage{28}
+  \item {correctLeft}
+    \subitem {RJFRC2011::Autonomous}, \hyperpage{8}
+  \item {correctRight}
+    \subitem {RJFRC2011::Autonomous}, \hyperpage{8}
+
+  \indexspace
+
+  \item {Drive}
+    \subitem {RJFRC2011::Drive}, \hyperpage{17}
+  \item {drive}
+    \subitem {RJFRC2011::Drive}, \hyperpage{17}
+  \item {Drive.cpp}, \hyperpage{29}
+  \item {Drive.h}, \hyperpage{29}
+  \item {drive\_\discretionary {-}{}{}noramp}
+    \subitem {RJFRC2011::Drive}, \hyperpage{17}
+
+  \indexspace
+
+  \item {ejectTube}
+    \subitem {RJFRC2011::Manipulator}, \hyperpage{20}
+  \item {elevate}
+    \subitem {RJFRC2011::Manipulator}, \hyperpage{20}
+  \item {expo}
+    \subitem {RJFRC2011::Controller}, \hyperpage{13}
+
+  \indexspace
+
+  \item {flip}
+    \subitem {RJFRC2011::Autonomous}, \hyperpage{8}
+
+  \indexspace
+
+  \item {GetBottomLimitSwitchAddress}
+    \subitem {RJFRC2011::Manipulator}, \hyperpage{21}
+  \item {getDriveSpeed}
+    \subitem {RJFRC2011::Controller}, \hyperpage{14}
+  \item {getDriveTurn}
+    \subitem {RJFRC2011::Controller}, \hyperpage{14}
+  \item {getManipulatorAction}
+    \subitem {RJFRC2011::Controller}, \hyperpage{14}
+  \item {getManipulatorElevation}
+    \subitem {RJFRC2011::Controller}, \hyperpage{14}
+  \item {getMinibotSwitches}
+    \subitem {RJFRC2011::Controller}, \hyperpage{15}
+  \item {GetTopLimitSwitchAddress}
+    \subitem {RJFRC2011::Manipulator}, \hyperpage{21}
+  \item {Go}
+    \subitem {RJFRC2011::Autonomous}, \hyperpage{8}
+    \subitem {RJFRC2011::Teleoperated}, \hyperpage{24}
+
+  \indexspace
+
+  \item {initialState}
+    \subitem {RJFRC2011::Autonomous}, \hyperpage{8}
+  \item {inputTube}
+    \subitem {RJFRC2011::Manipulator}, \hyperpage{21}
+
+  \indexspace
+
+  \item {macros.h}, \hyperpage{30}
+    \subitem {topchar}, \hyperpage{32}
+  \item {Manipulator}
+    \subitem {RJFRC2011::Manipulator}, \hyperpage{20}
+  \item {Manipulator.cpp}, \hyperpage{33}
+  \item {Manipulator.h}, \hyperpage{33}
+  \item {move}
+    \subitem {RJFRC2011::Autonomous}, \hyperpage{9}
+
+  \indexspace
+
+  \item {normalize}
+    \subitem {RJFRC2011::Controller}, \hyperpage{15}
+
+  \indexspace
+
+  \item {placeTube}
+    \subitem {RJFRC2011::Autonomous}, \hyperpage{9}
+
+  \indexspace
+
+  \item {ramp}
+    \subitem {RJFRC2011::Drive}, \hyperpage{17}
+  \item {RJFRC2011::Autonomous}, \hyperpage{5}
+    \subitem {Autonomous}, \hyperpage{7}
+    \subitem {checkForLines}, \hyperpage{8}
+    \subitem {correctLeft}, \hyperpage{8}
+    \subitem {correctRight}, \hyperpage{8}
+    \subitem {flip}, \hyperpage{8}
+    \subitem {Go}, \hyperpage{8}
+    \subitem {initialState}, \hyperpage{8}
+    \subitem {move}, \hyperpage{9}
+    \subitem {placeTube}, \hyperpage{9}
+  \item {RJFRC2011::Controller}, \hyperpage{11}
+    \subitem {abs}, \hyperpage{13}
+    \subitem {Controller}, \hyperpage{13}
+    \subitem {expo}, \hyperpage{13}
+    \subitem {getDriveSpeed}, \hyperpage{14}
+    \subitem {getDriveTurn}, \hyperpage{14}
+    \subitem {getManipulatorAction}, \hyperpage{14}
+    \subitem {getManipulatorElevation}, \hyperpage{14}
+    \subitem {getMinibotSwitches}, \hyperpage{15}
+    \subitem {normalize}, \hyperpage{15}
+  \item {RJFRC2011::Drive}, \hyperpage{16}
+    \subitem {Drive}, \hyperpage{17}
+    \subitem {drive}, \hyperpage{17}
+    \subitem {drive\_\discretionary {-}{}{}noramp}, \hyperpage{17}
+    \subitem {ramp}, \hyperpage{17}
+    \subitem {tank\_\discretionary {-}{}{}drive}, \hyperpage{18}
+  \item {RJFRC2011::Manipulator}, \hyperpage{18}
+    \subitem {ejectTube}, \hyperpage{20}
+    \subitem {elevate}, \hyperpage{20}
+    \subitem {GetBottomLimitSwitchAddress}, \hyperpage{21}
+    \subitem {GetTopLimitSwitchAddress}, \hyperpage{21}
+    \subitem {inputTube}, \hyperpage{21}
+    \subitem {Manipulator}, \hyperpage{20}
+    \subitem {rotateTube}, \hyperpage{21}
+    \subitem {stopManipulatorAction}, \hyperpage{21}
+    \subitem {stopManipulatorElevation}, \hyperpage{21}
+  \item {RJFRC2011::Teleoperated}, \hyperpage{22}
+    \subitem {Go}, \hyperpage{24}
+    \subitem {Teleoperated}, \hyperpage{24}
+  \item {rotateTube}
+    \subitem {RJFRC2011::Manipulator}, \hyperpage{21}
+
+  \indexspace
+
+  \item {stopManipulatorAction}
+    \subitem {RJFRC2011::Manipulator}, \hyperpage{21}
+  \item {stopManipulatorElevation}
+    \subitem {RJFRC2011::Manipulator}, \hyperpage{21}
+
+  \indexspace
+
+  \item {tank\_\discretionary {-}{}{}drive}
+    \subitem {RJFRC2011::Drive}, \hyperpage{18}
+  \item {Teleoperated}
+    \subitem {RJFRC2011::Teleoperated}, \hyperpage{24}
+  \item {Teleoperated.cpp}, \hyperpage{34}
+  \item {Teleoperated.h}, \hyperpage{34}
+  \item {topchar}
+    \subitem {macros.h}, \hyperpage{32}
+
+\end{theindex}

@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="class_r_j_f_r_c2011_1_1_drive" kind="class" prot="public">
+    <compoundname>RJFRC2011::Drive</compoundname>
+    <includes refid="_drive_8h" local="no">Drive.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_drive_1a869d7df0f00c2f9b5c62abe8ade90298" prot="private" static="no" mutable="no">
+        <type>RobotDrive *</type>
+        <definition>RobotDrive* RJFRC2011::Drive::_drive</definition>
+        <argsstring></argsstring>
+        <name>_drive</name>
+        <briefdescription>
+<para>WPILib-defined class for abstracting the drive mechanism. Our &quot;Drive&quot; class basically clarifies and ramps the inputs provided by RobotDrive. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.h" line="34" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_drive_1a242653143f6cd0b7e35a3249ab14a9d1" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float RJFRC2011::Drive::_speed_prev</definition>
+        <argsstring></argsstring>
+        <name>_speed_prev</name>
+        <briefdescription>
+<para>The last sent speed value (used for ramping). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.h" line="36" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_drive_1a0cd549eb20982cfeea32e197d3c613e9" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float RJFRC2011::Drive::_turn_prev</definition>
+        <argsstring></argsstring>
+        <name>_turn_prev</name>
+        <briefdescription>
+<para>The last sent turn value (used for ramping). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.h" line="38" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_drive_1a6633c3e2ff4c7d3803a1b87947d872a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RJFRC2011::Drive::Drive</definition>
+        <argsstring>()</argsstring>
+        <name>Drive</name>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initialize the drive system to work with Jaguars on ports <emphasis>DRIVE_FRONT_LEFT_JAGUAR_PORT</emphasis> , <emphasis>DRIVE_FRONT_RIGHT_JAGUAR_PORT</emphasis> , <emphasis>DRIVE_BACK_LEFT_JAGUAR_PORT</emphasis> , and <emphasis>DRIVE_BACK_RIGHT_JAGUAR_PORT</emphasis> . </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.h" line="40" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.cpp" bodystart="25" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_drive_1aced8eae560776e6e8f063fd29d887cdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RJFRC2011::Drive::~Drive</definition>
+        <argsstring>()</argsstring>
+        <name>~Drive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.h" line="41" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.cpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_drive_1aa246cbe7cdecc4e72af60d5d9a87bcdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RJFRC2011::Drive::drive</definition>
+        <argsstring>(float speed, float turn)</argsstring>
+        <name>drive</name>
+        <param>
+          <type>float</type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>turn</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_r_j_f_r_c2011_1_1_drive" kindref="compound">Drive</ref> the robot, ramping as you go. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user-requested speed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>turn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user-requested turn</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<ref refid="class_r_j_f_r_c2011_1_1_drive" kindref="compound">Drive</ref> the robot with the <emphasis>RobotDrive.Drive(speed, turn)</emphasis> function UNLESS the user wants to do a dead turn (by pushing a stick directly to the left or right), in which case we use the <emphasis>RobotDrive.TankDrive(left, right)</emphasis> function. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.h" line="42" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.cpp" bodystart="43" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_drive_1a033624d88429de64fe3d954680157c44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RJFRC2011::Drive::drive_noramp</definition>
+        <argsstring>(float speed, float turn)</argsstring>
+        <name>drive_noramp</name>
+        <param>
+          <type>float</type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>turn</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_r_j_f_r_c2011_1_1_drive" kindref="compound">Drive</ref> without ramping. Used ONLY in <ref refid="class_r_j_f_r_c2011_1_1_autonomous" kindref="compound">Autonomous</ref>, since we don&apos;t trust our drivers ;) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The requested speed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>turn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The requested turn</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<ref refid="class_r_j_f_r_c2011_1_1_drive" kindref="compound">Drive</ref> the robot with the <emphasis>RobotDrive.Drive(speed, turn)</emphasis> function UNLESS we want to do a dead turn, in which case we use the <emphasis>RobotDrive.TankDrive(left, right)</emphasis> function. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.h" line="43" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.cpp" bodystart="66" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_drive_1a731a3b7d782c3f75287b97db93f489d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RJFRC2011::Drive::tank_drive</definition>
+        <argsstring>(float left, float right)</argsstring>
+        <name>tank_drive</name>
+        <param>
+          <type>float</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>right</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_r_j_f_r_c2011_1_1_drive" kindref="compound">Drive</ref> robot from values given for the speed of each wheel; used in autonomous. Regrettably, no ramping here; however, since it won&apos;t be sporadic, we don&apos;t need it. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Speed of the left motor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>right</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Speed of the right motor </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.h" line="44" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.cpp" bodystart="83" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_drive_1ad816025f2d8dbbed3049f611a6e63a90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float RJFRC2011::Drive::ramp</definition>
+        <argsstring>(float desired_output, float current_output)</argsstring>
+        <name>ramp</name>
+        <param>
+          <type>float</type>
+          <declname>desired_output</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>current_output</declname>
+        </param>
+        <briefdescription>
+<para>A function that &quot;ramps&quot; input from a joystick to motors so that an overzealous driver doesn&apos;t tear up the chassis. </para>        </briefdescription>
+        <detaileddescription>
+<para>Increase or decrease the sent value gradually based on operator response. With values close to zero, go even more gradually than normal. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>desired_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output that the operator is trying to send </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>current_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current output </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>increment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount by which to increment ramping. Defaults to .005 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the ramped value </para></simplesect>
+<simplesect kind="author"><para>Drew Lazzeri </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.h" line="45" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.cpp" bodystart="97" bodyend="114"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class abstracting the drive system. </para>    </briefdescription>
+    <detaileddescription>
+<para>Basically a wrapper for the WPILib-defined <emphasis>RobotDrive</emphasis> class, with our own fancy ramping capabilities put in. </para>    </detaileddescription>
+    <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.h" line="31" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Drive.h" bodystart="30" bodyend="46"/>
+    <listofallmembers>
+      <member refid="class_r_j_f_r_c2011_1_1_drive_1a869d7df0f00c2f9b5c62abe8ade90298" prot="private" virt="non-virtual"><scope>RJFRC2011::Drive</scope><name>_drive</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_drive_1a242653143f6cd0b7e35a3249ab14a9d1" prot="private" virt="non-virtual"><scope>RJFRC2011::Drive</scope><name>_speed_prev</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_drive_1a0cd549eb20982cfeea32e197d3c613e9" prot="private" virt="non-virtual"><scope>RJFRC2011::Drive</scope><name>_turn_prev</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_drive_1a6633c3e2ff4c7d3803a1b87947d872a3" prot="public" virt="non-virtual"><scope>RJFRC2011::Drive</scope><name>Drive</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_drive_1aa246cbe7cdecc4e72af60d5d9a87bcdb" prot="public" virt="non-virtual"><scope>RJFRC2011::Drive</scope><name>drive</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_drive_1a033624d88429de64fe3d954680157c44" prot="public" virt="non-virtual"><scope>RJFRC2011::Drive</scope><name>drive_noramp</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_drive_1ad816025f2d8dbbed3049f611a6e63a90" prot="public" virt="non-virtual"><scope>RJFRC2011::Drive</scope><name>ramp</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_drive_1a731a3b7d782c3f75287b97db93f489d6" prot="public" virt="non-virtual"><scope>RJFRC2011::Drive</scope><name>tank_drive</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_drive_1aced8eae560776e6e8f063fd29d887cdf" prot="public" virt="non-virtual"><scope>RJFRC2011::Drive</scope><name>~Drive</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

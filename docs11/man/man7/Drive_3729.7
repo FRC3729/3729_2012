@@ -1,0 +1,123 @@
+.TH "RJFRC2011::Drive" 7 "Mon May 30 2011" "RJHS FRC Software Documentation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RJFRC2011::Drive \- 
+.PP
+Class abstracting the drive system.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Drive.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDrive\fP ()"
+.br
+.RI "\fIConstructor. \fP"
+.ti -1c
+.RI "void \fBdrive\fP (float speed, float turn)"
+.br
+.RI "\fI\fBDrive\fP the robot, ramping as you go. \fP"
+.ti -1c
+.RI "void \fBdrive_noramp\fP (float speed, float turn)"
+.br
+.RI "\fI\fBDrive\fP without ramping. Used ONLY in \fBAutonomous\fP, since we don't trust our drivers ;) \fP"
+.ti -1c
+.RI "void \fBtank_drive\fP (float left, float right)"
+.br
+.RI "\fI\fBDrive\fP robot from values given for the speed of each wheel; used in autonomous. Regrettably, no ramping here; however, since it won't be sporadic, we don't need it. \fP"
+.ti -1c
+.RI "float \fBramp\fP (float desired_output, float current_output)"
+.br
+.RI "\fIA function that 'ramps' input from a joystick to motors so that an overzealous driver doesn't tear up the chassis. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "RobotDrive * \fB_drive\fP"
+.br
+.RI "\fIWPILib-defined class for abstracting the drive mechanism. Our 'Drive' class basically clarifies and ramps the inputs provided by RobotDrive. \fP"
+.ti -1c
+.RI "float \fB_speed_prev\fP"
+.br
+.RI "\fIThe last sent speed value (used for ramping). \fP"
+.ti -1c
+.RI "float \fB_turn_prev\fP"
+.br
+.RI "\fIThe last sent turn value (used for ramping). \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class abstracting the drive system. 
+
+Basically a wrapper for the WPILib-defined \fIRobotDrive\fP class, with our own fancy ramping capabilities put in. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RJFRC2011::Drive::Drive ()"
+.PP
+Constructor. Initialize the drive system to work with Jaguars on ports \fIDRIVE_FRONT_LEFT_JAGUAR_PORT\fP , \fIDRIVE_FRONT_RIGHT_JAGUAR_PORT\fP , \fIDRIVE_BACK_LEFT_JAGUAR_PORT\fP , and \fIDRIVE_BACK_RIGHT_JAGUAR_PORT\fP . 
+.SH "Member Function Documentation"
+.PP 
+.SS "void RJFRC2011::Drive::drive (floatspeed, floatturn)"
+.PP
+\fBDrive\fP the robot, ramping as you go. \fBParameters:\fP
+.RS 4
+\fIspeed\fP The user-requested speed 
+.br
+\fIturn\fP The user-requested turn
+.RE
+.PP
+\fBDrive\fP the robot with the \fIRobotDrive.Drive(speed, turn)\fP function UNLESS the user wants to do a dead turn (by pushing a stick directly to the left or right), in which case we use the \fIRobotDrive.TankDrive(left, right)\fP function. 
+.SS "void RJFRC2011::Drive::drive_noramp (floatspeed, floatturn)"
+.PP
+\fBDrive\fP without ramping. Used ONLY in \fBAutonomous\fP, since we don't trust our drivers ;) \fBParameters:\fP
+.RS 4
+\fIspeed\fP The requested speed 
+.br
+\fIturn\fP The requested turn
+.RE
+.PP
+\fBDrive\fP the robot with the \fIRobotDrive.Drive(speed, turn)\fP function UNLESS we want to do a dead turn, in which case we use the \fIRobotDrive.TankDrive(left, right)\fP function. 
+.SS "float RJFRC2011::Drive::ramp (floatdesired_output, floatcurrent_output)"
+.PP
+A function that 'ramps' input from a joystick to motors so that an overzealous driver doesn't tear up the chassis. Increase or decrease the sent value gradually based on operator response. With values close to zero, go even more gradually than normal. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdesired_output\fP The output that the operator is trying to send 
+.br
+\fIcurrent_output\fP The current output 
+.br
+\fIincrement\fP The amount by which to increment ramping. Defaults to .005 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the ramped value 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Drew Lazzeri 
+.RE
+.PP
+
+.SS "void RJFRC2011::Drive::tank_drive (floatleft, floatright)"
+.PP
+\fBDrive\fP robot from values given for the speed of each wheel; used in autonomous. Regrettably, no ramping here; however, since it won't be sporadic, we don't need it. \fBParameters:\fP
+.RS 4
+\fIleft\fP Speed of the left motor 
+.br
+\fIright\fP Speed of the right motor 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RJHS FRC Software Documentation from the source code.

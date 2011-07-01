@@ -1,0 +1,63 @@
+/*!
+ \file Teleoperated.h
+ \brief File containing definition of \a Teleoperated class, which is used in the main program during Teleoperated mode to simplify things.
+ \authors Matthew Haney, Drew Lazzeri
+ */
+
+#ifndef _RJHS_FRC_2011_TELEOPERATED_H_
+#define _RJHS_FRC_2011_TELEOPERATED_H_
+
+#include "StateMachine.h"
+#include "macros.h"
+#include "WPILib.h"
+#include "Drive.h"
+#include "Manipulator.h"
+#include "Controller.h"
+
+namespace RJFRC2011
+{
+	/*!
+	 \class Teleoperated : public RJFRC2011::state_machine<void>
+	 \brief Class used to simplify Teleoperated mode.
+	 \details Manages a state machine to iterate through a number of states: gets user input, then feeds it to the other states sequentially.
+	 */
+	class Teleoperated : public RJFRC2011::state_machine<void>
+	{
+	private:
+		//! Pointer to object abstracting drive system
+		Drive * _drive;
+		//! Pointer to object abstracting manipulator
+		Manipulator * _manip;
+		//! Pointer to object abstracting controller
+		Controller * _controller;
+		//! User input: requested manipulator elevation
+		float manipulatorElevation;
+		//! User input: requested drive speed
+		float driveSpeed;
+		//! User input: requested drive turn
+		float driveTurn;
+		//! User input: requested manipulator action
+		float manipulatorAction;
+		//! User input: requested minibot switches
+		int minibotSwitches;
+		//! Used internally (in \a genericCondition()) to manage state switching.
+		int _nextState;
+		//! Used to flag that we want to rotate the tube down (after inputting it).
+		bool rotateTubeDownFlag;
+	public:
+		Teleoperated(Drive * drive, Manipulator * manip, Controller * controller);
+		void initial();					// state 0
+		void getDriverInput();			// state 1
+		void moveRobot();				// state 2
+		void elevateManipulator();		// state 3
+		void inputTube();				// state 4
+		void rotateTube();				// state 5
+		void ejectTube();				// state 6
+		void moveMinobotShelf();		// state 7
+		//! After \a inittial() state, always continue to \a getDriverInput().
+		int initialCondition() { return 1; }
+		int genericCondition();
+	};	
+};
+
+#endif

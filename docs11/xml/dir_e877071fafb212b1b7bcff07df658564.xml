@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="dir_e877071fafb212b1b7bcff07df658564" kind="dir">
+    <compoundname>workspace11/BuiltinDefaultCode/</compoundname>
+    <innerdir refid="dir_791f48bfdc40792f6614cbb4e55761fe">workspace11/BuiltinDefaultCode/PPC603gnu/</innerdir>
+    <innerfile refid="_autonomous_8cpp">Autonomous.cpp</innerfile>
+    <innerfile refid="_autonomous_8h">Autonomous.h</innerfile>
+    <innerfile refid="_axis_camera_8cpp">AxisCamera.cpp</innerfile>
+    <innerfile refid="_axis_camera_params_8cpp">AxisCameraParams.cpp</innerfile>
+    <innerfile refid="_builtin_default_code_8cpp">BuiltinDefaultCode.cpp</innerfile>
+    <innerfile refid="_controller_8cpp">Controller.cpp</innerfile>
+    <innerfile refid="_controller_8h">Controller.h</innerfile>
+    <innerfile refid="_drive_8cpp">Drive.cpp</innerfile>
+    <innerfile refid="_drive_8h">Drive.h</innerfile>
+    <innerfile refid="macros_8h">macros.h</innerfile>
+    <innerfile refid="_manipulator_8cpp">Manipulator.cpp</innerfile>
+    <innerfile refid="_manipulator_8h">Manipulator.h</innerfile>
+    <innerfile refid="_teleoperated_8cpp">Teleoperated.cpp</innerfile>
+    <innerfile refid="_teleoperated_8h">Teleoperated.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/"/>
+  </compounddef>
+</doxygen>

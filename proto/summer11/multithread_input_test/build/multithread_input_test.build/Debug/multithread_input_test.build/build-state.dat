@@ -1,0 +1,146 @@
+Tmultithread_input_test
+v7
+r0
+t331008922.230880
+cCheck dependencies
+cCompileC build/multithread_input_test.build/Debug/multithread_input_test.build/Objects-normal/x86_64/main.o /Users/matthewhaney/Desktop/multithread_input_test/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cLd /Users/matthewhaney/Desktop/multithread_input_test/build/Debug/multithread_input_test normal x86_64
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004CAA740B00000000000000EE
+t1286239243
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/pthread.h
+c000000004BBD2CE900000000000038F0
+t1270689001
+s14576
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdio.h
+c000000004BBD2CE90000000000004174
+t1270689001
+s16756
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/sys/ioctl.h
+c000000004C239946000000000000116C
+t1277401414
+s4460
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/sys/time.h
+c000000004C2399480000000000001E17
+t1277401416
+s7703
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/sys/types.h
+c000000004C2399480000000000002905
+t1277401416
+s10501
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/termios.h
+c000000004BBD2CE900000000000004D4
+t1270689001
+s1236
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/unistd.h
+c000000004BBD2CE9000000000000563E
+t1270689001
+s22078
+
+N/Users/matthewhaney/Desktop/multithread_input_test/build/Debug/multithread_input_test
+t1309316121
+s73768
+
+N/Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/Objects-normal/x86_64/main.o
+t1309316121
+s255152
+
+N/Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/Objects-normal/x86_64/multithread_input_test.LinkFileList
+c000000004E0A714A0000000000000096
+t1309307210
+s150
+
+N/Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/Objects-normal/x86_64/multithread_input_test.o
+t2
+s0
+
+N/Users/matthewhaney/Desktop/multithread_input_test/env.h
+c000000004E0A7A9000000000000009DE
+t1309309584
+s2526
+i<map>
+i<string>
+i"exception.h"
+
+N/Users/matthewhaney/Desktop/multithread_input_test/exception.h
+c000000004E0A736500000000000002A6
+t1309307749
+s678
+
+N/Users/matthewhaney/Desktop/multithread_input_test/library.h
+c000000004D4A3DB900000000000015C8
+t1296711097
+s5576
+i<string>
+i<iostream>
+i<iterator>
+i<ctime>
+i<cctype>
+i<stdio.h>
+i<unistd.h>
+i<termios.h>
+i<sys/ioctl.h>
+i<sys/time.h>
+i<sys/types.h>
+
+N/Users/matthewhaney/Desktop/multithread_input_test/main.cpp
+c000000004E0A94180000000000000C96
+t1309316120
+s3222
+i<unistd.h>
+i<pthread.h>
+i<iostream>
+i<cmath>
+i"env.h"
+i"library.h"
+i<fstream>
+
+N/Users/matthewhaney/Desktop/multithread_input_test/multithread_input_test.cpp
+c000000004E0A65E600000000000003F8
+t1309304294
+s1016
+i<unistd.h>
+i<pthread.h>
+i<iostream>
+i"env.h"
+i<fstream>
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies331008922#331008922#0(0"0(0#1#0"8618649472#0"0#
+
+CCompileC build/multithread_input_test.build/Debug/multithread_input_test.build/Objects-normal/x86_64/main.o /Users/matthewhaney/Desktop/multithread_input_test/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s331008921.168690
+e331008921.360716
+r1
+xCompileC
+xbuild/multithread_input_test.build/Debug/multithread_input_test.build/Objects-normal/x86_64/main.o
+x/Users/matthewhaney/Desktop/multithread_input_test/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@67"Compile /Users/matthewhaney/Desktop/multithread_input_test/main.cpp331008921#331008921#0(0"0(0#0#59"/Users/matthewhaney/Desktop/multithread_input_test/main.cpp8605783264#1693"    cd /Users/matthewhaney/Desktop/multithread_input_test    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/multithread_input_test-generated-files.hmap -I/Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/multithread_input_test-own-target-headers.hmap -I/Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/multithread_input_test-all-target-headers.hmap -iquote /Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/multithread_input_test-project-headers.hmap -F/Users/matthewhaney/Desktop/multithread_input_test/build/Debug -I/Users/matthewhaney/Desktop/multithread_input_test/build/Debug/include -I/Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/DerivedSources/x86_64 -I/Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/DerivedSources -c /Users/matthewhaney/Desktop/multithread_input_test/main.cpp -o /Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/Objects-normal/x86_64/main.o0#
+
+CCompileC build/multithread_input_test.build/Debug/multithread_input_test.build/Objects-normal/x86_64/multithread_input_test.o /Users/matthewhaney/Desktop/multithread_input_test/multithread_input_test.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+r0
+
+CLd /Users/matthewhaney/Desktop/multithread_input_test/build/Debug/multithread_input_test normal x86_64
+s331008921.360785
+e331008921.383365
+r1
+xLd
+x/Users/matthewhaney/Desktop/multithread_input_test/build/Debug/multithread_input_test
+xnormal
+xx86_64
+lSLF07#2@90"Link /Users/matthewhaney/Desktop/multithread_input_test/build/Debug/multithread_input_test331008921#331008921#0(0"0(0#0#0"8619159968#618"    cd /Users/matthewhaney/Desktop/multithread_input_test    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/matthewhaney/Desktop/multithread_input_test/build/Debug -F/Users/matthewhaney/Desktop/multithread_input_test/build/Debug -filelist /Users/matthewhaney/Desktop/multithread_input_test/build/multithread_input_test.build/Debug/multithread_input_test.build/Objects-normal/x86_64/multithread_input_test.LinkFileList -mmacosx-version-min=10.6 -o /Users/matthewhaney/Desktop/multithread_input_test/build/Debug/multithread_input_test0#
+

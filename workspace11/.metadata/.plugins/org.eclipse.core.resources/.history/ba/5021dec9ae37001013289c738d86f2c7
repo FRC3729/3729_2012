@@ -1,0 +1,71 @@
+/*!
+ /file Autonomous.h
+ /brief File containing definition of \a Autonomous class, which is used within the \a AutomonousPeriodic function in the main program to simplify things.
+ /authors Matthew Haney, Drew Lazzeri
+ 
+ */
+
+#ifndef _RJHS_FRC_2011_AUTONOMOUS_H
+#define _RJHS_FRC_2011_AUTONOMOUS_H
+
+#include "StateMachine.h"
+#include "Drive.h"
+#include "Manipulator.h"
+
+namespace RJFRC2011
+{
+	class Autonomous : public RJFRC2011::state_machine
+	{
+		enum { AUTO_DRIVE_SPEED = 10 };
+	private:
+		//! The starting lane of the robot; 1 for center, 0 for left or right.
+		UINT8 lane;
+		//! If we're in the center lane: do we go left or right at the fork?
+		char forkDirection;
+		//! Speed of line following
+		float follow_speed;
+		//! Turn of line following
+		float turn;
+		
+		Drive * _drive;
+		Manipulator * _manip;
+		Controller * _controller;
+		
+		//! Leftmost light sensor
+		DigitalInput * lightSensorLeft;
+		//! Center light sensor
+		DigitalInput * lightSensorCenter;
+		//! Rightmost light sensor
+		DigitalInput * lightSensorRight;
+		//! Stores values read by light sensor
+		UINT8 lightVals;
+		
+		//! Physical switch controlling which lane our robot starts out in
+		DigitalInput * autonomousLaneSwitch;
+		//! Physical switch controlling which direction our robot is to take if it's in the center lane
+		DigitalInput * autonomousForkSwitch;
+		
+		// States
+		void initialState();		// state 0
+		void checkForLines();		// state 1
+		void move();				// state 2
+		void correctRight();		// state 3
+		void correctLeft();			// state 4
+		void placeTube();			// state 5
+		void retreat();				// state 6
+		
+		// Conditions
+		int initialStateCondition() { return 1; }		// Immediately move on to state 1 when finished
+		int checkForLinesCondition();
+		int moveCondition() { return 1; }
+		int correctRightCondition() { return 2; }
+		int correctLeftCondition() { return 2; }
+		int placeTubeCondition() { return 6; }
+		int retreatCondition() { return -1; }			// Never switch from this state once you're in it
+	public:
+		Autonomous(Drive * drive, Manipulator * manip, Controller * controller);
+		~Autonomous();
+	};
+};
+
+#endif

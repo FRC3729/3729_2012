@@ -1,0 +1,113 @@
+/*!
+ \file Teleoperated.cpp
+ \brief File containing definitions of functions declared in class \a Teleoperated (declared in Teleoperated.h).
+ \authors Matthew Haney, Drew Lazzeri
+ */
+
+#include "Teleoperated.h"
+using namespace RJFRC2011;
+/*!
+ \brief Construct from a drive system, a manipulator, and a controller.
+ \details Set up pointers to passed adresses.  Initialize state and condition pointers.
+ */
+RJFRC2011::Teleoperated::Teleoperated(Drive * drive, Manipulator * manip, Controller * controller, DriverStationLCD * screen)
+{
+	this->_drive = drive;
+	this->_manip = manip;
+	this->_controller = controller;
+	this->_screen = screen;
+	this->minibotShelf = new Relay(MINIBOT_SHELF_RELAY_PORT, Relay::kBothDirections);
+}
+
+//! Destructor.
+RJFRC2011::Teleoperated::~Teleoperated()
+{
+	delete minibotShelf;
+}
+
+/*!
+ \brief Set up for Teleoperated mode.
+ \details Set all input values to zero.
+ */
+void RJFRC2011::Teleoperated::Init()					// state 0
+{
+	manipulatorElevation = driveSpeed = driveTurn;
+	manipulatorAction = 0;
+	minibotSwitches = 0;
+	_nextState = 1;
+	rotateTubeDownFlag = false;
+}
+
+void RJFRC2011::Teleoperated::Go()
+{
+	// Get driver input
+	manipulatorElevation = this->_controller->getManipulatorElevation();
+	driveSpeed = this->_controller->getDriveSpeed();
+	driveTurn = this->_controller->getDriveTurn();
+	manipulatorAction = this->_controller->getManipulatorAction();
+	minibotSwitches = this->_controller->getMinibotSwitches();
+	
+	// Move robot
+	this->_drive->drive(driveSpeed, driveTurn);
+	
+	// Elevate manipulator
+	if ((manipulatorElevation > 0.35) || (manipulatorElevation < -0.35))
+		this->_manip->elevate(manipulatorElevation);
+	else
+		this->_manip->stopManipulatorElevation();
+	this->_screen->PrintfLine(DriverStationLCD::kUser_Line3, float2str(manipulatorElevation).c_str());
+	this->_screen->PrintfLine(DriverStationLCD::kUser_Line4, int2str(manipulatorAction).c_str());
+	
+	// Input tube
+	if (manipulatorAction == 3)
+	{
+		this->_manip->inputTube();
+	}
+	else if (manipulatorAction == 0)
+	{
+		this->_manip->stopManipulatorAction();
+	}
+	
+	// Rotate tube
+	if (manipulatorAction == 2)
+	{
+		this->_manip->rotateTube();
+	}
+	
+	// Eject tube
+	if (manipulatorAction == 1)
+		this->_manip->ejectTube();
+	
+	// Move minibot
+	if (minibotSwitches == 2)						// 10
+	{
+		minibotShelf->Set(Relay::kForward);			// Set the relay to forward if the right switch is on...
+	}
+	else if (minibotSwitches == 1)					// 01
+	{
+		minibotShelf->Set(Relay::kReverse);			// ...forward if the left switch is on...
+	}
+	else if (minibotSwitches == 0)					// 00
+	{
+		minibotShelf->Set(Relay::kOff);				// ..or off if the switch is off
+	}
+	else//if (minibotSwitches == 3)					// 11
+	{
+		minibotShelf->Set(Relay::kOff);
+	}
+}
+
+string RJFRC2011::Teleoperated::float2str(float val)
+{
+	ostringstream out("");
+	out << val;
+	return out.str();
+}
+
+string RJFRC2011::Teleoperated::int2str(int val)
+{
+	ostringstream out("");
+	out << val;
+	return out.str();
+}
+

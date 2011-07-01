@@ -1,0 +1,67 @@
+/*!
+ \file Autonomous.h
+ \brief File containing definition of \a Autonomous class, which is used within the \a AutomonousPeriodic function in the main program to simplify things.
+ \authors Matthew Haney, Drew Lazzeri
+ 
+ */
+
+#ifndef _RJHS_FRC_2011_AUTONOMOUS_H
+#define _RJHS_FRC_2011_AUTONOMOUS_H
+
+#include "StateMachine.h"
+#include "Drive.h"
+#include "Manipulator.h"
+#include "Controller.h"
+
+namespace RJFRC2011
+{
+	class Autonomous
+	{
+	private:
+		//! The starting lane of the robot; 1 for center, 0 for left or right.
+		UINT8 lane;
+		//! If we're in the center lane: do we go left or right at the fork?
+		char forkDirection;
+		int _currentState;
+		
+		//! Pointer to object abstracting drive mechanism
+		Drive * _drive;
+		//! Pointer to object abstracting manipulator
+		Manipulator * _manip;
+		//! Pointer to object abstracting controller
+		Controller * _controller;
+		
+		// Light sensor variables
+		//! Pointer to object interfacing with leftmost light sensor
+		DigitalInput * lightSensorLeft;
+		//! Pointer to object interfacing with center light sensor
+		DigitalInput * lightSensorCenter;
+		//! Pointer to object interfacing with rightmost light sensor
+		DigitalInput * lightSensorRight;
+		UINT8 lightLeft, lightCenter, lightRight;
+		
+		//! Physical switch controlling which lane our robot starts out in
+		DigitalInput * autonomousLaneSwitch;
+		//! Physical switch controlling which direction our robot is to take if it's in the center lane
+		DigitalInput * autonomousForkSwitch;
+		
+		// States
+		void initialState();		// state 0
+		void checkForLines();		// state 1
+		void move();				// state 2
+		void correctRight();		// state 3
+		void correctLeft();			// state 4
+		void placeTube();			// state 5
+		void retreat();				// state 6
+		
+		int getNextState();
+	public:
+		Autonomous(Drive * drive, Manipulator * manip, Controller * controller);
+		~Autonomous();
+		void Go();
+		void Init();
+		void testLightSensors();
+	};
+};
+
+#endif

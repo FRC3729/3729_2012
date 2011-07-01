@@ -1,0 +1,425 @@
+/*!
+ \file BuiltinDefaultCode.cpp
+ \brief The file containing the class BuiltinDefaultCode.  We didn't bother changing the name...
+ 
+ */
+
+// NOTICE: We've decided agianst the CAN network, as it would take a while to set up and we don't need those 4 extra PWM ports for anything else anyway.
+
+// Adjustment macros by Adam Bryant
+//! Adjustment for the fact that the joystick is slightly off-center
+#define YCENTER (0.03125)
+
+//! Adjustment for the fact that the joystick is slightly off-center
+#define ROTCENTER (0.0156)
+//! Minimum possible X value
+#define XMIN -0.641
+//! Maximum possible X value
+#define XMAX 0.648
+//! Minimum possible Y value
+#define YMIN (-0.57-YCENTER)
+//! Maximum possilble Y value
+#define YMAX (0.641-YCENTER)
+//! Minimum possible Z value
+#define ZMIN (-0.54)
+//! Maximum possible Z value
+#define ZMAX (0.63)
+//! Minimum possible rotation value
+#define ROTMIN (-0.64-ROTCENTER)
+//! Maximum possible rotation value
+#define ROTMAX (0.68-ROTCENTER)
+//! Exponential constant for modifying input from the x-axis
+#define XEXPO 0.4
+//! Exponential constant for modfying input from the y-axis
+#define YEXPO 0.4
+//! Exponential constant for modifying input form the rotational axis
+#define ROTEXPO 0.6
+
+// Port # constants: Digital I/O
+//! Port # for the physical lane choosing switch in Autonomous.  ALSO: Is using this switch really necessary?  Could we just hard-code the thing?
+#define AUTONOMOUS_LANE_SWITCH_PORT 6
+//! Port # for the physical fork choosing switch in Autonomous.  ALSO: Is using this switch really necessary?  Could we just hard-code the thing?
+#define AUTONOMOUS_FORK_SWITCH_PORT 7
+//! Port # for the relay controlling the minbot shelf
+#define MINIBOT_SHELF_RELAY_PORT 1
+//! Port # for the relay controlling the top wheels of the manipulator
+#define MANIPULATOR_TOP_RELAY_PORT 2
+//! Port # for the relay controlling the bottom wheels of the manipulator
+#define MANIPULATOR_BOTTOM_RELAY_PORT 3
+//! Port # for the relay controlling elevation of the manipulator
+#define MANIPULATOR_ELEVATION_RELAY_PORT 4
+//! Port # for the limit switch at the top of the manipulator elevator's reach.  ALSO: Is using this really necessary?  Could it just be operator-controlled?  Less safe that way, but simpler...
+#define MANIPULATOR_ELEVATION_TOP_LIMIT_SWITCH_PORT	4
+//! Port # for the limit switch at the bottom of the manipulator elevator's reach.  ALSO: Is using this really necessary?  Could it just be operator-controlled?  Less safe that way, but simpler...
+#define MANIPULATOR_ELEVATION_BOTTOM_LIMIT_SWITCH_PORT 5
+//! Port # of the leftmost line-following light sensor
+#define LIGHT_SENSOR_LEFT_PORT 1
+//! Port # of the center line-following light sensor
+#define LIGHT_SENSOR_CENTER_PORT 2
+//! Port # of the rightmost line-following light sensor
+#define LIGHT_SENSOR_RIGHT_PORT	3
+
+// Port # constants: PWM out
+//! Port # of the front left Jaguar on the drive train
+#define DRIVE_FRONT_LEFT_JAGUAR_PORT 5
+//! Port # of the front right Jaguar on the drive train
+#define DRIVE_FRONT_RIGHT_JAGUAR_PORT 7
+//! Port # of the back left Jaguar on the drive train
+#define DRIVE_BACK_LEFT_JAGUAR_PORT	6
+//! Port # of the back right Jaguar on the drive train
+#define DRIVE_BACK_RIGHT_JAGUAR_PORT 8
+
+// Others
+//! The default expiration time of the Watchdog timer, in seconds
+#define DEFAULT_WATCHDOG_TIME (0.75)
+
+#include "WPILib.h"
+#include "Autonomous.h"
+//#include "Teleoperated.h"
+using namespace RJFRC2011;
+
+/*! \class BuiltinDefaultCode : public IterativeRobot
+ \brief Our big class that does everything.  We didn't bother renaming it.
+ 
+ For those of you reading this who are unfamiliar with C++, this 'class' actually abstracts all of the features of a robot.  For example, on line 45 we give it a drive system.  On line 66 we connect it to a driver station (or, at least, say that we will later on).
+ */
+class BuiltinDefaultCode : public IterativeRobot
+{
+private:
+	//! Variable abstracting drive system
+	RobotDrive * drive;
+	
+	//! Forwards/backwards relay controlling minobot shelf extension
+	Relay * minibotShelf;
+	//! Forwards/backwards relay controlling motion of the top arm of the manipulator
+	Relay * manipulatorTop;
+	//! Forwards/backwards relay controlling motion of the bottom arm of the manipulator
+	Relay * manipulatorBottom;
+	//! Forwards/backwards relay controlling position of the manipulator
+	Relay * manipulatorElevation;
+	
+	//! Limit switch at the bottom of the manipulator elevator
+	DigitalInput * manipulatorElevationBottomLimitSwitch;
+	//! Limit switch at the top of the manipulator elevator
+	DigitalInput * manipulatorElevationTopLimitSwitch;
+	
+	//! Object abstracting the driver station
+	DriverStation * ds;
+	
+	//! Object interfacing with a controller connected to a USB port on the classmate laptop (AKA the driver station)
+	Joystick *controller;
+	
+	// State machine variables
+	//! Current state of autonomous machine
+	UINT8 auto_state;
+	//! Autonomous state machine
+	Autonomous auto_machine;
+	//! Current state of teleoperated machine
+	UINT8 teleop_state;
+	//! Teleoperated state machine
+	//Teleoperated teleop_machine;
+	
+	// Teleoperated variables
+	//! X value read by controller (left stick)
+	float x_l;
+	float x_l_prev;
+	//! Y value read by controller (left stick)
+	float y_l;
+	float y_l_prev;
+	//! X value read by controller (right stick)
+	float x_r;
+	//! Y value read by controller (right stick)
+	float y_r;
+	//! Value of left trigger switch
+	UINT8 leftSwitch;
+	//! Value of right trigger switch
+	UINT8 rightSwitch;
+	//! Keep track of when to rotate the tube down
+	bool ManipulatorDownFlag;
+	
+public:
+	/*!
+	 * \brief Constructor for this "BuiltinDefaultCode" Class.
+	 * 
+	 * The constructor creates all of the objects used for the different inputs and outputs of
+	 * the robot.  Essentially, the constructor defines the input/output mapping for the robot,
+	 * providing named objects for each of the robot interfaces. 
+	 */
+	BuiltinDefaultCode(void)
+	{
+		// Create a robot using standard right/left robot drive on PWMS 1, 2, 3, and #4
+		drive = new RobotDrive(DRIVE_FRONT_LEFT_JAGUAR_PORT, DRIVE_FRONT_RIGHT_JAGUAR_PORT, DRIVE_BACK_LEFT_JAGUAR_PORT, DRIVE_BACK_RIGHT_JAGUAR_PORT);
+		
+		// Set up relays
+		minibotShelf = new Relay(MINIBOT_SHELF_RELAY_PORT, Relay::kBothDirections);
+		manipulatorTop = new Relay(MANIPULATOR_TOP_RELAY_PORT, Relay::kBothDirections);
+		manipulatorBottom = new Relay(MANIPULATOR_BOTTOM_RELAY_PORT, Relay::kBothDirections);
+		manipulatorElevation = new Relay(MANIPULATOR_ELEVATION_RELAY_PORT, Relay::kBothDirections);
+		
+		// Set up digital inputs
+		manipulatorElevationBottomLimitSwitch = new DigitalInput(MANIPULATOR_ELEVATION_BOTTOM_LIMIT_SWITCH_PORT);
+		manipulatorElevationTopLimitSwitch = new DigitalInput(MANIPULATOR_ELEVATION_TOP_LIMIT_SWITCH_PORT);
+		
+		// Acquire the Driver Station object
+		ds = DriverStation::GetInstance();
+		
+		// Define joysticks being used at USB port #1 and USB port #2 on the Drivers Station
+		controller = new Joystick(1);
+		
+		lane = 0;		// Let's optimistically assume that we're in the left or right lane
+		ManipulatorDownFlag = false;
+		x_l = y_l = x_r = y_r = x_l_prev = y_l_prev = 0.0;
+		teleop_state = auto_state = 0;
+		follow_speed = 0.4;
+	}
+	
+	//! Destructor.  Called when a class object expires.  Used so we don't waste memory.
+	~BuiltinDefaultCode()
+	{
+		// Clean up at end of match
+		RJRobotEnd();
+		delete drive;
+		delete controller;
+		delete minibotShelf;
+		delete manipulatorTop;
+		delete manipulatorBottom;
+		delete manipulatorElevation;
+		delete manipulatorElevationTopLimitSwitch;
+		delete manipulatorElevationBottomLimitSwitch;
+	}
+	
+	//! Clean up at end of match.
+	void RJRobotEnd(void)
+	{
+		GetWatchdog().SetExpiration(3.0);
+		minibotShelf->Set(Relay::kReverse);
+		Wait(2);
+		minibotShelf->Set(Relay::kOff);
+		manipulatorElevation->Set(Relay::kReverse);
+		while (manipulatorElevationBottomLimitSwitch->Get() != 1) { continue; }
+		manipulatorElevation->Set(Relay::kOff);
+		manipulatorTop->Set(Relay::kOff);
+		manipulatorBottom->Set(Relay::kOff);
+		drive->Drive(0, 0);
+	}
+	
+	/********************************** Init Routines *************************************/
+	
+	//! Actions which would be performed once (and only once) upon initialization of the robot are put here
+	void RobotInit(void)
+	{
+		GetWatchdog().SetExpiration(DEFAULT_WATCHDOG_TIME);
+		// Actions which would be performed once (and only once) upon initialization of the
+		// robot would be put here.
+	}
+	
+	//! Code called at the beginning of Disabled Mode
+	void DisabledInit(void)
+	{
+		GetWatchdog().Feed();
+	}
+	
+	//! Code called at the beginning of Autonomous Mode
+	void AutonomousInit(void)
+	{
+		GetWatchdog().Feed();
+	}
+	
+	//! Code called at the beginning of Teleoperated Mode
+	void TeleopInit(void)
+	{
+		GetWatchdog().Feed();
+		x_l_prev = 0;
+		y_l_prev = 0;
+	}
+	
+	/********************************** Periodic Routines *************************************/
+	
+	//! The code called in a loop during Disabled Mode.  Left as the default, minus the loop counter.
+	void DisabledPeriodic(void)
+	{
+		GetWatchdog().Feed();
+		// Basically, sit idle and keep the watchdog running.
+	}
+	
+	//! The code called in a loop during Autonomous Mode
+	void AutonomousPeriodic(void)
+	{
+		GetWatchdog().Feed();
+	}
+	
+	//! The code called in a loop during Teleoperated Mode
+	void TeleopPeriodic(void)
+	{
+		GetWatchdog().Feed();
+		// X-axis left; turn
+		x_l = expo(normalize(controller->GetX(), XMIN, XMAX), XEXPO);
+		// Y-axis left; speed
+		y_l = expo(normalize(controller->GetY(), YMIN, YMAX) * -1.0, YEXPO);
+		// X-axis right; manipulator receive/eject controls
+		x_r = normalize(controller->GetZ(), ZMIN, ZMAX) * -1.0;							// No expo for these; don't really need it
+		// yY-axis right; manipulator elevation controls
+		y_r = normalize(controller->GetRawAxis(5), ROTMIN, ROTMAX);
+		// Right trigger switch; minibot deployment
+		rightSwitch = controller->GetRawButton(2);
+		// Left trigger switch; ?
+		leftSwitch = controller->GetRawButton(1);
+		
+		// ramp x_l and y_l
+		x_l = ramp(x_l, x_l_prev);
+		y_l = ramp(y_l, y_l_prev);
+		// drive with y_l for speed and x_l for turn
+		drive->Drive(y_l, x_l);
+		// move shelf up/down with y_r
+		// if user wants to go up, and we haven't hit the top limit switch yet, go up
+		if (y_r > 0.35)// && manipulatorElevationTopLimitSwitch->Get() != 1)
+		{
+			manipulatorElevation->Set(Relay::kForward);
+		}
+		// if user wants to go down, and we haven't hit the bottom limit switch yet, go down
+		else if (y_r < -0.35)// && manipulatorElevationBottomLimitSwitch->Get() != 1)
+		{
+			manipulatorElevation->Set(Relay::kReverse);
+		}
+		// if no response from driver, turn it off
+		else
+		{
+			manipulatorElevation->Set(Relay::kOff);
+		}
+		
+		// manipulator controls
+		if (x_r > 0.35)
+		{
+			ManipulatorDownFlag = true;					// flag that, when user is done inputting, we want to rotate the tube down
+			manipulatorTop->Set(Relay::kReverse);		// top part forward
+			manipulatorBottom->Set(Relay::kReverse);	// bottom part backward
+		}
+		else if (x_r < -0.35)
+		{
+			manipulatorTop->Set(Relay::kForward);		// top part forward
+			manipulatorBottom->Set(Relay::kForward);	// bottom part backward
+		}
+		else if ((x_r < 0.35) && (x_r > -0.35))
+		{
+			manipulatorBottom->Set(Relay::kOff);		// turn things off
+			manipulatorTop->Set(Relay::kOff);			// ditto
+		}
+		
+		// rotate tube down
+		if (ManipulatorDownFlag == true && (x_r < 0.35) && (x_r > -0.35))	// go here ONLY if user has flagged that tube is ready AND the relays are off (done inputting; right joystick has zero X)
+		{
+			manipulatorTop->Set(Relay::kForward);		// turn top part forward
+			manipulatorBottom->Set(Relay::kReverse);	//turn bottom part forward
+			GetWatchdog().Feed();				// this next bit: wait for a whole second, but don't trigger the watchdog
+			GetWatchdog().SetExpiration(1);					// (normally set to expire @ .75 seconds)
+			Wait(0.75);	// EDIT TIME NEEDED HERE
+			GetWatchdog().Feed();
+			GetWatchdog().SetExpiration(DEFAULT_WATCHDOG_TIME);
+			manipulatorBottom->Set(Relay::kOff);		// turn top part off
+			manipulatorTop->Set(Relay::kOff);			// turn bottom part off
+			ManipulatorDownFlag = false;				// no longer needed
+		}
+		// minibot controls
+		if (rightSwitch == 1 && leftSwitch == 0)
+		{
+			minibotShelf->Set(Relay::kForward);			// Set the relay to forward if the right switch is on...
+		}
+		else if (leftSwitch == 1 && rightSwitch == 0)
+		{
+			minibotShelf->Set(Relay::kReverse);			// ...forward if the left switch is on...
+		}
+		else if (rightSwitch == 0 && leftSwitch == 0)
+		{
+			minibotShelf->Set(Relay::kOff);				// ..or off if the switch is off
+		}
+		else
+		{
+			minibotShelf->Set(Relay::kOff);
+		}
+		// We back up the shelf in the destructor
+		
+		// set previous left X and Y values (for ramping function)
+		x_l_prev = x_l;
+		y_l_prev = y_l;
+		Wait(0.1);
+	}
+	
+	//! A function that "ramps" input from a joystick to motors so that an overzealous driver doesn't tear up the chassis
+	/*!
+	 \param desired_output The output that the operator is trying to send
+	 \param current_output The current output
+	 \param increment The amount by which to increment ramping.  Defaults to .005
+	 \return the ramped value
+	 \author Drew Lazzeri
+	 */
+	float ramp(float desired_output, float current_output)
+	{
+		float increment = .1;
+		if (desired_output  <= .1 && desired_output >= -.1);
+		    increment = .05;
+		if (desired_output < current_output)
+		{
+			return current_output - increment;//(desired_output * increment);
+		}    
+		else if (desired_output > current_output)
+		{    
+			return /*(desired_output * increment)*/increment + current_output;
+		}
+		else
+		{
+			return current_output;
+		}
+	}
+	//! A function that "normalizes" inputs from the joysticks (because they don't give perfect -1.0 to 1.0 values).
+	/*!
+	 \param joyVal the input from the joystick
+	 \param min the minimun joystick value
+	 \param max the maximum joystick value
+	 \return the normalized value
+	 \author Adam Bryant
+	 */
+	float normalize(double joyVal, double min, double max)
+    {
+        double retVal = 0.0;
+		
+        if (joyVal < 0.0)
+            retVal = abs(joyVal) / min;
+        else if (joyVal > 0.0)
+            retVal = abs(joyVal) / max;
+        if (retVal < -1.0)
+            retVal = -1.0;
+        else if (retVal > 1.0)
+            retVal = 1.0;
+		
+        return retVal;
+    }
+	//! An exponential function used to make joysticks less sensitive near the center and more sensitive towards the edges
+	/*!
+	 \param x the value to be exponentiated
+	 \param a a predefined exponential factor
+	 \return the "expo-ed" value
+	 \author Adam Bryant
+	 */
+	float expo(float x, float a)
+    {
+        return (a * (x * x * x) + (1 - a) * x);
+    }
+	
+	//! Absolute value of a float, since I'm not sure if we can import the <cmath> library onto the cRIO
+	/*!
+	 \param initial the initial value
+	 \return the absolute value of the passed value; if it's negative, make it positive
+	 \author Matthew Haney
+	 */
+	float abs(float initial)
+	{
+		if (initial < 0)
+			return (initial * -1.0);
+		else if (initial > 0)
+			return initial;
+		else 
+			return 0.0;
+	}
+};
+
+START_ROBOT_CLASS(BuiltinDefaultCode);

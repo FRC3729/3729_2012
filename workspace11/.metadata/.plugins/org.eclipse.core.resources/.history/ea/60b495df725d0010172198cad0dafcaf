@@ -1,0 +1,30 @@
+#include "WPILib.h"
+
+class RoboDemo : public SimpleRobot
+{
+public:
+	RoboDemo(void)
+	{
+		
+	}
+	
+	void OperatorControl(void)
+	{
+		Wait(8.0);
+		AxisCamera & cam = AxisCamera::GetInstance();
+		cam.WriteCompression(30);
+		//cam.WriteBrightness(?);
+		cam.WriteMaxFPS(30);
+		cam.WriteExposureControl(AxisCamera::kExposure_Automatic);
+		cam.WriteWhiteBalance(AxisCamera::kWhiteBalance_FixedIndoor);
+		HSLImage * image;
+		
+		while (isOperatorControl())
+		{
+			if (cam.IsFreshImage())
+				image = cam.GetImage();
+		}
+	}
+};
+
+START_ROBOT_CLASS(RoboDemo);

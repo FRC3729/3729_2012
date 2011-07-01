@@ -1,0 +1,94 @@
+\contentsline {chapter}{\numberline {1}Class Index}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Class List}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}File Index}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}File List}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}Class Documentation}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}RJFRC2011::Autonomous Class Reference}{5}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Detailed Description}{7}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Constructor \& Destructor Documentation}{7}{subsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.2.1}Autonomous}{7}{subsubsection.3.1.2.1}
+\contentsline {subsection}{\numberline {3.1.3}Member Function Documentation}{8}{subsection.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.3.1}checkForLines}{8}{subsubsection.3.1.3.1}
+\contentsline {subsubsection}{\numberline {3.1.3.2}correctLeft}{8}{subsubsection.3.1.3.2}
+\contentsline {subsubsection}{\numberline {3.1.3.3}correctRight}{8}{subsubsection.3.1.3.3}
+\contentsline {subsubsection}{\numberline {3.1.3.4}flip}{8}{subsubsection.3.1.3.4}
+\contentsline {subsubsection}{\numberline {3.1.3.5}Go}{8}{subsubsection.3.1.3.5}
+\contentsline {subsubsection}{\numberline {3.1.3.6}initialState}{8}{subsubsection.3.1.3.6}
+\contentsline {subsubsection}{\numberline {3.1.3.7}move}{9}{subsubsection.3.1.3.7}
+\contentsline {subsubsection}{\numberline {3.1.3.8}placeTube}{9}{subsubsection.3.1.3.8}
+\contentsline {section}{\numberline {3.2}BuiltinDefaultCode Class Reference}{9}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Detailed Description}{11}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Constructor \& Destructor Documentation}{11}{subsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2.1}BuiltinDefaultCode}{11}{subsubsection.3.2.2.1}
+\contentsline {section}{\numberline {3.3}RJFRC2011::Controller Class Reference}{11}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Detailed Description}{13}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Constructor \& Destructor Documentation}{13}{subsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.2.1}Controller}{13}{subsubsection.3.3.2.1}
+\contentsline {subsection}{\numberline {3.3.3}Member Function Documentation}{13}{subsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.3.1}abs}{13}{subsubsection.3.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.3.2}expo}{13}{subsubsection.3.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3.3}getDriveSpeed}{14}{subsubsection.3.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.3.4}getDriveTurn}{14}{subsubsection.3.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.3.5}getManipulatorAction}{14}{subsubsection.3.3.3.5}
+\contentsline {subsubsection}{\numberline {3.3.3.6}getManipulatorElevation}{15}{subsubsection.3.3.3.6}
+\contentsline {subsubsection}{\numberline {3.3.3.7}getMinibotSwitches}{15}{subsubsection.3.3.3.7}
+\contentsline {subsubsection}{\numberline {3.3.3.8}normalize}{15}{subsubsection.3.3.3.8}
+\contentsline {section}{\numberline {3.4}RJFRC2011::Drive Class Reference}{16}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Detailed Description}{17}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Constructor \& Destructor Documentation}{17}{subsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.2.1}Drive}{17}{subsubsection.3.4.2.1}
+\contentsline {subsection}{\numberline {3.4.3}Member Function Documentation}{17}{subsection.3.4.3}
+\contentsline {subsubsection}{\numberline {3.4.3.1}drive}{17}{subsubsection.3.4.3.1}
+\contentsline {subsubsection}{\numberline {3.4.3.2}drive\_\discretionary {-}{}{}noramp}{17}{subsubsection.3.4.3.2}
+\contentsline {subsubsection}{\numberline {3.4.3.3}ramp}{18}{subsubsection.3.4.3.3}
+\contentsline {subsubsection}{\numberline {3.4.3.4}tank\_\discretionary {-}{}{}drive}{18}{subsubsection.3.4.3.4}
+\contentsline {section}{\numberline {3.5}RJFRC2011::Manipulator Class Reference}{18}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Detailed Description}{20}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Constructor \& Destructor Documentation}{20}{subsection.3.5.2}
+\contentsline {subsubsection}{\numberline {3.5.2.1}Manipulator}{20}{subsubsection.3.5.2.1}
+\contentsline {subsection}{\numberline {3.5.3}Member Function Documentation}{20}{subsection.3.5.3}
+\contentsline {subsubsection}{\numberline {3.5.3.1}ejectTube}{20}{subsubsection.3.5.3.1}
+\contentsline {subsubsection}{\numberline {3.5.3.2}elevate}{20}{subsubsection.3.5.3.2}
+\contentsline {subsubsection}{\numberline {3.5.3.3}GetBottomLimitSwitchAddress}{21}{subsubsection.3.5.3.3}
+\contentsline {subsubsection}{\numberline {3.5.3.4}GetTopLimitSwitchAddress}{21}{subsubsection.3.5.3.4}
+\contentsline {subsubsection}{\numberline {3.5.3.5}inputTube}{21}{subsubsection.3.5.3.5}
+\contentsline {subsubsection}{\numberline {3.5.3.6}rotateTube}{21}{subsubsection.3.5.3.6}
+\contentsline {subsubsection}{\numberline {3.5.3.7}stopManipulatorAction}{21}{subsubsection.3.5.3.7}
+\contentsline {subsubsection}{\numberline {3.5.3.8}stopManipulatorElevation}{22}{subsubsection.3.5.3.8}
+\contentsline {section}{\numberline {3.6}RJFRC2011::Teleoperated Class Reference}{22}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Detailed Description}{24}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Constructor \& Destructor Documentation}{24}{subsection.3.6.2}
+\contentsline {subsubsection}{\numberline {3.6.2.1}Teleoperated}{24}{subsubsection.3.6.2.1}
+\contentsline {subsection}{\numberline {3.6.3}Member Function Documentation}{24}{subsection.3.6.3}
+\contentsline {subsubsection}{\numberline {3.6.3.1}Go}{24}{subsubsection.3.6.3.1}
+\contentsline {chapter}{\numberline {4}File Documentation}{25}{chapter.4}
+\contentsline {section}{\numberline {4.1}Autonomous.cpp File Reference}{25}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{25}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}Autonomous.h File Reference}{25}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{26}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.3}AxisCamera.cpp File Reference}{26}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{26}{subsection.4.3.1}
+\contentsline {section}{\numberline {4.4}AxisCameraParams.cpp File Reference}{26}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{27}{subsection.4.4.1}
+\contentsline {section}{\numberline {4.5}BuiltinDefaultCode.cpp File Reference}{27}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{28}{subsection.4.5.1}
+\contentsline {section}{\numberline {4.6}Controller.cpp File Reference}{28}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Detailed Description}{28}{subsection.4.6.1}
+\contentsline {section}{\numberline {4.7}Controller.h File Reference}{28}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Detailed Description}{29}{subsection.4.7.1}
+\contentsline {section}{\numberline {4.8}Drive.cpp File Reference}{29}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}Detailed Description}{29}{subsection.4.8.1}
+\contentsline {section}{\numberline {4.9}Drive.h File Reference}{29}{section.4.9}
+\contentsline {subsection}{\numberline {4.9.1}Detailed Description}{29}{subsection.4.9.1}
+\contentsline {section}{\numberline {4.10}macros.h File Reference}{30}{section.4.10}
+\contentsline {subsection}{\numberline {4.10.1}Detailed Description}{32}{subsection.4.10.1}
+\contentsline {subsection}{\numberline {4.10.2}Function Documentation}{32}{subsection.4.10.2}
+\contentsline {subsubsection}{\numberline {4.10.2.1}topchar}{32}{subsubsection.4.10.2.1}
+\contentsline {section}{\numberline {4.11}Manipulator.cpp File Reference}{33}{section.4.11}
+\contentsline {subsection}{\numberline {4.11.1}Detailed Description}{33}{subsection.4.11.1}
+\contentsline {section}{\numberline {4.12}Manipulator.h File Reference}{33}{section.4.12}
+\contentsline {subsection}{\numberline {4.12.1}Detailed Description}{34}{subsection.4.12.1}
+\contentsline {section}{\numberline {4.13}Teleoperated.cpp File Reference}{34}{section.4.13}
+\contentsline {subsection}{\numberline {4.13.1}Detailed Description}{34}{subsection.4.13.1}
+\contentsline {section}{\numberline {4.14}Teleoperated.h File Reference}{34}{section.4.14}
+\contentsline {subsection}{\numberline {4.14.1}Detailed Description}{35}{subsection.4.14.1}
