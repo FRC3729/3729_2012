@@ -275,28 +275,28 @@
     <detaileddescription>
 <para>Gets user input from two controllers (abstracted as instances of class <emphasis>Joystick</emphasis>), processes said inputs (normalizing joystick values, dead space, etc.), and feeds them to a series of outputs (mainly the <emphasis><ref refid="class_r_j_f_r_c2011_1_1_drive" kindref="compound">Drive</ref></emphasis> class). </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="19">
+      <node id="42">
         <label>RJFRC2011::Teleoperated</label>
         <link refid="class_r_j_f_r_c2011_1_1_teleoperated"/>
-        <childnode refid="20" relation="usage">
+        <childnode refid="43" relation="usage">
           <edgelabel>_controller</edgelabel>
         </childnode>
-        <childnode refid="21" relation="usage">
+        <childnode refid="44" relation="usage">
           <edgelabel>_drive</edgelabel>
         </childnode>
-        <childnode refid="22" relation="usage">
+        <childnode refid="45" relation="usage">
           <edgelabel>_manip</edgelabel>
         </childnode>
       </node>
-      <node id="22">
+      <node id="45">
         <label>RJFRC2011::Manipulator</label>
         <link refid="class_r_j_f_r_c2011_1_1_manipulator"/>
       </node>
-      <node id="20">
+      <node id="43">
         <label>RJFRC2011::Controller</label>
         <link refid="class_r_j_f_r_c2011_1_1_controller"/>
       </node>
-      <node id="21">
+      <node id="44">
         <label>RJFRC2011::Drive</label>
         <link refid="class_r_j_f_r_c2011_1_1_drive"/>
       </node>

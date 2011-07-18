@@ -11,48 +11,48 @@
     <includes local="yes">Synchronized.h</includes>
     <includes local="yes">Timer.h</includes>
     <incdepgraph>
-      <node id="31">
+      <node id="172">
         <label>AxisCameraParams.cpp</label>
         <link refid="AxisCameraParams.cpp"/>
-        <childnode refid="32" relation="include">
+        <childnode refid="173" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="174" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="175" relation="include">
         </childnode>
-        <childnode refid="35" relation="include">
+        <childnode refid="176" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="177" relation="include">
         </childnode>
-        <childnode refid="37" relation="include">
+        <childnode refid="178" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
+        <childnode refid="179" relation="include">
         </childnode>
-        <childnode refid="39" relation="include">
+        <childnode refid="180" relation="include">
         </childnode>
       </node>
-      <node id="39">
+      <node id="180">
         <label>Timer.h</label>
       </node>
-      <node id="33">
+      <node id="174">
         <label>Vision/AxisCamera.h</label>
       </node>
-      <node id="38">
+      <node id="179">
         <label>Synchronized.h</label>
       </node>
-      <node id="35">
+      <node id="176">
         <label>pcre.h</label>
       </node>
-      <node id="34">
+      <node id="175">
         <label>inetLib.h</label>
       </node>
-      <node id="37">
+      <node id="178">
         <label>string.h</label>
       </node>
-      <node id="32">
+      <node id="173">
         <label>Vision/AxisCameraParams.h</label>
       </node>
-      <node id="36">
+      <node id="177">
         <label>sockLib.h</label>
       </node>
     </incdepgraph>

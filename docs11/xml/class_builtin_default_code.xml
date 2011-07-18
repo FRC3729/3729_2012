@@ -347,60 +347,60 @@
     <detaileddescription>
 <para><ref refid="class_builtin_default_code" kindref="compound">BuiltinDefaultCode</ref> is technically the name of the example class that we first opened, but once we started coding we realized that we couldn&apos;t rename the project and didn&apos;t want to reconfigure all the build settings from scratch. So here we are. </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="11">
+      <node id="34">
         <label>RJFRC2011::Teleoperated</label>
         <link refid="class_r_j_f_r_c2011_1_1_teleoperated"/>
-        <childnode refid="8" relation="usage">
+        <childnode refid="31" relation="usage">
           <edgelabel>_controller</edgelabel>
         </childnode>
-        <childnode refid="9" relation="usage">
+        <childnode refid="32" relation="usage">
           <edgelabel>_drive</edgelabel>
         </childnode>
-        <childnode refid="10" relation="usage">
+        <childnode refid="33" relation="usage">
           <edgelabel>_manip</edgelabel>
         </childnode>
       </node>
-      <node id="6">
+      <node id="29">
         <label>BuiltinDefaultCode</label>
         <link refid="class_builtin_default_code"/>
-        <childnode refid="7" relation="usage">
+        <childnode refid="30" relation="usage">
           <edgelabel>auto_machine</edgelabel>
         </childnode>
-        <childnode refid="8" relation="usage">
+        <childnode refid="31" relation="usage">
           <edgelabel>controller</edgelabel>
         </childnode>
-        <childnode refid="11" relation="usage">
+        <childnode refid="34" relation="usage">
           <edgelabel>teleop_machine</edgelabel>
         </childnode>
-        <childnode refid="9" relation="usage">
+        <childnode refid="32" relation="usage">
           <edgelabel>drive</edgelabel>
         </childnode>
-        <childnode refid="10" relation="usage">
+        <childnode refid="33" relation="usage">
           <edgelabel>manipulator</edgelabel>
         </childnode>
       </node>
-      <node id="10">
+      <node id="33">
         <label>RJFRC2011::Manipulator</label>
         <link refid="class_r_j_f_r_c2011_1_1_manipulator"/>
       </node>
-      <node id="8">
+      <node id="31">
         <label>RJFRC2011::Controller</label>
         <link refid="class_r_j_f_r_c2011_1_1_controller"/>
       </node>
-      <node id="7">
+      <node id="30">
         <label>RJFRC2011::Autonomous</label>
         <link refid="class_r_j_f_r_c2011_1_1_autonomous"/>
-        <childnode refid="8" relation="usage">
+        <childnode refid="31" relation="usage">
           <edgelabel>_controller</edgelabel>
         </childnode>
-        <childnode refid="9" relation="usage">
+        <childnode refid="32" relation="usage">
           <edgelabel>_drive</edgelabel>
         </childnode>
-        <childnode refid="10" relation="usage">
+        <childnode refid="33" relation="usage">
           <edgelabel>_manip</edgelabel>
         </childnode>
       </node>
-      <node id="9">
+      <node id="32">
         <label>RJFRC2011::Drive</label>
         <link refid="class_r_j_f_r_c2011_1_1_drive"/>
       </node>

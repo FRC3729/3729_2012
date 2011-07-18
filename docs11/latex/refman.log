@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  23 JUN 2011 17:38
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  17 JUL 2011 19:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1044,65 +1044,76 @@ LaTeX Font Info:    Try loading font information for T1+pcr on input line 12.
 (/usr/local/texlive/2010/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 14.
-LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
-(Font)              scaled to size 10.79993pt on input line 14.
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 17.
+<class_r_j_f_r_c2011_1_1_autonomous__coll__graph.pdf, id=587, 469.755pt x 172.6
+45pt>
+File: class_r_j_f_r_c2011_1_1_autonomous__coll__graph.pdf Graphic file (type pd
+f)
+ <use class_r_j_f_r_c2011_1_1_autonomous__coll__graph.pdf>
+Overfull \hbox (55.0pt too wide) in paragraph at lines 20--22
+ [] 
+ []
 
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 24.
+LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
+(Font)              scaled to size 10.79993pt on input line 24.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 27.
 (/usr/local/texlive/2010/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [5
 
-] [6]
+ <./class_r_j_f_r_c2011_1_1_autonomous__coll__graph.pdf>] [6]
 LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 127.
+(Font)              scaled to size 8.99994pt on input line 137.
 LaTeX Font Info:    Font shape `OT1/phv/bc/it' in size <10> not available
-(Font)              Font shape `OT1/phv/bc/sl' tried instead on input line 127.
+(Font)              Font shape `OT1/phv/bc/sl' tried instead on input line 137.
 
 LaTeX Font Info:    Font shape `OT1/phv/bc/sl' will be
-(Font)              scaled to size 8.99994pt on input line 127.
-
-Overfull \hbox (21.88861pt too wide) in alignment at lines 134--143
+(Font)              scaled to size 8.99994pt on input line 137.
+ [7]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 144--153
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 143
+Underfull \vbox (badness 10000) detected at line 153
  []
 
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 164.
 
-Overfull \vbox (16.75232pt too high) has occurred while \output is active []
-
-
-[7]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 154.
-
- (/usr/local/texlive/2010/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+(/usr/local/texlive/2010/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 
 LaTeX Font Warning: Font shape `OT1/pcr/bc/n' undefined
-(Font)              using `OT1/pcr/m/n' instead on input line 154.
+(Font)              using `OT1/pcr/m/n' instead on input line 164.
 
-
-Overfull \hbox (21.88861pt too wide) in alignment at lines 200--203
+[8]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 210--213
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 203
+Underfull \vbox (badness 10000) detected at line 213
  []
 
-[8]) (./class_builtin_default_code.tex [9] [10])
-(./class_r_j_f_r_c2011_1_1_controller.tex [11]
+) (./class_builtin_default_code.tex
+<class_builtin_default_code__coll__graph.pdf, id=694, 652.4375pt x 306.14375pt>
+File: class_builtin_default_code__coll__graph.pdf Graphic file (type pdf)
+<use class_builtin_default_code__coll__graph.pdf>
+Overfull \hbox (55.0pt too wide) in paragraph at lines 16--18
+ [] 
+ []
+
+[9] [10 <./class_builtin_default_code__coll__graph.pdf>] [11])
+(./class_r_j_f_r_c2011_1_1_controller.tex [12]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
- [12]
+ [13]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 95--98
  [] [] 
  []
@@ -1120,11 +1131,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 120--125
 Underfull \vbox (badness 10000) detected at line 125
  []
 
-
-Overfull \vbox (8.26581pt too high) has occurred while \output is active []
-
-
-[13] [14]
+[14] [15]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 228--235
  [] [] 
  []
@@ -1133,7 +1140,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 228--235
 Underfull \vbox (badness 10000) detected at line 235
  []
 
-) (./class_r_j_f_r_c2011_1_1_drive.tex [15] [16]
+) (./class_r_j_f_r_c2011_1_1_drive.tex [16] [17]
 Overfull \hbox (1.40762pt too wide) in paragraph at lines 64--65
 \T1/ptm/m/it/10 JAGUAR_-PORT \T1/ptm/m/n/10 , \T1/ptm/m/it/10 DRIVE_-FRONT_-RIG
 HT_-JAGUAR_-PORT \T1/ptm/m/n/10 , \T1/ptm/m/it/10 DRIVE_-BACK_-LEFT_-
@@ -1157,10 +1164,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 103--108
 Underfull \vbox (badness 10000) detected at line 108
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [17]
+[18]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 124--131
  [] [] 
  []
@@ -1178,7 +1182,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 153--158
 Underfull \vbox (badness 10000) detected at line 158
  []
 
-) (./class_r_j_f_r_c2011_1_1_manipulator.tex [18] [19]
+) (./class_r_j_f_r_c2011_1_1_manipulator.tex [19] [20]
 Overfull \hbox (3.95738pt too wide) in paragraph at lines 87--88
 \T1/ptm/m/it/10 TOP_-RELAY_-PORT \T1/ptm/m/n/10 , \T1/ptm/m/it/10 MANIPULATOR_-
 BOTTOM_-RELAY_-PORT \T1/ptm/m/n/10 , \T1/ptm/m/it/10 MANIPULATOR_-
@@ -1190,7 +1194,7 @@ Overfull \hbox (27.33745pt too wide) in paragraph at lines 87--88
 ATOR_-ELEVATION_-BOTTOM_-LIMIT_-SWITCH_-
  []
 
-[20]
+
 Overfull \hbox (21.88861pt too wide) in alignment at lines 117--120
  [] [] 
  []
@@ -1199,47 +1203,236 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 117--120
 Underfull \vbox (badness 10000) detected at line 120
  []
 
-[21]) (./class_r_j_f_r_c2011_1_1_teleoperated.tex [22] [23]) [24]
-Chapter 4.
-(./_autonomous_8cpp.tex) (./_autonomous_8h.tex [25
 
-]) (./_axis_camera_8cpp.tex)
-(./_axis_camera_params_8cpp.tex [26]) (./_builtin_default_code_8cpp.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21])
+(./class_r_j_f_r_c2011_1_1_teleoperated.tex [22]
+<class_r_j_f_r_c2011_1_1_teleoperated__coll__graph.pdf, id=913, 469.755pt x 172
+.645pt>
+File: class_r_j_f_r_c2011_1_1_teleoperated__coll__graph.pdf Graphic file (type 
+pdf)
+ <use class_r_j_f_r_c2011_1_1_teleoperated__coll__graph.pdf>
+Overfull \hbox (55.0pt too wide) in paragraph at lines 20--22
+ [] 
+ []
+
+[23 <./class_r_j_f_r_c2011_1_1_teleoperated__coll__graph.pdf>] [24]) [25]
+[26
+
+]
+Chapter 4.
+(./_autonomous_8cpp.tex
+<_autonomous_8cpp__incl.pdf, id=994, 369.38pt x 335.2525pt>
+File: _autonomous_8cpp__incl.pdf Graphic file (type pdf)
+
+<use _autonomous_8cpp__incl.pdf>
+Overfull \hbox (23.0pt too wide) in paragraph at lines 17--19
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27])
+(./_autonomous_8h.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28 <./_autonomous_8cpp__incl.pdf>]
+<_autonomous_8h__incl.pdf, id=1013, 386.44376pt x 277.035pt>
+File: _autonomous_8h__incl.pdf Graphic file (type pdf)
+
+<use _autonomous_8h__incl.pdf>
+Overfull \hbox (40.0pt too wide) in paragraph at lines 20--22
+ [] 
+ []
+
+<_autonomous_8h__dep__incl.pdf, id=1014, 317.185pt x 160.6pt>
+File: _autonomous_8h__dep__incl.pdf Graphic file (type pdf)
+
+<use _autonomous_8h__dep__incl.pdf>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [29 <./_autonomous_8h__incl.pdf>]) (./_axis_camera_8cpp.tex
+<_axis_camera_8cpp__incl.pdf, id=1029, 507.8975pt x 160.6pt>
+File: _axis_camera_8cpp__incl.pdf Graphic file (type pdf)
+
+<use _axis_camera_8cpp__incl.pdf>
+Overfull \hbox (55.0pt too wide) in paragraph at lines 18--20
+ [] 
+ []
+
+[30 <./_autonomous_8h__dep__incl.pdf>]) (./_axis_camera_params_8cpp.tex
+<_axis_camera_params_8cpp__incl.pdf, id=1043, 809.0225pt x 160.6pt>
+File: _axis_camera_params_8cpp__incl.pdf Graphic file (type pdf)
+
+<use _axis_camera_params_8cpp__incl.pdf>
+Overfull \hbox (55.0pt too wide) in paragraph at lines 22--24
+ [] 
+ []
+
+
+Underfull \vbox (badness 4779) has occurred while \output is active []
+
+ [31 <./_axis_camera_8cpp__incl.pdf>]) (./_builtin_default_code_8cpp.tex
 Overfull \hbox (0.77676pt too wide) in paragraph at lines 7--8
 \T1/ptm/m/n/10 The file con-tain-ing the class [][]Builtin-De-fault-Code[][]. W
 e didn't bother chang-ing the name... 
  []
 
+<_builtin_default_code_8cpp__incl.pdf, id=1058, 429.605pt x 335.2525pt>
+File: _builtin_default_code_8cpp__incl.pdf Graphic file (type pdf)
 
-Overfull \hbox (0.77676pt too wide) in paragraph at lines 24--24
+<use _builtin_default_code_8cpp__incl.pdf>
+Overfull \hbox (55.0pt too wide) in paragraph at lines 20--22
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32 <./_axis_camera_params_8cpp__incl.pdf>]
+Overfull \hbox (0.77676pt too wide) in paragraph at lines 32--32
 \T1/ptm/m/n/10 The file con-tain-ing the class [][]Builtin-De-fault-Code[][]. W
 e didn't bother chang-ing the name...
  []
 
-[27]) (./_controller_8cpp.tex) (./_controller_8h.tex [28]) (./_drive_8cpp.tex)
-(./_drive_8h.tex) (./macros_8h.tex [29] [30]
-Overfull \hbox (1.60847pt too wide) in paragraph at lines 96--98
+) (./_controller_8cpp.tex [33 <./_builtin_default_code_8cpp__incl.pdf>]
+<_controller_8cpp__incl.pdf, id=1087, 263.98625pt x 277.035pt>
+File: _controller_8cpp__incl.pdf Graphic file (type pdf)
+
+<use _controller_8cpp__incl.pdf>) (./_controller_8h.tex [34 <./_controller_8cpp
+__incl.pdf>] <_controller_8h__incl.pdf, id=1101, 238.8925pt x 218.8175pt>
+File: _controller_8h__incl.pdf Graphic file (type pdf)
+
+<use _controller_8h__incl.pdf>
+<_controller_8h__dep__incl.pdf, id=1102, 469.755pt x 218.8175pt>
+File: _controller_8h__dep__incl.pdf Graphic file (type pdf)
+
+<use _controller_8h__dep__incl.pdf>
+Overfull \hbox (55.0pt too wide) in paragraph at lines 24--26
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35 <./_controller_8h__incl.pdf>]) (./_drive_8cpp.tex
+<_drive_8cpp__incl.pdf, id=1117, 243.91125pt x 277.035pt>
+File: _drive_8cpp__incl.pdf Graphic file (type pdf)
+
+<use _drive_8cpp__incl.pdf> [36 <./_controller_8h__dep__incl.pdf>])
+(./_drive_8h.tex <_drive_8h__incl.pdf, id=1133, 243.91125pt x 218.8175pt>
+File: _drive_8h__incl.pdf Graphic file (type pdf)
+
+<use _drive_8h__incl.pdf>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [37 <./_drive_8cpp__incl.pdf>]
+<_drive_8h__dep__incl.pdf, id=1147, 433.62pt x 218.8175pt>
+File: _drive_8h__dep__incl.pdf Graphic file (type pdf)
+
+<use _drive_8h__dep__incl.pdf>
+Overfull \hbox (55.0pt too wide) in paragraph at lines 24--26
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38 <./_drive_8h__incl.pdf> <./_drive_8h__dep__incl.pdf>]) (./macros_8h.tex
+<macros_8h__incl.pdf, id=1169, 192.72pt x 160.6pt>
+File: macros_8h__incl.pdf Graphic file (type pdf)
+ <use macros_8h__incl.pdf>
+<macros_8h__dep__incl.pdf, id=1170, 614.295pt x 277.035pt>
+File: macros_8h__dep__incl.pdf Graphic file (type pdf)
+
+<use macros_8h__dep__incl.pdf>
+Overfull \hbox (55.0pt too wide) in paragraph at lines 24--26
+ [] 
+ []
+
+
+Underfull \vbox (badness 5064) has occurred while \output is active []
+
+ [39 <./macros_8h__incl.pdf>] [40 <./macros_8h__dep__incl.pdf>]
+Overfull \hbox (1.60847pt too wide) in paragraph at lines 112--114
 []\T1/ptm/m/n/10 #define [][]MANIPULATOR_-ELEVATION_-BOTTOM_-LIMIT_-SWITCH_-POR
 T[][] 5
  []
 
-[31]
+[41]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 178.
- [32]
-Overfull \hbox (21.88861pt too wide) in alignment at lines 200--203
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 194.
+ [42]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 216--219
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 203
+Underfull \vbox (badness 10000) detected at line 219
  []
 
-) (./_manipulator_8cpp.tex) (./_manipulator_8h.tex [33])
-(./_teleoperated_8cpp.tex) (./_teleoperated_8h.tex [34]) (./refman.ind [35]
-[36
+) (./_manipulator_8cpp.tex
+<_manipulator_8cpp__incl.pdf, id=1274, 266.9975pt x 277.035pt>
+File: _manipulator_8cpp__incl.pdf Graphic file (type pdf)
 
-] [37])
+<use _manipulator_8cpp__incl.pdf>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [43])
+(./_manipulator_8h.tex
+<_manipulator_8h__incl.pdf, id=1282, 238.8925pt x 218.8175pt>
+File: _manipulator_8h__incl.pdf Graphic file (type pdf)
+
+<use _manipulator_8h__incl.pdf> [44 <./_manipulator_8cpp__incl.pdf>]
+<_manipulator_8h__dep__incl.pdf, id=1295, 455.7025pt x 218.8175pt>
+File: _manipulator_8h__dep__incl.pdf Graphic file (type pdf)
+
+<use _manipulator_8h__dep__incl.pdf>
+Overfull \hbox (55.0pt too wide) in paragraph at lines 24--26
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [45 <./_manipulator_8h__incl.pdf> <./_manipulator_8h__dep__incl.pdf>])
+(./_teleoperated_8cpp.tex
+<_teleoperated_8cpp__incl.pdf, id=1318, 360.34625pt x 335.2525pt>
+File: _teleoperated_8cpp__incl.pdf Graphic file (type pdf)
+
+<use _teleoperated_8cpp__incl.pdf>
+Overfull \hbox (14.0pt too wide) in paragraph at lines 15--17
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [46])
+(./_teleoperated_8h.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [47 <./_teleoperated_8cpp__incl.pdf>]
+<_teleoperated_8h__incl.pdf, id=1339, 360.34625pt x 277.035pt>
+File: _teleoperated_8h__incl.pdf Graphic file (type pdf)
+
+<use _teleoperated_8h__incl.pdf>
+Overfull \hbox (14.0pt too wide) in paragraph at lines 20--22
+ [] 
+ []
+
+<_teleoperated_8h__dep__incl.pdf, id=1340, 321.2pt x 160.6pt>
+File: _teleoperated_8h__dep__incl.pdf Graphic file (type pdf)
+
+<use _teleoperated_8h__dep__incl.pdf>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [48 <./_teleoperated_8h__incl.pdf>]) (./refman.ind [49 <./_teleoperated_8h__de
+p__incl.pdf>] [50
+
+] [51])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 83.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 83.
  (./refman.aux)
@@ -1252,13 +1445,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 10577 strings out of 493747
- 161634 string characters out of 3143546
+ 10708 strings out of 493747
+ 165563 string characters out of 3143546
  251125 words of memory out of 3000000
- 13268 multiletter control sequences out of 15000+200000
+ 13361 multiletter control sequences out of 15000+200000
  74001 words of font info for 106 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 42i,12n,58p,496b,518s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,12n,58p,496b,520s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2010/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
 xlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
@@ -1268,10 +1461,10 @@ f-dist/fonts/type1/urw/helvetic/uhvbo8ac.pfb></usr/local/texlive/2010/texmf-dis
 t/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2010/texmf-dist/fonts/ty
 pe1/urw/times/utmr8a.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/urw/ti
 mes/utmri8a.pfb>
-Output written on refman.pdf (43 pages, 186628 bytes).
+Output written on refman.pdf (57 pages, 395708 bytes).
 PDF statistics:
- 1302 PDF objects out of 1440 (max. 8388607)
- 1236 compressed objects within 13 object streams
- 314 named destinations out of 1000 (max. 500000)
- 753 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1572 PDF objects out of 1728 (max. 8388607)
+ 1421 compressed objects within 15 object streams
+ 328 named destinations out of 1000 (max. 500000)
+ 868 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -490,28 +490,28 @@
     <detaileddescription>
 <para>Manages a &quot;state machine&quot; (essentially a <emphasis>switch</emphasis> block) that defines which of a number of &quot;states&quot; to execute based on inputs from three light sensors. These states are: check light sensors, move, correct left, correct right, place tube. </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="4">
+      <node id="27">
         <label>RJFRC2011::Manipulator</label>
         <link refid="class_r_j_f_r_c2011_1_1_manipulator"/>
       </node>
-      <node id="2">
+      <node id="25">
         <label>RJFRC2011::Controller</label>
         <link refid="class_r_j_f_r_c2011_1_1_controller"/>
       </node>
-      <node id="1">
+      <node id="24">
         <label>RJFRC2011::Autonomous</label>
         <link refid="class_r_j_f_r_c2011_1_1_autonomous"/>
-        <childnode refid="2" relation="usage">
+        <childnode refid="25" relation="usage">
           <edgelabel>_controller</edgelabel>
         </childnode>
-        <childnode refid="3" relation="usage">
+        <childnode refid="26" relation="usage">
           <edgelabel>_drive</edgelabel>
         </childnode>
-        <childnode refid="4" relation="usage">
+        <childnode refid="27" relation="usage">
           <edgelabel>_manip</edgelabel>
         </childnode>
       </node>
-      <node id="3">
+      <node id="26">
         <label>RJFRC2011::Drive</label>
         <link refid="class_r_j_f_r_c2011_1_1_drive"/>
       </node>
