@@ -1,0 +1,9 @@
+w=go_north
+a=go_west
+s=go_south
+d=go_east
+r=reload_bindings
+q=nil
+e=nil
+t=nil
+y=nil
