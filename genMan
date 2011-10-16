@@ -11,16 +11,21 @@ else
 fi
 # Define output directory
 DOCS="./docs$YEAR";
+if [ "$YEAR" = "12" ]; then
+    SRCDIR="./workspace/FRC2012/src/org/usfirst/frc3729"
+else
+    SRCDIR="./worspace$YEAR/BuiltinDefaultCode"
+fi
 # Remove directory if it exists
 if [ -d "$DOCS" ]; then 
-    rm -r docs;
+    rm -r $DOCS
 fi
 # Dynamic Doxygen config tags
 # For Lua support - NOTE THAT YOU MUST INSTALL DOXYGEN-LUA FOR THIS TO WORK
 # See https://github.com/alecchen/doxygen-lua
 echo "FILTER_PATTERNS = *.lua=/usr/local/doxygen-lua/bin/lua2dox" > lua.txt;
 # Source code directory, determined by year
-echo "INPUT               = ./workspace$YEAR/BuiltinDefaultCode" > projsrc.txt;
+echo "INPUT               = $SRCDIR" > projsrc.txt;
 # Output directory, determined by year
 echo "OUTPUT_DIRECTORY   = ./docs$YEAR" > projdir.txt;
 # Project number (just the year)

@@ -1,0 +1,16 @@
+*.o
+*.s
+*.elf
+*.out
+*.hex
+*.eep
+*.map
+*.lst
+*.gch
+*#
+*~
+.#*
+*.ICNS
+Icon?
+__MACOSX
+.DS_Store

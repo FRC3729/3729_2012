@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="_main_robot_class_8java" kind="file">
+    <compoundname>MainRobotClass.java</compoundname>
+    <innerclass refid="classorg_1_1usfirst_1_1frc3729_1_1_main_robot_class" prot="public">org::usfirst::frc3729::MainRobotClass</innerclass>
+    <innernamespace refid="namespaceorg_1_1usfirst_1_1frc3729">org::usfirst::frc3729</innernamespace>
+    <briefdescription>
+<para>The main class from which execution starts, as mandated by WPILib. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">org.usfirst.frc3729;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="keyword">import</highlight><highlight class="normal"><sp/>edu.wpi.first.wpilibj.IterativeRobot;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="classorg_1_1usfirst_1_1frc3729_1_1_main_robot_class" refkind="compound"><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classorg_1_1usfirst_1_1frc3729_1_1_main_robot_class" kindref="compound">MainRobotClass</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/>IterativeRobot<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1usfirst_1_1frc3729_1_1_main_robot_class_1a8ecb7e2f7f61f8fdd2dfe6b19cb33e6b" kindref="member">robotInit</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1usfirst_1_1frc3729_1_1_main_robot_class_1ad1890d14437760dd78cf0d806b8ed181" kindref="member">autonomousPeriodic</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1usfirst_1_1frc3729_1_1_main_robot_class_1a8fdc05f41fb5dcb2a22be5aaec03d59b" kindref="member">teleopPeriodic</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/MainRobotClass.java"/>
+  </compounddef>
+</doxygen>

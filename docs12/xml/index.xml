@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.7.3">
+  <compound refid="classorg_1_1usfirst_1_1frc3729_1_1_main_robot_class" kind="class"><name>org::usfirst::frc3729::MainRobotClass</name>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_main_robot_class_1a8ecb7e2f7f61f8fdd2dfe6b19cb33e6b" kind="function"><name>robotInit</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_main_robot_class_1ad1890d14437760dd78cf0d806b8ed181" kind="function"><name>autonomousPeriodic</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_main_robot_class_1a8fdc05f41fb5dcb2a22be5aaec03d59b" kind="function"><name>teleopPeriodic</name></member>
+  </compound>
+  <compound refid="namespaceorg" kind="namespace"><name>org</name>
+  </compound>
+  <compound refid="namespaceorg_1_1usfirst" kind="namespace"><name>org::usfirst</name>
+  </compound>
+  <compound refid="namespaceorg_1_1usfirst_1_1frc3729" kind="namespace"><name>org::usfirst::frc3729</name>
+  </compound>
+  <compound refid="_main_robot_class_8java" kind="file"><name>MainRobotClass.java</name>
+  </compound>
+  <compound refid="dir_4127c382a522f4bec3fe74dadd0902a6" kind="dir"><name>workspace/FRC2012/</name>
+  </compound>
+  <compound refid="dir_e321ac691169e122cb4f12a23016995f" kind="dir"><name>workspace/FRC2012/src/org/usfirst/frc3729/</name>
+  </compound>
+  <compound refid="dir_dda453ec5c1a3b2c4fa1c3b8ef16b0e9" kind="dir"><name>workspace/FRC2012/src/org/</name>
+  </compound>
+  <compound refid="dir_dc734078d04fe721b912feee0163a080" kind="dir"><name>workspace/FRC2012/src/</name>
+  </compound>
+  <compound refid="dir_5df2618d4ca79b49adf1ab81b69410e9" kind="dir"><name>workspace/FRC2012/src/org/usfirst/</name>
+  </compound>
+  <compound refid="dir_7830ae8d09ef54d0974dbd9f650d30c1" kind="dir"><name>workspace/</name>
+  </compound>
+</doxygenindex>
