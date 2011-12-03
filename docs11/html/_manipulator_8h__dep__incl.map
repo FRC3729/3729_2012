@@ -1,8 +1,8 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_autonomous_8h.html" title="File containing definition of Autonomous class, which is used within the AutomonousPeriodic function ..." alt="" coords="115,83,224,111"/>
-<area shape="rect" id="node9" href="$_teleoperated_8h.html" title="File containing definition of Teleoperated class, which is used in the main program during Teleoperat..." alt="" coords="248,83,363,111"/>
-<area shape="rect" id="node14" href="$_manipulator_8cpp.html" title="File containing implementations of functions found in the Manipulator class (found in Manipulator..." alt="" coords="387,83,504,111"/>
-<area shape="rect" id="node5" href="$_autonomous_8cpp.html" title="File containing implementations of functions found in the Autonomous class (found in Autonomous..." alt="" coords="5,161,131,189"/>
-<area shape="rect" id="node7" href="$_builtin_default_code_8cpp.html" title="The file containing the class BuiltinDefaultCode. We didn&#39;t bother changing the name..." alt="" coords="155,161,320,189"/>
-<area shape="rect" id="node12" href="$_teleoperated_8cpp.html" title="File containing definitions of functions declared in class Teleoperated (declared in Teleoperated..." alt="" coords="344,161,475,189"/>
+<area shape="rect" id="node3" href="$_autonomous_8h.html" title="File containing definition of Autonomous class, which is used within the AutomonousPeriodic function ..." alt="" coords="114,80,224,107"/>
+<area shape="rect" id="node9" href="$_teleoperated_8h.html" title="File containing definition of Teleoperated class, which is used in the main program during Teleoperat..." alt="" coords="249,80,364,107"/>
+<area shape="rect" id="node14" href="$_manipulator_8cpp.html" title="File containing implementations of functions found in the Manipulator class (found in Manipulator..." alt="" coords="389,80,507,107"/>
+<area shape="rect" id="node5" href="$_autonomous_8cpp.html" title="File containing implementations of functions found in the Autonomous class (found in Autonomous..." alt="" coords="5,155,131,181"/>
+<area shape="rect" id="node7" href="$_builtin_default_code_8cpp.html" title="The file containing the class BuiltinDefaultCode. We didn&#39;t bother changing the name..." alt="" coords="156,155,321,181"/>
+<area shape="rect" id="node12" href="$_teleoperated_8cpp.html" title="File containing definitions of functions declared in class Teleoperated (declared in Teleoperated..." alt="" coords="346,155,477,181"/>
 </map>

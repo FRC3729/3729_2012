@@ -4,9 +4,9 @@
     <compoundname>RJFRC2011::Teleoperated</compoundname>
     <includes refid="_teleoperated_8h" local="no">Teleoperated.h</includes>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1acf24bc9abe43a00df74559378f5eef09" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1a6ca6803f40fe02528cbddae4df3fc53c" prot="private" static="no" mutable="no">
         <type><ref refid="class_r_j_f_r_c2011_1_1_drive" kindref="compound">Drive</ref> *</type>
-        <definition>Drive* RJFRC2011::Teleoperated::_drive</definition>
+        <definition>Drive* _drive</definition>
         <argsstring></argsstring>
         <name>_drive</name>
         <briefdescription>
@@ -17,9 +17,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" line="39" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" bodystart="39" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1a79579c70472b11af4938659c19c246a0" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1a938412c0aafbe49631d154b04328c5d2" prot="private" static="no" mutable="no">
         <type><ref refid="class_r_j_f_r_c2011_1_1_manipulator" kindref="compound">Manipulator</ref> *</type>
-        <definition>Manipulator* RJFRC2011::Teleoperated::_manip</definition>
+        <definition>Manipulator* _manip</definition>
         <argsstring></argsstring>
         <name>_manip</name>
         <briefdescription>
@@ -30,9 +30,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" line="41" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" bodystart="41" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1a7ebf1a9b8ed5f9ac5174c524f50babc0" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1a2cced8bfdcdcfdd4ac8603aa96d56781" prot="private" static="no" mutable="no">
         <type><ref refid="class_r_j_f_r_c2011_1_1_controller" kindref="compound">Controller</ref> *</type>
-        <definition>Controller* RJFRC2011::Teleoperated::_controller</definition>
+        <definition>Controller* _controller</definition>
         <argsstring></argsstring>
         <name>_controller</name>
         <briefdescription>
@@ -43,9 +43,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" line="43" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" bodystart="43" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1a6a158c8efb6eb673ef4aceb89c614ba6" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1a7661f30a1cf9f7086d3ab8581488f048" prot="private" static="no" mutable="no">
         <type>DriverStationLCD *</type>
-        <definition>DriverStationLCD* RJFRC2011::Teleoperated::_screen</definition>
+        <definition>DriverStationLCD* _screen</definition>
         <argsstring></argsstring>
         <name>_screen</name>
         <briefdescription>
@@ -56,9 +56,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" line="45" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" bodystart="45" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1addd1786ca5cf7b7ddcccb2096aa2d934" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1a5acec96ec04590b14215684661517d07" prot="private" static="no" mutable="no">
         <type>Relay *</type>
-        <definition>Relay* RJFRC2011::Teleoperated::minibotShelf</definition>
+        <definition>Relay* minibotShelf</definition>
         <argsstring></argsstring>
         <name>minibotShelf</name>
         <briefdescription>
@@ -69,9 +69,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" line="47" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" bodystart="47" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1abb83059ecad14dc769094bfabc77399d" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1a69cc566f297ee006bc59fc5f70a6ce8f" prot="private" static="no" mutable="no">
         <type>DigitalInput *</type>
-        <definition>DigitalInput* RJFRC2011::Teleoperated::top</definition>
+        <definition>DigitalInput* top</definition>
         <argsstring></argsstring>
         <name>top</name>
         <briefdescription>
@@ -82,9 +82,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" line="49" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" bodystart="49" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1a3daa75d78f5d01924876ef42c99ca7a1" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1af20d3c5eeb69170f4aceb518aa79515d" prot="private" static="no" mutable="no">
         <type>DigitalInput *</type>
-        <definition>DigitalInput* RJFRC2011::Teleoperated::bottom</definition>
+        <definition>DigitalInput* bottom</definition>
         <argsstring></argsstring>
         <name>bottom</name>
         <briefdescription>
@@ -95,9 +95,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" line="51" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" bodystart="51" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1ae73746c690998c02e4b5bd1912e83585" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1a24a67d0469a219477629ee56b8636b8d" prot="private" static="no" mutable="no">
         <type>float</type>
-        <definition>float RJFRC2011::Teleoperated::manipulatorElevation</definition>
+        <definition>float manipulatorElevation</definition>
         <argsstring></argsstring>
         <name>manipulatorElevation</name>
         <briefdescription>
@@ -108,9 +108,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" line="53" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" bodystart="53" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1af78f94699cab83d5936d4b783bf29ed7" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1a08d43d7a7aac505a9de5c4064aea96fd" prot="private" static="no" mutable="no">
         <type>float</type>
-        <definition>float RJFRC2011::Teleoperated::driveSpeed</definition>
+        <definition>float driveSpeed</definition>
         <argsstring></argsstring>
         <name>driveSpeed</name>
         <briefdescription>
@@ -121,9 +121,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" line="55" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" bodystart="55" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1ad2a716aacf9ab3d2379c0255bb193638" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1ab02ce438620ef99634fce0e0fc179f03" prot="private" static="no" mutable="no">
         <type>float</type>
-        <definition>float RJFRC2011::Teleoperated::driveTurn</definition>
+        <definition>float driveTurn</definition>
         <argsstring></argsstring>
         <name>driveTurn</name>
         <briefdescription>
@@ -134,9 +134,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" line="57" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" bodystart="57" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1a84e0dd4584d3c97475a0dde1242d485f" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1a2b7b8b3c8b0d624cebf0c54ebb37d29b" prot="private" static="no" mutable="no">
         <type>int</type>
-        <definition>int RJFRC2011::Teleoperated::manipulatorAction</definition>
+        <definition>int manipulatorAction</definition>
         <argsstring></argsstring>
         <name>manipulatorAction</name>
         <briefdescription>
@@ -147,9 +147,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" line="59" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" bodystart="59" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1ae1d4ce201074832575f6a5dbe34a7c78" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1a023135ea35f7f6b4f8c2b0dbc3e6f05b" prot="private" static="no" mutable="no">
         <type>int</type>
-        <definition>int RJFRC2011::Teleoperated::minibotSwitches</definition>
+        <definition>int minibotSwitches</definition>
         <argsstring></argsstring>
         <name>minibotSwitches</name>
         <briefdescription>
@@ -160,9 +160,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" line="61" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" bodystart="61" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1a8a3025d8bc20673eb7db70db765fa1ff" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1a217182074fc75594390b0fab99e9727b" prot="private" static="no" mutable="no">
         <type>int</type>
-        <definition>int RJFRC2011::Teleoperated::_nextState</definition>
+        <definition>int _nextState</definition>
         <argsstring></argsstring>
         <name>_nextState</name>
         <briefdescription>
@@ -173,9 +173,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" line="63" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" bodystart="63" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1a68b5dd3cb2442b6b722de3aa75e9dfee" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_teleoperated_1a0ea34db9b495f0d0f4d03ea710a46aa1" prot="private" static="no" mutable="no">
         <type>bool</type>
-        <definition>bool RJFRC2011::Teleoperated::rotateTubeDownFlag</definition>
+        <definition>bool rotateTubeDownFlag</definition>
         <argsstring></argsstring>
         <name>rotateTubeDownFlag</name>
         <briefdescription>
@@ -188,9 +188,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_teleoperated_1a4faee78835700892307b89c9977f523e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_teleoperated_1afe609ebd9360b83b300ad281b1e740c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>RJFRC2011::Teleoperated::Teleoperated</definition>
+        <definition>Teleoperated</definition>
         <argsstring>(Drive *drive, Manipulator *manip, Controller *controller, DriverStationLCD *screen)</argsstring>
         <name>Teleoperated</name>
         <param>
@@ -217,9 +217,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" line="67" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.cpp" bodystart="25" bodyend="34"/>
       </memberdef>
-      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_teleoperated_1a19603fc214137c80b292de4ccf5fd3ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_teleoperated_1a5e430bcddabb0a4f01784461819034eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>RJFRC2011::Teleoperated::~Teleoperated</definition>
+        <definition>~Teleoperated</definition>
         <argsstring>()</argsstring>
         <name>~Teleoperated</name>
         <briefdescription>
@@ -230,9 +230,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" line="68" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.cpp" bodystart="37" bodyend="40"/>
       </memberdef>
-      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_teleoperated_1a12d319115a887d3308c5f0a74d0df10f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_teleoperated_1a1e3b6d38df0786ccf7f938d60e386aae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void RJFRC2011::Teleoperated::Init</definition>
+        <definition>void Init</definition>
         <argsstring>()</argsstring>
         <name>Init</name>
         <briefdescription>
@@ -243,9 +243,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" line="69" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.cpp" bodystart="45" bodyend="51"/>
       </memberdef>
-      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_teleoperated_1a22fa5b99fdf48c16e4f86db0bb0f4c02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_teleoperated_1a5840525ab84532ad9bcfaf7996c3a728" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void RJFRC2011::Teleoperated::Go</definition>
+        <definition>void Go</definition>
         <argsstring>()</argsstring>
         <name>Go</name>
         <briefdescription>
@@ -256,9 +256,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" line="70" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.cpp" bodystart="57" bodyend="114"/>
       </memberdef>
-      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_teleoperated_1a885303324836622da915a1204ac5e9bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_teleoperated_1abd8e4e3da5f5695f409887843a7aecc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void RJFRC2011::Teleoperated::testLimitSwitches</definition>
+        <definition>void testLimitSwitches</definition>
         <argsstring>()</argsstring>
         <name>testLimitSwitches</name>
         <briefdescription>
@@ -275,8 +275,12 @@
     <detaileddescription>
 <para>Gets user input from two controllers (abstracted as instances of class <emphasis>Joystick</emphasis>), processes said inputs (normalizing joystick values, dead space, etc.), and feeds them to a series of outputs (mainly the <emphasis><ref refid="class_r_j_f_r_c2011_1_1_drive" kindref="compound">Drive</ref></emphasis> class). </para>    </detaileddescription>
     <collaborationgraph>
+      <node id="44">
+        <label>Drive</label>
+        <link refid="class_r_j_f_r_c2011_1_1_drive"/>
+      </node>
       <node id="42">
-        <label>RJFRC2011::Teleoperated</label>
+        <label>Teleoperated</label>
         <link refid="class_r_j_f_r_c2011_1_1_teleoperated"/>
         <childnode refid="43" relation="usage">
           <edgelabel>_controller</edgelabel>
@@ -289,39 +293,35 @@
         </childnode>
       </node>
       <node id="45">
-        <label>RJFRC2011::Manipulator</label>
+        <label>Manipulator</label>
         <link refid="class_r_j_f_r_c2011_1_1_manipulator"/>
       </node>
       <node id="43">
-        <label>RJFRC2011::Controller</label>
+        <label>Controller</label>
         <link refid="class_r_j_f_r_c2011_1_1_controller"/>
-      </node>
-      <node id="44">
-        <label>RJFRC2011::Drive</label>
-        <link refid="class_r_j_f_r_c2011_1_1_drive"/>
       </node>
     </collaborationgraph>
     <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" line="36" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Teleoperated.h" bodystart="35" bodyend="72"/>
     <listofallmembers>
-      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a7ebf1a9b8ed5f9ac5174c524f50babc0" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>_controller</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1acf24bc9abe43a00df74559378f5eef09" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>_drive</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a79579c70472b11af4938659c19c246a0" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>_manip</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a8a3025d8bc20673eb7db70db765fa1ff" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>_nextState</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a6a158c8efb6eb673ef4aceb89c614ba6" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>_screen</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a3daa75d78f5d01924876ef42c99ca7a1" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>bottom</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1af78f94699cab83d5936d4b783bf29ed7" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>driveSpeed</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1ad2a716aacf9ab3d2379c0255bb193638" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>driveTurn</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a22fa5b99fdf48c16e4f86db0bb0f4c02" prot="public" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>Go</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a12d319115a887d3308c5f0a74d0df10f" prot="public" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>Init</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a84e0dd4584d3c97475a0dde1242d485f" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>manipulatorAction</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1ae73746c690998c02e4b5bd1912e83585" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>manipulatorElevation</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1addd1786ca5cf7b7ddcccb2096aa2d934" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>minibotShelf</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1ae1d4ce201074832575f6a5dbe34a7c78" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>minibotSwitches</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a68b5dd3cb2442b6b722de3aa75e9dfee" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>rotateTubeDownFlag</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a4faee78835700892307b89c9977f523e" prot="public" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>Teleoperated</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a885303324836622da915a1204ac5e9bf" prot="public" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>testLimitSwitches</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1abb83059ecad14dc769094bfabc77399d" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>top</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a19603fc214137c80b292de4ccf5fd3ec" prot="public" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>~Teleoperated</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a2cced8bfdcdcfdd4ac8603aa96d56781" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>_controller</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a6ca6803f40fe02528cbddae4df3fc53c" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>_drive</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a938412c0aafbe49631d154b04328c5d2" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>_manip</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a217182074fc75594390b0fab99e9727b" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>_nextState</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a7661f30a1cf9f7086d3ab8581488f048" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>_screen</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1af20d3c5eeb69170f4aceb518aa79515d" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>bottom</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a08d43d7a7aac505a9de5c4064aea96fd" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>driveSpeed</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1ab02ce438620ef99634fce0e0fc179f03" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>driveTurn</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a5840525ab84532ad9bcfaf7996c3a728" prot="public" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>Go</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a1e3b6d38df0786ccf7f938d60e386aae" prot="public" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>Init</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a2b7b8b3c8b0d624cebf0c54ebb37d29b" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>manipulatorAction</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a24a67d0469a219477629ee56b8636b8d" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>manipulatorElevation</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a5acec96ec04590b14215684661517d07" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>minibotShelf</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a023135ea35f7f6b4f8c2b0dbc3e6f05b" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>minibotSwitches</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a0ea34db9b495f0d0f4d03ea710a46aa1" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>rotateTubeDownFlag</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1afe609ebd9360b83b300ad281b1e740c9" prot="public" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>Teleoperated</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1abd8e4e3da5f5695f409887843a7aecc5" prot="public" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>testLimitSwitches</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a69cc566f297ee006bc59fc5f70a6ce8f" prot="private" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>top</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_teleoperated_1a5e430bcddabb0a4f01784461819034eb" prot="public" virt="non-virtual"><scope>RJFRC2011::Teleoperated</scope><name>~Teleoperated</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

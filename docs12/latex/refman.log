@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  16 OCT 2011 15:20
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  3 DEC 2011 14:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1079,7 +1079,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  9949 strings out of 493747
  140384 string characters out of 3143546
- 239125 words of memory out of 3000000
+ 239123 words of memory out of 3000000
  12978 multiletter control sequences out of 15000+200000
  49205 words of font info for 65 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
@@ -1089,7 +1089,7 @@ exlive/2010/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2
 010/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/local/texlive/2010/te
 xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2010/texmf-dist/f
 onts/type1/urw/times/utmr8a.pfb>
-Output written on refman.pdf (12 pages, 54011 bytes).
+Output written on refman.pdf (12 pages, 53740 bytes).
 PDF statistics:
  173 PDF objects out of 1000 (max. 8388607)
  153 compressed objects within 2 object streams

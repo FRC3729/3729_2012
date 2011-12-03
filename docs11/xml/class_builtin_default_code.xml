@@ -3,9 +3,9 @@
   <compounddef id="class_builtin_default_code" kind="class" prot="public">
     <compoundname>BuiltinDefaultCode</compoundname>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_builtin_default_code_1a2d4ed2369361dcd5b02e74dac9b3f4dd" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_builtin_default_code_1aa45afd7ad503319b9ff0d98bce031ce0" prot="private" static="no" mutable="no">
         <type><ref refid="class_r_j_f_r_c2011_1_1_drive" kindref="compound">Drive</ref> *</type>
-        <definition>Drive* BuiltinDefaultCode::drive</definition>
+        <definition>Drive* drive</definition>
         <argsstring></argsstring>
         <name>drive</name>
         <briefdescription>
@@ -16,9 +16,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="40" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="40" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_builtin_default_code_1ac2ed56fdb661e5c24cd9b012f9d09b63" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_builtin_default_code_1a5409b6e087f0c1147f5cb1826c7fc201" prot="private" static="no" mutable="no">
         <type><ref refid="class_r_j_f_r_c2011_1_1_manipulator" kindref="compound">Manipulator</ref> *</type>
-        <definition>Manipulator* BuiltinDefaultCode::manipulator</definition>
+        <definition>Manipulator* manipulator</definition>
         <argsstring></argsstring>
         <name>manipulator</name>
         <briefdescription>
@@ -29,9 +29,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="42" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="42" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_builtin_default_code_1af8e1d3aaa175d9d8091438a00b4b1556" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_builtin_default_code_1acaf0644c14bf7a45d314781c4168cb83" prot="private" static="no" mutable="no">
         <type><ref refid="class_r_j_f_r_c2011_1_1_controller" kindref="compound">Controller</ref> *</type>
-        <definition>Controller* BuiltinDefaultCode::controller</definition>
+        <definition>Controller* controller</definition>
         <argsstring></argsstring>
         <name>controller</name>
         <briefdescription>
@@ -42,9 +42,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="44" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="44" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_builtin_default_code_1ac09bfa871751a5c092c1db9cb3ad37e9" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_builtin_default_code_1a8289841da07622d68f69205d316f0442" prot="private" static="no" mutable="no">
         <type>DriverStationLCD *</type>
-        <definition>DriverStationLCD* BuiltinDefaultCode::screen</definition>
+        <definition>DriverStationLCD* screen</definition>
         <argsstring></argsstring>
         <name>screen</name>
         <briefdescription>
@@ -55,9 +55,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="46" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="46" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_builtin_default_code_1a39f6383c7d191eeca78ab4a9865d6664" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_builtin_default_code_1ace01ebc55fcc879ef22e8041d3dc8795" prot="private" static="no" mutable="no">
         <type>DriverStation *</type>
-        <definition>DriverStation* BuiltinDefaultCode::ds</definition>
+        <definition>DriverStation* ds</definition>
         <argsstring></argsstring>
         <name>ds</name>
         <briefdescription>
@@ -68,9 +68,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="49" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="49" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_builtin_default_code_1aef2c4c3029fc5446af5117125ffdc555" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_builtin_default_code_1af2f3459e06aed9119e25fcdb359e1c2c" prot="private" static="no" mutable="no">
         <type>AxisCamera *</type>
-        <definition>AxisCamera* BuiltinDefaultCode::cam</definition>
+        <definition>AxisCamera* cam</definition>
         <argsstring></argsstring>
         <name>cam</name>
         <briefdescription>
@@ -81,9 +81,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="51" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="51" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_builtin_default_code_1a432ff1c2f998228b0e74532fc9862a76" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_builtin_default_code_1aace427c61c04bc741d609fe8190102d4" prot="private" static="no" mutable="no">
         <type>bool</type>
-        <definition>bool BuiltinDefaultCode::timerHasStarted</definition>
+        <definition>bool timerHasStarted</definition>
         <argsstring></argsstring>
         <name>timerHasStarted</name>
         <briefdescription>
@@ -94,9 +94,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="53" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="53" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_builtin_default_code_1af71f9b1053b320fb4f8152d99b8af42e" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_builtin_default_code_1adf3a1812accff0e42c47570258240156" prot="private" static="no" mutable="no">
         <type>DriverStationEnhancedIO *</type>
-        <definition>DriverStationEnhancedIO* BuiltinDefaultCode::dseio</definition>
+        <definition>DriverStationEnhancedIO* dseio</definition>
         <argsstring></argsstring>
         <name>dseio</name>
         <briefdescription>
@@ -107,9 +107,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="55" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="55" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_builtin_default_code_1a23fafbc7100e3b5b50408d010b5f609b" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_builtin_default_code_1ac9d108f12ceac87a203dbb17c73ed70b" prot="private" static="no" mutable="no">
         <type><ref refid="class_r_j_f_r_c2011_1_1_autonomous" kindref="compound">Autonomous</ref> *</type>
-        <definition>Autonomous* BuiltinDefaultCode::auto_machine</definition>
+        <definition>Autonomous* auto_machine</definition>
         <argsstring></argsstring>
         <name>auto_machine</name>
         <briefdescription>
@@ -120,9 +120,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="57" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="57" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_builtin_default_code_1ad31f83ef30fd7bbb3bbe22895dfb9c99" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_builtin_default_code_1a9907b098362e4ec8b2d30e5a991b05b9" prot="private" static="no" mutable="no">
         <type><ref refid="class_r_j_f_r_c2011_1_1_teleoperated" kindref="compound">Teleoperated</ref> *</type>
-        <definition>Teleoperated* BuiltinDefaultCode::teleop_machine</definition>
+        <definition>Teleoperated* teleop_machine</definition>
         <argsstring></argsstring>
         <name>teleop_machine</name>
         <briefdescription>
@@ -133,9 +133,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="59" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="59" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_builtin_default_code_1aaf59606d706817c312686afcd1f8f527" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_builtin_default_code_1ad59f2b60cccbf7bd6a43003017d1d01a" prot="private" static="no" mutable="no">
         <type>Timer *</type>
-        <definition>Timer* BuiltinDefaultCode::timer</definition>
+        <definition>Timer* timer</definition>
         <argsstring></argsstring>
         <name>timer</name>
         <briefdescription>
@@ -146,9 +146,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="62" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="62" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_builtin_default_code_1a583cc9b63da187ec33d4becbcc282e4f" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_builtin_default_code_1a37da6d102cbacbc6c8b814a4a8b17322" prot="private" static="no" mutable="no">
         <type>int</type>
-        <definition>int BuiltinDefaultCode::nAutoLoops</definition>
+        <definition>int nAutoLoops</definition>
         <argsstring></argsstring>
         <name>nAutoLoops</name>
         <briefdescription>
@@ -159,9 +159,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="65" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="65" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_builtin_default_code_1a96b42562447a335304a4e9b8ff78e9e6" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_builtin_default_code_1a01f41146a280afa5a9f1e737f3c83066" prot="private" static="no" mutable="no">
         <type>int</type>
-        <definition>int BuiltinDefaultCode::nTeleLoops</definition>
+        <definition>int nTeleLoops</definition>
         <argsstring></argsstring>
         <name>nTeleLoops</name>
         <briefdescription>
@@ -172,9 +172,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="65" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="65" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_builtin_default_code_1a6cb5a9f66f7b86ce9bc2c892d1fb51d1" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_builtin_default_code_1a41f57e0d4c8900c3cc2ceef0055fe5df" prot="private" static="no" mutable="no">
         <type>int</type>
-        <definition>int BuiltinDefaultCode::nDisabledLoops</definition>
+        <definition>int nDisabledLoops</definition>
         <argsstring></argsstring>
         <name>nDisabledLoops</name>
         <briefdescription>
@@ -185,9 +185,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="65" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="65" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_builtin_default_code_1a6f073cb2c577764d0202428eaf3b9cf5" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_builtin_default_code_1a767b284f71afe93c84ba245e2105dd43" prot="private" static="no" mutable="no">
         <type>int</type>
-        <definition>int BuiltinDefaultCode::end_loops</definition>
+        <definition>int end_loops</definition>
         <argsstring></argsstring>
         <name>end_loops</name>
         <briefdescription>
@@ -200,9 +200,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_builtin_default_code_1a5f72b929d98fe4193e1a7d8e351a7837" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_builtin_default_code_1abcae5a572e0a119a69625edf19612203" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>BuiltinDefaultCode::BuiltinDefaultCode</definition>
+        <definition>BuiltinDefaultCode</definition>
         <argsstring>(void)</argsstring>
         <name>BuiltinDefaultCode</name>
         <param>
@@ -216,9 +216,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="72" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="71" bodyend="97"/>
       </memberdef>
-      <memberdef kind="function" id="class_builtin_default_code_1a04c696dab5af274ca086d8903eb02134" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_builtin_default_code_1aca7d57e622ea4ab27fb5270037cc0a22" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>BuiltinDefaultCode::~BuiltinDefaultCode</definition>
+        <definition>~BuiltinDefaultCode</definition>
         <argsstring>()</argsstring>
         <name>~BuiltinDefaultCode</name>
         <briefdescription>
@@ -229,9 +229,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="101" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="100" bodyend="108"/>
       </memberdef>
-      <memberdef kind="function" id="class_builtin_default_code_1a522b7e1b11f160868900a01a7f5609b6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_builtin_default_code_1adbc329f518be839e728ddc5e4d35bed1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void BuiltinDefaultCode::RobotInit</definition>
+        <definition>void RobotInit</definition>
         <argsstring>(void)</argsstring>
         <name>RobotInit</name>
         <param>
@@ -245,9 +245,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="114" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="113" bodyend="118"/>
       </memberdef>
-      <memberdef kind="function" id="class_builtin_default_code_1a1df5e366a588086aedab2510393a9ac6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_builtin_default_code_1abe31b16407ded0236a67b29fbab7e321" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void BuiltinDefaultCode::DisabledInit</definition>
+        <definition>void DisabledInit</definition>
         <argsstring>(void)</argsstring>
         <name>DisabledInit</name>
         <param>
@@ -261,9 +261,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="122" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="121" bodyend="127"/>
       </memberdef>
-      <memberdef kind="function" id="class_builtin_default_code_1a727ebabf0678af822d53f90f96bfd679" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_builtin_default_code_1a054af09e7e6d8a923f703a2c124545cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void BuiltinDefaultCode::AutonomousInit</definition>
+        <definition>void AutonomousInit</definition>
         <argsstring>(void)</argsstring>
         <name>AutonomousInit</name>
         <param>
@@ -277,9 +277,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="131" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="130" bodyend="139"/>
       </memberdef>
-      <memberdef kind="function" id="class_builtin_default_code_1ab3d70e0754e54bab03b130e6c042e0b5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_builtin_default_code_1a33c90462b66a06f319170b0ce2712832" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void BuiltinDefaultCode::TeleopInit</definition>
+        <definition>void TeleopInit</definition>
         <argsstring>(void)</argsstring>
         <name>TeleopInit</name>
         <param>
@@ -293,9 +293,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="144" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="143" bodyend="152"/>
       </memberdef>
-      <memberdef kind="function" id="class_builtin_default_code_1a504e7d9b01a66635c31597f9a58cf478" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_builtin_default_code_1a44735b87ee0edb507a926d5195a64c69" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void BuiltinDefaultCode::DisabledPeriodic</definition>
+        <definition>void DisabledPeriodic</definition>
         <argsstring>(void)</argsstring>
         <name>DisabledPeriodic</name>
         <param>
@@ -309,9 +309,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="158" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="157" bodyend="164"/>
       </memberdef>
-      <memberdef kind="function" id="class_builtin_default_code_1a26da787e2abf683077e266ad44049ca0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_builtin_default_code_1a5ff19c03a26ad9d272abc3062e8a1c51" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void BuiltinDefaultCode::AutonomousPeriodic</definition>
+        <definition>void AutonomousPeriodic</definition>
         <argsstring>(void)</argsstring>
         <name>AutonomousPeriodic</name>
         <param>
@@ -325,9 +325,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="168" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="167" bodyend="202"/>
       </memberdef>
-      <memberdef kind="function" id="class_builtin_default_code_1a79dd68c3dba134d041413df30862aae2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_builtin_default_code_1a7efff3a52c7626cd30a8d150bb4c6b96" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void BuiltinDefaultCode::TeleopPeriodic</definition>
+        <definition>void TeleopPeriodic</definition>
         <argsstring>(void)</argsstring>
         <name>TeleopPeriodic</name>
         <param>
@@ -347,8 +347,12 @@
     <detaileddescription>
 <para><ref refid="class_builtin_default_code" kindref="compound">BuiltinDefaultCode</ref> is technically the name of the example class that we first opened, but once we started coding we realized that we couldn&apos;t rename the project and didn&apos;t want to reconfigure all the build settings from scratch. So here we are. </para>    </detaileddescription>
     <collaborationgraph>
+      <node id="32">
+        <label>Drive</label>
+        <link refid="class_r_j_f_r_c2011_1_1_drive"/>
+      </node>
       <node id="34">
-        <label>RJFRC2011::Teleoperated</label>
+        <label>Teleoperated</label>
         <link refid="class_r_j_f_r_c2011_1_1_teleoperated"/>
         <childnode refid="31" relation="usage">
           <edgelabel>_controller</edgelabel>
@@ -359,6 +363,10 @@
         <childnode refid="33" relation="usage">
           <edgelabel>_manip</edgelabel>
         </childnode>
+      </node>
+      <node id="33">
+        <label>Manipulator</label>
+        <link refid="class_r_j_f_r_c2011_1_1_manipulator"/>
       </node>
       <node id="29">
         <label>BuiltinDefaultCode</label>
@@ -379,16 +387,8 @@
           <edgelabel>manipulator</edgelabel>
         </childnode>
       </node>
-      <node id="33">
-        <label>RJFRC2011::Manipulator</label>
-        <link refid="class_r_j_f_r_c2011_1_1_manipulator"/>
-      </node>
-      <node id="31">
-        <label>RJFRC2011::Controller</label>
-        <link refid="class_r_j_f_r_c2011_1_1_controller"/>
-      </node>
       <node id="30">
-        <label>RJFRC2011::Autonomous</label>
+        <label>Autonomous</label>
         <link refid="class_r_j_f_r_c2011_1_1_autonomous"/>
         <childnode refid="31" relation="usage">
           <edgelabel>_controller</edgelabel>
@@ -400,37 +400,37 @@
           <edgelabel>_manip</edgelabel>
         </childnode>
       </node>
-      <node id="32">
-        <label>RJFRC2011::Drive</label>
-        <link refid="class_r_j_f_r_c2011_1_1_drive"/>
+      <node id="31">
+        <label>Controller</label>
+        <link refid="class_r_j_f_r_c2011_1_1_controller"/>
       </node>
     </collaborationgraph>
     <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" line="37" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/BuiltinDefaultCode.cpp" bodystart="36" bodyend="214"/>
     <listofallmembers>
-      <member refid="class_builtin_default_code_1a23fafbc7100e3b5b50408d010b5f609b" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>auto_machine</name></member>
-      <member refid="class_builtin_default_code_1a727ebabf0678af822d53f90f96bfd679" prot="public" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>AutonomousInit</name></member>
-      <member refid="class_builtin_default_code_1a26da787e2abf683077e266ad44049ca0" prot="public" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>AutonomousPeriodic</name></member>
-      <member refid="class_builtin_default_code_1a5f72b929d98fe4193e1a7d8e351a7837" prot="public" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>BuiltinDefaultCode</name></member>
-      <member refid="class_builtin_default_code_1aef2c4c3029fc5446af5117125ffdc555" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>cam</name></member>
-      <member refid="class_builtin_default_code_1af8e1d3aaa175d9d8091438a00b4b1556" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>controller</name></member>
-      <member refid="class_builtin_default_code_1a1df5e366a588086aedab2510393a9ac6" prot="public" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>DisabledInit</name></member>
-      <member refid="class_builtin_default_code_1a504e7d9b01a66635c31597f9a58cf478" prot="public" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>DisabledPeriodic</name></member>
-      <member refid="class_builtin_default_code_1a2d4ed2369361dcd5b02e74dac9b3f4dd" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>drive</name></member>
-      <member refid="class_builtin_default_code_1a39f6383c7d191eeca78ab4a9865d6664" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>ds</name></member>
-      <member refid="class_builtin_default_code_1af71f9b1053b320fb4f8152d99b8af42e" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>dseio</name></member>
-      <member refid="class_builtin_default_code_1a6f073cb2c577764d0202428eaf3b9cf5" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>end_loops</name></member>
-      <member refid="class_builtin_default_code_1ac2ed56fdb661e5c24cd9b012f9d09b63" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>manipulator</name></member>
-      <member refid="class_builtin_default_code_1a583cc9b63da187ec33d4becbcc282e4f" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>nAutoLoops</name></member>
-      <member refid="class_builtin_default_code_1a6cb5a9f66f7b86ce9bc2c892d1fb51d1" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>nDisabledLoops</name></member>
-      <member refid="class_builtin_default_code_1a96b42562447a335304a4e9b8ff78e9e6" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>nTeleLoops</name></member>
-      <member refid="class_builtin_default_code_1a522b7e1b11f160868900a01a7f5609b6" prot="public" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>RobotInit</name></member>
-      <member refid="class_builtin_default_code_1ac09bfa871751a5c092c1db9cb3ad37e9" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>screen</name></member>
-      <member refid="class_builtin_default_code_1ad31f83ef30fd7bbb3bbe22895dfb9c99" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>teleop_machine</name></member>
-      <member refid="class_builtin_default_code_1ab3d70e0754e54bab03b130e6c042e0b5" prot="public" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>TeleopInit</name></member>
-      <member refid="class_builtin_default_code_1a79dd68c3dba134d041413df30862aae2" prot="public" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>TeleopPeriodic</name></member>
-      <member refid="class_builtin_default_code_1aaf59606d706817c312686afcd1f8f527" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>timer</name></member>
-      <member refid="class_builtin_default_code_1a432ff1c2f998228b0e74532fc9862a76" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>timerHasStarted</name></member>
-      <member refid="class_builtin_default_code_1a04c696dab5af274ca086d8903eb02134" prot="public" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>~BuiltinDefaultCode</name></member>
+      <member refid="class_builtin_default_code_1ac9d108f12ceac87a203dbb17c73ed70b" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>auto_machine</name></member>
+      <member refid="class_builtin_default_code_1a054af09e7e6d8a923f703a2c124545cb" prot="public" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>AutonomousInit</name></member>
+      <member refid="class_builtin_default_code_1a5ff19c03a26ad9d272abc3062e8a1c51" prot="public" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>AutonomousPeriodic</name></member>
+      <member refid="class_builtin_default_code_1abcae5a572e0a119a69625edf19612203" prot="public" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>BuiltinDefaultCode</name></member>
+      <member refid="class_builtin_default_code_1af2f3459e06aed9119e25fcdb359e1c2c" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>cam</name></member>
+      <member refid="class_builtin_default_code_1acaf0644c14bf7a45d314781c4168cb83" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>controller</name></member>
+      <member refid="class_builtin_default_code_1abe31b16407ded0236a67b29fbab7e321" prot="public" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>DisabledInit</name></member>
+      <member refid="class_builtin_default_code_1a44735b87ee0edb507a926d5195a64c69" prot="public" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>DisabledPeriodic</name></member>
+      <member refid="class_builtin_default_code_1aa45afd7ad503319b9ff0d98bce031ce0" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>drive</name></member>
+      <member refid="class_builtin_default_code_1ace01ebc55fcc879ef22e8041d3dc8795" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>ds</name></member>
+      <member refid="class_builtin_default_code_1adf3a1812accff0e42c47570258240156" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>dseio</name></member>
+      <member refid="class_builtin_default_code_1a767b284f71afe93c84ba245e2105dd43" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>end_loops</name></member>
+      <member refid="class_builtin_default_code_1a5409b6e087f0c1147f5cb1826c7fc201" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>manipulator</name></member>
+      <member refid="class_builtin_default_code_1a37da6d102cbacbc6c8b814a4a8b17322" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>nAutoLoops</name></member>
+      <member refid="class_builtin_default_code_1a41f57e0d4c8900c3cc2ceef0055fe5df" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>nDisabledLoops</name></member>
+      <member refid="class_builtin_default_code_1a01f41146a280afa5a9f1e737f3c83066" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>nTeleLoops</name></member>
+      <member refid="class_builtin_default_code_1adbc329f518be839e728ddc5e4d35bed1" prot="public" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>RobotInit</name></member>
+      <member refid="class_builtin_default_code_1a8289841da07622d68f69205d316f0442" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>screen</name></member>
+      <member refid="class_builtin_default_code_1a9907b098362e4ec8b2d30e5a991b05b9" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>teleop_machine</name></member>
+      <member refid="class_builtin_default_code_1a33c90462b66a06f319170b0ce2712832" prot="public" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>TeleopInit</name></member>
+      <member refid="class_builtin_default_code_1a7efff3a52c7626cd30a8d150bb4c6b96" prot="public" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>TeleopPeriodic</name></member>
+      <member refid="class_builtin_default_code_1ad59f2b60cccbf7bd6a43003017d1d01a" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>timer</name></member>
+      <member refid="class_builtin_default_code_1aace427c61c04bc741d609fe8190102d4" prot="private" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>timerHasStarted</name></member>
+      <member refid="class_builtin_default_code_1aca7d57e622ea4ab27fb5270037cc0a22" prot="public" virt="non-virtual"><scope>BuiltinDefaultCode</scope><name>~BuiltinDefaultCode</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

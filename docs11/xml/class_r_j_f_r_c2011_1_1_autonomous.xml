@@ -4,9 +4,9 @@
     <compoundname>RJFRC2011::Autonomous</compoundname>
     <includes refid="_autonomous_8h" local="no">Autonomous.h</includes>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a250e8a5a9a38ae5bba7457df67e05462" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a3002d35266aa29ddaec363130fb5d12b" prot="private" static="no" mutable="no">
         <type>UINT8</type>
-        <definition>UINT8 RJFRC2011::Autonomous::lane</definition>
+        <definition>UINT8 lane</definition>
         <argsstring></argsstring>
         <name>lane</name>
         <briefdescription>
@@ -17,9 +17,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="40" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" bodystart="40" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1abcfa4840dd66568b3e263a36d9941bbc" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1ab7681c337943ad6600c39e1be0027bbd" prot="private" static="no" mutable="no">
         <type>char</type>
-        <definition>char RJFRC2011::Autonomous::forkDirection</definition>
+        <definition>char forkDirection</definition>
         <argsstring></argsstring>
         <name>forkDirection</name>
         <briefdescription>
@@ -30,9 +30,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="42" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" bodystart="42" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a15f4f4554332e90259e12aec3baa827b" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a6ca6803f40fe02528cbddae4df3fc53c" prot="private" static="no" mutable="no">
         <type><ref refid="class_r_j_f_r_c2011_1_1_drive" kindref="compound">Drive</ref> *</type>
-        <definition>Drive* RJFRC2011::Autonomous::_drive</definition>
+        <definition>Drive* _drive</definition>
         <argsstring></argsstring>
         <name>_drive</name>
         <briefdescription>
@@ -43,9 +43,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="45" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" bodystart="45" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1acaeb4cd9803595987b7fa237247ecd70" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a938412c0aafbe49631d154b04328c5d2" prot="private" static="no" mutable="no">
         <type><ref refid="class_r_j_f_r_c2011_1_1_manipulator" kindref="compound">Manipulator</ref> *</type>
-        <definition>Manipulator* RJFRC2011::Autonomous::_manip</definition>
+        <definition>Manipulator* _manip</definition>
         <argsstring></argsstring>
         <name>_manip</name>
         <briefdescription>
@@ -56,9 +56,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="47" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" bodystart="47" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1ad5f5bd5da92e33c84b1227d98fe9db47" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a2cced8bfdcdcfdd4ac8603aa96d56781" prot="private" static="no" mutable="no">
         <type><ref refid="class_r_j_f_r_c2011_1_1_controller" kindref="compound">Controller</ref> *</type>
-        <definition>Controller* RJFRC2011::Autonomous::_controller</definition>
+        <definition>Controller* _controller</definition>
         <argsstring></argsstring>
         <name>_controller</name>
         <briefdescription>
@@ -69,9 +69,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="49" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" bodystart="49" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a45427a812f865b5d200b2642e53d44b0" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a7661f30a1cf9f7086d3ab8581488f048" prot="private" static="no" mutable="no">
         <type>DriverStationLCD *</type>
-        <definition>DriverStationLCD* RJFRC2011::Autonomous::_screen</definition>
+        <definition>DriverStationLCD* _screen</definition>
         <argsstring></argsstring>
         <name>_screen</name>
         <briefdescription>
@@ -82,9 +82,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="51" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" bodystart="51" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1ae6c458fcfb8244e4e112c6a836bb5609" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a891c7ae8a0250a58e96c4ef0dfb74352" prot="private" static="no" mutable="no">
         <type>DigitalInput *</type>
-        <definition>DigitalInput* RJFRC2011::Autonomous::lightSensorLeft</definition>
+        <definition>DigitalInput* lightSensorLeft</definition>
         <argsstring></argsstring>
         <name>lightSensorLeft</name>
         <briefdescription>
@@ -95,9 +95,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="55" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" bodystart="55" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a4b9f4445f2514da0e59f9129b1b247d3" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a4c3907fd78cb30d997bf7b12eaad6fc5" prot="private" static="no" mutable="no">
         <type>DigitalInput *</type>
-        <definition>DigitalInput* RJFRC2011::Autonomous::lightSensorCenter</definition>
+        <definition>DigitalInput* lightSensorCenter</definition>
         <argsstring></argsstring>
         <name>lightSensorCenter</name>
         <briefdescription>
@@ -108,9 +108,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="57" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" bodystart="57" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a8ada7ae26d2b78274febe96a415c7fb0" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a9b8464d0ba37a956d44f769c80da212f" prot="private" static="no" mutable="no">
         <type>DigitalInput *</type>
-        <definition>DigitalInput* RJFRC2011::Autonomous::lightSensorRight</definition>
+        <definition>DigitalInput* lightSensorRight</definition>
         <argsstring></argsstring>
         <name>lightSensorRight</name>
         <briefdescription>
@@ -121,9 +121,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="59" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" bodystart="59" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1afa181f57e25cab35aa5eeffdbc1bd43d" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1ac54600742a1c7e9d6de932cc16653534" prot="private" static="no" mutable="no">
         <type>DigitalInput *</type>
-        <definition>DigitalInput* RJFRC2011::Autonomous::autonomousLaneSwitch</definition>
+        <definition>DigitalInput* autonomousLaneSwitch</definition>
         <argsstring></argsstring>
         <name>autonomousLaneSwitch</name>
         <briefdescription>
@@ -134,9 +134,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="62" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" bodystart="62" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1aff3688fd6c4119516863947014e17aca" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a5b1c68931c034a23970d6933ed7e3dcc" prot="private" static="no" mutable="no">
         <type>DigitalInput *</type>
-        <definition>DigitalInput* RJFRC2011::Autonomous::autonomousForkSwitch</definition>
+        <definition>DigitalInput* autonomousForkSwitch</definition>
         <argsstring></argsstring>
         <name>autonomousForkSwitch</name>
         <briefdescription>
@@ -147,9 +147,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="64" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" bodystart="64" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1afe58d24469fe990d5b9a118cff3b22b2" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1ae1923a0ddadf4002d3a34f777c2f69b8" prot="private" static="no" mutable="no">
         <type>string</type>
-        <definition>string RJFRC2011::Autonomous::leftOut</definition>
+        <definition>string leftOut</definition>
         <argsstring></argsstring>
         <name>leftOut</name>
         <briefdescription>
@@ -160,9 +160,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="66" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" bodystart="66" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a2b55b6b2e73c92c232ff006476920252" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1aec83ad797e582f3b15b18eaf6bbb8382" prot="private" static="no" mutable="no">
         <type>string</type>
-        <definition>string RJFRC2011::Autonomous::rightOut</definition>
+        <definition>string rightOut</definition>
         <argsstring></argsstring>
         <name>rightOut</name>
         <briefdescription>
@@ -173,9 +173,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="67" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" bodystart="67" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1abf795083a6b3c1a4fddd5add146a627e" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a263c35f5c9abaed63464972a596752b0" prot="private" static="no" mutable="no">
         <type>string</type>
-        <definition>string RJFRC2011::Autonomous::centerOut</definition>
+        <definition>string centerOut</definition>
         <argsstring></argsstring>
         <name>centerOut</name>
         <briefdescription>
@@ -186,9 +186,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="68" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" bodystart="68" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a0d2ee271a5351656f47ed253ff46c82e" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a455cf41b0dd38f5c7ca97c1268154d15" prot="private" static="no" mutable="no">
         <type>bool</type>
-        <definition>bool RJFRC2011::Autonomous::hasEjectedTube</definition>
+        <definition>bool hasEjectedTube</definition>
         <argsstring></argsstring>
         <name>hasEjectedTube</name>
         <briefdescription>
@@ -199,9 +199,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="69" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" bodystart="69" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1adb590e5cc03f8f653187aee454991a81" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a8cbf0ff4ad39fa7586ec2ed90050c142" prot="private" static="no" mutable="no">
         <type>string</type>
-        <definition>string RJFRC2011::Autonomous::lastCorrectDirection</definition>
+        <definition>string lastCorrectDirection</definition>
         <argsstring></argsstring>
         <name>lastCorrectDirection</name>
         <briefdescription>
@@ -212,9 +212,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="70" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" bodystart="70" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a307fc0bab39e0418a12f405b5a35f0a7" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a75d5b19cb3f72d5382b19c1c75adea53" prot="private" static="no" mutable="no">
         <type>int</type>
-        <definition>int RJFRC2011::Autonomous::lightLeft</definition>
+        <definition>int lightLeft</definition>
         <argsstring></argsstring>
         <name>lightLeft</name>
         <briefdescription>
@@ -225,9 +225,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="71" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" bodystart="71" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a6c06942f52db320c861fdb2efb088f82" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1aba86124f0002ebd507f66005efc796f2" prot="private" static="no" mutable="no">
         <type>int</type>
-        <definition>int RJFRC2011::Autonomous::lightCenter</definition>
+        <definition>int lightCenter</definition>
         <argsstring></argsstring>
         <name>lightCenter</name>
         <briefdescription>
@@ -238,9 +238,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="71" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" bodystart="71" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a8a1dff8f5e71c096660d122aea8edd21" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a73a775d0e11e9191a562b5f75cebd361" prot="private" static="no" mutable="no">
         <type>int</type>
-        <definition>int RJFRC2011::Autonomous::lightRight</definition>
+        <definition>int lightRight</definition>
         <argsstring></argsstring>
         <name>lightRight</name>
         <briefdescription>
@@ -253,9 +253,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a0d767ab0cfb4de715e0085a12a20c54d" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="class_r_j_f_r_c2011_1_1_autonomous_1a92ae58b959ae9b65b4a70c45d5171df4" prot="public" static="no" mutable="no">
         <type>bool</type>
-        <definition>bool RJFRC2011::Autonomous::DONE</definition>
+        <definition>bool DONE</definition>
         <argsstring></argsstring>
         <name>DONE</name>
         <briefdescription>
@@ -268,9 +268,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
-      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1a1f04427d07d9569a9f746445c82b8173" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1ac23ae3c557b0a664d5f079b16c6f58df" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void RJFRC2011::Autonomous::initialState</definition>
+        <definition>void initialState</definition>
         <argsstring>()</argsstring>
         <name>initialState</name>
         <briefdescription>
@@ -281,9 +281,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="74" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.cpp" bodystart="69" bodyend="95"/>
       </memberdef>
-      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1a19885a005434b857e127132a8b871cbe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1a8c231a2395b4fc03bb3d0dcbda53113d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void RJFRC2011::Autonomous::checkForLines</definition>
+        <definition>void checkForLines</definition>
         <argsstring>()</argsstring>
         <name>checkForLines</name>
         <briefdescription>
@@ -294,61 +294,61 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="75" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.cpp" bodystart="102" bodyend="112"/>
       </memberdef>
-      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1aa3128360e2ac480a3e3ed89e2aeda31b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1a68c0b61b84e4e095b6463cadc275adae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void RJFRC2011::Autonomous::move</definition>
+        <definition>void move</definition>
         <argsstring>()</argsstring>
         <name>move</name>
         <briefdescription>
 <para>State in which the robot moves forward. </para>        </briefdescription>
         <detaileddescription>
-<para>Print to the screen that we&apos;re in <emphasis><ref refid="class_r_j_f_r_c2011_1_1_autonomous_1aa3128360e2ac480a3e3ed89e2aeda31b" kindref="member">move()</ref></emphasis> and drive forward at <emphasis>AUTO_DRIVE_SPEED</emphasis> </para>        </detaileddescription>
+<para>Print to the screen that we&apos;re in <emphasis><ref refid="class_r_j_f_r_c2011_1_1_autonomous_1a68c0b61b84e4e095b6463cadc275adae" kindref="member">move()</ref></emphasis> and drive forward at <emphasis>AUTO_DRIVE_SPEED</emphasis> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="76" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.cpp" bodystart="118" bodyend="122"/>
       </memberdef>
-      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1acf0141adb70da7e5fe52c5597c0ad34f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1a4558410db180891d594a40eeedc9b09f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void RJFRC2011::Autonomous::correctRight</definition>
+        <definition>void correctRight</definition>
         <argsstring>()</argsstring>
         <name>correctRight</name>
         <briefdescription>
 <para>State in which the robot moves slightly to the right. </para>        </briefdescription>
         <detaileddescription>
-<para>Print to the screen that we&apos;re in <emphasis><ref refid="class_r_j_f_r_c2011_1_1_autonomous_1acf0141adb70da7e5fe52c5597c0ad34f" kindref="member">correctRight()</ref></emphasis> and turn right by driving the left wheels at <emphasis>AUTO_TURN_SPEED</emphasis> and the right wheels at -.15. </para>        </detaileddescription>
+<para>Print to the screen that we&apos;re in <emphasis><ref refid="class_r_j_f_r_c2011_1_1_autonomous_1a4558410db180891d594a40eeedc9b09f" kindref="member">correctRight()</ref></emphasis> and turn right by driving the left wheels at <emphasis>AUTO_TURN_SPEED</emphasis> and the right wheels at -.15. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="77" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.cpp" bodystart="128" bodyend="133"/>
       </memberdef>
-      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1a04da5791b6204403806e04d6a02ad48f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1a6de9f09a6b3304e67829e7b0b6ba3862" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void RJFRC2011::Autonomous::correctLeft</definition>
+        <definition>void correctLeft</definition>
         <argsstring>()</argsstring>
         <name>correctLeft</name>
         <briefdescription>
 <para>State in which the robot moves slightly to the left. </para>        </briefdescription>
         <detaileddescription>
-<para>Print to the screen that we&apos;re in <emphasis><ref refid="class_r_j_f_r_c2011_1_1_autonomous_1a04da5791b6204403806e04d6a02ad48f" kindref="member">correctLeft()</ref></emphasis> and turn left by driving the left wheels at -.15 and the right wheels at <emphasis>AUTO_TURN_SPEED</emphasis>. </para>        </detaileddescription>
+<para>Print to the screen that we&apos;re in <emphasis><ref refid="class_r_j_f_r_c2011_1_1_autonomous_1a6de9f09a6b3304e67829e7b0b6ba3862" kindref="member">correctLeft()</ref></emphasis> and turn left by driving the left wheels at -.15 and the right wheels at <emphasis>AUTO_TURN_SPEED</emphasis>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="78" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.cpp" bodystart="139" bodyend="144"/>
       </memberdef>
-      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1af0c3a743192b8ba41280999752a1e7da" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1ac2f9296b723f0f862c40f39a3d10dda2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void RJFRC2011::Autonomous::placeTube</definition>
+        <definition>void placeTube</definition>
         <argsstring>()</argsstring>
         <name>placeTube</name>
         <briefdescription>
 <para>State in which the robot ejects the tube (ideally onto a peg) </para>        </briefdescription>
         <detaileddescription>
-<para>Brake the robot to a stop, print that we&apos;re in <emphasis><ref refid="class_r_j_f_r_c2011_1_1_autonomous_1af0c3a743192b8ba41280999752a1e7da" kindref="member">placeTube()</ref></emphasis>, and run the ejection wheels for one second. </para>        </detaileddescription>
+<para>Brake the robot to a stop, print that we&apos;re in <emphasis><ref refid="class_r_j_f_r_c2011_1_1_autonomous_1ac2f9296b723f0f862c40f39a3d10dda2" kindref="member">placeTube()</ref></emphasis>, and run the ejection wheels for one second. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="79" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.cpp" bodystart="150" bodyend="165"/>
       </memberdef>
-      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1a71e3ba11ca9e1f84b324a785d1f7985a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1ab6638dfef78f4513be78e517df1c0ca0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
-        <definition>int RJFRC2011::Autonomous::flip</definition>
+        <definition>int flip</definition>
         <argsstring>(int x)</argsstring>
         <name>flip</name>
         <param>
@@ -374,9 +374,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1a747bcf35b9790d7b69b14f4303496418" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1a4be836215225fd5e28546c8fc581437e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>RJFRC2011::Autonomous::Autonomous</definition>
+        <definition>Autonomous</definition>
         <argsstring>(Drive *drive, Manipulator *manip, Controller *controller, DriverStationLCD *screen)</argsstring>
         <name>Autonomous</name>
         <param>
@@ -432,9 +432,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="82" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.cpp" bodystart="31" bodyend="53"/>
       </memberdef>
-      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1a556fc6fc020f18c7bbe6cde03ef81ea4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1aa0c7b6f95a793d94aa0fc88d05d24141" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>RJFRC2011::Autonomous::~Autonomous</definition>
+        <definition>~Autonomous</definition>
         <argsstring>()</argsstring>
         <name>~Autonomous</name>
         <briefdescription>
@@ -445,9 +445,9 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="83" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.cpp" bodystart="56" bodyend="63"/>
       </memberdef>
-      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1ab7959f947b71d84b03f53c8e91a542f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1a5840525ab84532ad9bcfaf7996c3a728" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void RJFRC2011::Autonomous::Go</definition>
+        <definition>void Go</definition>
         <argsstring>()</argsstring>
         <name>Go</name>
         <briefdescription>
@@ -458,22 +458,22 @@
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="85" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.cpp" bodystart="171" bodyend="236"/>
       </memberdef>
-      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1a8cae3af2e3d40459b013583ccec77da6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1a1e3b6d38df0786ccf7f938d60e386aae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void RJFRC2011::Autonomous::Init</definition>
+        <definition>void Init</definition>
         <argsstring>()</argsstring>
         <name>Init</name>
         <briefdescription>
-<para>Convenience method. Same as <emphasis><ref refid="class_r_j_f_r_c2011_1_1_autonomous_1a1f04427d07d9569a9f746445c82b8173" kindref="member">initialState()</ref></emphasis> </para>        </briefdescription>
+<para>Convenience method. Same as <emphasis><ref refid="class_r_j_f_r_c2011_1_1_autonomous_1ac23ae3c557b0a664d5f079b16c6f58df" kindref="member">initialState()</ref></emphasis> </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="86" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.cpp" bodystart="239" bodyend="242"/>
       </memberdef>
-      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1ae35c0e29665ed5812645bec8acbbd965" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_r_j_f_r_c2011_1_1_autonomous_1a37e5a030f02ca1e9377aad232ea7f515" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void RJFRC2011::Autonomous::printLightSensors</definition>
+        <definition>void printLightSensors</definition>
         <argsstring>()</argsstring>
         <name>printLightSensors</name>
         <briefdescription>
@@ -490,16 +490,16 @@
     <detaileddescription>
 <para>Manages a &quot;state machine&quot; (essentially a <emphasis>switch</emphasis> block) that defines which of a number of &quot;states&quot; to execute based on inputs from three light sensors. These states are: check light sensors, move, correct left, correct right, place tube. </para>    </detaileddescription>
     <collaborationgraph>
+      <node id="26">
+        <label>Drive</label>
+        <link refid="class_r_j_f_r_c2011_1_1_drive"/>
+      </node>
       <node id="27">
-        <label>RJFRC2011::Manipulator</label>
+        <label>Manipulator</label>
         <link refid="class_r_j_f_r_c2011_1_1_manipulator"/>
       </node>
-      <node id="25">
-        <label>RJFRC2011::Controller</label>
-        <link refid="class_r_j_f_r_c2011_1_1_controller"/>
-      </node>
       <node id="24">
-        <label>RJFRC2011::Autonomous</label>
+        <label>Autonomous</label>
         <link refid="class_r_j_f_r_c2011_1_1_autonomous"/>
         <childnode refid="25" relation="usage">
           <edgelabel>_controller</edgelabel>
@@ -511,45 +511,45 @@
           <edgelabel>_manip</edgelabel>
         </childnode>
       </node>
-      <node id="26">
-        <label>RJFRC2011::Drive</label>
-        <link refid="class_r_j_f_r_c2011_1_1_drive"/>
+      <node id="25">
+        <label>Controller</label>
+        <link refid="class_r_j_f_r_c2011_1_1_controller"/>
       </node>
     </collaborationgraph>
     <location file="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" line="37" bodyfile="/Users/matthewhaney/rjfrc/workspace11/BuiltinDefaultCode/Autonomous.h" bodystart="36" bodyend="88"/>
     <listofallmembers>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1ad5f5bd5da92e33c84b1227d98fe9db47" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>_controller</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a15f4f4554332e90259e12aec3baa827b" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>_drive</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1acaeb4cd9803595987b7fa237247ecd70" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>_manip</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a45427a812f865b5d200b2642e53d44b0" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>_screen</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a747bcf35b9790d7b69b14f4303496418" prot="public" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>Autonomous</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1aff3688fd6c4119516863947014e17aca" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>autonomousForkSwitch</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1afa181f57e25cab35aa5eeffdbc1bd43d" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>autonomousLaneSwitch</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1abf795083a6b3c1a4fddd5add146a627e" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>centerOut</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a19885a005434b857e127132a8b871cbe" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>checkForLines</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a04da5791b6204403806e04d6a02ad48f" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>correctLeft</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1acf0141adb70da7e5fe52c5597c0ad34f" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>correctRight</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a0d767ab0cfb4de715e0085a12a20c54d" prot="public" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>DONE</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a71e3ba11ca9e1f84b324a785d1f7985a" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>flip</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1abcfa4840dd66568b3e263a36d9941bbc" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>forkDirection</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1ab7959f947b71d84b03f53c8e91a542f6" prot="public" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>Go</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a0d2ee271a5351656f47ed253ff46c82e" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>hasEjectedTube</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a8cae3af2e3d40459b013583ccec77da6" prot="public" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>Init</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a1f04427d07d9569a9f746445c82b8173" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>initialState</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a250e8a5a9a38ae5bba7457df67e05462" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>lane</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1adb590e5cc03f8f653187aee454991a81" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>lastCorrectDirection</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1afe58d24469fe990d5b9a118cff3b22b2" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>leftOut</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a6c06942f52db320c861fdb2efb088f82" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>lightCenter</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a307fc0bab39e0418a12f405b5a35f0a7" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>lightLeft</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a8a1dff8f5e71c096660d122aea8edd21" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>lightRight</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a4b9f4445f2514da0e59f9129b1b247d3" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>lightSensorCenter</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1ae6c458fcfb8244e4e112c6a836bb5609" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>lightSensorLeft</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a8ada7ae26d2b78274febe96a415c7fb0" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>lightSensorRight</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1aa3128360e2ac480a3e3ed89e2aeda31b" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>move</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1af0c3a743192b8ba41280999752a1e7da" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>placeTube</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1ae35c0e29665ed5812645bec8acbbd965" prot="public" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>printLightSensors</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a2b55b6b2e73c92c232ff006476920252" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>rightOut</name></member>
-      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a556fc6fc020f18c7bbe6cde03ef81ea4" prot="public" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>~Autonomous</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a2cced8bfdcdcfdd4ac8603aa96d56781" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>_controller</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a6ca6803f40fe02528cbddae4df3fc53c" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>_drive</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a938412c0aafbe49631d154b04328c5d2" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>_manip</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a7661f30a1cf9f7086d3ab8581488f048" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>_screen</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a4be836215225fd5e28546c8fc581437e" prot="public" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>Autonomous</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a5b1c68931c034a23970d6933ed7e3dcc" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>autonomousForkSwitch</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1ac54600742a1c7e9d6de932cc16653534" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>autonomousLaneSwitch</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a263c35f5c9abaed63464972a596752b0" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>centerOut</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a8c231a2395b4fc03bb3d0dcbda53113d" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>checkForLines</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a6de9f09a6b3304e67829e7b0b6ba3862" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>correctLeft</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a4558410db180891d594a40eeedc9b09f" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>correctRight</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a92ae58b959ae9b65b4a70c45d5171df4" prot="public" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>DONE</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1ab6638dfef78f4513be78e517df1c0ca0" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>flip</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1ab7681c337943ad6600c39e1be0027bbd" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>forkDirection</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a5840525ab84532ad9bcfaf7996c3a728" prot="public" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>Go</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a455cf41b0dd38f5c7ca97c1268154d15" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>hasEjectedTube</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a1e3b6d38df0786ccf7f938d60e386aae" prot="public" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>Init</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1ac23ae3c557b0a664d5f079b16c6f58df" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>initialState</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a3002d35266aa29ddaec363130fb5d12b" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>lane</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a8cbf0ff4ad39fa7586ec2ed90050c142" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>lastCorrectDirection</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1ae1923a0ddadf4002d3a34f777c2f69b8" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>leftOut</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1aba86124f0002ebd507f66005efc796f2" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>lightCenter</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a75d5b19cb3f72d5382b19c1c75adea53" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>lightLeft</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a73a775d0e11e9191a562b5f75cebd361" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>lightRight</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a4c3907fd78cb30d997bf7b12eaad6fc5" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>lightSensorCenter</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a891c7ae8a0250a58e96c4ef0dfb74352" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>lightSensorLeft</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a9b8464d0ba37a956d44f769c80da212f" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>lightSensorRight</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a68c0b61b84e4e095b6463cadc275adae" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>move</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1ac2f9296b723f0f862c40f39a3d10dda2" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>placeTube</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1a37e5a030f02ca1e9377aad232ea7f515" prot="public" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>printLightSensors</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1aec83ad797e582f3b15b18eaf6bbb8382" prot="private" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>rightOut</name></member>
+      <member refid="class_r_j_f_r_c2011_1_1_autonomous_1aa0c7b6f95a793d94aa0fc88d05d24141" prot="public" virt="non-virtual"><scope>RJFRC2011::Autonomous</scope><name>~Autonomous</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -14,7 +14,7 @@ DOCS="./docs$YEAR";
 if [ "$YEAR" = "12" ]; then
     SRCDIR="./workspace/FRC2012/src/org/usfirst/frc3729"
 else
-    SRCDIR="./worspace$YEAR/BuiltinDefaultCode"
+    SRCDIR="./workspace$YEAR/BuiltinDefaultCode"
 fi
 # Remove directory if it exists
 if [ -d "$DOCS" ]; then 

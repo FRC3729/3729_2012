@@ -5,7 +5,7 @@
   \item {Autonomous}
     \subitem {RJFRC2011::Autonomous}, \hyperpage{8}
   \item {Autonomous.cpp}, \hyperpage{27}
-  \item {Autonomous.h}, \hyperpage{29}
+  \item {Autonomous.h}, \hyperpage{28}
   \item {AxisCamera.cpp}, \hyperpage{30}
   \item {AxisCameraParams.cpp}, \hyperpage{31}
 
@@ -31,7 +31,7 @@
   \indexspace
 
   \item {Drive}
-    \subitem {RJFRC2011::Drive}, \hyperpage{18}
+    \subitem {RJFRC2011::Drive}, \hyperpage{17}
   \item {drive}
     \subitem {RJFRC2011::Drive}, \hyperpage{18}
   \item {Drive.cpp}, \hyperpage{36}
@@ -68,7 +68,7 @@
   \item {getMinibotSwitches}
     \subitem {RJFRC2011::Controller}, \hyperpage{15}
   \item {GetTopLimitSwitchAddress}
-    \subitem {RJFRC2011::Manipulator}, \hyperpage{22}
+    \subitem {RJFRC2011::Manipulator}, \hyperpage{21}
   \item {Go}
     \subitem {RJFRC2011::Autonomous}, \hyperpage{9}
     \subitem {RJFRC2011::Teleoperated}, \hyperpage{25}
@@ -126,7 +126,7 @@
     \subitem {getMinibotSwitches}, \hyperpage{15}
     \subitem {normalize}, \hyperpage{16}
   \item {RJFRC2011::Drive}, \hyperpage{16}
-    \subitem {Drive}, \hyperpage{18}
+    \subitem {Drive}, \hyperpage{17}
     \subitem {drive}, \hyperpage{18}
     \subitem {drive\_\discretionary {-}{}{}noramp}, \hyperpage{18}
     \subitem {ramp}, \hyperpage{18}
@@ -135,13 +135,13 @@
     \subitem {ejectTube}, \hyperpage{21}
     \subitem {elevate}, \hyperpage{21}
     \subitem {GetBottomLimitSwitchAddress}, \hyperpage{21}
-    \subitem {GetTopLimitSwitchAddress}, \hyperpage{22}
+    \subitem {GetTopLimitSwitchAddress}, \hyperpage{21}
     \subitem {inputTube}, \hyperpage{22}
     \subitem {Manipulator}, \hyperpage{21}
     \subitem {rotateTube}, \hyperpage{22}
     \subitem {stopManipulatorAction}, \hyperpage{22}
     \subitem {stopManipulatorElevation}, \hyperpage{22}
-  \item {RJFRC2011::Teleoperated}, \hyperpage{23}
+  \item {RJFRC2011::Teleoperated}, \hyperpage{22}
     \subitem {Go}, \hyperpage{25}
     \subitem {Teleoperated}, \hyperpage{25}
   \item {rotateTube}
@@ -161,7 +161,7 @@
   \item {Teleoperated}
     \subitem {RJFRC2011::Teleoperated}, \hyperpage{25}
   \item {Teleoperated.cpp}, \hyperpage{46}
-  \item {Teleoperated.h}, \hyperpage{48}
+  \item {Teleoperated.h}, \hyperpage{47}
   \item {topchar}
     \subitem {macros.h}, \hyperpage{43}
 

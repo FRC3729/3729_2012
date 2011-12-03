@@ -1,5 +1,5 @@
 \hypertarget{class_r_j_f_r_c2011_1_1_autonomous}{
-\section{RJFRC2011::Autonomous Class Reference}
+\section{Autonomous Class Reference}
 \label{class_r_j_f_r_c2011_1_1_autonomous}\index{RJFRC2011::Autonomous@{RJFRC2011::Autonomous}}
 }
 
@@ -13,108 +13,109 @@ Class managing the \hyperlink{class_r_j_f_r_c2011_1_1_autonomous}{Autonomous} pe
 
 
 
-Collaboration diagram for RJFRC2011::Autonomous:\nopagebreak
+Collaboration diagram for Autonomous:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{class_r_j_f_r_c2011_1_1_autonomous__coll__graph}
+\includegraphics[width=290pt]{class_r_j_f_r_c2011_1_1_autonomous__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a747bcf35b9790d7b69b14f4303496418}{Autonomous} (\hyperlink{class_r_j_f_r_c2011_1_1_drive}{Drive} $\ast$drive, \hyperlink{class_r_j_f_r_c2011_1_1_manipulator}{Manipulator} $\ast$manip, \hyperlink{class_r_j_f_r_c2011_1_1_controller}{Controller} $\ast$controller, DriverStationLCD $\ast$screen)
+\hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a4be836215225fd5e28546c8fc581437e}{Autonomous} (\hyperlink{class_r_j_f_r_c2011_1_1_drive}{Drive} $\ast$drive, \hyperlink{class_r_j_f_r_c2011_1_1_manipulator}{Manipulator} $\ast$manip, \hyperlink{class_r_j_f_r_c2011_1_1_controller}{Controller} $\ast$controller, DriverStationLCD $\ast$screen)
 \begin{DoxyCompactList}\small\item\em Construct from the addresses of a drive system, a manipulator, a controller, and an LCD screen. \item\end{DoxyCompactList}\item 
-\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a556fc6fc020f18c7bbe6cde03ef81ea4}{
-\hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a556fc6fc020f18c7bbe6cde03ef81ea4}{$\sim$Autonomous} ()}
-\label{class_r_j_f_r_c2011_1_1_autonomous_a556fc6fc020f18c7bbe6cde03ef81ea4}
+\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_aa0c7b6f95a793d94aa0fc88d05d24141}{
+\hyperlink{class_r_j_f_r_c2011_1_1_autonomous_aa0c7b6f95a793d94aa0fc88d05d24141}{$\sim$Autonomous} ()}
+\label{class_r_j_f_r_c2011_1_1_autonomous_aa0c7b6f95a793d94aa0fc88d05d24141}
 
 \begin{DoxyCompactList}\small\item\em Destructor. Kill stuff. \item\end{DoxyCompactList}\item 
-void \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_ab7959f947b71d84b03f53c8e91a542f6}{Go} ()
+void \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a5840525ab84532ad9bcfaf7996c3a728}{Go} ()
 \begin{DoxyCompactList}\small\item\em State machine function that decides which state to go into. \item\end{DoxyCompactList}\item 
-\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a8cae3af2e3d40459b013583ccec77da6}{
-void \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a8cae3af2e3d40459b013583ccec77da6}{Init} ()}
-\label{class_r_j_f_r_c2011_1_1_autonomous_a8cae3af2e3d40459b013583ccec77da6}
+\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a1e3b6d38df0786ccf7f938d60e386aae}{
+void \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a1e3b6d38df0786ccf7f938d60e386aae}{Init} ()}
+\label{class_r_j_f_r_c2011_1_1_autonomous_a1e3b6d38df0786ccf7f938d60e386aae}
 
-\begin{DoxyCompactList}\small\item\em Convenience method. Same as {\itshape \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a1f04427d07d9569a9f746445c82b8173}{initialState()}\/} \item\end{DoxyCompactList}\item 
-\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_ae35c0e29665ed5812645bec8acbbd965}{
-void \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_ae35c0e29665ed5812645bec8acbbd965}{printLightSensors} ()}
-\label{class_r_j_f_r_c2011_1_1_autonomous_ae35c0e29665ed5812645bec8acbbd965}
+\begin{DoxyCompactList}\small\item\em Convenience method. Same as {\itshape \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_ac23ae3c557b0a664d5f079b16c6f58df}{initialState()}\/} \item\end{DoxyCompactList}\item 
+\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a37e5a030f02ca1e9377aad232ea7f515}{
+void \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a37e5a030f02ca1e9377aad232ea7f515}{printLightSensors} ()}
+\label{class_r_j_f_r_c2011_1_1_autonomous_a37e5a030f02ca1e9377aad232ea7f515}
 
 \begin{DoxyCompactList}\small\item\em Debug info. Prints the values of lightLeft, lightCenter, and lightRight on the screen. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a1f04427d07d9569a9f746445c82b8173}{initialState} ()
+void \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_ac23ae3c557b0a664d5f079b16c6f58df}{initialState} ()
 \begin{DoxyCompactList}\small\item\em The initial state of the robot. \item\end{DoxyCompactList}\item 
-void \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a19885a005434b857e127132a8b871cbe}{checkForLines} ()
+void \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a8c231a2395b4fc03bb3d0dcbda53113d}{checkForLines} ()
 \begin{DoxyCompactList}\small\item\em The state in which the robot is looking for tape lines on the floor. \item\end{DoxyCompactList}\item 
-void \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_aa3128360e2ac480a3e3ed89e2aeda31b}{move} ()
+void \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a68c0b61b84e4e095b6463cadc275adae}{move} ()
 \begin{DoxyCompactList}\small\item\em State in which the robot moves forward. \item\end{DoxyCompactList}\item 
-void \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_acf0141adb70da7e5fe52c5597c0ad34f}{correctRight} ()
+void \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a4558410db180891d594a40eeedc9b09f}{correctRight} ()
 \begin{DoxyCompactList}\small\item\em State in which the robot moves slightly to the right. \item\end{DoxyCompactList}\item 
-void \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a04da5791b6204403806e04d6a02ad48f}{correctLeft} ()
+void \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a6de9f09a6b3304e67829e7b0b6ba3862}{correctLeft} ()
 \begin{DoxyCompactList}\small\item\em State in which the robot moves slightly to the left. \item\end{DoxyCompactList}\item 
-void \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_af0c3a743192b8ba41280999752a1e7da}{placeTube} ()
+void \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_ac2f9296b723f0f862c40f39a3d10dda2}{placeTube} ()
 \begin{DoxyCompactList}\small\item\em State in which the robot ejects the tube (ideally onto a peg) \item\end{DoxyCompactList}\item 
-int \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a71e3ba11ca9e1f84b324a785d1f7985a}{flip} (int x)
+int \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_ab6638dfef78f4513be78e517df1c0ca0}{flip} (int x)
 \begin{DoxyCompactList}\small\item\em If x is 0, return 1! If x is 1, return 0! \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a250e8a5a9a38ae5bba7457df67e05462}{
-UINT8 \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a250e8a5a9a38ae5bba7457df67e05462}{lane}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_a250e8a5a9a38ae5bba7457df67e05462}
+\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a3002d35266aa29ddaec363130fb5d12b}{
+UINT8 \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a3002d35266aa29ddaec363130fb5d12b}{lane}}
+\label{class_r_j_f_r_c2011_1_1_autonomous_a3002d35266aa29ddaec363130fb5d12b}
 
 \begin{DoxyCompactList}\small\item\em The starting lane of the robot; 1 for center, 0 for left or right. \item\end{DoxyCompactList}\item 
-\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_abcfa4840dd66568b3e263a36d9941bbc}{
-char \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_abcfa4840dd66568b3e263a36d9941bbc}{forkDirection}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_abcfa4840dd66568b3e263a36d9941bbc}
+\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_ab7681c337943ad6600c39e1be0027bbd}{
+char \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_ab7681c337943ad6600c39e1be0027bbd}{forkDirection}}
+\label{class_r_j_f_r_c2011_1_1_autonomous_ab7681c337943ad6600c39e1be0027bbd}
 
 \begin{DoxyCompactList}\small\item\em If we're in the center lane: do we go left or right at the fork? \item\end{DoxyCompactList}\item 
-\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a15f4f4554332e90259e12aec3baa827b}{
-\hyperlink{class_r_j_f_r_c2011_1_1_drive}{Drive} $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a15f4f4554332e90259e12aec3baa827b}{\_\-drive}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_a15f4f4554332e90259e12aec3baa827b}
+\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a6ca6803f40fe02528cbddae4df3fc53c}{
+\hyperlink{class_r_j_f_r_c2011_1_1_drive}{Drive} $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a6ca6803f40fe02528cbddae4df3fc53c}{\_\-drive}}
+\label{class_r_j_f_r_c2011_1_1_autonomous_a6ca6803f40fe02528cbddae4df3fc53c}
 
 \begin{DoxyCompactList}\small\item\em Pointer to object abstracting drive mechanism. \item\end{DoxyCompactList}\item 
-\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_acaeb4cd9803595987b7fa237247ecd70}{
-\hyperlink{class_r_j_f_r_c2011_1_1_manipulator}{Manipulator} $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_acaeb4cd9803595987b7fa237247ecd70}{\_\-manip}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_acaeb4cd9803595987b7fa237247ecd70}
+\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a938412c0aafbe49631d154b04328c5d2}{
+\hyperlink{class_r_j_f_r_c2011_1_1_manipulator}{Manipulator} $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a938412c0aafbe49631d154b04328c5d2}{\_\-manip}}
+\label{class_r_j_f_r_c2011_1_1_autonomous_a938412c0aafbe49631d154b04328c5d2}
 
 \begin{DoxyCompactList}\small\item\em Pointer to object abstracting manipulator. \item\end{DoxyCompactList}\item 
-\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_ad5f5bd5da92e33c84b1227d98fe9db47}{
-\hyperlink{class_r_j_f_r_c2011_1_1_controller}{Controller} $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_ad5f5bd5da92e33c84b1227d98fe9db47}{\_\-controller}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_ad5f5bd5da92e33c84b1227d98fe9db47}
+\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a2cced8bfdcdcfdd4ac8603aa96d56781}{
+\hyperlink{class_r_j_f_r_c2011_1_1_controller}{Controller} $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a2cced8bfdcdcfdd4ac8603aa96d56781}{\_\-controller}}
+\label{class_r_j_f_r_c2011_1_1_autonomous_a2cced8bfdcdcfdd4ac8603aa96d56781}
 
 \begin{DoxyCompactList}\small\item\em Pointer to object abstracting controller. \item\end{DoxyCompactList}\item 
-\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a45427a812f865b5d200b2642e53d44b0}{
-DriverStationLCD $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a45427a812f865b5d200b2642e53d44b0}{\_\-screen}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_a45427a812f865b5d200b2642e53d44b0}
+\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a7661f30a1cf9f7086d3ab8581488f048}{
+DriverStationLCD $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a7661f30a1cf9f7086d3ab8581488f048}{\_\-screen}}
+\label{class_r_j_f_r_c2011_1_1_autonomous_a7661f30a1cf9f7086d3ab8581488f048}
 
 \begin{DoxyCompactList}\small\item\em Pointer to object representing LCD screen on the Driver Station. Used toprint feedback to the screen. \item\end{DoxyCompactList}\item 
-\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_ae6c458fcfb8244e4e112c6a836bb5609}{
-DigitalInput $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_ae6c458fcfb8244e4e112c6a836bb5609}{lightSensorLeft}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_ae6c458fcfb8244e4e112c6a836bb5609}
+\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a891c7ae8a0250a58e96c4ef0dfb74352}{
+DigitalInput $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a891c7ae8a0250a58e96c4ef0dfb74352}{lightSensorLeft}}
+\label{class_r_j_f_r_c2011_1_1_autonomous_a891c7ae8a0250a58e96c4ef0dfb74352}
 
 \begin{DoxyCompactList}\small\item\em Pointer to object interfacing with leftmost light sensor. \item\end{DoxyCompactList}\item 
-\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a4b9f4445f2514da0e59f9129b1b247d3}{
-DigitalInput $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a4b9f4445f2514da0e59f9129b1b247d3}{lightSensorCenter}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_a4b9f4445f2514da0e59f9129b1b247d3}
+\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a4c3907fd78cb30d997bf7b12eaad6fc5}{
+DigitalInput $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a4c3907fd78cb30d997bf7b12eaad6fc5}{lightSensorCenter}}
+\label{class_r_j_f_r_c2011_1_1_autonomous_a4c3907fd78cb30d997bf7b12eaad6fc5}
 
 \begin{DoxyCompactList}\small\item\em Pointer to object interfacing with center light sensor. \item\end{DoxyCompactList}\item 
-\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a8ada7ae26d2b78274febe96a415c7fb0}{
-DigitalInput $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a8ada7ae26d2b78274febe96a415c7fb0}{lightSensorRight}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_a8ada7ae26d2b78274febe96a415c7fb0}
+\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a9b8464d0ba37a956d44f769c80da212f}{
+DigitalInput $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a9b8464d0ba37a956d44f769c80da212f}{lightSensorRight}}
+\label{class_r_j_f_r_c2011_1_1_autonomous_a9b8464d0ba37a956d44f769c80da212f}
 
 \begin{DoxyCompactList}\small\item\em Pointer to object interfacing with rightmost light sensor. \item\end{DoxyCompactList}\item 
-\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_afa181f57e25cab35aa5eeffdbc1bd43d}{
-DigitalInput $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_afa181f57e25cab35aa5eeffdbc1bd43d}{autonomousLaneSwitch}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_afa181f57e25cab35aa5eeffdbc1bd43d}
+\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_ac54600742a1c7e9d6de932cc16653534}{
+DigitalInput $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_ac54600742a1c7e9d6de932cc16653534}{autonomousLaneSwitch}}
+\label{class_r_j_f_r_c2011_1_1_autonomous_ac54600742a1c7e9d6de932cc16653534}
 
 \begin{DoxyCompactList}\small\item\em Physical switch controlling which lane our robot starts out in. \item\end{DoxyCompactList}\item 
-\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_aff3688fd6c4119516863947014e17aca}{
-DigitalInput $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_aff3688fd6c4119516863947014e17aca}{autonomousForkSwitch}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_aff3688fd6c4119516863947014e17aca}
+\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a5b1c68931c034a23970d6933ed7e3dcc}{
+DigitalInput $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a5b1c68931c034a23970d6933ed7e3dcc}{autonomousForkSwitch}}
+\label{class_r_j_f_r_c2011_1_1_autonomous_a5b1c68931c034a23970d6933ed7e3dcc}
 
 \begin{DoxyCompactList}\small\item\em Physical switch controlling which direction our robot is to take if it's in the center lane. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -123,10 +124,10 @@ DigitalInput $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_aff3688fd6c411
 Class managing the \hyperlink{class_r_j_f_r_c2011_1_1_autonomous}{Autonomous} period of the competition. Manages a \char`\"{}state machine\char`\"{} (essentially a {\itshape switch\/} block) that defines which of a number of \char`\"{}states\char`\"{} to execute based on inputs from three light sensors. These states are: check light sensors, move, correct left, correct right, place tube. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a747bcf35b9790d7b69b14f4303496418}{
+\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a4be836215225fd5e28546c8fc581437e}{
 \index{RJFRC2011::Autonomous@{RJFRC2011::Autonomous}!Autonomous@{Autonomous}}
 \index{Autonomous@{Autonomous}!RJFRC2011::Autonomous@{RJFRC2011::Autonomous}}
-\subsubsection[{Autonomous}]{\setlength{\rightskip}{0pt plus 5cm}RJFRC2011::Autonomous::Autonomous (
+\subsubsection[{Autonomous}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Autonomous} (
 \begin{DoxyParamCaption}
 \item[{{\bf Drive} $\ast$}]{drive, }
 \item[{{\bf Manipulator} $\ast$}]{manip, }
@@ -134,7 +135,7 @@ Class managing the \hyperlink{class_r_j_f_r_c2011_1_1_autonomous}{Autonomous} pe
 \item[{DriverStationLCD $\ast$}]{screen}
 \end{DoxyParamCaption}
 )}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_a747bcf35b9790d7b69b14f4303496418}
+\label{class_r_j_f_r_c2011_1_1_autonomous_a4be836215225fd5e28546c8fc581437e}
 
 
 Construct from the addresses of a drive system, a manipulator, a controller, and an LCD screen. 
@@ -153,54 +154,54 @@ Construct from the addresses of a drive system, a manipulator, a controller, and
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a19885a005434b857e127132a8b871cbe}{
+\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a8c231a2395b4fc03bb3d0dcbda53113d}{
 \index{RJFRC2011::Autonomous@{RJFRC2011::Autonomous}!checkForLines@{checkForLines}}
 \index{checkForLines@{checkForLines}!RJFRC2011::Autonomous@{RJFRC2011::Autonomous}}
-\subsubsection[{checkForLines}]{\setlength{\rightskip}{0pt plus 5cm}void RJFRC2011::Autonomous::checkForLines (
+\subsubsection[{checkForLines}]{\setlength{\rightskip}{0pt plus 5cm}void checkForLines (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_a19885a005434b857e127132a8b871cbe}
+\label{class_r_j_f_r_c2011_1_1_autonomous_a8c231a2395b4fc03bb3d0dcbda53113d}
 
 
 The state in which the robot is looking for tape lines on the floor. 
 
-Read input from the 3 light sensors and store the results in three variables. \hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a04da5791b6204403806e04d6a02ad48f}{
+Read input from the 3 light sensors and store the results in three variables. \hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a6de9f09a6b3304e67829e7b0b6ba3862}{
 \index{RJFRC2011::Autonomous@{RJFRC2011::Autonomous}!correctLeft@{correctLeft}}
 \index{correctLeft@{correctLeft}!RJFRC2011::Autonomous@{RJFRC2011::Autonomous}}
-\subsubsection[{correctLeft}]{\setlength{\rightskip}{0pt plus 5cm}void RJFRC2011::Autonomous::correctLeft (
+\subsubsection[{correctLeft}]{\setlength{\rightskip}{0pt plus 5cm}void correctLeft (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_a04da5791b6204403806e04d6a02ad48f}
+\label{class_r_j_f_r_c2011_1_1_autonomous_a6de9f09a6b3304e67829e7b0b6ba3862}
 
 
 State in which the robot moves slightly to the left. 
 
-Print to the screen that we're in {\itshape \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a04da5791b6204403806e04d6a02ad48f}{correctLeft()}\/} and turn left by driving the left wheels at -\/.15 and the right wheels at {\itshape AUTO\_\-TURN\_\-SPEED\/}. \hypertarget{class_r_j_f_r_c2011_1_1_autonomous_acf0141adb70da7e5fe52c5597c0ad34f}{
+Print to the screen that we're in {\itshape \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a6de9f09a6b3304e67829e7b0b6ba3862}{correctLeft()}\/} and turn left by driving the left wheels at -\/.15 and the right wheels at {\itshape AUTO\_\-TURN\_\-SPEED\/}. \hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a4558410db180891d594a40eeedc9b09f}{
 \index{RJFRC2011::Autonomous@{RJFRC2011::Autonomous}!correctRight@{correctRight}}
 \index{correctRight@{correctRight}!RJFRC2011::Autonomous@{RJFRC2011::Autonomous}}
-\subsubsection[{correctRight}]{\setlength{\rightskip}{0pt plus 5cm}void RJFRC2011::Autonomous::correctRight (
+\subsubsection[{correctRight}]{\setlength{\rightskip}{0pt plus 5cm}void correctRight (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_acf0141adb70da7e5fe52c5597c0ad34f}
+\label{class_r_j_f_r_c2011_1_1_autonomous_a4558410db180891d594a40eeedc9b09f}
 
 
 State in which the robot moves slightly to the right. 
 
-Print to the screen that we're in {\itshape \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_acf0141adb70da7e5fe52c5597c0ad34f}{correctRight()}\/} and turn right by driving the left wheels at {\itshape AUTO\_\-TURN\_\-SPEED\/} and the right wheels at -\/.15. \hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a71e3ba11ca9e1f84b324a785d1f7985a}{
+Print to the screen that we're in {\itshape \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a4558410db180891d594a40eeedc9b09f}{correctRight()}\/} and turn right by driving the left wheels at {\itshape AUTO\_\-TURN\_\-SPEED\/} and the right wheels at -\/.15. \hypertarget{class_r_j_f_r_c2011_1_1_autonomous_ab6638dfef78f4513be78e517df1c0ca0}{
 \index{RJFRC2011::Autonomous@{RJFRC2011::Autonomous}!flip@{flip}}
 \index{flip@{flip}!RJFRC2011::Autonomous@{RJFRC2011::Autonomous}}
-\subsubsection[{flip}]{\setlength{\rightskip}{0pt plus 5cm}int RJFRC2011::Autonomous::flip (
+\subsubsection[{flip}]{\setlength{\rightskip}{0pt plus 5cm}int flip (
 \begin{DoxyParamCaption}
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_a71e3ba11ca9e1f84b324a785d1f7985a}
+\label{class_r_j_f_r_c2011_1_1_autonomous_ab6638dfef78f4513be78e517df1c0ca0}
 
 
 If x is 0, return 1! If x is 1, return 0! 
@@ -213,59 +214,59 @@ If x is 0, return 1! If x is 1, return 0!
 \begin{DoxyReturn}{Returns}
 The flipped value 
 \end{DoxyReturn}
-\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_ab7959f947b71d84b03f53c8e91a542f6}{
+\hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a5840525ab84532ad9bcfaf7996c3a728}{
 \index{RJFRC2011::Autonomous@{RJFRC2011::Autonomous}!Go@{Go}}
 \index{Go@{Go}!RJFRC2011::Autonomous@{RJFRC2011::Autonomous}}
-\subsubsection[{Go}]{\setlength{\rightskip}{0pt plus 5cm}void RJFRC2011::Autonomous::Go (
+\subsubsection[{Go}]{\setlength{\rightskip}{0pt plus 5cm}void Go (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_ab7959f947b71d84b03f53c8e91a542f6}
+\label{class_r_j_f_r_c2011_1_1_autonomous_a5840525ab84532ad9bcfaf7996c3a728}
 
 
 State machine function that decides which state to go into. 
 
-Operates on the {\itshape lightX\/} variables to tell where the line is, with 0 indicating that the sensor saw nothing and 1 indicating that the sensor detected something (ideally the tape). We then use a sereis of {\itshape if\/} statements to change to the appropriate state. \hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a1f04427d07d9569a9f746445c82b8173}{
+Operates on the {\itshape lightX\/} variables to tell where the line is, with 0 indicating that the sensor saw nothing and 1 indicating that the sensor detected something (ideally the tape). We then use a sereis of {\itshape if\/} statements to change to the appropriate state. \hypertarget{class_r_j_f_r_c2011_1_1_autonomous_ac23ae3c557b0a664d5f079b16c6f58df}{
 \index{RJFRC2011::Autonomous@{RJFRC2011::Autonomous}!initialState@{initialState}}
 \index{initialState@{initialState}!RJFRC2011::Autonomous@{RJFRC2011::Autonomous}}
-\subsubsection[{initialState}]{\setlength{\rightskip}{0pt plus 5cm}void RJFRC2011::Autonomous::initialState (
+\subsubsection[{initialState}]{\setlength{\rightskip}{0pt plus 5cm}void initialState (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_a1f04427d07d9569a9f746445c82b8173}
+\label{class_r_j_f_r_c2011_1_1_autonomous_ac23ae3c557b0a664d5f079b16c6f58df}
 
 
 The initial state of the robot. 
 
-Read input from the switches and set variables accordingly. If lane switch is off, we're in a side lane; if it's on, we're in the center one. If we're in the center, read the second fork switch: if it's on, go left; if not, go right. \hypertarget{class_r_j_f_r_c2011_1_1_autonomous_aa3128360e2ac480a3e3ed89e2aeda31b}{
+Read input from the switches and set variables accordingly. If lane switch is off, we're in a side lane; if it's on, we're in the center one. If we're in the center, read the second fork switch: if it's on, go left; if not, go right. \hypertarget{class_r_j_f_r_c2011_1_1_autonomous_a68c0b61b84e4e095b6463cadc275adae}{
 \index{RJFRC2011::Autonomous@{RJFRC2011::Autonomous}!move@{move}}
 \index{move@{move}!RJFRC2011::Autonomous@{RJFRC2011::Autonomous}}
-\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}void RJFRC2011::Autonomous::move (
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}void move (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_aa3128360e2ac480a3e3ed89e2aeda31b}
+\label{class_r_j_f_r_c2011_1_1_autonomous_a68c0b61b84e4e095b6463cadc275adae}
 
 
 State in which the robot moves forward. 
 
-Print to the screen that we're in {\itshape \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_aa3128360e2ac480a3e3ed89e2aeda31b}{move()}\/} and drive forward at {\itshape AUTO\_\-DRIVE\_\-SPEED\/} \hypertarget{class_r_j_f_r_c2011_1_1_autonomous_af0c3a743192b8ba41280999752a1e7da}{
+Print to the screen that we're in {\itshape \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_a68c0b61b84e4e095b6463cadc275adae}{move()}\/} and drive forward at {\itshape AUTO\_\-DRIVE\_\-SPEED\/} \hypertarget{class_r_j_f_r_c2011_1_1_autonomous_ac2f9296b723f0f862c40f39a3d10dda2}{
 \index{RJFRC2011::Autonomous@{RJFRC2011::Autonomous}!placeTube@{placeTube}}
 \index{placeTube@{placeTube}!RJFRC2011::Autonomous@{RJFRC2011::Autonomous}}
-\subsubsection[{placeTube}]{\setlength{\rightskip}{0pt plus 5cm}void RJFRC2011::Autonomous::placeTube (
+\subsubsection[{placeTube}]{\setlength{\rightskip}{0pt plus 5cm}void placeTube (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
-\label{class_r_j_f_r_c2011_1_1_autonomous_af0c3a743192b8ba41280999752a1e7da}
+\label{class_r_j_f_r_c2011_1_1_autonomous_ac2f9296b723f0f862c40f39a3d10dda2}
 
 
 State in which the robot ejects the tube (ideally onto a peg) 
 
-Brake the robot to a stop, print that we're in {\itshape \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_af0c3a743192b8ba41280999752a1e7da}{placeTube()}\/}, and run the ejection wheels for one second. 
+Brake the robot to a stop, print that we're in {\itshape \hyperlink{class_r_j_f_r_c2011_1_1_autonomous_ac2f9296b723f0f862c40f39a3d10dda2}{placeTube()}\/}, and run the ejection wheels for one second. 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
 \item 

@@ -1,5 +1,5 @@
 \hypertarget{class_r_j_f_r_c2011_1_1_drive}{
-\section{RJFRC2011::Drive Class Reference}
+\section{Drive Class Reference}
 \label{class_r_j_f_r_c2011_1_1_drive}\index{RJFRC2011::Drive@{RJFRC2011::Drive}}
 }
 
@@ -14,32 +14,32 @@ Class abstracting the drive system.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_r_j_f_r_c2011_1_1_drive_a6633c3e2ff4c7d3803a1b87947d872a3}{Drive} ()
+\hyperlink{class_r_j_f_r_c2011_1_1_drive_a70d21ef3a677f93d143809ccdb43f542}{Drive} ()
 \begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
-void \hyperlink{class_r_j_f_r_c2011_1_1_drive_aa246cbe7cdecc4e72af60d5d9a87bcdb}{drive} (float speed, float turn)
+void \hyperlink{class_r_j_f_r_c2011_1_1_drive_a45db0398a3b95e7bc3230d1cdf35542c}{drive} (float speed, float turn)
 \begin{DoxyCompactList}\small\item\em \hyperlink{class_r_j_f_r_c2011_1_1_drive}{Drive} the robot, ramping as you go. \item\end{DoxyCompactList}\item 
-void \hyperlink{class_r_j_f_r_c2011_1_1_drive_a033624d88429de64fe3d954680157c44}{drive\_\-noramp} (float speed, float turn)
+void \hyperlink{class_r_j_f_r_c2011_1_1_drive_a0a15ad6630865e45514115e90e3a712a}{drive\_\-noramp} (float speed, float turn)
 \begin{DoxyCompactList}\small\item\em \hyperlink{class_r_j_f_r_c2011_1_1_drive}{Drive} without ramping. Used ONLY in \hyperlink{class_r_j_f_r_c2011_1_1_autonomous}{Autonomous}, since we don't trust our drivers ;) \item\end{DoxyCompactList}\item 
-void \hyperlink{class_r_j_f_r_c2011_1_1_drive_a731a3b7d782c3f75287b97db93f489d6}{tank\_\-drive} (float left, float right)
+void \hyperlink{class_r_j_f_r_c2011_1_1_drive_aee80f00e9c569ac417d1d38622873fd6}{tank\_\-drive} (float left, float right)
 \begin{DoxyCompactList}\small\item\em \hyperlink{class_r_j_f_r_c2011_1_1_drive}{Drive} robot from values given for the speed of each wheel; used in autonomous. Regrettably, no ramping here; however, since it won't be sporadic, we don't need it. \item\end{DoxyCompactList}\item 
-float \hyperlink{class_r_j_f_r_c2011_1_1_drive_ad816025f2d8dbbed3049f611a6e63a90}{ramp} (float desired\_\-output, float current\_\-output)
+float \hyperlink{class_r_j_f_r_c2011_1_1_drive_a178331829dec3f3aca42663859624f48}{ramp} (float desired\_\-output, float current\_\-output)
 \begin{DoxyCompactList}\small\item\em A function that \char`\"{}ramps\char`\"{} input from a joystick to motors so that an overzealous driver doesn't tear up the chassis. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_r_j_f_r_c2011_1_1_drive_a869d7df0f00c2f9b5c62abe8ade90298}{
-RobotDrive $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_drive_a869d7df0f00c2f9b5c62abe8ade90298}{\_\-drive}}
-\label{class_r_j_f_r_c2011_1_1_drive_a869d7df0f00c2f9b5c62abe8ade90298}
+\hypertarget{class_r_j_f_r_c2011_1_1_drive_a4e6fb332d2aed2f9cdd44abf19cb5d7e}{
+RobotDrive $\ast$ \hyperlink{class_r_j_f_r_c2011_1_1_drive_a4e6fb332d2aed2f9cdd44abf19cb5d7e}{\_\-drive}}
+\label{class_r_j_f_r_c2011_1_1_drive_a4e6fb332d2aed2f9cdd44abf19cb5d7e}
 
 \begin{DoxyCompactList}\small\item\em WPILib-\/defined class for abstracting the drive mechanism. Our \char`\"{}Drive\char`\"{} class basically clarifies and ramps the inputs provided by RobotDrive. \item\end{DoxyCompactList}\item 
-\hypertarget{class_r_j_f_r_c2011_1_1_drive_a242653143f6cd0b7e35a3249ab14a9d1}{
-float \hyperlink{class_r_j_f_r_c2011_1_1_drive_a242653143f6cd0b7e35a3249ab14a9d1}{\_\-speed\_\-prev}}
-\label{class_r_j_f_r_c2011_1_1_drive_a242653143f6cd0b7e35a3249ab14a9d1}
+\hypertarget{class_r_j_f_r_c2011_1_1_drive_a00ef359ecfa695063e012fddaa848f50}{
+float \hyperlink{class_r_j_f_r_c2011_1_1_drive_a00ef359ecfa695063e012fddaa848f50}{\_\-speed\_\-prev}}
+\label{class_r_j_f_r_c2011_1_1_drive_a00ef359ecfa695063e012fddaa848f50}
 
 \begin{DoxyCompactList}\small\item\em The last sent speed value (used for ramping). \item\end{DoxyCompactList}\item 
-\hypertarget{class_r_j_f_r_c2011_1_1_drive_a0cd549eb20982cfeea32e197d3c613e9}{
-float \hyperlink{class_r_j_f_r_c2011_1_1_drive_a0cd549eb20982cfeea32e197d3c613e9}{\_\-turn\_\-prev}}
-\label{class_r_j_f_r_c2011_1_1_drive_a0cd549eb20982cfeea32e197d3c613e9}
+\hypertarget{class_r_j_f_r_c2011_1_1_drive_a28a4c1ce270c272f351abc966b557fe0}{
+float \hyperlink{class_r_j_f_r_c2011_1_1_drive_a28a4c1ce270c272f351abc966b557fe0}{\_\-turn\_\-prev}}
+\label{class_r_j_f_r_c2011_1_1_drive_a28a4c1ce270c272f351abc966b557fe0}
 
 \begin{DoxyCompactList}\small\item\em The last sent turn value (used for ramping). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -48,15 +48,15 @@ float \hyperlink{class_r_j_f_r_c2011_1_1_drive_a0cd549eb20982cfeea32e197d3c613e9
 Class abstracting the drive system. Basically a wrapper for the WPILib-\/defined {\itshape RobotDrive\/} class, with our own fancy ramping capabilities put in. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_r_j_f_r_c2011_1_1_drive_a6633c3e2ff4c7d3803a1b87947d872a3}{
+\hypertarget{class_r_j_f_r_c2011_1_1_drive_a70d21ef3a677f93d143809ccdb43f542}{
 \index{RJFRC2011::Drive@{RJFRC2011::Drive}!Drive@{Drive}}
 \index{Drive@{Drive}!RJFRC2011::Drive@{RJFRC2011::Drive}}
-\subsubsection[{Drive}]{\setlength{\rightskip}{0pt plus 5cm}RJFRC2011::Drive::Drive (
+\subsubsection[{Drive}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drive} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}
-\label{class_r_j_f_r_c2011_1_1_drive_a6633c3e2ff4c7d3803a1b87947d872a3}
+\label{class_r_j_f_r_c2011_1_1_drive_a70d21ef3a677f93d143809ccdb43f542}
 
 
 Constructor. 
@@ -64,16 +64,16 @@ Constructor.
 Initialize the drive system to work with Jaguars on ports {\itshape DRIVE\_\-FRONT\_\-LEFT\_\-JAGUAR\_\-PORT\/} , {\itshape DRIVE\_\-FRONT\_\-RIGHT\_\-JAGUAR\_\-PORT\/} , {\itshape DRIVE\_\-BACK\_\-LEFT\_\-JAGUAR\_\-PORT\/} , and {\itshape DRIVE\_\-BACK\_\-RIGHT\_\-JAGUAR\_\-PORT\/} . 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_r_j_f_r_c2011_1_1_drive_aa246cbe7cdecc4e72af60d5d9a87bcdb}{
+\hypertarget{class_r_j_f_r_c2011_1_1_drive_a45db0398a3b95e7bc3230d1cdf35542c}{
 \index{RJFRC2011::Drive@{RJFRC2011::Drive}!drive@{drive}}
 \index{drive@{drive}!RJFRC2011::Drive@{RJFRC2011::Drive}}
-\subsubsection[{drive}]{\setlength{\rightskip}{0pt plus 5cm}void RJFRC2011::Drive::drive (
+\subsubsection[{drive}]{\setlength{\rightskip}{0pt plus 5cm}void drive (
 \begin{DoxyParamCaption}
 \item[{float}]{speed, }
 \item[{float}]{turn}
 \end{DoxyParamCaption}
 )}}
-\label{class_r_j_f_r_c2011_1_1_drive_aa246cbe7cdecc4e72af60d5d9a87bcdb}
+\label{class_r_j_f_r_c2011_1_1_drive_a45db0398a3b95e7bc3230d1cdf35542c}
 
 
 \hyperlink{class_r_j_f_r_c2011_1_1_drive}{Drive} the robot, ramping as you go. 
@@ -85,16 +85,16 @@ Initialize the drive system to work with Jaguars on ports {\itshape DRIVE\_\-FRO
 {\em turn} & The user-\/requested turn\\
 \hline
 \end{DoxyParams}
-\hyperlink{class_r_j_f_r_c2011_1_1_drive}{Drive} the robot with the {\itshape RobotDrive.Drive(speed, turn)\/} function UNLESS the user wants to do a dead turn (by pushing a stick directly to the left or right), in which case we use the {\itshape RobotDrive.TankDrive(left, right)\/} function. \hypertarget{class_r_j_f_r_c2011_1_1_drive_a033624d88429de64fe3d954680157c44}{
+\hyperlink{class_r_j_f_r_c2011_1_1_drive}{Drive} the robot with the {\itshape RobotDrive.Drive(speed, turn)\/} function UNLESS the user wants to do a dead turn (by pushing a stick directly to the left or right), in which case we use the {\itshape RobotDrive.TankDrive(left, right)\/} function. \hypertarget{class_r_j_f_r_c2011_1_1_drive_a0a15ad6630865e45514115e90e3a712a}{
 \index{RJFRC2011::Drive@{RJFRC2011::Drive}!drive\_\-noramp@{drive\_\-noramp}}
 \index{drive\_\-noramp@{drive\_\-noramp}!RJFRC2011::Drive@{RJFRC2011::Drive}}
-\subsubsection[{drive\_\-noramp}]{\setlength{\rightskip}{0pt plus 5cm}void RJFRC2011::Drive::drive\_\-noramp (
+\subsubsection[{drive\_\-noramp}]{\setlength{\rightskip}{0pt plus 5cm}void drive\_\-noramp (
 \begin{DoxyParamCaption}
 \item[{float}]{speed, }
 \item[{float}]{turn}
 \end{DoxyParamCaption}
 )}}
-\label{class_r_j_f_r_c2011_1_1_drive_a033624d88429de64fe3d954680157c44}
+\label{class_r_j_f_r_c2011_1_1_drive_a0a15ad6630865e45514115e90e3a712a}
 
 
 \hyperlink{class_r_j_f_r_c2011_1_1_drive}{Drive} without ramping. Used ONLY in \hyperlink{class_r_j_f_r_c2011_1_1_autonomous}{Autonomous}, since we don't trust our drivers ;) 
@@ -106,16 +106,16 @@ Initialize the drive system to work with Jaguars on ports {\itshape DRIVE\_\-FRO
 {\em turn} & The requested turn\\
 \hline
 \end{DoxyParams}
-\hyperlink{class_r_j_f_r_c2011_1_1_drive}{Drive} the robot with the {\itshape RobotDrive.Drive(speed, turn)\/} function UNLESS we want to do a dead turn, in which case we use the {\itshape RobotDrive.TankDrive(left, right)\/} function. \hypertarget{class_r_j_f_r_c2011_1_1_drive_ad816025f2d8dbbed3049f611a6e63a90}{
+\hyperlink{class_r_j_f_r_c2011_1_1_drive}{Drive} the robot with the {\itshape RobotDrive.Drive(speed, turn)\/} function UNLESS we want to do a dead turn, in which case we use the {\itshape RobotDrive.TankDrive(left, right)\/} function. \hypertarget{class_r_j_f_r_c2011_1_1_drive_a178331829dec3f3aca42663859624f48}{
 \index{RJFRC2011::Drive@{RJFRC2011::Drive}!ramp@{ramp}}
 \index{ramp@{ramp}!RJFRC2011::Drive@{RJFRC2011::Drive}}
-\subsubsection[{ramp}]{\setlength{\rightskip}{0pt plus 5cm}float RJFRC2011::Drive::ramp (
+\subsubsection[{ramp}]{\setlength{\rightskip}{0pt plus 5cm}float ramp (
 \begin{DoxyParamCaption}
 \item[{float}]{desired\_\-output, }
 \item[{float}]{current\_\-output}
 \end{DoxyParamCaption}
 )}}
-\label{class_r_j_f_r_c2011_1_1_drive_ad816025f2d8dbbed3049f611a6e63a90}
+\label{class_r_j_f_r_c2011_1_1_drive_a178331829dec3f3aca42663859624f48}
 
 
 A function that \char`\"{}ramps\char`\"{} input from a joystick to motors so that an overzealous driver doesn't tear up the chassis. 
@@ -135,16 +135,16 @@ the ramped value
 \begin{DoxyAuthor}{Author}
 Drew Lazzeri 
 \end{DoxyAuthor}
-\hypertarget{class_r_j_f_r_c2011_1_1_drive_a731a3b7d782c3f75287b97db93f489d6}{
+\hypertarget{class_r_j_f_r_c2011_1_1_drive_aee80f00e9c569ac417d1d38622873fd6}{
 \index{RJFRC2011::Drive@{RJFRC2011::Drive}!tank\_\-drive@{tank\_\-drive}}
 \index{tank\_\-drive@{tank\_\-drive}!RJFRC2011::Drive@{RJFRC2011::Drive}}
-\subsubsection[{tank\_\-drive}]{\setlength{\rightskip}{0pt plus 5cm}void RJFRC2011::Drive::tank\_\-drive (
+\subsubsection[{tank\_\-drive}]{\setlength{\rightskip}{0pt plus 5cm}void tank\_\-drive (
 \begin{DoxyParamCaption}
 \item[{float}]{left, }
 \item[{float}]{right}
 \end{DoxyParamCaption}
 )}}
-\label{class_r_j_f_r_c2011_1_1_drive_a731a3b7d782c3f75287b97db93f489d6}
+\label{class_r_j_f_r_c2011_1_1_drive_aee80f00e9c569ac417d1d38622873fd6}
 
 
 \hyperlink{class_r_j_f_r_c2011_1_1_drive}{Drive} robot from values given for the speed of each wheel; used in autonomous. Regrettably, no ramping here; however, since it won't be sporadic, we don't need it. 

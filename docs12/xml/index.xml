@@ -1,9 +1,35 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.7.3">
+  <compound refid="classorg_1_1usfirst_1_1frc3729_1_1_drive" kind="class"><name>org::usfirst::frc3729::Drive</name>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a0eb5828525a6d4bfa7573d1e58df7465" kind="variable"><name>fl</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a0757dd37ffb594a0a4bc76da35f32fa8" kind="variable"><name>fr</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a5e5ae650be19ab2d27215b819f904852" kind="variable"><name>bl</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a573aa9e3792ca59d1cbd83a03f8d4ad0" kind="variable"><name>br</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1ab80aa00592a79ba8ae4c6d644b2d0432" kind="variable"><name>_x_prev</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1adee92a1101090fd040fcc8f041b48c60" kind="variable"><name>_y_prev</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a9906e16e55ad79d6be1b20853bef0449" kind="function"><name>ramp</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a70d21ef3a677f93d143809ccdb43f542" kind="function"><name>Drive</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a3a7bc6982f33aa10c5760969ad353ea8" kind="function"><name>drive_tank</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1ab526116b6172a5aec9b28ce8cd7d68c6" kind="function"><name>drive_tank_noramp</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a59404296b29f69e0264c9303409f08fe" kind="function"><name>drive_arcade</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1aa42e54bed99bbe6ae52b4c7c9f0d470e" kind="function"><name>drive_mecanum</name></member>
+  </compound>
   <compound refid="classorg_1_1usfirst_1_1frc3729_1_1_main_robot_class" kind="class"><name>org::usfirst::frc3729::MainRobotClass</name>
     <member refid="classorg_1_1usfirst_1_1frc3729_1_1_main_robot_class_1a8ecb7e2f7f61f8fdd2dfe6b19cb33e6b" kind="function"><name>robotInit</name></member>
     <member refid="classorg_1_1usfirst_1_1frc3729_1_1_main_robot_class_1ad1890d14437760dd78cf0d806b8ed181" kind="function"><name>autonomousPeriodic</name></member>
     <member refid="classorg_1_1usfirst_1_1frc3729_1_1_main_robot_class_1a8fdc05f41fb5dcb2a22be5aaec03d59b" kind="function"><name>teleopPeriodic</name></member>
+  </compound>
+  <compound refid="classorg_1_1usfirst_1_1frc3729_1_1_params" kind="class"><name>org::usfirst::frc3729::Params</name>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_params_1ae4b0e5043efba1e422584eec401dd949" kind="variable"><name>fl_port</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_params_1afa7c6d2f1fe2f1bf7b5fb28ab6398dbf" kind="variable"><name>fr_port</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_params_1a06f38f12cf5d82d7d776ba72c91b2e57" kind="variable"><name>bl_port</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_params_1a8da711fc6f3934af2f709fdf7871e5bf" kind="variable"><name>br_port</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_params_1a1e9e890a10b78657f7c2b9cc6e468eb3" kind="variable"><name>default_watchdog_time</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_params_1a60a30592a623ec27ccf86943696d514f" kind="variable"><name>auto_drive_speed</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_params_1aaef6b1dd06be8509e99c1edd76f7f5fb" kind="variable"><name>auto_turn_speed</name></member>
+    <member refid="classorg_1_1usfirst_1_1frc3729_1_1_params_1ac22c562ee72f1e4b324e7236168280a6" kind="variable"><name>auto_brake_speed</name></member>
+  </compound>
+  <compound refid="namespaceedu_1_1wpi_1_1first_1_1wpilibj_1_1" kind="namespace"><name>edu::wpi::first::wpilibj::</name>
   </compound>
   <compound refid="namespaceorg" kind="namespace"><name>org</name>
   </compound>
@@ -11,7 +37,11 @@
   </compound>
   <compound refid="namespaceorg_1_1usfirst_1_1frc3729" kind="namespace"><name>org::usfirst::frc3729</name>
   </compound>
+  <compound refid="_drive_8java" kind="file"><name>Drive.java</name>
+  </compound>
   <compound refid="_main_robot_class_8java" kind="file"><name>MainRobotClass.java</name>
+  </compound>
+  <compound refid="_params_8java" kind="file"><name>Params.java</name>
   </compound>
   <compound refid="dir_4127c382a522f4bec3fe74dadd0902a6" kind="dir"><name>workspace/FRC2012/</name>
   </compound>

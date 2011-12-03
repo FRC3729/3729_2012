@@ -40,8 +40,8 @@
 \indexentry{RJFRC2011::Controller@{RJFRC2011::Controller}!normalize@{normalize}|hyperpage}{16}
 \indexentry{normalize@{normalize}!RJFRC2011::Controller@{RJFRC2011::Controller}|hyperpage}{16}
 \indexentry{RJFRC2011::Drive@{RJFRC2011::Drive}|hyperpage}{16}
-\indexentry{RJFRC2011::Drive@{RJFRC2011::Drive}!Drive@{Drive}|hyperpage}{18}
-\indexentry{Drive@{Drive}!RJFRC2011::Drive@{RJFRC2011::Drive}|hyperpage}{18}
+\indexentry{RJFRC2011::Drive@{RJFRC2011::Drive}!Drive@{Drive}|hyperpage}{17}
+\indexentry{Drive@{Drive}!RJFRC2011::Drive@{RJFRC2011::Drive}|hyperpage}{17}
 \indexentry{RJFRC2011::Drive@{RJFRC2011::Drive}!drive@{drive}|hyperpage}{18}
 \indexentry{drive@{drive}!RJFRC2011::Drive@{RJFRC2011::Drive}|hyperpage}{18}
 \indexentry{RJFRC2011::Drive@{RJFRC2011::Drive}!drive\_\discretionary {-}{}{}noramp@{drive\_\discretionary {-}{}{}noramp}|hyperpage}{18}
@@ -59,8 +59,8 @@
 \indexentry{elevate@{elevate}!RJFRC2011::Manipulator@{RJFRC2011::Manipulator}|hyperpage}{21}
 \indexentry{RJFRC2011::Manipulator@{RJFRC2011::Manipulator}!GetBottomLimitSwitchAddress@{GetBottomLimitSwitchAddress}|hyperpage}{21}
 \indexentry{GetBottomLimitSwitchAddress@{GetBottomLimitSwitchAddress}!RJFRC2011::Manipulator@{RJFRC2011::Manipulator}|hyperpage}{21}
-\indexentry{RJFRC2011::Manipulator@{RJFRC2011::Manipulator}!GetTopLimitSwitchAddress@{GetTopLimitSwitchAddress}|hyperpage}{22}
-\indexentry{GetTopLimitSwitchAddress@{GetTopLimitSwitchAddress}!RJFRC2011::Manipulator@{RJFRC2011::Manipulator}|hyperpage}{22}
+\indexentry{RJFRC2011::Manipulator@{RJFRC2011::Manipulator}!GetTopLimitSwitchAddress@{GetTopLimitSwitchAddress}|hyperpage}{21}
+\indexentry{GetTopLimitSwitchAddress@{GetTopLimitSwitchAddress}!RJFRC2011::Manipulator@{RJFRC2011::Manipulator}|hyperpage}{21}
 \indexentry{RJFRC2011::Manipulator@{RJFRC2011::Manipulator}!inputTube@{inputTube}|hyperpage}{22}
 \indexentry{inputTube@{inputTube}!RJFRC2011::Manipulator@{RJFRC2011::Manipulator}|hyperpage}{22}
 \indexentry{RJFRC2011::Manipulator@{RJFRC2011::Manipulator}!rotateTube@{rotateTube}|hyperpage}{22}
@@ -69,13 +69,13 @@
 \indexentry{stopManipulatorAction@{stopManipulatorAction}!RJFRC2011::Manipulator@{RJFRC2011::Manipulator}|hyperpage}{22}
 \indexentry{RJFRC2011::Manipulator@{RJFRC2011::Manipulator}!stopManipulatorElevation@{stopManipulatorElevation}|hyperpage}{22}
 \indexentry{stopManipulatorElevation@{stopManipulatorElevation}!RJFRC2011::Manipulator@{RJFRC2011::Manipulator}|hyperpage}{22}
-\indexentry{RJFRC2011::Teleoperated@{RJFRC2011::Teleoperated}|hyperpage}{23}
+\indexentry{RJFRC2011::Teleoperated@{RJFRC2011::Teleoperated}|hyperpage}{22}
 \indexentry{RJFRC2011::Teleoperated@{RJFRC2011::Teleoperated}!Teleoperated@{Teleoperated}|hyperpage}{25}
 \indexentry{Teleoperated@{Teleoperated}!RJFRC2011::Teleoperated@{RJFRC2011::Teleoperated}|hyperpage}{25}
 \indexentry{RJFRC2011::Teleoperated@{RJFRC2011::Teleoperated}!Go@{Go}|hyperpage}{25}
 \indexentry{Go@{Go}!RJFRC2011::Teleoperated@{RJFRC2011::Teleoperated}|hyperpage}{25}
 \indexentry{Autonomous.cpp@{Autonomous.cpp}|hyperpage}{27}
-\indexentry{Autonomous.h@{Autonomous.h}|hyperpage}{29}
+\indexentry{Autonomous.h@{Autonomous.h}|hyperpage}{28}
 \indexentry{AxisCamera.cpp@{AxisCamera.cpp}|hyperpage}{30}
 \indexentry{AxisCameraParams.cpp@{AxisCameraParams.cpp}|hyperpage}{31}
 \indexentry{BuiltinDefaultCode.cpp@{BuiltinDefaultCode.cpp}|hyperpage}{32}
@@ -89,4 +89,4 @@
 \indexentry{Manipulator.cpp@{Manipulator.cpp}|hyperpage}{43}
 \indexentry{Manipulator.h@{Manipulator.h}|hyperpage}{44}
 \indexentry{Teleoperated.cpp@{Teleoperated.cpp}|hyperpage}{46}
-\indexentry{Teleoperated.h@{Teleoperated.h}|hyperpage}{48}
+\indexentry{Teleoperated.h@{Teleoperated.h}|hyperpage}{47}

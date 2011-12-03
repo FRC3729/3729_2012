@@ -2,7 +2,9 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
   <compounddef id="dir_e321ac691169e122cb4f12a23016995f" kind="dir">
     <compoundname>workspace/FRC2012/src/org/usfirst/frc3729/</compoundname>
+    <innerfile refid="_drive_8java">Drive.java</innerfile>
     <innerfile refid="_main_robot_class_8java">MainRobotClass.java</innerfile>
+    <innerfile refid="_params_8java">Params.java</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

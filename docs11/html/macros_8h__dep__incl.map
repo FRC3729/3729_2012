@@ -1,13 +1,13 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_autonomous_8cpp.html" title="File containing implementations of functions found in the Autonomous class (found in Autonomous..." alt="" coords="20,238,145,266"/>
-<area shape="rect" id="node5" href="$_autonomous_8h.html" title="File containing definition of Autonomous class, which is used within the AutomonousPeriodic function ..." alt="" coords="125,161,235,189"/>
-<area shape="rect" id="node8" href="$_builtin_default_code_8cpp.html" title="The file containing the class BuiltinDefaultCode. We didn&#39;t bother changing the name..." alt="" coords="469,238,635,266"/>
-<area shape="rect" id="node10" href="$_drive_8h.html" title="File containing definition of Drive class, which is used in the main program to drive the robot in bo..." alt="" coords="133,83,197,111"/>
-<area shape="rect" id="node13" href="$_teleoperated_8h.html" title="File containing definition of Teleoperated class, which is used in the main program during Teleoperat..." alt="" coords="400,161,515,189"/>
-<area shape="rect" id="node20" href="$_manipulator_8h.html" title="File containing definition of Manipulator class, which is used to simulate the manipulator in both Au..." alt="" coords="323,83,424,111"/>
-<area shape="rect" id="node24" href="$_manipulator_8cpp.html" title="File containing implementations of functions found in the Manipulator class (found in Manipulator..." alt="" coords="259,161,376,189"/>
-<area shape="rect" id="node26" href="$_controller_8h.html" title="File containing definition of Controller class, which is used in both Autonomous and Teleoperated mod..." alt="" coords="499,83,592,111"/>
-<area shape="rect" id="node31" href="$_controller_8cpp.html" title="File containing implementations of functions found in the Controller class (found in Controller..." alt="" coords="589,161,699,189"/>
-<area shape="rect" id="node18" href="$_drive_8cpp.html" title="File containing definitions of functions declared in class Drive (declared in Drive.h)." alt="" coords="21,161,101,189"/>
-<area shape="rect" id="node16" href="$_teleoperated_8cpp.html" title="File containing definitions of functions declared in class Teleoperated (declared in Teleoperated..." alt="" coords="315,238,445,266"/>
+<area shape="rect" id="node3" href="$_autonomous_8cpp.html" title="File containing implementations of functions found in the Autonomous class (found in Autonomous..." alt="" coords="21,229,147,256"/>
+<area shape="rect" id="node5" href="$_autonomous_8h.html" title="File containing definition of Autonomous class, which is used within the AutomonousPeriodic function ..." alt="" coords="127,155,237,181"/>
+<area shape="rect" id="node8" href="$_builtin_default_code_8cpp.html" title="The file containing the class BuiltinDefaultCode. We didn&#39;t bother changing the name..." alt="" coords="476,229,641,256"/>
+<area shape="rect" id="node10" href="$_drive_8h.html" title="File containing definition of Drive class, which is used in the main program to drive the robot in bo..." alt="" coords="135,80,200,107"/>
+<area shape="rect" id="node13" href="$_teleoperated_8h.html" title="File containing definition of Teleoperated class, which is used in the main program during Teleoperat..." alt="" coords="405,155,520,181"/>
+<area shape="rect" id="node20" href="$_manipulator_8h.html" title="File containing definition of Manipulator class, which is used to simulate the manipulator in both Au..." alt="" coords="327,80,429,107"/>
+<area shape="rect" id="node24" href="$_manipulator_8cpp.html" title="File containing implementations of functions found in the Manipulator class (found in Manipulator..." alt="" coords="262,155,380,181"/>
+<area shape="rect" id="node26" href="$_controller_8h.html" title="File containing definition of Controller class, which is used in both Autonomous and Teleoperated mod..." alt="" coords="505,80,599,107"/>
+<area shape="rect" id="node31" href="$_controller_8cpp.html" title="File containing implementations of functions found in the Controller class (found in Controller..." alt="" coords="596,155,705,181"/>
+<area shape="rect" id="node18" href="$_drive_8cpp.html" title="File containing definitions of functions declared in class Drive (declared in Drive.h)." alt="" coords="22,155,103,181"/>
+<area shape="rect" id="node16" href="$_teleoperated_8cpp.html" title="File containing definitions of functions declared in class Teleoperated (declared in Teleoperated..." alt="" coords="319,229,451,256"/>
 </map>

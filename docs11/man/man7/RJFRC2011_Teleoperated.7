@@ -1,4 +1,4 @@
-.TH "RJFRC2011::Teleoperated" 7 "Mon Sep 26 2011" "Version 2011" "RJHS FRC Software Documentation" \" -*- nroff -*-
+.TH "RJFRC2011::Teleoperated" 7 "Sat Dec 3 2011" "Version 2011" "RJHS FRC Software Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -102,12 +102,12 @@ Class managing robot performance in \fBTeleoperated\fP mode.
 Gets user input from two controllers (abstracted as instances of class \fIJoystick\fP), processes said inputs (normalizing joystick values, dead space, etc.), and feeds them to a series of outputs (mainly the \fI\fBDrive\fP\fP class). 
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "RJFRC2011::Teleoperated::Teleoperated (\fBDrive\fP *drive, \fBManipulator\fP *manip, \fBController\fP *controller, DriverStationLCD *screen)"
+.SS "\fBTeleoperated\fP (\fBDrive\fP *drive, \fBManipulator\fP *manip, \fBController\fP *controller, DriverStationLCD *screen)"
 .PP
 Construct from the addresses of a drive system, a manipulator, a controller, and the driver station LCD screen. Set up pointers to passed adresses. Initialize state and condition pointers. 
 .SH "Member Function Documentation"
 .PP 
-.SS "void RJFRC2011::Teleoperated::Go ()"
+.SS "void Go ()"
 .PP
 This is where the magic happens. Get driver input, then figure out what to do with it. Get input from the controller (see \fI\fBController\fP\fP class). Based on this, decide what values to send to the \fI\fBDrive\fP\fP class and \fI\fBManipulator\fP\fP class, as well as how to move the relay (\fIRelay\fP class) controlling the minibot deployment system. 
 

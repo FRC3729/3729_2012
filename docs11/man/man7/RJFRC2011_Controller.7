@@ -1,4 +1,4 @@
-.TH "RJFRC2011::Controller" 7 "Mon Sep 26 2011" "Version 2011" "RJHS FRC Software Documentation" \" -*- nroff -*-
+.TH "RJFRC2011::Controller" 7 "Sat Dec 3 2011" "Version 2011" "RJHS FRC Software Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -82,12 +82,12 @@ Class abstracting the controller(s) used by our driver(s)
 Get input from a pair of joysticks (one of which is physically a flight simulator controller) and return those inputs. A class like this is useful because we can modify a few lines of code to change the inputs for functions throughout the entire code. 
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "RJFRC2011::Controller::Controller ()"
+.SS "\fBController\fP ()"
 .PP
 Constructor. Basically, initialize the controllers to USB ports 1 and 2. 
 .SH "Member Function Documentation"
 .PP 
-.SS "float RJFRC2011::Controller::abs (floatinitial)\fC [private]\fP"
+.SS "float abs (floatinitial)\fC [private]\fP"
 .PP
 Absolute value of a float, since I'm not sure if we can import the <cmath> library onto the cRIO. EDIT: turns out we can, but I'll leave this here to conserve memory. \fBParameters:\fP
 .RS 4
@@ -105,7 +105,7 @@ Matthew Haney
 .RE
 .PP
 
-.SS "float RJFRC2011::Controller::expo (floatx, floata)\fC [private]\fP"
+.SS "float expo (floatx, floata)\fC [private]\fP"
 .PP
 An exponential function used to make joysticks less sensitive near the center and more sensitive towards the edges. Basically, plug the value requested by the user and a predefined constant into an exponential equation and return the result. 
 .PP
@@ -127,7 +127,7 @@ Adam Bryant
 .RE
 .PP
 
-.SS "float RJFRC2011::Controller::getDriveSpeed ()"
+.SS "float getDriveSpeed ()"
 .PP
 Get user-requested drive speed. Reads input from the y-axis on the right stick, normalizes it to a value between -1.0 and 1.0, and then exponentiates it (so the stick's less sensitive in the center and more sensitive at the edges). 
 .PP
@@ -137,7 +137,7 @@ The received, normalized, and expo-ed value (inverted [if the inversion switch {
 .RE
 .PP
 
-.SS "float RJFRC2011::Controller::getDriveTurn ()"
+.SS "float getDriveTurn ()"
 .PP
 Get user-requested drive turn speed. Reads input from the x-axis on the right stick, normalizes it to a value between -1.0 and 1.0, and then exponentiates it (so the stick's less sensitive in the center and more sensitive at the edges). 
 .PP
@@ -147,7 +147,7 @@ The received, normalized, and expo-ed value(inverted [if the inversion switch {b
 .RE
 .PP
 
-.SS "Controller::getManipulatorAction ()\fC [static]\fP"
+.SS "getManipulatorAction ()\fC [static]\fP"
 .PP
 Get user-requested manipulator action (input, rotate, or eject). Read input from three buttons on the joystick: the trigger (1) and two thumb buttons (2 and 3). If any one of them is pressed, return that button's ID. If multiple are pressed, or none are pressed, return 0. 
 .PP
@@ -157,7 +157,7 @@ The ID of the received button.
 .RE
 .PP
 
-.SS "float RJFRC2011::Controller::getManipulatorElevation ()"
+.SS "float getManipulatorElevation ()"
 .PP
 Get user-requested manipulator elevation. Reads input from the y-axis on the joystick. 
 .PP
@@ -167,7 +167,7 @@ The received value (inverted).
 .RE
 .PP
 
-.SS "int RJFRC2011::Controller::getMinibotSwitches ()"
+.SS "int getMinibotSwitches ()"
 .PP
 Get user-requested minibot shelf action (in/out). Read input from two thumb buttons on the joystick (buttons 4 and 5) and return ther states in a single variable. 
 .PP
@@ -177,7 +177,7 @@ An integer with the last two bits being the right and left button inputs, respec
 .RE
 .PP
 
-.SS "float RJFRC2011::Controller::normalize (floatjoyVal, floatmin, floatmax)\fC [private]\fP"
+.SS "float normalize (floatjoyVal, floatmin, floatmax)\fC [private]\fP"
 .PP
 A function that 'normalizes' inputs from the joysticks (because they don't give perfect -1.0 to 1.0 values). If the requested value is negative, return its percentage of the minimum possible value; if it's possible, do the same with the max. If it's zero, of course, return zero. 
 .PP

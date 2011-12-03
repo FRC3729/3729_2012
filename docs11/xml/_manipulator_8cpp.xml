@@ -64,7 +64,7 @@
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="macros_8h" kindref="compound" tooltip="File containing a bunch of macros to de-clutter our other files.">macros.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">RJFRC2011;</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><ref refid="class_r_j_f_r_c2011_1_1_manipulator_1a6038d65cea681e5d561be874c4aa8446" kindref="member" tooltip="Constructor.">RJFRC2011::Manipulator::Manipulator</ref>()</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><ref refid="class_r_j_f_r_c2011_1_1_manipulator_1aa17e96e9120f0779c9d478e121b663e1" kindref="member" tooltip="Constructor.">RJFRC2011::Manipulator::Manipulator</ref>()</highlight></codeline>
 <codeline lineno="29"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manipulatorTop<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Relay(<ref refid="macros_8h_1ac1b9b0f3b1b26567061f78a109415cd2" kindref="member" tooltip="Port # for the relay controlling the top wheels of the manipulator.">MANIPULATOR_TOP_RELAY_PORT</ref>,<sp/>Relay::kBothDirections);</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manipulatorBottom<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Relay(<ref refid="macros_8h_1a001642e6e62eedc685167a8bdc5cfccd" kindref="member" tooltip="Port # for the relay controlling the bottom wheels of the manipulator.">MANIPULATOR_BOTTOM_RELAY_PORT</ref>,<sp/>Relay::kBothDirections);</highlight></codeline>
@@ -74,7 +74,7 @@
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manipulatorElevationTopLimitSwitch<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>DigitalInput(<ref refid="macros_8h_1a2c9350fc206ba58641929e083648be11" kindref="member" tooltip="Port # for the limit switch at the top of the manipulator elevator&amp;#39;s reach.">MANIPULATOR_ELEVATION_TOP_LIMIT_SWITCH_PORT</ref>);</highlight></codeline>
 <codeline lineno="36"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><ref refid="class_r_j_f_r_c2011_1_1_manipulator_1a8672c9e940c5d0fe61906fa4f0f74ab3" kindref="member" tooltip="Destructor. Kill stuff.">RJFRC2011::Manipulator::~Manipulator</ref>()</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><ref refid="class_r_j_f_r_c2011_1_1_manipulator_1a5326e01c30be9c281792a4dc8d3d64ff" kindref="member" tooltip="Destructor. Kill stuff.">RJFRC2011::Manipulator::~Manipulator</ref>()</highlight></codeline>
 <codeline lineno="42"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>manipulatorElevationTopLimitSwitch;</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>manipulatorElevationBottomLimitSwitch;</highlight></codeline>
@@ -83,25 +83,25 @@
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>manipulatorElevation;</highlight></codeline>
 <codeline lineno="48"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_j_f_r_c2011_1_1_manipulator_1a46b06044e8821d6df6d7d57b8c82b1fc" kindref="member" tooltip="Suck in the tube.">RJFRC2011::Manipulator::inputTube</ref>()</highlight></codeline>
+<codeline lineno="54"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_j_f_r_c2011_1_1_manipulator_1a7aa0f040e138fa13c8aa7263a7c7bf44" kindref="member" tooltip="Suck in the tube.">RJFRC2011::Manipulator::inputTube</ref>()</highlight></codeline>
 <codeline lineno="55"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manipulatorTop-&gt;Set(Relay::kReverse);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>top<sp/>part<sp/>backward</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manipulatorBottom-&gt;Set(Relay::kReverse);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>bottom<sp/>part<sp/>backward</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="58"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_j_f_r_c2011_1_1_manipulator_1a315e58939a97c9a0516bab7a92161a1e" kindref="member" tooltip="Rotate the tube downward.">RJFRC2011::Manipulator::rotateTube</ref>()</highlight></codeline>
+<codeline lineno="64"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_j_f_r_c2011_1_1_manipulator_1a0b575c08bbcc3f66c148ae4b159712fd" kindref="member" tooltip="Rotate the tube downward.">RJFRC2011::Manipulator::rotateTube</ref>()</highlight></codeline>
 <codeline lineno="65"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manipulatorTop-&gt;Set(Relay::kForward);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>turn<sp/>top<sp/>part<sp/>forward</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manipulatorBottom-&gt;Set(Relay::kReverse);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//turn<sp/>bottom<sp/>part<sp/>backward</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="68"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_j_f_r_c2011_1_1_manipulator_1aa2aad5b415a79d3cbf2d416e7dd4d6b4" kindref="member" tooltip="Spit out the tube.">RJFRC2011::Manipulator::ejectTube</ref>()</highlight></codeline>
+<codeline lineno="74"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_j_f_r_c2011_1_1_manipulator_1aa24b86401a78f668b41f74d2a64675e6" kindref="member" tooltip="Spit out the tube.">RJFRC2011::Manipulator::ejectTube</ref>()</highlight></codeline>
 <codeline lineno="75"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manipulatorTop-&gt;Set(Relay::kForward);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>top<sp/>part<sp/>forward</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manipulatorBottom-&gt;Set(Relay::kForward);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>bottom<sp/>part<sp/>forward</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="78"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_j_f_r_c2011_1_1_manipulator_1ab5c4959ca6900ef7332713158d5567b6" kindref="member" tooltip="Elevate or lower the manipulator.">RJFRC2011::Manipulator::elevate</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>val)</highlight></codeline>
+<codeline lineno="85"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_j_f_r_c2011_1_1_manipulator_1a3f3e7f01e2d55398625e16780aa0a8fd" kindref="member" tooltip="Elevate or lower the manipulator.">RJFRC2011::Manipulator::elevate</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>val)</highlight></codeline>
 <codeline lineno="86"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>As<sp/>of<sp/>yet,<sp/>limit<sp/>switches<sp/>are<sp/>not<sp/>implemented<sp/>(commented<sp/>out)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>move<sp/>shelf<sp/>up/down<sp/>with<sp/>y_r</highlight><highlight class="normal"></highlight></codeline>
@@ -122,13 +122,13 @@
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="104"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"></highlight></codeline>
-<codeline lineno="110"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_j_f_r_c2011_1_1_manipulator_1a1f643a0a143871d0f0b123ea0f273bd7" kindref="member" tooltip="Stop all movement of the manipulator.">RJFRC2011::Manipulator::stopManipulatorAction</ref>()</highlight></codeline>
+<codeline lineno="110"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_j_f_r_c2011_1_1_manipulator_1a45eb99830ea757af18a30bd0cf299290" kindref="member" tooltip="Stop all movement of the manipulator.">RJFRC2011::Manipulator::stopManipulatorAction</ref>()</highlight></codeline>
 <codeline lineno="111"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manipulatorTop-&gt;Set(Relay::kOff);</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manipulatorBottom-&gt;Set(Relay::kOff);</highlight></codeline>
 <codeline lineno="114"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="115"><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_j_f_r_c2011_1_1_manipulator_1a086407a628311ecab83795fbc6fcfee6" kindref="member" tooltip="Stop all elevation of the manipulator.">RJFRC2011::Manipulator::stopManipulatorElevation</ref>()</highlight></codeline>
+<codeline lineno="120"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_j_f_r_c2011_1_1_manipulator_1aec97a8d018374519863f8ac357cc694f" kindref="member" tooltip="Stop all elevation of the manipulator.">RJFRC2011::Manipulator::stopManipulatorElevation</ref>()</highlight></codeline>
 <codeline lineno="121"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manipulatorElevation-&gt;Set(Relay::kOff);</highlight></codeline>
 <codeline lineno="123"><highlight class="normal">}</highlight></codeline>
