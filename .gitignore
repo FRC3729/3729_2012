@@ -13,6 +13,7 @@
 .*~
 docs11
 docs12
+workspace/FRC2012/suite
 *.ICNS
 Icon?
 __MACOSX

@@ -1,7 +1,7 @@
 package org.usfirst.frc3729;
 
 import edu.wpi.first.wpilibj.*;
-import java.lang.Math;
+import com.sun.squawk.util.MathUtils;
 
 public class Drive {
 	
@@ -12,11 +12,13 @@ public class Drive {
 	
 	private double _x_prev;
 	private double _y_prev;
+	private double _z_prev;
+	private double fl_out, fr_out, br_out, bl_out;
 	
-	double ramp(double desired_output, double current_output) {
-		double increment = .1;
+	double ramp(double desired_output, double current_output, double increment)
+	{
 		if (desired_output  <= .1 && desired_output >= -.1);
-		increment = .05;
+		increment /= 2;
 		if (desired_output < current_output)
 		{
 			return current_output - increment;
@@ -31,7 +33,9 @@ public class Drive {
 		}
 	}
 	
-	public Drive() {
+	public Drive()
+	{
+		_y_prev = _x_prev = _z_prev = 0.0;
 		fl = new Jaguar(Params.fl_port);
 		fr = new Jaguar(Params.fr_port);
 		bl = new Jaguar(Params.bl_port);
@@ -39,42 +43,49 @@ public class Drive {
 		
 	}
 	
-	public void drive_tank(double left, double right) {
+	public void drive_tank(double left, double right)
+	{
 		
 	}
 	
-	public void drive_tank_noramp(double left, double right) {
+	public void drive_tank_noramp(double left, double right)
+	{
 		
 	}
 	
-	public void drive_arcade(double speed, double turn) {
-		if ((speed <= 0.1 && speed > 0) || (speed >= -0.1 && speed < 0))
+	// Input from x and y axes on joystick, mapped to y = speed, x = turn
+	public void drive_arcade(double x, double y)
+	{
+		// If not pushing forward much, switch to tank mode to turn in place
+		if ((y <= 0.1 && y > 0) || (y >= -0.1 && y < 0))
 		{
-			this.drive_tank(turn * 0.75, -turn * 0.75);
+			this.drive_tank(x * 0.75, -x * 0.75);
 		}
 		else
 		{
 			double left, right;
-			if (turn < 0)
+			// If turning left:
+			if (x < 0)
 			{
-				double mag = Math.log10(-turn);
+				double mag = MathUtils.log(-y);
 				double ratio = (mag - 0.5) / (mag + 0.5);
 				if (ratio == 0) ratio = .0000000001;
-				left = speed / ratio;
-				right = speed;
+				left = y / ratio;
+				right = y;
 			}
-			else if (turn > 0)
+			// If turning right:
+			else if (x > 0)
 			{
-				double mag = Math.log10(turn);
+				double mag = MathUtils.log(y);
 				double ratio = (mag - 0.5) / (mag + 0.5);
 				if (ratio == 0) ratio = .0000000001;
-				left = speed;
-				right = speed / ratio;
+				left = y;
+				right = y / ratio;
 			}
 			else
 			{
-				left = speed;
-				right = speed;
+				left = y;
+				right = y;
 			}
 			// Keep everything within the confines of [-1.0, 1.0]
 			left = ( (left > 1.0) ? 1.0 : left);
@@ -89,18 +100,36 @@ public class Drive {
 
 	}
 	
-	// This may be all we need to do to make it work.  We may need to eliminate or redo ramping.  We'll have to see.
-	public void drive_mecanum(double x, double y) {
-		x = ramp(x, _x_prev);
-		y = ramp(y, _y_prev);
+	// Cool suggestion found on CD using three degrees of freedom for turning.  Might work, might not.
+	// If all else fails, we can use edu.wpi.first.wpilibj.RobotDrive.mecanumDrive_polar(double, double, double)
+	public void drive_mecanum(double x, double y, double z)
+	{
+		x = ramp(x, _x_prev, Params.x_ramp_increment);
+		y = ramp(y, _y_prev, Params.y_ramp_increment);
+		z = ramp(z, _z_prev, Params.z_ramp_increment);
 		
-		fl.set(x);
-		br.set(x);
-		fr.set(y);
-		bl.set(y);
+		fl_out = y + x + z;
+		fr_out = y - x - z;
+		bl_out = y - x + z;
+		br_out = y + x - z;
+		
+		// Maximum absolute value of all output speeds - this next bit normalizes the outputs to no more than 1.0
+		double max = Math.max(Math.max(Math.abs(fl_out), Math.abs(fr_out)), Math.max(Math.abs(br_out), Math.abs(bl_out)));
+		if (max > 1.0) {
+			fl_out /= max;
+			fr_out /= max;
+			br_out /= max;
+			bl_out /= max;
+		}
+		
+		fl.set(fl_out);
+		br.set(br_out);
+		fr.set(fr_out);
+		bl.set(bl_out);
 		
 		_x_prev = x;
 		_y_prev = y;
+		_z_prev = z;
 	}
 	
 }
