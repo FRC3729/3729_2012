@@ -21,6 +21,13 @@ public class Input {
 		this._controller = new Joystick(3);
 	}
 	
+	public void setMode(char m)
+	{
+		this.mode = m;
+	}
+	
+	public char getMode() { return mode; } 
+	
 	public double getX()
 	{
 		switch(mode)

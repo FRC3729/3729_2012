@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$class_r_j_f_r_c2011_1_1_autonomous.html" title="Class managing the Autonomous period of the competition." alt="" coords="317,96,416,123"/>
-<area shape="rect" id="node4" href="$class_r_j_f_r_c2011_1_1_controller.html" title="Class abstracting the controller(s) used by our driver(s)" alt="" coords="5,5,88,32"/>
-<area shape="rect" id="node11" href="$class_r_j_f_r_c2011_1_1_teleoperated.html" title="Class managing robot performance in Teleoperated mode." alt="" coords="187,96,292,123"/>
-<area shape="rect" id="node6" href="$class_r_j_f_r_c2011_1_1_drive.html" title="Class abstracting the drive system." alt="" coords="149,5,203,32"/>
-<area shape="rect" id="node8" href="$class_r_j_f_r_c2011_1_1_manipulator.html" title="Abstracts the manipulator." alt="" coords="437,5,528,32"/>
-</map>

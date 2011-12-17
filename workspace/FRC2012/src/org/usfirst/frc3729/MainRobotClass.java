@@ -18,12 +18,16 @@ import edu.wpi.first.wpilibj.IterativeRobot;
  * directory.
  */
 public class MainRobotClass extends IterativeRobot {
-    /**
+    private Input input_manager;
+    private Drive drive;
+	/**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
-    	
+    	this.input_manager = new Input();
+    	this.input_manager.setMode('m');
+    	this.drive = new Drive();
     }
 
     /**
@@ -37,7 +41,8 @@ public class MainRobotClass extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-        
+        // Drive t3h robot
+    	this.drive.drive_mecanum(this.input_manager.getX(), this.input_manager.getY(), this.input_manager.getZ());
     }
     
 }

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="namespaceedu_1_1wpi_1_1first_1_1wpilibj_1_1" kind="namespace">
+    <compoundname>edu::wpi::first::wpilibj::</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" line="1"/>
+  </compounddef>
+</doxygen>

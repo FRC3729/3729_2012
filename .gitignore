@@ -11,8 +11,8 @@
 *~
 .#*
 .*~
-docs11
-docs12
+./docs11/*
+./docs12/*
 workspace/FRC2012/suite
 *.ICNS
 Icon?

@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$_teleoperated_8h.html" title="File containing definition of Teleoperated class, which is used in the main program during Teleoperat..." alt="" coords="170,80,285,107"/>
-<area shape="rect" id="node5" href="$macros_8h.html" title="File containing a bunch of macros to de&#45;clutter our other files." alt="" coords="128,229,205,256"/>
-<area shape="rect" id="node13" href="$_drive_8h.html" title="File containing definition of Drive class, which is used in the main program to drive the robot in bo..." alt="" coords="26,155,90,181"/>
-<area shape="rect" id="node17" href="$_manipulator_8h.html" title="File containing definition of Manipulator class, which is used to simulate the manipulator in both Au..." alt="" coords="115,155,217,181"/>
-<area shape="rect" id="node21" href="$_controller_8h.html" title="File containing definition of Controller class, which is used in both Autonomous and Teleoperated mod..." alt="" coords="242,155,336,181"/>
-</map>

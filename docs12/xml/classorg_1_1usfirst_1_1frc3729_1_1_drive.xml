@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="classorg_1_1usfirst_1_1frc3729_1_1_drive" kind="class" prot="public">
+    <compoundname>org::usfirst::frc3729::Drive</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a0eb5828525a6d4bfa7573d1e58df7465" prot="private" static="no" mutable="no">
+        <type>Jaguar</type>
+        <definition>Jaguar fl</definition>
+        <argsstring></argsstring>
+        <name>fl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" line="8" bodyfile="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a0757dd37ffb594a0a4bc76da35f32fa8" prot="private" static="no" mutable="no">
+        <type>Jaguar</type>
+        <definition>Jaguar fr</definition>
+        <argsstring></argsstring>
+        <name>fr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" line="9" bodyfile="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a5e5ae650be19ab2d27215b819f904852" prot="private" static="no" mutable="no">
+        <type>Jaguar</type>
+        <definition>Jaguar bl</definition>
+        <argsstring></argsstring>
+        <name>bl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" line="10" bodyfile="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a573aa9e3792ca59d1cbd83a03f8d4ad0" prot="private" static="no" mutable="no">
+        <type>Jaguar</type>
+        <definition>Jaguar br</definition>
+        <argsstring></argsstring>
+        <name>br</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" line="11" bodyfile="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1usfirst_1_1frc3729_1_1_drive_1ab80aa00592a79ba8ae4c6d644b2d0432" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double _x_prev</definition>
+        <argsstring></argsstring>
+        <name>_x_prev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" line="13" bodyfile="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1usfirst_1_1frc3729_1_1_drive_1adee92a1101090fd040fcc8f041b48c60" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double _y_prev</definition>
+        <argsstring></argsstring>
+        <name>_y_prev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" line="14" bodyfile="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a18e5bd65c458c6b0287aa0895d47e90c" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double _z_prev</definition>
+        <argsstring></argsstring>
+        <name>_z_prev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" line="15" bodyfile="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1usfirst_1_1frc3729_1_1_drive_1ab54ff47c1e8cb80dafba9e3df6867bb7" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double fl_out</definition>
+        <argsstring></argsstring>
+        <name>fl_out</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" line="16" bodyfile="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classorg_1_1usfirst_1_1frc3729_1_1_drive_1aaafb956b8ab50b11b908ba67c5dfd0ab" prot="package" static="no" mutable="no">
+        <type>double</type>
+        <definition>double fr_out</definition>
+        <argsstring></argsstring>
+        <name>fr_out</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" line="16" bodyfile="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a89f7cfbdfc803c850adb3193f8d75e6d" prot="package" static="no" mutable="no">
+        <type>double</type>
+        <definition>double br_out</definition>
+        <argsstring></argsstring>
+        <name>br_out</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" line="16" bodyfile="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a02831d1e5cf32a31dbe2f37b520b0c5c" prot="package" static="no" mutable="no">
+        <type>double</type>
+        <definition>double bl_out</definition>
+        <argsstring></argsstring>
+        <name>bl_out</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" line="16" bodyfile="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="classorg_1_1usfirst_1_1frc3729_1_1_drive_1ac2e59b63e1df63035ee41aa7d57a7c45" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double ramp</definition>
+        <argsstring>(double desired_output, double current_output, double increment)</argsstring>
+        <name>ramp</name>
+        <param>
+          <type>double</type>
+          <declname>desired_output</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>current_output</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>increment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" line="19" bodyfile="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" bodystart="18" bodyend="34"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a70d21ef3a677f93d143809ccdb43f542" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Drive</definition>
+        <argsstring>()</argsstring>
+        <name>Drive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" line="37" bodyfile="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" bodystart="36" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a3a7bc6982f33aa10c5760969ad353ea8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void drive_tank</definition>
+        <argsstring>(double left, double right)</argsstring>
+        <name>drive_tank</name>
+        <param>
+          <type>double</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>right</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" line="47" bodyfile="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" bodystart="46" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1usfirst_1_1frc3729_1_1_drive_1ab526116b6172a5aec9b28ce8cd7d68c6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void drive_tank_noramp</definition>
+        <argsstring>(double left, double right)</argsstring>
+        <name>drive_tank_noramp</name>
+        <param>
+          <type>double</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>right</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" line="52" bodyfile="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" bodystart="51" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1usfirst_1_1frc3729_1_1_drive_1ac87147230ff84d5cee3872f03672f5ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void drive_arcade</definition>
+        <argsstring>(double x, double y)</argsstring>
+        <name>drive_arcade</name>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" line="58" bodyfile="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" bodystart="57" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a94aabacdc5f973dcef76b2bbef635570" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void drive_mecanum</definition>
+        <argsstring>(double x, double y, double z)</argsstring>
+        <name>drive_mecanum</name>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" line="106" bodyfile="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" bodystart="105" bodyend="133"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" line="6" bodyfile="/Users/matthewhaney/rjfrc/workspace/FRC2012/src/org/usfirst/frc3729/Drive.java" bodystart="6" bodyend="135"/>
+    <listofallmembers>
+      <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1ab80aa00592a79ba8ae4c6d644b2d0432" prot="private" virt="non-virtual"><scope>org::usfirst::frc3729::Drive</scope><name>_x_prev</name></member>
+      <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1adee92a1101090fd040fcc8f041b48c60" prot="private" virt="non-virtual"><scope>org::usfirst::frc3729::Drive</scope><name>_y_prev</name></member>
+      <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a18e5bd65c458c6b0287aa0895d47e90c" prot="private" virt="non-virtual"><scope>org::usfirst::frc3729::Drive</scope><name>_z_prev</name></member>
+      <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a5e5ae650be19ab2d27215b819f904852" prot="private" virt="non-virtual"><scope>org::usfirst::frc3729::Drive</scope><name>bl</name></member>
+      <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a02831d1e5cf32a31dbe2f37b520b0c5c" prot="package" virt="non-virtual"><scope>org::usfirst::frc3729::Drive</scope><name>bl_out</name></member>
+      <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a573aa9e3792ca59d1cbd83a03f8d4ad0" prot="private" virt="non-virtual"><scope>org::usfirst::frc3729::Drive</scope><name>br</name></member>
+      <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a89f7cfbdfc803c850adb3193f8d75e6d" prot="package" virt="non-virtual"><scope>org::usfirst::frc3729::Drive</scope><name>br_out</name></member>
+      <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a70d21ef3a677f93d143809ccdb43f542" prot="public" virt="non-virtual"><scope>org::usfirst::frc3729::Drive</scope><name>Drive</name></member>
+      <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1ac87147230ff84d5cee3872f03672f5ea" prot="public" virt="non-virtual"><scope>org::usfirst::frc3729::Drive</scope><name>drive_arcade</name></member>
+      <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a94aabacdc5f973dcef76b2bbef635570" prot="public" virt="non-virtual"><scope>org::usfirst::frc3729::Drive</scope><name>drive_mecanum</name></member>
+      <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a3a7bc6982f33aa10c5760969ad353ea8" prot="public" virt="non-virtual"><scope>org::usfirst::frc3729::Drive</scope><name>drive_tank</name></member>
+      <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1ab526116b6172a5aec9b28ce8cd7d68c6" prot="public" virt="non-virtual"><scope>org::usfirst::frc3729::Drive</scope><name>drive_tank_noramp</name></member>
+      <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a0eb5828525a6d4bfa7573d1e58df7465" prot="private" virt="non-virtual"><scope>org::usfirst::frc3729::Drive</scope><name>fl</name></member>
+      <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1ab54ff47c1e8cb80dafba9e3df6867bb7" prot="private" virt="non-virtual"><scope>org::usfirst::frc3729::Drive</scope><name>fl_out</name></member>
+      <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1a0757dd37ffb594a0a4bc76da35f32fa8" prot="private" virt="non-virtual"><scope>org::usfirst::frc3729::Drive</scope><name>fr</name></member>
+      <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1aaafb956b8ab50b11b908ba67c5dfd0ab" prot="package" virt="non-virtual"><scope>org::usfirst::frc3729::Drive</scope><name>fr_out</name></member>
+      <member refid="classorg_1_1usfirst_1_1frc3729_1_1_drive_1ac2e59b63e1df63035ee41aa7d57a7c45" prot="package" virt="non-virtual"><scope>org::usfirst::frc3729::Drive</scope><name>ramp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
