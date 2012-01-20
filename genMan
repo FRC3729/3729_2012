@@ -11,19 +11,17 @@ else
 fi
 # Define output directory
 DOCS="./docs$YEAR";
-if [ "$YEAR" = "12" ]; then
-    SRCDIR="./workspace/FRC2012/src/org/usfirst/frc3729"
+# In 2011 we used Eclipse, later we used NetBeans
+if [ "$YEAR" = "11" ]; then
+    SRCDIR="./FRC20$YEAR/BuiltinDefaultCode"
 else
-    SRCDIR="./workspace$YEAR/BuiltinDefaultCode"
+    SRCDIR="./FRC20$YEAR/src";
 fi
 # Remove directory if it exists
 if [ -d "$DOCS" ]; then 
     rm -r $DOCS
 fi
 # Dynamic Doxygen config tags
-# For Lua support - NOTE THAT YOU MUST INSTALL DOXYGEN-LUA FOR THIS TO WORK
-# See https://github.com/alecchen/doxygen-lua
-echo "FILTER_PATTERNS = *.lua=/usr/local/doxygen-lua/bin/lua2dox" > lua.txt;
 # Source code directory, determined by year
 echo "INPUT               = $SRCDIR" > projsrc.txt;
 # Output directory, determined by year
@@ -33,7 +31,7 @@ echo "PROJECT_NUMBER     = 20$YEAR" > projnum.txt;
 # Project brief
 echo "PROJECT_BRIEF      = \"Technical documentation of source code used by the Regis Jesuit FIRST Robotics Competition team #3729 during the 20$YEAR season.\"" > projbrief.txt;
 # Combine the above with the rest of the DOXYFILE
-cat DOXYFILE projsrc.txt projdir.txt projnum.txt projbrief.txt lua.txt > DOXYFILE_TEMP;
+cat DOXYFILE projsrc.txt projdir.txt projnum.txt projbrief.txt > DOXYFILE_TEMP;
 # Run Doxygen
 doxygen DOXYFILE_TEMP;
 # Clean up

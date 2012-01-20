@@ -11,9 +11,8 @@
 *~
 .#*
 .*~
-./docs11/*
-./docs12/*
-workspace/FRC2012/suite
+docs11/
+docs12/
 *.ICNS
 Icon?
 __MACOSX
