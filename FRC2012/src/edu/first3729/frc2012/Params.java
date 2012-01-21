@@ -31,6 +31,8 @@ public class Params {
 	public static final double y_ramp_increment = 0.1;
 	//! Increment at which we ramp output from the z-axis
 	public static final double z_ramp_increment = 0.1;
+        //! Default drive mode - 'a' = arcade, 'm' = mecanum, 't' = tank
+        public static final char default_drive_mode = 'a';
 	
 	// Adjustment macros by Adam Bryant
 	// Used in normalization functions

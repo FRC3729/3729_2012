@@ -25,6 +25,20 @@ public class Input {
 	{
 		this.mode = m;
 	}
+        
+        public boolean checkButton(int joystick, int button_id)
+        { 
+            switch (joystick) {
+                case 0:
+                    return this._joy_left.getRawButton(button_id);
+                case 1:
+                    return this._joy_right.getRawButton(button_id);
+                case 2:
+                    return this._controller.getRawButton(button_id);
+                default:
+                    return checkButton(2, button_id);
+            }
+        }
 	
 	public char getMode() { return mode; } 
 	

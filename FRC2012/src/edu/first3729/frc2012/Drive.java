@@ -45,12 +45,24 @@ public class Drive {
 	
 	public void drive_tank(double left, double right)
 	{
-		
+            left = ramp(left, _x_prev, Params.x_ramp_increment);
+            right = ramp(right, _y_prev, Params.y_ramp_increment);
+            
+            fl.set(left);
+            bl.set(left);
+            fr.set(right);
+            br.set(right);
+            
+            _x_prev = left;
+            _y_prev = right;
 	}
 	
 	public void drive_tank_noramp(double left, double right)
 	{
-		
+            fl.set(left);
+            bl.set(left);
+            fr.set(right);
+            br.set(right);
 	}
 	
 	// Input from x and y axes on joystick, mapped to y = speed, x = turn
@@ -100,28 +112,31 @@ public class Drive {
 
 	}
 	
-	// Cool suggestion found on CD using three degrees of freedom for turning.  Might work, might not.
-	// If all else fails, we can use edu.wpi.first.wpilibj.RobotDrive.mecanumDrive_polar(double, double, double)
+	// Mecanum drive!
 	public void drive_mecanum(double x, double y, double z)
 	{
 		x = ramp(x, _x_prev, Params.x_ramp_increment);
 		y = ramp(y, _y_prev, Params.y_ramp_increment);
 		z = ramp(z, _z_prev, Params.z_ramp_increment);
 		
-		fl_out = y + x + z;
-		fr_out = y - x - z;
-		bl_out = y - x + z;
-		br_out = y + x - z;
+                // If not turning, our job is easy
+                if (z == 0) {
+                    fl_out = y - x;
+                    fr_out = y + x;
+                    bl_out = y + x;
+                    br_out = y - x;
+                }
 		
-		// Maximum absolute value of all output speeds - this next bit normalizes the outputs to no more than 1.0
-		double max = Math.max(Math.max(Math.abs(fl_out), Math.abs(fr_out)), Math.max(Math.abs(br_out), Math.abs(bl_out)));
-		if (max > 1.0) {
-			fl_out /= max;
-			fr_out /= max;
-			br_out /= max;
-			bl_out /= max;
-		}
-		
+                // Normalize between 1 and -1
+                fl_out = ( (fl_out > 1.0) ? 1.0 : fl_out);
+                fl_out = ( (fl_out < -1.0) ? 1.0 : fl_out);
+		fr_out = ( (fr_out > 1.0) ? 1.0 : fr_out);
+		fr_out = ( (fr_out < -1.0) ? 1.0 : fr_out);
+                bl_out = ( (bl_out > 1.0) ? 1.0 : bl_out);
+                bl_out = ( (bl_out < -1.0) ? 1.0 : bl_out);
+		br_out = ( (br_out > 1.0) ? 1.0 : br_out);
+		br_out = ( (br_out < -1.0) ? 1.0 : br_out);
+                
 		fl.set(fl_out);
 		br.set(br_out);
 		fr.set(fr_out);
@@ -131,11 +146,11 @@ public class Drive {
 		_y_prev = y;
 		_z_prev = z;
 	}
-	void test_motors(double _fl, double _fr, double _bl, double _br)
+	void lock_motors()
         {
-            fl.set(.1);
-            br.set(.1);
-            fr.set(.1);
-            bl.set(.1);
+            fl.set(0);
+            br.set(0);
+            fr.set(0);
+            bl.set(0);
         }
 }
