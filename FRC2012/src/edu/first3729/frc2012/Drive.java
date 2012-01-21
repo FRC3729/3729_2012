@@ -131,5 +131,11 @@ public class Drive {
 		_y_prev = y;
 		_z_prev = z;
 	}
-	
+	void test_motors(double _fl, double _fr, double _bl, double _br)
+        {
+            fl.set(.1);
+            br.set(.1);
+            fr.set(.1);
+            bl.set(.1);
+        }
 }

@@ -8,7 +8,7 @@ package edu.first3729.frc2012;
  * 
  */
 
-import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.*;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -19,6 +19,7 @@ import edu.wpi.first.wpilibj.IterativeRobot;
  */
 public class MainRobotClass extends IterativeRobot {
     private Input input_manager;
+    private DriverStationLCD screen;
     private Drive drive;
 	/**
      * This function is run when the robot is first started up and should be
@@ -36,13 +37,27 @@ public class MainRobotClass extends IterativeRobot {
     public void autonomousPeriodic() {
     	
     }
-
+    public void disabledInit()
+    {
+        System.out.println("jafjkadhfkjhadkf");
+    }
+    
+    public void disabledPeriodic()
+    {
+    }
+    
+    public void teleopInit()
+    {
+        
+    }
+    
     /**
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
         // Drive t3h robot
-    	this.drive.drive_mecanum(this.input_manager.getX(), this.input_manager.getY(), this.input_manager.getZ());
+        //this.drive.test_motors(0.05, 0.05, 0.05, 0.05);
+        this.drive.drive_mecanum(this.input_manager.getX(), this.input_manager.getY(), this.input_manager.getZ());
     }
     
 }

@@ -17,7 +17,7 @@ public class Input {
 	public Input()
 	{
 		this._joy_left = new Joystick(1);
-		this._joy_left = new Joystick(2);
+		this._joy_right = new Joystick(2);
 		this._controller = new Joystick(3);
 	}
 	
