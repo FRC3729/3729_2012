@@ -38,6 +38,8 @@ public class Teleoperated
             case 't':
                 this._drive.drive_tank(this._input_manager.getX(), this._input_manager.getY());
                 break;
+            case 'l':
+                this._drive.lock_motors();
         }
     }
     
@@ -51,6 +53,9 @@ public class Teleoperated
         }
         if (this._input_manager.checkButton(0, 10)) {
             this._input_manager.setMode('t');
+        }
+        if (this._input_manager.checkButton(0, 8)) {
+            this._input_manager.setMode('l');
         }
     }
     

@@ -52,7 +52,9 @@ public class Input {
 			return expo(normalize(this._controller.getX(), Params.XMIN, Params.XMAX), Params.XEXPO);
 		case 't':
 			return expo(normalize(this._joy_left.getY(), -1.0, 1.0), Params.JOYEXPO);
-		default:
+                case 'l':
+                        return 0;
+                default:
 			mode = 'a';
 			return getX();
 		}
@@ -68,7 +70,9 @@ public class Input {
 			return expo(normalize(this._controller.getY(), Params.YMIN, Params.YMAX) * -1.0, Params.YEXPO);
 		case 't':
 			return expo(normalize(this._joy_right.getY(), -1.0, 1.0), Params.JOYEXPO);
-		default:
+                case 'l':
+                        return 0;
+                default:
 			mode = 'a';
 			return getY();
 		}
@@ -84,6 +88,8 @@ public class Input {
 			return 0;
 		case 't':
 			return 0;
+                case 'l':
+                        return 0;
 		default:
 			mode = 'm';
 			return getZ();

@@ -118,24 +118,89 @@ public class Drive {
 		x = ramp(x, _x_prev, Params.x_ramp_increment);
 		y = ramp(y, _y_prev, Params.y_ramp_increment);
 		z = ramp(z, _z_prev, Params.z_ramp_increment);
-		
-                // If not turning, our job is easy
-                if (z == 0) {
-                    fl_out = y - x;
-                    fr_out = y + x;
-                    bl_out = y + x;
-                    br_out = y - x;
-                }
-		
-                // Normalize between 1 and -1
-                fl_out = ( (fl_out > 1.0) ? 1.0 : fl_out);
-                fl_out = ( (fl_out < -1.0) ? 1.0 : fl_out);
-		fr_out = ( (fr_out > 1.0) ? 1.0 : fr_out);
-		fr_out = ( (fr_out < -1.0) ? 1.0 : fr_out);
-                bl_out = ( (bl_out > 1.0) ? 1.0 : bl_out);
-                bl_out = ( (bl_out < -1.0) ? 1.0 : bl_out);
-		br_out = ( (br_out > 1.0) ? 1.0 : br_out);
-		br_out = ( (br_out < -1.0) ? 1.0 : br_out);
+
+                /* 
+                 * Reasons behind this next bit of craziness:
+                 * 
+                 * X is the right joystick X-value, representing sideways
+                 *   mecanum strafing motion.
+                 * Y is the right joystick Y-value, representing forward motion.
+                 * Z is the left joystick X-value, representing arcade-style
+                 *   turning motion.
+                 * 
+                 * Let's say we're only pushing Y forward.  We want the robot to
+                 *   just move forward.  To do this, we simply drive all 4
+                 *   wheels forward.  So we get this:
+                 *   
+                 *   fl_out = y;
+                 *   fr_out = y;
+                 *   bl_out = y;
+                 *   br_out = y;
+                 * 
+                 * Now, let's say we're only moving X to the right.  We want the
+                 *   robot to strafe to the right.  To do this, we drive the
+                 *   wheels in the corners at opposite speeds, like this:
+                 * 
+                 *   fl_out = -x;
+                 *   fr_out = x;
+                 *   bl_out = x;
+                 *   br_out = -x;
+                 * 
+                 * Finally, we move Z to the right.  We want the robot to turn
+                 *   in place.  To do this, we drive the right wheels backwards
+                 *   and the left wheels forwards like so:
+                 * 
+                 *   fl_out = z;
+                 *   fr_out = -z
+                 *   bl_out = z;
+                 *   br_out = -z;
+                 * 
+                 * Combining all of these statements, we get this:
+                 * 
+                 *   fl_out = y - x + z;
+                 *   fr_out = y + x - z;
+                 *   bl_out = y + x + z;
+                 *   br_out = y - x - z;
+                 * 
+                 * However, in doing this we could have inputs as high as 3 or
+                 *   as low as -2.  As such, we need to normalize the outputs to
+                 *   be a fraction of the maximum output value.  That way, if we
+                 *   push X, Y, and Z all full forward, we don't get this:
+                 *   
+                 *   fl_out = 1;
+                 *   fr_out = 1;
+                 *   bl_out = 3;
+                 *   br_out = -1;
+                 * 
+                 * But instead, we get this:
+                 * 
+                 *   fl_out = 0.333333;
+                 *   fr_out = 0.333333;
+                 *   bl_out = 1;
+                 *   br_out = -0.333333;
+                 * 
+                 * This has the same net motion vector, but all the output
+                 *   values are within the output range of -1.0 to 1.0.
+                 * 
+                 * Incidentally, the result of pushing Y full forward, X full
+                 *   right, and Z full right should be having the robot move
+                 *   forward, strafe right, and turn right all at once.
+                 * 
+                 */
+                
+                fl_out = y - x + z;
+                fr_out = y + x - z;
+                bl_out = y + x + z;
+                br_out = y - x - z;
+
+                // Maximum absolute value of all output speeds - this next bit normalizes the outputs to no more than 1.0 and no less than -1.0
+		double max = Math.max(Math.max(Math.abs(fl_out), Math.abs(fr_out)), Math.max(Math.abs(br_out), Math.abs(bl_out)));
+		if (max > 1.0) {
+			fl_out /= max;
+			fr_out /= max;
+			br_out /= max;
+			bl_out /= max;
+		}
                 
 		fl.set(fl_out);
 		br.set(br_out);
