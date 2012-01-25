@@ -17,8 +17,8 @@ public class Drive {
 	
 	double ramp(double desired_output, double current_output, double increment)
 	{
-		if (desired_output  <= .1 && desired_output >= -.1);
-		increment /= 2;
+		if (desired_output  <= .1 && desired_output >= -.1)
+                    increment /= 2;
 		if (desired_output < current_output)
 		{
 			return current_output - increment;
@@ -36,7 +36,7 @@ public class Drive {
 	public Drive()
 	{
 		_y_prev = _x_prev = _z_prev = 0.0;
-		fl = new Jaguar(Params.fl_port);
+                fl = new Jaguar(Params.fl_port);
 		fr = new Jaguar(Params.fr_port);
 		bl = new Jaguar(Params.bl_port);
 		br = new Jaguar(Params.br_port);
@@ -50,8 +50,8 @@ public class Drive {
             
             fl.set(left);
             bl.set(left);
-            fr.set(right);
-            br.set(right);
+            fr.set(-right);
+            br.set(-right);
             
             _x_prev = left;
             _y_prev = right;
@@ -61,8 +61,8 @@ public class Drive {
 	{
             fl.set(left);
             bl.set(left);
-            fr.set(right);
-            br.set(right);
+            fr.set(-right);
+            br.set(-right);
 	}
 	
 	// Input from x and y axes on joystick, mapped to y = speed, x = turn
@@ -105,9 +105,9 @@ public class Drive {
 			right = ( (right > 1.0) ? 1.0 : right);
 			right = ( (right < -1.0) ? 1.0 : right);
 			fl.set(left);
-			fr.set(right);
+			fr.set(-right);
 			bl.set(left);
-			br.set(right);
+			br.set(-right);
 		}
 
 	}
@@ -203,8 +203,8 @@ public class Drive {
 		}
                 
 		fl.set(fl_out);
-		br.set(br_out);
-		fr.set(fr_out);
+		br.set(-br_out);
+		fr.set(-fr_out);
 		bl.set(bl_out);
 		
 		_x_prev = x;

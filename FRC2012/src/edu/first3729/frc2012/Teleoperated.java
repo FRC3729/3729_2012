@@ -24,6 +24,25 @@ public class Teleoperated
         this._drive.lock_motors();
     }
     
+    public void test_buttons()
+    {
+        if (this._input_manager.checkButton(1, 1)) {
+            this._drive.drive_mecanum(0, 1, 0);
+        }
+        else if (this._input_manager.checkButton(1, 4)) {
+            this._drive.drive_mecanum(-1, 0, 0);
+        }
+        else if (this._input_manager.checkButton(1, 5)) {
+            this._drive.drive_mecanum(1, 0, 0);
+        }
+        else if (this._input_manager.checkButton(1, 6)) {
+            this._drive.drive_mecanum(0, 0, -1);
+        }
+        else if (this._input_manager.checkButton(1, 11)) {
+            this._drive.drive_mecanum(0, 0, 1);
+        }
+    }
+    
     public void run()
     {
         // Check buttons and update setting accordingly

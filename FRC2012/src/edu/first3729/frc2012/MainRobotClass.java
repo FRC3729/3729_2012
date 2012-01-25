@@ -21,6 +21,7 @@ public class MainRobotClass extends IterativeRobot
     private DriverStationLCD screen;
     private Drive drive;
     private Teleoperated teleop;
+    private int loop;
 	/**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -31,6 +32,7 @@ public class MainRobotClass extends IterativeRobot
     	this.input_manager.setMode(Params.default_drive_mode);
     	this.drive = new Drive();
         this.teleop = new Teleoperated(input_manager, drive);
+        loop = 0;
     }
     
     
@@ -55,7 +57,9 @@ public class MainRobotClass extends IterativeRobot
      */
     public void teleopPeriodic()
     {
-        teleop.run();
+        System.out.println("Loop " + loop);
+        ++loop;
+        teleop.test_buttons();
     }
     
 }
