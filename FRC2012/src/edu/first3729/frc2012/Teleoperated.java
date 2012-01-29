@@ -12,6 +12,7 @@ public class Teleoperated
 {
     private Input _input_manager;
     private Drive _drive;
+    private double x, y, z;
     
     public Teleoperated(Input imanager, Drive drv)
     {
@@ -47,22 +48,30 @@ public class Teleoperated
     {
         // Check buttons and update setting accordingly
         this.updateBindings();
+        this.getInput();
         switch (this._input_manager.getMode()) {
             case 'a':
-                this._drive.drive_arcade(this._input_manager.getX(), this._input_manager.getY());
+                this._drive.drive_arcade(this.x, this.y);
                 break;
             case 'm':
-                this._drive.drive_mecanum(this._input_manager.getX(), this._input_manager.getY(), this._input_manager.getZ());
+                this._drive.drive_mecanum(this.x, this.y, this.z);
                 break;
             case 't':
-                this._drive.drive_tank(this._input_manager.getX(), this._input_manager.getY());
+                this._drive.drive_tank(this.x, this.y);
                 break;
             case 'l':
                 this._drive.lock_motors();
         }
     }
     
-    void updateBindings()
+    private void getInput()
+    {
+        this.x = this._input_manager.getX();
+        this.y = this._input_manager.getY();
+        this.z = this._input_manager.getZ();
+    }
+    
+    private void updateBindings()
     {
         if (this._input_manager.checkButton(0, 6)) {
             this._input_manager.setMode('a');
@@ -73,7 +82,7 @@ public class Teleoperated
         if (this._input_manager.checkButton(0, 10)) {
             this._input_manager.setMode('t');
         }
-        if (this._input_manager.checkButton(0, 8)) {
+        if (this._input_manager.checkButton(0, 11)) {
             this._input_manager.setMode('l');
         }
     }

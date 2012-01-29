@@ -120,15 +120,15 @@ public class Input {
 	 */
 	private double normalize(double joyVal, double min, double max)
 	{
-		double retVal = 0.0f;
+		double retVal = 0.0;
 		if (joyVal < 0.0)
 			retVal = Math.abs(joyVal) / min;
 		else if (joyVal > 0.0)
 			retVal = Math.abs(joyVal) / max;
 		if (retVal < -1.0)
-			retVal = -1.0f;
+			retVal = -1.0;
 		else if (retVal > 1.0)
-			retVal = 1.0f;
+			retVal = 1.0;
 		return retVal;
 	}
 }

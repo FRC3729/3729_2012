@@ -15,7 +15,7 @@ public class Drive {
 	private double _z_prev;
 	private double fl_out, fr_out, br_out, bl_out;
 	
-	double ramp(double desired_output, double current_output, double increment)
+	private double ramp(double desired_output, double current_output, double increment)
 	{
 		if (desired_output  <= .1 && desired_output >= -.1)
                     increment /= 2;
@@ -211,7 +211,8 @@ public class Drive {
 		_y_prev = y;
 		_z_prev = z;
 	}
-	void lock_motors()
+	
+        public void lock_motors()
         {
             fl.set(0);
             br.set(0);

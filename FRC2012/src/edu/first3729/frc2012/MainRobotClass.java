@@ -59,7 +59,7 @@ public class MainRobotClass extends IterativeRobot
     {
         System.out.println("Loop " + loop);
         ++loop;
-        teleop.test_buttons();
+        teleop.run();
     }
     
 }
