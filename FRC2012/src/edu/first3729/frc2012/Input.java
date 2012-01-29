@@ -49,13 +49,13 @@ public class Input {
 		case 'm':
 			return normalize(this._joy_right.getRawAxis(1), -1.0, 1.0);
 		case 'a':
-			return expo(normalize(this._controller.getX(), Params.XMIN, Params.XMAX), Params.XEXPO);
+			return expo(normalize(this._joy_left.getX(), Params.XMIN, Params.XMAX), Params.XEXPO);
 		case 't':
 			return expo(normalize(this._joy_left.getY(), -1.0, 1.0), Params.JOYEXPO);
                 case 'l':
                         return 0;
                 default:
-			mode = 'a';
+			mode = 'l';
 			return getX();
 		}
 	}
@@ -67,13 +67,13 @@ public class Input {
 		case 'm':
 			return normalize(-this._joy_left.getRawAxis(2), -1.0, 1.0);
 		case 'a':
-			return expo(normalize(this._controller.getY(), Params.YMIN, Params.YMAX) * -1.0, Params.YEXPO);
+			return expo(normalize(this._joy_left.getY(), Params.YMIN, Params.YMAX) * -1.0, Params.YEXPO);
 		case 't':
 			return expo(normalize(this._joy_right.getY(), -1.0, 1.0), Params.JOYEXPO);
                 case 'l':
                         return 0;
                 default:
-			mode = 'a';
+			mode = 'l';
 			return getY();
 		}
 	}
@@ -91,7 +91,7 @@ public class Input {
                 case 'l':
                         return 0;
 		default:
-			mode = 'm';
+			mode = 'l';
 			return getZ();
 		}
 	}

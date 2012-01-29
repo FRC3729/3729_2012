@@ -68,11 +68,11 @@ public class Drive {
 	// Input from x and y axes on joystick, mapped to y = speed, x = turn
 	public void drive_arcade(double x, double y)
 	{
-		// If not pushing forward much, switch to tank mode to turn in place
+            // If not pushing forward much, switch to tank mode to turn in place
 		if ((y <= 0.1 && y > 0) || (y >= -0.1 && y < 0))
 		{
 			this.drive_tank(x * 0.75, -x * 0.75);
-		}
+		} 
 		else
 		{
 			double left, right;
@@ -234,4 +234,7 @@ public class Drive {
             fr.set(fr_out);
             bl.set(bl_out);
         }
+
+    private void ramp(double _y_prev, double y_ramp_increment) {
+    }
 }
