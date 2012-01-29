@@ -206,6 +206,14 @@ public class Drive {
                     fr_out = fl_out = br_out = bl_out = 0;
                 }
                 
+                if (Math.abs(y) <= .1 && Math.abs(x) <= .1) {
+                    z *= .75;
+                    fl_out = -z;
+                    bl_out = -z;
+                    br_out = z;
+                    fr_out = z;
+                }
+                
                 System.out.println("fr_out: " + fr_out + " fl_out: " + fl_out + " br_out: " + br_out + " bl_out: " + br_out);
                 
 		fl.set(fl_out);

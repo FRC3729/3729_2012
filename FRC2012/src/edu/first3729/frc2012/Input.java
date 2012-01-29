@@ -47,7 +47,7 @@ public class Input {
 		switch(mode)
 		{
 		case 'm':
-			return expo(normalize(this._joy_left.getRawAxis(1), -1.0, 1.0), Params.JOYEXPO);
+			return normalize(this._joy_right.getRawAxis(1), -1.0, 1.0);
 		case 'a':
 			return expo(normalize(this._controller.getX(), Params.XMIN, Params.XMAX), Params.XEXPO);
 		case 't':
@@ -65,7 +65,7 @@ public class Input {
 		switch(mode)
 		{
 		case 'm':
-			return expo(normalize(-this._joy_left.getRawAxis(2), -1.0, 1.0), Params.JOYEXPO);
+			return normalize(-this._joy_left.getRawAxis(2), -1.0, 1.0);
 		case 'a':
 			return expo(normalize(this._controller.getY(), Params.YMIN, Params.YMAX) * -1.0, Params.YEXPO);
 		case 't':
@@ -83,7 +83,7 @@ public class Input {
 		switch(mode)
 		{
 		case 'm':
-			return expo(normalize(this._joy_right.getRawAxis(1), -1.0, 1.0), Params.JOYEXPO);
+			return normalize(this._joy_left.getRawAxis(1), -1.0, 1.0);
 		case 'a':
 			return 0;
 		case 't':
