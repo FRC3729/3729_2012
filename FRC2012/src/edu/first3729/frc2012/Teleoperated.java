@@ -69,6 +69,7 @@ public class Teleoperated
         this.x = this._input_manager.getX();
         this.y = this._input_manager.getY();
         this.z = this._input_manager.getZ();
+        System.out.println("X: " + x + " Y: " + y + "Z: " + z);
     }
     
     private void updateBindings()

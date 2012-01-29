@@ -35,7 +35,6 @@ public class MainRobotClass extends IterativeRobot
         loop = 0;
     }
     
-    
     public void disabledInit()
     {
         System.out.println("If you can see this, robot code has deployed successfully.");
@@ -49,6 +48,7 @@ public class MainRobotClass extends IterativeRobot
     
     public void teleopInit()
     {
+        loop = 0;
         teleop.init();
     }
     
@@ -57,8 +57,8 @@ public class MainRobotClass extends IterativeRobot
      */
     public void teleopPeriodic()
     {
-        System.out.println("Loop " + loop);
-        ++loop;
+        //System.out.println("Loop " + loop);
+        //++loop;
         teleop.run();
     }
     

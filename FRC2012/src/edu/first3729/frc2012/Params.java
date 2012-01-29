@@ -10,9 +10,9 @@ public class Params {
 	//! Port # of the front left Jaguar on the drive train
 	public static final int fl_port = 5;
 	//! Port # of the front right Jaguar on the drive train
-	public static final int fr_port = 7;
+	public static final int fr_port = 6;
 	//! Port # of the back left Jaguar on the drive train
-	public static final int bl_port = 6;
+	public static final int bl_port = 7;
 	//! Port # of the back right Jaguar on the drive train
 	public static final int br_port = 8;
 	

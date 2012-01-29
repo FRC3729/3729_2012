@@ -194,19 +194,25 @@ public class Drive {
                 br_out = y - x - z;
 
                 // Maximum absolute value of all output speeds - this next bit normalizes the outputs to no more than 1.0 and no less than -1.0
-		double max = Math.max(Math.max(Math.abs(fl_out), Math.abs(fr_out)), Math.max(Math.abs(br_out), Math.abs(bl_out)));
+		double max;
+                max = Math.max(Math.max(Math.abs(fl_out), Math.abs(fr_out)), Math.max(Math.abs(br_out), Math.abs(bl_out)));
 		if (max > 1.0) {
 			fl_out /= max;
 			fr_out /= max;
 			br_out /= max;
 			bl_out /= max;
 		}
+                else if (max < .11) {
+                    fr_out = fl_out = br_out = bl_out = 0;
+                }
+                
+                System.out.println("fr_out: " + fr_out + " fl_out: " + fl_out + " br_out: " + br_out + " bl_out: " + br_out);
                 
 		fl.set(fl_out);
 		br.set(-br_out);
 		fr.set(-fr_out);
 		bl.set(bl_out);
-		
+                
 		_x_prev = x;
 		_y_prev = y;
 		_z_prev = z;
@@ -214,9 +220,10 @@ public class Drive {
 	
         public void lock_motors()
         {
-            fl.set(0);
-            br.set(0);
-            fr.set(0);
-            bl.set(0);
+            fl_out = fr_out = br_out = bl_out = 0.0;
+            fl.set(fl_out);
+            br.set(br_out);
+            fr.set(fr_out);
+            bl.set(bl_out);
         }
 }
