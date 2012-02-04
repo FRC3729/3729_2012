@@ -112,6 +112,8 @@ public class Drive {
 			bl.set(left);
 			br.set(-right);
 		}
+                _x_prev = x;
+		_y_prev = y;
 
 	}
 	
