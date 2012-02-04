@@ -13,6 +13,7 @@ public class Input {
 	// a = arcade
 	// t = tank
 	protected char mode = 'm';
+        private int booleanInputs = 0;
 	
 	public Input()
 	{
@@ -95,6 +96,37 @@ public class Input {
 			return getZ();
 		}
 	}
+        
+        public int getBooleanButtonInputs(int side)
+        {
+            int i;
+            switch (side)
+            {
+            case 0:
+                for (i = 1; i <= 11; i++)
+                {
+                    this.booleanInputs ^= toInt(this._joy_left.getRawButton(i)) << (i - 1);
+                }
+                break;
+            case 1:
+                for (i = 1; i <= 11; i++)
+                {
+                    this.booleanInputs ^= toInt(this._joy_right.getRawButton(i)) << (i - 1);
+                }
+                break;
+            default:
+                return getBooleanButtonInputs(0);
+            }
+            return this.booleanInputs;
+        }
+        
+        private int toInt(boolean thingummy)
+        {
+            if (thingummy)
+                return 1;
+            else
+                return 0;
+        }
 	
 	/**
 	 * @brief Exponential function that makes the controller more sensitive toward the center and less so toward the outside

@@ -21,6 +21,7 @@ public class MainRobotClass extends IterativeRobot
     private DriverStationLCD screen;
     private Drive drive;
     private Teleoperated teleop;
+    private Manipulator manip;
     private int loop;
 	/**
      * This function is run when the robot is first started up and should be
@@ -31,7 +32,8 @@ public class MainRobotClass extends IterativeRobot
     	this.input_manager = new Input();
     	this.input_manager.setMode(Params.default_drive_mode);
     	this.drive = new Drive();
-        this.teleop = new Teleoperated(input_manager, drive);
+        this.manip = new Manipulator();
+        this.teleop = new Teleoperated(input_manager, drive, manip);
         loop = 0;
     }
     
