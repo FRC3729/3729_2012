@@ -15,6 +15,12 @@ public class Params {
 	public static final int bl_port = 7;
 	//! Port # of the back right Jaguar on the drive train
 	public static final int br_port = 8;
+        public static final int shooter1_relay_port = 1;
+        public static final int shooter2_relay_port = 2;
+        public static final int intake_relay_port = 3;
+        public static final int elevator_relay_port = 4;
+        public static final int bridge_relay_port = 5;
+        
 	
 	// Others
 	//! The default expiration time of the Watchdog timer, in seconds

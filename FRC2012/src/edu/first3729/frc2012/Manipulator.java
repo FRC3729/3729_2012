@@ -20,6 +20,15 @@ public class Manipulator {
     
     public Manipulator()
     {
+        shooter1 = new Relay(Params.shooter1_relay_port);
+        shooter2 = new Relay(Params.shooter2_relay_port);
+        elevator = new Relay(Params.elevator_relay_port);
+        bridge = new Relay(Params.bridge_relay_port);
+        intake = new Relay(Params.intake_relay_port);
+    }
+    
+    public void init()
+    {
         shooter1.setDirection(Relay.Direction.kBoth);
         shooter1.set(Relay.Value.kOff);
         shooter2.setDirection(Relay.Direction.kBoth);
