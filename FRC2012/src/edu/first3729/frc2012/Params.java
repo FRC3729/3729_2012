@@ -21,6 +21,7 @@ public class Params {
         public static final int elevator_relay_port = 4;
         public static final int bridge_relay_port = 5;
         public static final int net_relay_port = 6;
+        public static final int intake_limit_digin_port = 1;
         
 	
 	// Others
