@@ -8,18 +8,19 @@ public class Params {
 	
 	// Port # constants: PWM out
 	//! Port # of the front left Jaguar on the drive train
-	public static final int fl_port = 5;
+	public static final int fl_port = 1;
 	//! Port # of the front right Jaguar on the drive train
-	public static final int fr_port = 6;
+	public static final int fr_port = 4;
 	//! Port # of the back left Jaguar on the drive train
-	public static final int bl_port = 7;
+	public static final int bl_port = 2;
 	//! Port # of the back right Jaguar on the drive train
-	public static final int br_port = 8;
+	public static final int br_port = 6;
         public static final int shooter1_relay_port = 1;
         public static final int shooter2_relay_port = 2;
         public static final int intake_relay_port = 3;
         public static final int elevator_relay_port = 4;
         public static final int bridge_relay_port = 5;
+        public static final int net_relay_port = 6;
         
 	
 	// Others

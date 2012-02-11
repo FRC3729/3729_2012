@@ -17,6 +17,7 @@ public class Manipulator {
     private Relay elevator;
     private Relay bridge;
     private Relay intake;
+    private Relay net;
     private DigitalInput intake_limit;
     
     public Manipulator()
@@ -26,6 +27,7 @@ public class Manipulator {
         elevator = new Relay(Params.elevator_relay_port);
         bridge = new Relay(Params.bridge_relay_port);
         intake = new Relay(Params.intake_relay_port);
+        net = new Relay(Params.net_relay_port);
     }
     
     public void init()
@@ -66,10 +68,18 @@ public class Manipulator {
     public void intake(boolean state)
     {
         // Turn on until limit switch is pressed, then off
+        this.intake.set(Relay.Value.kForward);
+        while (!this.intake_limit.get()) { continue; }
+        this.intake.set(Relay.Value.kOff);
     }
     
     public void bridge(Relay.Value state)
     {
         bridge.set(state);
+    }
+    
+    public void lift_net(Relay.Value state)
+    {
+        net.set(state);
     }
 }

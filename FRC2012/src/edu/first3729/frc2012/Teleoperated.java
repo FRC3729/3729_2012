@@ -16,7 +16,7 @@ public class Teleoperated
     private Drive _drive;
     private Manipulator _manip;
     private double x = 0.0, y = 0.0, z = 0.0, left = 0.0, right = 0.0;
-    private boolean shoot = false, lift = false, intake = false, bridge_down = false, bridge_up = false;
+    private boolean net = false, shoot = false, lift = false, intake = false, bridge_down = false, bridge_up = false;
     private boolean shoot_old = false, lift_old = false;
     private int input_left = 0, input_right = 0, input_controller = 0;
     
@@ -30,6 +30,7 @@ public class Teleoperated
     public void init()
     {
         this._drive.lock_motors();
+        this._manip.init();
     }
     
     public void run()
@@ -55,6 +56,8 @@ public class Teleoperated
         if (bridge_up) { this._manip.bridge(Relay.Value.kForward); }
         else if (bridge_down) { this._manip.bridge(Relay.Value.kReverse); }
         else { this._manip.bridge(Relay.Value.kOff); }
+        if (net) { this._manip.lift_net(Relay.Value.kForward); }
+        else { this._manip.lift_net(Relay.Value.kOff); }
     }
     
     private void getInput(int mode)
@@ -68,26 +71,28 @@ public class Teleoperated
             case 0:  // Mecanum drive, we'll disable it for now
                 getInput(1);
                 break;
+            default:
             case 1:  // Arcade drive, two joysticks
                 this.intake = toBoolean((1 << 0) & input_left);
                 this.shoot = toBoolean((1 << 1) & input_left);
                 this.bridge_down = toBoolean((1 << 2) & input_left);
                 this.lift = toBoolean((1 << 3) & input_left);
                 this.bridge_up = toBoolean((1 << 4) & input_left);
+                this.net = toBoolean((1 << 7) * input_left);
                 break;
-            case 2:  // Arcade drive, controller
-                
         }
-        if (toBoolean((1 << 5) & input_left) && toBoolean((1 << 7) & input_left)) {
+        if (toBoolean((1 << 5) & input_right)) {
             this._input_manager.setMode(1);
         }
-        if (toBoolean((1 << 6) & input_left) && toBoolean((1 << 7) & input_left)) {
+        /*
+        if (toBoolean((1 << 6) & input_right)) {
             this._input_manager.setMode(2);
         }
-        if (toBoolean((1 << 9) & input_left) && toBoolean((1 << 7) & input_left)) {
+        if (toBoolean((1 << 9) & input_right)) {
             this._input_manager.setMode(3);
         }
-        if (toBoolean((1 << 10) & input_left) && toBoolean((1 << 7) & input_left)) {
+        */
+        if (toBoolean((1 << 10) & input_right)) {
             this._input_manager.setMode(4);
         }
         System.out.println("X: " + x + " Y: " + y + "Z: " + z);
