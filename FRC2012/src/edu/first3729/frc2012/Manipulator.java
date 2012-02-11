@@ -17,6 +17,7 @@ public class Manipulator {
     private Relay elevator;
     private Relay bridge;
     private Relay intake;
+    private DigitalInput intake_limit;
     
     public Manipulator()
     {
@@ -43,23 +44,32 @@ public class Manipulator {
     
     public void shoot(boolean state)
     {
+        if (state) {
+            shooter1.set(Relay.Value.kForward);
+            shooter2.set(Relay.Value.kForward);
+        }
+        else {
+            shooter1.set(Relay.Value.kOff);
+            shooter2.set(Relay.Value.kOff);
+        }
         
     }
     
     public void lift(boolean state)
     {
-        
+        if (state)
+            elevator.set(Relay.Value.kForward);
+        else
+            elevator.set(Relay.Value.kOff);
     }
     
     public void intake(boolean state)
     {
-        
+        // Turn on until limit switch is pressed, then off
     }
     
-    
-    public void bridge(boolean state)
+    public void bridge(Relay.Value state)
     {
-        
+        bridge.set(state);
     }
-    
 }

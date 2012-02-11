@@ -18,4 +18,8 @@ Icon?
 __MACOSX
 .DS_Store
 Thumbs.db
-build
+FRC2012/build
+FRC2012/j2meclasses
+FRC2012/suite
+FRC2012/build.xml
+FRC2012/build.properties

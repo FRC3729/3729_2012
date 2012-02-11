@@ -12,7 +12,7 @@ public class Input {
 	// m = mecanum
 	// a = arcade
 	// t = tank
-	protected char mode = 'm';
+	protected int mode = 0;
         private int booleanInputs = 0;
 	
 	public Input()
@@ -22,7 +22,7 @@ public class Input {
 		this._controller = new Joystick(3);
 	}
 	
-	public void setMode(char m)
+	public void setMode(int m)
 	{
 		this.mode = m;
 	}
@@ -41,22 +41,25 @@ public class Input {
             }
         }
 	
-	public char getMode() { return mode; } 
+	public int getMode() { return mode; } 
 	
+        // MATL
+        
 	public double getX()
 	{
 		switch(mode)
 		{
-		case 'm':
+		case 0:
 			return normalize(this._joy_right.getRawAxis(1), -1.0, 1.0);
-		case 'a':
+		case 1:
+                case 2:
 			return expo(normalize(this._joy_left.getX(), Params.XMIN, Params.XMAX), Params.XEXPO);
-		case 't':
+		case 3:
 			return expo(normalize(this._joy_left.getY(), -1.0, 1.0), Params.JOYEXPO);
-                case 'l':
+                case 4:
                         return 0;
                 default:
-			mode = 'l';
+			mode = 3;
 			return getX();
 		}
 	}
@@ -65,16 +68,17 @@ public class Input {
 	{
 		switch(mode)
 		{
-		case 'm':
+		case 0:
 			return normalize(-this._joy_left.getRawAxis(2), -1.0, 1.0);
-		case 'a':
+		case 1:
+                case 2:
 			return expo(normalize(this._joy_left.getY(), Params.YMIN, Params.YMAX) * -1.0, Params.YEXPO);
-		case 't':
+		case 3:
 			return expo(normalize(this._joy_right.getY(), -1.0, 1.0), Params.JOYEXPO);
-                case 'l':
+                case 4:
                         return 0;
                 default:
-			mode = 'l';
+			mode = 3;
 			return getY();
 		}
 	}
@@ -83,16 +87,17 @@ public class Input {
 	{
 		switch(mode)
 		{
-		case 'm':
+		case 0:
 			return normalize(this._joy_left.getRawAxis(1), -1.0, 1.0);
-		case 'a':
+		case 1:
+                case 2:
 			return 0;
-		case 't':
+		case 3:
 			return 0;
-                case 'l':
+                case 4:
                         return 0;
 		default:
-			mode = 'l';
+			mode = 3;
 			return getZ();
 		}
 	}
@@ -112,6 +117,12 @@ public class Input {
                 for (i = 1; i <= 11; i++)
                 {
                     this.booleanInputs ^= toInt(this._joy_right.getRawButton(i)) << (i - 1);
+                }
+                break;
+            case 2:
+                for (i = 1; i <= 11; i++)
+                {
+                    this.booleanInputs ^= toInt(this._controller.getRawButton(i)) << (i - 1);
                 }
                 break;
             default:
