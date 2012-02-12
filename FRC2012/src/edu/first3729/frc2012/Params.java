@@ -1,10 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.first3729.frc2012;
 
-public class Params {
+public class Params
+{
 	
 	// Port # constants: PWM out
 	//! Port # of the front left Jaguar on the drive train

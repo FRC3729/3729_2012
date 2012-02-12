@@ -3,7 +3,8 @@ package edu.first3729.frc2012;
 import edu.wpi.first.wpilibj.*;
 import com.sun.squawk.util.MathUtils;
 
-public class Drive {
+public class Drive
+{
 	
 	private Jaguar fl;
 	private Jaguar fr;
@@ -20,17 +21,11 @@ public class Drive {
 		if (desired_output  <= .1 && desired_output >= -.1)
                     increment /= 2;
 		if (desired_output < current_output)
-		{
-			return current_output - increment;
-		}    
+			return current_output - increment; 
 		else if (desired_output > current_output)
-		{    
 			return increment + current_output;
-		}
 		else
-		{
 			return current_output;
-		}
 	}
 	
 	public Drive()
@@ -72,16 +67,13 @@ public class Drive {
             y = ramp(y, _y_prev,Params.y_ramp_increment);        
                     
             // If not pushing forward much, switch to tank mode to turn in place
-		if ((y <= 0.1 && y > 0) || (y >= -0.1 && y < 0))
-		{
+		if ((y <= 0.1 && y > 0) || (y >= -0.1 && y < 0)) {
 			this.drive_tank(x * 0.75, -x * 0.75);
 		} 
-		else
-		{
+                else {
 			double left, right;
 			// If turning left:
-			if (x < 0)
-			{
+			if (x < 0) {
 				double mag = MathUtils.log(-y);
 				double ratio = (mag - 0.5) / (mag + 0.5);
 				if (ratio == 0) ratio = .0000000001;
@@ -89,16 +81,14 @@ public class Drive {
 				right = y;
 			}
 			// If turning right:
-			else if (x > 0)
-			{
+			else if (x > 0) {
 				double mag = MathUtils.log(y);
 				double ratio = (mag - 0.5) / (mag + 0.5);
 				if (ratio == 0) ratio = .0000000001;
 				left = y;
 				right = y / ratio;
 			}
-			else
-			{
+                        else {
 				left = y;
 				right = y;
 			}
@@ -239,7 +229,4 @@ public class Drive {
             fr.set(fr_out);
             bl.set(bl_out);
         }
-
-    private void ramp(double _y_prev, double y_ramp_increment) {
-    }
 }

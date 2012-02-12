@@ -1,16 +1,16 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.first3729.frc2012;
 
 import edu.wpi.first.wpilibj.*;
 
 /**
- *
- * @author matthewhaney
+ * 
+ * @class Manipulator
+ * @brief Class that abstracts manipulator
+ * 
+ * Manages a bunch of relays that do stuff.
  */
-public class Manipulator {
+public class Manipulator
+{
     
     private Relay shooter1;
     private Relay shooter2;
