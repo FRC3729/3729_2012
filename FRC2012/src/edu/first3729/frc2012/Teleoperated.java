@@ -137,38 +137,24 @@ public class Teleoperated
             break;
         }
         // Button 6, arcade drive 2 joysticks
-        if (toBoolean((1 << 5) & input_right)) {
+        if (this._input_manager.checkButton(1, 6)) {
             this._input_manager.setMode(Input.arcade_joy);
         }
         // Button 7, arcade drive 1 joystick 1 controller
-        if (toBoolean((1 << 6) & input_right)) 
+        if (this._input_manager.checkButton(1, 7)) 
         {
             this._input_manager.setMode(Input.arcade_controller);
         }
         // Button 10, tank drive 3 joysticks
-        if (toBoolean((1 << 9) & input_right)) {
+        if (this._input_manager.checkButton(1, 10)) {
             this._input_manager.setMode(Input.tank);
         }
         // Button 11, lock all controls
-        if (toBoolean((1 << 10) & input_right)) {
+        if (this._input_manager.checkButton(1, 11)) {
             this._input_manager.setMode(Input.locked);
         }
         System.out.println("X: " + x + " Y: " + y + "Z: " + z);
         System.out.println("Mode: " + this._input_manager.getMode());
-    }
-    
-    /**
-     * 
-     * @brief If given nonzero value returns true, false if zero
-     * @param thingummy Long value to convert to boolean
-     * @return boolean value converted from long
-     */
-    private boolean toBoolean(long thingummy)
-    {
-        if (thingummy == 0L)
-            return false;
-        else
-            return true;
     }
     
 }

@@ -21,11 +21,11 @@ public class Drive
 		if (desired_output  <= .1 && desired_output >= -.1)
                     increment /= 2;
 		if (desired_output < current_output)
-			return current_output - increment; 
+                    return current_output - increment; 
 		else if (desired_output > current_output)
-			return increment + current_output;
+                    return increment + current_output;
 		else
-			return current_output;
+                    return current_output;
 	}
 	
 	public Drive()
