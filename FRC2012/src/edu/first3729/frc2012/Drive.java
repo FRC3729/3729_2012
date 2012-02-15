@@ -226,7 +226,7 @@ public class Drive
             fl_out = fr_out = br_out = bl_out = 0.0;
             fl.set(fl_out);
             bl.set(bl_out);
-            br.set(br_out);
             fr.set(fr_out);
+            br.set(br_out);
         }
 }
