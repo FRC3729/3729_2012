@@ -11,7 +11,7 @@ public class Input
 	protected int mode = 0;
 	private int booleanInputs = 0;
 	
-        public static final int mecanum = ;
+        public static final int mecanum = 0;
         public static final int arcade_joy = 1;
         public static final int arcade_controller = 2;
         public static final int tank = 3;
@@ -19,6 +19,11 @@ public class Input
         
         // Switch between 1.0 and Params.drive_creep_scale_factor
         private double scale_factor = 1.0;
+        
+        public void setScaleFactor(double scale)
+        {
+            scale_factor = scale;
+        }
         
 	public Input()
 	{
@@ -61,13 +66,13 @@ public class Input
 	{
 		switch(mode) {
 		case mecanum:
-			return normalize(this._joy1.getRawAxis(1), -1.0, 1.0);
+			return normalize(this._joy1.getRawAxis(1), -1.0, 1.0) * scale_factor;
 		case arcade_joy:
-			return expo(normalize(this._joy1.getX(), -1.0, 1.0), Params.JOYEXPO);
+			return expo(normalize(this._joy1.getX(), -1.0, 1.0), Params.JOYEXPO) * scale_factor;
 		case arcade_controller:
-			return expo(normalize(this._controller.getX(), Params.XMIN, Params.XMAX), Params.XEXPO);
+			return expo(normalize(this._controller.getX(), Params.XMIN, Params.XMAX), Params.XEXPO) * scale_factor;
 		case tank:
-			return expo(normalize(this._joy0.getY(), -1.0, 1.0) * -1.0, Params.JOYEXPO);
+			return expo(normalize(this._joy0.getY(), -1.0, 1.0) * -1.0, Params.JOYEXPO) * scale_factor;
 		case locked:
 			return 0;
 		default:
@@ -80,13 +85,13 @@ public class Input
 	{
 		switch(mode) {
 		case mecanum:
-			return normalize(-this._joy0.getRawAxis(2), -1.0, 1.0);
+			return normalize(-this._joy0.getRawAxis(2), -1.0, 1.0) * scale_factor;
 		case arcade_joy:
-			return expo(normalize(this._joy1.getY(), -1.0, 1.0) * -1.0, Params.JOYEXPO);
+			return expo(normalize(this._joy1.getY(), -1.0, 1.0) * -1.0, Params.JOYEXPO) * scale_factor;
 		case arcade_controller:
-			return expo(normalize(this._controller.getY(),Params.YMIN, Params.YMAX) * -1.0, Params.YEXPO);
+			return expo(normalize(this._controller.getY(),Params.YMIN, Params.YMAX) * -1.0, Params.YEXPO) * scale_factor;
 		case tank:
-			return expo(normalize(this._joy1.getY(), -1.0, 1.0) * -1.0, Params.JOYEXPO);
+			return expo(normalize(this._joy1.getY(), -1.0, 1.0) * -1.0, Params.JOYEXPO) * scale_factor;
 		case locked:
 			return 0;
 		default:
@@ -99,13 +104,13 @@ public class Input
 	{
 		switch(mode) {
 		case mecanum:
-			return normalize(this._joy0.getRawAxis(1), -1.0, 1.0);
+			return normalize(this._joy0.getRawAxis(1), -1.0, 1.0) * scale_factor;
 		case arcade_joy:
-			return expo(normalize(this._joy0.getX(), -1.0, 1.0), Params.JOYEXPO);
+			return expo(normalize(this._joy0.getX(), -1.0, 1.0), Params.JOYEXPO) * scale_factor;
 		case arcade_controller:
-			return expo(normalize(this._controller.getZ(),Params.ZMIN, Params.ZMAX) * -1.0, Params.YEXPO);
+			return expo(normalize(this._controller.getZ(),Params.ZMIN, Params.ZMAX), Params.YEXPO) * scale_factor;
 		case tank:
-			return expo(normalize(this._joy0.getX(), -1.0, 1.0) * -1.0, Params.JOYEXPO);
+			return expo(normalize(this._joy0.getX(), -1.0, 1.0), Params.JOYEXPO) * scale_factor;
 		case locked:
 			return 0;
 		default:
@@ -118,13 +123,13 @@ public class Input
 	{
 		switch (mode) {
 		case mecanum:
-			return normalize(this._joy1.getRawAxis(2), -1.0, 1.0);
+			return normalize(this._joy1.getRawAxis(2), -1.0, 1.0) * scale_factor;
 		case arcade_joy:
-			return expo(normalize(this._joy0.getY(), -1.0, 1.0), Params.JOYEXPO);
+			return expo(normalize(this._joy0.getY(), -1.0, 1.0) * -1.0, Params.JOYEXPO) * scale_factor;
 		case arcade_controller:
-			return expo(normalize(this._controller.getTwist(),Params.ROTMIN, Params.ROTMAX) * -1.0, Params.ROTEXPO);
+			return expo(normalize(this._controller.getTwist(),Params.ROTMIN, Params.ROTMAX) * -1.0, Params.ROTEXPO) * scale_factor;
 		case tank:
-			return expo(normalize(this._joy1.getX(), -1.0, 1.0) * -1.0, Params.JOYEXPO);
+			return expo(normalize(this._joy1.getX(), -1.0, 1.0), Params.JOYEXPO) * scale_factor;
 		case locked:
 			return 0;
 		default:

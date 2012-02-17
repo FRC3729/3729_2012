@@ -136,6 +136,11 @@ public class Teleoperated
             this.intake = this.shoot = this.bridge_up = this.bridge_down = this.lift = this.net_up = this.net_down = false;
             break;
         }
+        if (this._input_manager.getThrottle(1) < 0) {
+            this._input_manager.setScaleFactor(Params.drive_creep_scale_factor);
+        }
+        else
+            this._input_manager.setScaleFactor(1.0);
         // Button 6, arcade drive 2 joysticks
         if (this._input_manager.checkButton(1, 6)) {
             this._input_manager.setMode(Input.arcade_joy);

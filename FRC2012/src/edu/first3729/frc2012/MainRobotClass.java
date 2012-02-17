@@ -68,7 +68,7 @@ public class MainRobotClass extends IterativeRobot
         teleop.run();
     }
     
-    public void telepoContinuous()
+    public void teleopContinuous()
     {
         
     }

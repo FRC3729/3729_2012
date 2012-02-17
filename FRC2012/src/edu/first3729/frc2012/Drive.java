@@ -43,7 +43,7 @@ public class Drive
             left = ramp(left, _x_prev, Params.x_ramp_increment);
             right = ramp(right, _y_prev, Params.y_ramp_increment);
             
-            fl.set(-left);
+            fl.set(left);
             bl.set(left);
             fr.set(-right);
             br.set(-right);
@@ -54,7 +54,7 @@ public class Drive
 	
 	public void drive_tank_noramp(double left, double right)
 	{
-            fl.set(-left);
+            fl.set(left);
             bl.set(left);
             fr.set(-right);
             br.set(-right);
