@@ -11,7 +11,7 @@ public class Input
 	protected int mode = 0;
 	private int booleanInputs = 0;
 	
-        public static final int mecanum = 0;
+        public static final int mecanum = ;
         public static final int arcade_joy = 1;
         public static final int arcade_controller = 2;
         public static final int tank = 3;
