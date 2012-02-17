@@ -137,7 +137,7 @@ public class Teleoperated
             break;
         }
         if (this._input_manager.getThrottle(1) < 0) {
-            this._input_manager.setScaleFactor(Params.drive_creep_scale_factor);
+            this._input_manager.setScaleFactor(this._input_manager.getThrottle(1));
         }
         else
             this._input_manager.setScaleFactor(1.0);
@@ -158,7 +158,9 @@ public class Teleoperated
         if (this._input_manager.checkButton(1, 11)) {
             this._input_manager.setMode(Input.locked);
         }
-        System.out.println("X: " + x + " Y: " + y + "Z: " + z);
+        System.out.println("Left twist: " + this._input_manager.getTwist(0));
+        System.out.println("Scale factor: " + this._input_manager.getScaleFactor());
+        System.out.println("Right twist: " + this._input_manager.getTwist(1));
         System.out.println("Mode: " + this._input_manager.getMode());
     }
     

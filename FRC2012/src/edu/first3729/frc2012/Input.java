@@ -22,7 +22,12 @@ public class Input
         
         public void setScaleFactor(double scale)
         {
-            scale_factor = scale;
+            this.scale_factor = scale;
+        }
+        
+        public double getScaleFactor()
+        {
+            return scale_factor;
         }
         
 	public Input()
@@ -177,6 +182,47 @@ public class Input
 	public double getThrottle()
 	{
 		return getThrottle(0);
+	}
+        
+        public double getTwist(int joy)
+	{
+		switch(mode){
+		case mecanum:
+		case arcade_joy:
+			switch(joy) {
+			case 0:
+				return this._joy0.getTwist();
+			case 1:
+				return this._joy1.getTwist();
+			default:
+				joy = 0;
+				return getTwist(joy);
+			}
+		case arcade_controller:
+			return this._joy0.getTwist();
+		case tank:
+			switch(joy) {
+			case 0:
+				return this._joy0.getTwist();
+			case 1:
+				return this._joy1.getTwist();
+			case 2:
+				return this._controller.getTwist();  // 'Controller' is actually 3rd joystick
+			default:
+				joy = 0;
+				return getTwist(joy);
+			}
+		case locked:
+			return 0;
+		default:
+			mode = 2;
+			return getTwist(0);
+		}
+	}
+	
+	public double getTwist()
+	{
+		return getTwist(0);
 	}
 	
 	public int getBooleanButtonInputs(int side)
