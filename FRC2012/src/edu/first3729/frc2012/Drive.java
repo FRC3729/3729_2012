@@ -75,16 +75,14 @@ public class Drive
 			// If turning left:
 			if (x < 0) {
 				double mag = MathUtils.log(-y);
-				double ratio = (mag - 0.5) / (mag + 0.5);
-				if (ratio == 0) ratio = .0000000001;
+				double ratio = (mag - 0.5) / (mag + 0.5) + .0000000001;
 				left = y / ratio;
 				right = y;
 			}
 			// If turning right:
 			else if (x > 0) {
 				double mag = MathUtils.log(y);
-				double ratio = (mag - 0.5) / (mag + 0.5);
-				if (ratio == 0) ratio = .0000000001;
+				double ratio = (mag - 0.5) / (mag + 0.5) + .0000000001;
 				left = y;
 				right = y / ratio;
 			}
@@ -93,10 +91,9 @@ public class Drive
 				right = y;
 			}
 			// Keep everything within the confines of [-1.0, 1.0]
-			left = ( (left > 1.0) ? 1.0 : left);
-			left = ( (left < -1.0) ? 1.0 : left);
-			right = ( (right > 1.0) ? 1.0 : right);
-			right = ( (right < -1.0) ? 1.0 : right);
+			left = clamp(left, -1.0, 1.0);
+			right = clamp(right, -1.0, 1.0);
+                        
 			fl.set(-left);
 			fr.set(right);
 			bl.set(-left);
@@ -192,10 +189,10 @@ public class Drive
 		double max;
                 max = Math.max(Math.max(Math.abs(fl_out), Math.abs(fr_out)), Math.max(Math.abs(br_out), Math.abs(bl_out)));
 		if (max > 1.0) {
-			fl_out /= max;
-			fr_out /= max;
-			br_out /= max;
-			bl_out /= max;
+                    fl_out /= max;
+                    fr_out /= max;
+                    br_out /= max;
+                    bl_out /= max;
 		}
                 else if (max < .11) {
                     fr_out = fl_out = br_out = bl_out = 0;
@@ -228,5 +225,11 @@ public class Drive
             br.set(br_out);
             fr.set(fr_out);
             bl.set(bl_out);
+        }
+        
+        private double clamp(double value, double min, double max) {
+            if (value < min) return min;
+            else if (value > max) return max;
+            return value;
         }
 }
