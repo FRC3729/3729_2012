@@ -90,8 +90,11 @@ public class Drive {
 
             // Keep everything within the confines of [-1.0, 1.0]
             left = Utility.clamp(left, -1.0, 1.0);
-            right = Utility.clamp(right, -1.0, 1.0);
-
+            right = Utility.clamp(right, -1.0, 1.0);        
+            
+            System.out.println("Left: " + left);
+            System.out.println("Right: " + right);
+            
             fl.set(left);
             fr.set(right);
             bl.set(-left);
