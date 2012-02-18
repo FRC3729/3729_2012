@@ -24,7 +24,7 @@ public class Teleoperated
     private double x = 0.0, y = 0.0, z = 0.0, left = 0.0, right = 0.0, scale_factor = 0.0;
     private boolean intake_continue = false, net_down = false, net_up = false, shoot = false, lift = false, intake = false, bridge_down = false, bridge_up = false;
     private boolean shoot_old = false, lift_old = false;
-    private int input_left = 0, input_right = 0, input_controller = 0;
+    private int input_left = 0, input_right = 0, input_controller = 0, input_controller2 = 0;
     
     /**
      * @param imanager instance of Input class passed from MainRobotClass
@@ -116,6 +116,7 @@ public class Teleoperated
         this.input_left = this._input_manager.getBooleanButtonInputs(0);
         this.input_right = this._input_manager.getBooleanButtonInputs(1);
         this.input_controller = this._input_manager.getBooleanButtonInputs(2);
+        this.input_controller2 = this._input_manager.getBooleanButtonInputs (3);
         switch (mode) {
         default:
         case Input.arcade_joy:  // Arcade drive, two joysticks
