@@ -47,7 +47,7 @@ public class Manipulator {
     public void shoot(boolean state) {
         if (state) {
             shooter1.set(Relay.Value.kForward);
-            shooter2.set(Relay.Value.kForward);
+            shooter2.set(Relay.Value.kReverse);
         } else {
             shooter1.set(Relay.Value.kOff);
             shooter2.set(Relay.Value.kOff);

@@ -13,7 +13,7 @@ public class Input {
     private Joystick _joy1;
     private Joystick _controller;
     private Joystick _controller2;
-    protected int mode = 0;
+    protected int mode = 2;
     private int booleanInputs = 0;
     public static final int mecanum = 0;
     public static final int arcade_joy = 1;

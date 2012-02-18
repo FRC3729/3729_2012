@@ -92,7 +92,7 @@ public class Drive {
             left = Utility.clamp(left, -1.0, 1.0);
             right = Utility.clamp(right, -1.0, 1.0);
 
-            fl.set(-left);
+            fl.set(left);
             fr.set(right);
             bl.set(-left);
             br.set(-right);
