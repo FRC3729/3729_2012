@@ -26,7 +26,7 @@ public class Params {
     public static final int net_relay_port = 6;
     public static final int intake_limit_digin_port = 1;
     public static final double drive_creep_scale_factor = 0.2;
-    public static final String camera_IP = "10.37.29.3";
+    public static final String camera_IP = "10.37.29.11";
     public static final AxisCamera.ResolutionT camera_resolution = AxisCamera.ResolutionT.k640x480;
     public static final int camera_FPS = 24;
     // Others

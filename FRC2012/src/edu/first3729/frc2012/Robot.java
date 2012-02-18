@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.DriverStationLCD;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.camera.AxisCamera;
+import edu.wpi.first.wpilibj.Timer;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -23,7 +24,7 @@ import edu.wpi.first.wpilibj.camera.AxisCamera;
  * creating this project, you must also update the manifest file in the resource
  * directory.
  */
-public class MainRobotClass extends IterativeRobot {
+public class Robot extends IterativeRobot {
 
     private Input input_manager;
     private DriverStationLCD screen;
@@ -31,24 +32,30 @@ public class MainRobotClass extends IterativeRobot {
     private Teleoperated teleop;
     private Manipulator manip;
     private DigitalInput intake_limit;
-    public AxisCamera camera;
+    private AxisCamera camera;
 
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
+        // Initialization timer
+        Timer init_timer = new Timer();
+        
         // Print banner
-        System.out.println(" ______ ______ ______ ______\n|__    |      |__    |  __  |\n|__    |_     |    __|__    |\n|______| |____|______|______|");
+        System.out.println(" ______ ______ ______ ______\n|__    |      |__    |  __  |\n|__    |_     |    __|__    |\n|______| |____|______|______|\n");
  
         // For the lulz
         System.out.println("This robot complies with Asimov's Laws of Robotics:");
-        System.out.println("\t~> A robot may not injure a human being or, through inaction, allow a human being to come to harm.");
-        System.out.println("\t~> A robot must obey the orders given to it by human beings, except where such orders would conflict with the First Law.");
-        System.out.println("\t~> A robot must protect its own existence as long as such protection does not conflict with the First or Second Laws.");
+        System.out.println("\t~> 1. A robot may not injure a human being or,\n\t      through inaction, allow a human being to come to harm.");
+        System.out.println("\t~> 2. A robot must obey the orders given to it by human beings,\n\t      except where such orders would conflict with the First Law.");
+        System.out.println("\t~> 3. A robot must protect its own existence as long as\n\t      such protection does not conflict with the First or Second Laws.");
         
         // Initialize stuff
-        System.out.print("Initializing robot...");
+        System.out.println("=== INITIALIZING ROBOT ===");
+        
+        // Start timer
+        init_timer.start();
         this.input_manager = new Input();
         this.input_manager.set_mode(Params.default_drive_mode);
         this.drive = new Drive();
@@ -56,14 +63,17 @@ public class MainRobotClass extends IterativeRobot {
         this.manip = new Manipulator();
         this.manip.init();
         this.teleop = new Teleoperated(input_manager, drive, manip);
-        //this.camera = AxisCamera.getInstance(Params.camera_IP);
-        //this.camera.writeResolution(Params.camera_resolution);
-        //this.camera.writeMaxFPS(Params.camera_FPS);
+        this.camera = AxisCamera.getInstance(Params.camera_IP);
+        this.camera.writeResolution(Params.camera_resolution);
+        this.camera.writeMaxFPS(Params.camera_FPS);
         
         // Set up Watchdog
         this.getWatchdog().setExpiration(Params.default_watchdog_time);
         
-        System.out.println(" done!");
+        // Stop timer
+        init_timer.stop();
+        
+        System.out.println("=== DONE IN " + init_timer.get() * .001 + " MS ===");
     }
 
     public void disabledInit() {
@@ -92,6 +102,8 @@ public class MainRobotClass extends IterativeRobot {
     
     public void autonomousInit()
     {
+        System.out.println("Going autonomous.");
+        
         this.getWatchdog().feed();
         this.manip.shoot(true);
         this.manip.intake(Relay.Value.kForward);
