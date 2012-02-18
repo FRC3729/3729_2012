@@ -8,6 +8,7 @@ public class Input
 	private Joystick _joy0;
 	private Joystick _joy1;
 	private Joystick _controller;
+        private Joystick _controller2;
 	protected int mode = 0;
 	private int booleanInputs = 0;
 	
@@ -22,6 +23,7 @@ public class Input
 		this._joy0 = new Joystick(1);
 		this._joy1 = new Joystick(2);
 		this._controller = new Joystick(3);
+                this._controller2 = new Joystick(4);
 	}
 	
 	public void setMode(int m)
@@ -38,6 +40,8 @@ public class Input
 			return this._joy1.getRawButton(button_id);
 		case 2:
 			return this._controller.getRawButton(button_id);
+                case 3:
+                        return this._controller2.getRawButton(button_id);
 		default:
 			return checkButton(2, button_id);
 		}
@@ -154,6 +158,8 @@ public class Input
 				return this._joy1.getThrottle();
 			case 2:
 				return this._controller.getThrottle();  // 'Controller' is actually 3rd joystick
+                        case 3:
+                                return this._controller2.getThrottle();
 			default:
 				joy = 0;
 				return getThrottle(joy);
@@ -195,6 +201,8 @@ public class Input
 				return this._joy1.getTwist();
 			case 2:
 				return this._controller.getTwist();  // 'Controller' is actually 3rd joystick
+                        case 3:
+                                return this._controller2.getTwist();
 			default:
 				joy = 0;
 				return getTwist(joy);
@@ -231,6 +239,11 @@ public class Input
 				this.booleanInputs ^= toInt(this._controller.getRawButton(i)) << (i - 1);
 			}
 			break;
+                case 3:
+                        for (i =1; i <= 11; i++)  {
+                                this.booleanInputs ^= toInt(this._controller2.getRawButton(i)) << (i - 1);
+                        }
+                        break;
 		default:
 			return getBooleanButtonInputs(0);
 		}
