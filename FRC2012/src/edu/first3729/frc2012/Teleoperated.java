@@ -30,10 +30,10 @@ public class Teleoperated {
     private int input_left = 0, input_right = 0, input_controller = 0, input_controller2 = 0;
 
     /**
-     * @param imanager instance of Input class passed from MainRobotClass
-     * @param drv instance of Drive class passed from MainRobotClass
-     * @param manip instance of Manipulator class passed from MainRobotClass
-     * @brief Constructor - takes subsystem classes passed from MainRobotClass
+     * @param imanager instance of Input class passed from Robot
+     * @param drv instance of Drive class passed from Robot
+     * @param manip instance of Manipulator class passed from Robot
+     * @brief Constructor - takes subsystem classes passed from Robot
      */
     public Teleoperated(Input imanager, Drive drv, Manipulator manip) {
         this._input_manager = imanager;
