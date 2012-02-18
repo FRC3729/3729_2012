@@ -22,6 +22,7 @@ public class MainRobotClass extends IterativeRobot
     private Drive drive;
     private Teleoperated teleop;
     private Manipulator manip;
+    private DigitalInput intake_limit;
     private int loop;
 	/**
      * This function is run when the robot is first started up and should be
@@ -32,15 +33,17 @@ public class MainRobotClass extends IterativeRobot
     	this.input_manager = new Input();
     	this.input_manager.setMode(Params.default_drive_mode);
     	this.drive = new Drive();
+        this.drive.lock_motors();
         this.manip = new Manipulator();
+        this.manip.init();
         this.teleop = new Teleoperated(input_manager, drive, manip);
+        this.getWatchdog().setExpiration(Params.default_watchdog_time);
         loop = 0;
     }
     
     public void disabledInit()
     {
-        System.out.println("If you can see this, robot code has deployed successfully.");
-        System.out.println("Please click the red stop button to the left.");
+        // Nothing
     }
     
     public void disabledPeriodic()
@@ -61,7 +64,13 @@ public class MainRobotClass extends IterativeRobot
     {
         //System.out.println("Loop " + loop);
         //++loop;
+        this.getWatchdog().feed();
         teleop.run();
+    }
+    
+    public void teleopContinuous()
+    {
+        
     }
     
 }
