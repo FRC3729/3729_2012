@@ -1,7 +1,7 @@
 package edu.first3729.frc2012;
 
-import edu.wpi.first.wpilibj.*;
 import com.sun.squawk.util.MathUtils;
+import edu.wpi.first.wpilibj.Jaguar;
 
 public class Drive
 {
@@ -43,7 +43,7 @@ public class Drive
             left = ramp(left, _x_prev, Params.x_ramp_increment);
             right = ramp(right, _y_prev, Params.y_ramp_increment);
             
-            fl.set(-left);
+            fl.set(left);
             bl.set(left);
             fr.set(-right);
             br.set(-right);
@@ -54,7 +54,7 @@ public class Drive
 	
 	public void drive_tank_noramp(double left, double right)
 	{
-            fl.set(-left);
+            fl.set(left);
             bl.set(left);
             fr.set(-right);
             br.set(-right);
@@ -222,9 +222,9 @@ public class Drive
         {
             fl_out = fr_out = br_out = bl_out = 0.0;
             fl.set(fl_out);
-            br.set(br_out);
-            fr.set(fr_out);
             bl.set(bl_out);
+            fr.set(fr_out);
+            br.set(br_out);
         }
         
         private double clamp(double value, double min, double max) {
