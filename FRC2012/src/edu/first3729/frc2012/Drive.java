@@ -1,6 +1,5 @@
 package edu.first3729.frc2012;
 
-import edu.wpi.first.wpilibj.*;
 import com.sun.squawk.util.MathUtils;
 import edu.wpi.first.wpilibj.Jaguar;
 

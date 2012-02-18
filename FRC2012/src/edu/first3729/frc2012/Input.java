@@ -18,9 +18,6 @@ public class Input
         public static final int tank = 3;
         public static final int locked = 4;
         
-        // Switch between 1.0 and Params.drive_creep_scale_factor
-        private double scale_factor = 1.0;
-        
 	public Input()
 	{
 		this._joy0 = new Joystick(1);
