@@ -6,7 +6,9 @@ package edu.first3729.frc2012;
  * 
  */
 
-import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.DriverStationLCD;
+import edu.wpi.first.wpilibj.IterativeRobot;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -23,8 +25,8 @@ public class MainRobotClass extends IterativeRobot
     private Teleoperated teleop;
     private Manipulator manip;
     private DigitalInput intake_limit;
-    private int loop;
-	/**
+    
+    /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
@@ -38,7 +40,6 @@ public class MainRobotClass extends IterativeRobot
         this.manip.init();
         this.teleop = new Teleoperated(input_manager, drive, manip);
         this.getWatchdog().setExpiration(Params.default_watchdog_time);
-        loop = 0;
     }
     
     public void disabledInit()
@@ -53,7 +54,6 @@ public class MainRobotClass extends IterativeRobot
     
     public void teleopInit()
     {
-        loop = 0;
         teleop.init();
     }
     
@@ -62,13 +62,11 @@ public class MainRobotClass extends IterativeRobot
      */
     public void teleopPeriodic()
     {
-        //System.out.println("Loop " + loop);
-        //++loop;
         this.getWatchdog().feed();
         teleop.run();
     }
     
-    public void telepoContinuous()
+    public void teleopContinuous()
     {
         
     }

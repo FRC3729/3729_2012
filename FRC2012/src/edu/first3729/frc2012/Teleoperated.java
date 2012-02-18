@@ -4,7 +4,8 @@ package edu.first3729.frc2012;
  * @file Teleoperated.java
  */
 
-import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.Relay;
 
 /**
  * 
@@ -20,10 +21,10 @@ public class Teleoperated
     private Drive _drive;
     private Manipulator _manip;
     private DigitalInput intake_limit;
-    private double x = 0.0, y = 0.0, z = 0.0, left = 0.0, right = 0.0;
+    private double x = 0.0, y = 0.0, z = 0.0, left = 0.0, right = 0.0, scale_factor = 0.0;
     private boolean intake_continue = false, net_down = false, net_up = false, shoot = false, lift = false, intake = false, bridge_down = false, bridge_up = false;
     private boolean shoot_old = false, lift_old = false;
-    private int input_left = 0, input_right = 0, input_controller = 0;
+    private int input_left = 0, input_right = 0, input_controller = 0, input_controller2 = 0;
     
     /**
      * @param imanager instance of Input class passed from MainRobotClass
@@ -104,12 +105,18 @@ public class Teleoperated
     public void getInput()
     {
         int mode = this._input_manager.getMode();
-        this.x = this._input_manager.getX();
-        this.y = this._input_manager.getY();
-        this.z = this._input_manager.getZ();
+        if (this._input_manager.getTwist(1) > 0) { 
+            this.scale_factor = Params.drive_creep_scale_factor;
+        }
+        else
+            this.scale_factor = 1.0;
+        this.x = this._input_manager.getX() * scale_factor;
+        this.y = this._input_manager.getY() * scale_factor;
+        this.z = this._input_manager.getZ() * scale_factor;
         this.input_left = this._input_manager.getBooleanButtonInputs(0);
         this.input_right = this._input_manager.getBooleanButtonInputs(1);
         this.input_controller = this._input_manager.getBooleanButtonInputs(2);
+        this.input_controller2 = this._input_manager.getBooleanButtonInputs (3);
         switch (mode) {
         default:
         case Input.arcade_joy:  // Arcade drive, two joysticks
@@ -153,7 +160,8 @@ public class Teleoperated
         if (this._input_manager.checkButton(1, 11)) {
             this._input_manager.setMode(Input.locked);
         }
-        System.out.println("X: " + x + " Y: " + y + "Z: " + z);
+        System.out.println("Left twist: " + this._input_manager.getTwist(0));
+        System.out.println("Right twist: " + this._input_manager.getTwist(1));
         System.out.println("Mode: " + this._input_manager.getMode());
     }
     
