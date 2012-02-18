@@ -13,6 +13,7 @@ package edu.first3729.frc2012;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DriverStationLCD;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.camera.AxisCamera;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -29,6 +30,7 @@ public class Robot extends IterativeRobot {
     private Teleoperated teleop;
     private Manipulator manip;
     private DigitalInput intake_limit;
+    public AxisCamera camera;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -53,6 +55,9 @@ public class Robot extends IterativeRobot {
         this.manip = new Manipulator();
         this.manip.init();
         this.teleop = new Teleoperated(input_manager, drive, manip);
+        this.camera = AxisCamera.getInstance(Params.camera_IP);
+        this.camera.writeResolution(Params.camera_resolution);
+        this.camera.writeMaxFPS(Params.camera_FPS);
         
         // Set up Watchdog
         this.getWatchdog().setExpiration(Params.default_watchdog_time);

@@ -5,6 +5,8 @@
  */
 package edu.first3729.frc2012;
 
+import edu.wpi.first.wpilibj.camera.AxisCamera;
+
 public class Params {
     // Port # constants: PWM out
     //! Port # of the front left Jaguar on the drive train
@@ -24,6 +26,9 @@ public class Params {
     public static final int net_relay_port = 6;
     public static final int intake_limit_digin_port = 1;
     public static final double drive_creep_scale_factor = 0.2;
+    public static final String camera_IP = "10.37.29.3";
+    public static final AxisCamera.ResolutionT camera_resolution = AxisCamera.ResolutionT.k640x480;
+    public static final int camera_FPS = 24;
     // Others
     //! The default expiration time of the Watchdog timer, in seconds
     public static final double default_watchdog_time = 3.0;
