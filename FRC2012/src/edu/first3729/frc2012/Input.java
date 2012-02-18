@@ -17,19 +17,6 @@ public class Input
         public static final int tank = 3;
         public static final int locked = 4;
         
-        // Switch between 1.0 and Params.drive_creep_scale_factor
-        private double scale_factor = 1.0;
-        
-        public void setScaleFactor(double scale)
-        {
-            this.scale_factor = scale;
-        }
-        
-        public double getScaleFactor()
-        {
-            return scale_factor;
-        }
-        
 	public Input()
 	{
 		this._joy0 = new Joystick(1);
@@ -71,13 +58,13 @@ public class Input
 	{
 		switch(mode) {
 		case mecanum:
-			return normalize(this._joy1.getRawAxis(1), -1.0, 1.0) * scale_factor;
+			return normalize(this._joy1.getRawAxis(1), -1.0, 1.0);
 		case arcade_joy:
-			return expo(normalize(this._joy1.getX(), -1.0, 1.0), Params.JOYEXPO) * scale_factor;
+			return expo(normalize(this._joy1.getX(), -1.0, 1.0), Params.JOYEXPO);
 		case arcade_controller:
-			return expo(normalize(this._controller.getX(), Params.XMIN, Params.XMAX), Params.XEXPO) * scale_factor;
+			return expo(normalize(this._controller.getX(), Params.XMIN, Params.XMAX), Params.XEXPO);
 		case tank:
-			return expo(normalize(this._joy0.getY(), -1.0, 1.0) * -1.0, Params.JOYEXPO) * scale_factor;
+			return expo(normalize(this._joy0.getY(), -1.0, 1.0) * -1.0, Params.JOYEXPO);
 		case locked:
 			return 0;
 		default:
@@ -90,13 +77,13 @@ public class Input
 	{
 		switch(mode) {
 		case mecanum:
-			return normalize(-this._joy0.getRawAxis(2), -1.0, 1.0) * scale_factor;
+			return normalize(-this._joy0.getRawAxis(2), -1.0, 1.0);
 		case arcade_joy:
-			return expo(normalize(this._joy1.getY(), -1.0, 1.0) * -1.0, Params.JOYEXPO) * scale_factor;
+			return expo(normalize(this._joy1.getY(), -1.0, 1.0) * -1.0, Params.JOYEXPO);
 		case arcade_controller:
-			return expo(normalize(this._controller.getY(),Params.YMIN, Params.YMAX) * -1.0, Params.YEXPO) * scale_factor;
+			return expo(normalize(this._controller.getY(),Params.YMIN, Params.YMAX) * -1.0, Params.YEXPO);
 		case tank:
-			return expo(normalize(this._joy1.getY(), -1.0, 1.0) * -1.0, Params.JOYEXPO) * scale_factor;
+			return expo(normalize(this._joy1.getY(), -1.0, 1.0) * -1.0, Params.JOYEXPO);
 		case locked:
 			return 0;
 		default:
@@ -109,13 +96,13 @@ public class Input
 	{
 		switch(mode) {
 		case mecanum:
-			return normalize(this._joy0.getRawAxis(1), -1.0, 1.0) * scale_factor;
+			return normalize(this._joy0.getRawAxis(1), -1.0, 1.0);
 		case arcade_joy:
-			return expo(normalize(this._joy0.getX(), -1.0, 1.0), Params.JOYEXPO) * scale_factor;
+			return expo(normalize(this._joy0.getX(), -1.0, 1.0), Params.JOYEXPO);
 		case arcade_controller:
-			return expo(normalize(this._controller.getZ(),Params.ZMIN, Params.ZMAX), Params.YEXPO) * scale_factor;
+			return expo(normalize(this._controller.getZ(),Params.ZMIN, Params.ZMAX), Params.YEXPO);
 		case tank:
-			return expo(normalize(this._joy0.getX(), -1.0, 1.0), Params.JOYEXPO) * scale_factor;
+			return expo(normalize(this._joy0.getX(), -1.0, 1.0), Params.JOYEXPO);
 		case locked:
 			return 0;
 		default:
@@ -128,13 +115,13 @@ public class Input
 	{
 		switch (mode) {
 		case mecanum:
-			return normalize(this._joy1.getRawAxis(2), -1.0, 1.0) * scale_factor;
+			return normalize(this._joy1.getRawAxis(2), -1.0, 1.0);
 		case arcade_joy:
-			return expo(normalize(this._joy0.getY(), -1.0, 1.0) * -1.0, Params.JOYEXPO) * scale_factor;
+			return expo(normalize(this._joy0.getY(), -1.0, 1.0) * -1.0, Params.JOYEXPO);
 		case arcade_controller:
-			return expo(normalize(this._controller.getTwist(),Params.ROTMIN, Params.ROTMAX) * -1.0, Params.ROTEXPO) * scale_factor;
+			return expo(normalize(this._controller.getTwist(),Params.ROTMIN, Params.ROTMAX) * -1.0, Params.ROTEXPO);
 		case tank:
-			return expo(normalize(this._joy1.getX(), -1.0, 1.0), Params.JOYEXPO) * scale_factor;
+			return expo(normalize(this._joy1.getX(), -1.0, 1.0), Params.JOYEXPO);
 		case locked:
 			return 0;
 		default:
