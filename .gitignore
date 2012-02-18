@@ -30,7 +30,5 @@ FRC2012/build.xml
 FRC2012/build.properties
 FRC2012/nbproject/private
 FRC2012/nbproject/private/*
-FRC2012/j2meclasses/edu
-FRC2012/j2meclasses/com
-FRC2012/j2meclasses/edu/*
-FRC2012/j2meclasses/com/*
+FRC2012/j2meclasses
+FRC2012/j2meclasses/*
