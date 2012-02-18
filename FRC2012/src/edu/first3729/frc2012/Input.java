@@ -1,6 +1,6 @@
 package edu.first3729.frc2012;
 
-import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.Joystick;
 
 public class Input
 {

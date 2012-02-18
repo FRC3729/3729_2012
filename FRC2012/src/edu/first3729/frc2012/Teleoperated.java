@@ -4,7 +4,8 @@ package edu.first3729.frc2012;
  * @file Teleoperated.java
  */
 
-import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.Relay;
 
 /**
  * 
