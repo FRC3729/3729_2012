@@ -105,7 +105,7 @@ public class Teleoperated
     public void getInput()
     {
         int mode = this._input_manager.getMode();
-        if (this._input_manager.getTwist() > 0) {
+        if (this._input_manager.getTwist(1) > 0) { 
             this.scale_factor = Params.drive_creep_scale_factor;
         }
         else
