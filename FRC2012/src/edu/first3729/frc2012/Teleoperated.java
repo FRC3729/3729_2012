@@ -26,7 +26,7 @@ public class Teleoperated {
     private DigitalInput intake_limit;
     private double x = 0.0, y = 0.0, z = 0.0, left = 0.0, right = 0.0, scale_factor = 0.0;
     private boolean intake_continue = false, net_down = false, net_up = false, shoot = false, lift = false, intake = false, bridge_down = false, bridge_up = false;
-    private boolean shoot_old = false, lift_old = false;
+    private boolean shoot_old = false, lift_old = false, intake_old = false;
     private int input_left = 0, input_right = 0, input_controller = 0, input_controller2 = 0;
 
     /**
@@ -74,7 +74,7 @@ public class Teleoperated {
                 break;
         }
 
-        // If intake limit switch is hit, turn off intake relay
+        /* If intake limit switch is hit, turn off intake relay
         if (!this.intake_limit.get()) {
             for (int i = 0; i < 10000; i++) { continue; }
             this._manip.intake(Relay.Value.kOff);
@@ -82,6 +82,11 @@ public class Teleoperated {
         // Intake control   
         if (this.intake) {
             this._manip.intake(Relay.Value.kForward);
+        }
+        */
+         if (this.intake) {
+            this._manip.intake(!intake_old);
+            intake_old = !intake_old;
         }
 
         // Gist of the above 2 'if' statements: when intake button pressed,

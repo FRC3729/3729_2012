@@ -45,20 +45,20 @@ public class Drive {
         left = ramp(left, _x_prev, Params.x_ramp_increment);
         right = ramp(right, _y_prev, Params.y_ramp_increment);
 
-        fl.set(left);
-        bl.set(left);
-        fr.set(-right);
-        br.set(-right);
+        fl.set(-left);
+        bl.set(-left);
+        fr.set(right);
+        br.set(right);
 
         _x_prev = left;
         _y_prev = right;
     }
 
     public void drive_tank_noramp(double left, double right) {
-        fl.set(left);
-        bl.set(left);
-        fr.set(-right);
-        br.set(-right);
+        fl.set(-left);
+        bl.set(-left);
+        fr.set(right);
+        br.set(right);
     }
 
     // Input from x and y axes on joystick, mapped to y = speed, x = turn
@@ -95,10 +95,11 @@ public class Drive {
             System.out.println("Left: " + left);
             System.out.println("Right: " + right);
             
-            fl.set(left);
+            fl.set(-left);
             fr.set(right);
             bl.set(-left);
-            br.set(-right);
+            br.set(right);
+
         }
 
         _x_prev = x;

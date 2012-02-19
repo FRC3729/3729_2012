@@ -63,9 +63,13 @@ public class Manipulator {
         }
     }
 
-    public void intake(Relay.Value state) {
+    public void intake(boolean state) {
         // Turn on until limit switch is pressed, then off
-        this.intake.set(state);
+        if (state) {
+            intake.set(Relay.Value.kForward);
+        } else {
+            intake.set(Relay.Value.kOff);
+        }
 
     }
 

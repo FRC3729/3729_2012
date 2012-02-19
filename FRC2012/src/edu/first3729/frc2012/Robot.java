@@ -99,7 +99,7 @@ public class Robot extends IterativeRobot {
 
     public void teleopContinuous() {
     }
-    
+    /*
     public void autonomousInit()
     {
         System.out.println("Going autonomous.");
@@ -141,4 +141,5 @@ public class Robot extends IterativeRobot {
     {
         this.getWatchdog().feed();
     }
+    * */
 }
