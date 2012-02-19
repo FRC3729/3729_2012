@@ -23,11 +23,10 @@ public class Teleoperated {
     private Input _input_manager;
     private Drive _drive;
     private Manipulator _manip;
-    private DigitalInput intake_limit;
+    private DigitalInput bridge_limit, intake_sensor;
     private double x = 0.0, y = 0.0, z = 0.0, left = 0.0, right = 0.0, scale_factor = 0.0;
-    private boolean intake_continue = false, net_down = false, net_up = false, shoot = false, lift = false, intake = false, bridge_down = false, bridge_up = false;
-    private boolean shoot_old = false, lift_old = false, intake_old = false;
-    private int input_left = 0, input_right = 0, input_controller = 0, input_controller2 = 0;
+    private boolean net_down = false, net_up = false, intake = false, bridge_down = false, bridge_up = false;
+    private boolean shoot_on = false, shoot_off = false, lift_on = false, lift_off = false;
 
     /**
      * @param imanager instance of Input class passed from Robot
@@ -39,7 +38,8 @@ public class Teleoperated {
         this._input_manager = imanager;
         this._manip = manip;
         this._drive = drv;
-        this.intake_limit = new DigitalInput(Params.intake_limit_digin_port);
+        this.intake_sensor = new DigitalInput(Params.intake_sensor_digin_port);
+        this.bridge_limit = new DigitalInput(Params.bridge_limit_digin_port);
     }
 
     /**
@@ -84,28 +84,37 @@ public class Teleoperated {
             this._manip.intake(Relay.Value.kForward);
         }
         */
-         if (this.intake) {
-            this._manip.intake(!intake_old);
-            intake_old = !intake_old;
+        if (this.intake_sensor.get()) {
+            this._manip.intake(false);
+        }
+        if (this.intake) {
+            this._manip.intake(true);
         }
 
         // Gist of the above 2 'if' statements: when intake button pressed,
         // keep relay running until limit switch is pressed.
 
         // Toggle elevator
-        if (lift) {
-            this._manip.lift(!lift_old);
-            lift_old = !lift_old;
+        if (lift_on) {
+            this._manip.lift(true);
+        } else if (lift_off) {
+            this._manip.lift(false);
         }
 
         // Toggle shooter
-        if (shoot) {
-            this._manip.shoot(!shoot_old);
-            shoot_old = !shoot_old;
+        if (shoot_on) {
+            this._manip.shoot(true);
+        } else if (shoot_off) {
+            this._manip.shoot(false);
+        }
+
+        // If up and down both requested, do nothing
+        if (bridge_up && bridge_down) {
+            this._manip.bridge(Relay.Value.kOff);
         }
 
         // Bridge relay control
-        if (bridge_up) {
+        if (bridge_up && !this.bridge_limit.get()) {
             this._manip.bridge(Relay.Value.kForward);
         } else if (bridge_down) {
             this._manip.bridge(Relay.Value.kReverse);
@@ -147,35 +156,26 @@ public class Teleoperated {
         this.y = this._input_manager.get_y() * scale_factor;
         this.z = this._input_manager.get_z() * scale_factor;
 
-        this.input_left = this._input_manager.get_boolean_input(0);
-        this.input_right = this._input_manager.get_boolean_input(1);
-        this.input_controller = this._input_manager.get_boolean_input(2);
-        this.input_controller2 = this._input_manager.get_boolean_input(3);
-
         switch (mode) {
             default:
             case Input.arcade_joy:  // Arcade drive, two joysticks
             case Input.arcade_controller:  // Arcade drive w/ flight controller and joystick - buttons same
                 this.intake = this._input_manager.check_button(0, 1);
-                this.shoot = this._input_manager.check_button(0, 2);
-                this.bridge_down = this._input_manager.check_button(0, 4);
-                this.lift = this._input_manager.check_button(0, 3);
-                this.bridge_up = this._input_manager.check_button(0, 5);
-                this.net_up = this._input_manager.check_button(0, 7);
-                this.net_down = this._input_manager.check_button(0, 8);
+                this.lift_on = this._input_manager.check_button(0, 3);
+                this.lift_off = this._input_manager.check_button(0, 2);
+                this.shoot_on = this._input_manager.check_button(0, 4);
+                this.shoot_off = this._input_manager.check_button(0, 5);
+                this.bridge_down = this._input_manager.check_button(1, 4);
+                this.bridge_up = this._input_manager.check_button(1, 5);
+                this.net_up = this._input_manager.check_button(1, 3);
+                this.net_down = this._input_manager.check_button(1, 2);
                 break;
             case Input.tank:  // Tank drive and
             case Input.mecanum:  // Mecanum drive - both input from joystick 3
-                this.intake = this._input_manager.check_button(2, 1);
-                this.shoot = this._input_manager.check_button(2, 2);
-                this.bridge_down = this._input_manager.check_button(2, 4);
-                this.lift = this._input_manager.check_button(2, 3);
-                this.bridge_up = this._input_manager.check_button(2, 5);
-                this.net_up = this._input_manager.check_button(0, 7);
-                this.net_down = this._input_manager.check_button(0, 8);
+                // NMasfg
                 break;
             case Input.locked:  // Locked controls, nothing to do here
-                this.intake = this.shoot = this.bridge_up = this.bridge_down = this.lift = this.net_up = this.net_down = false;
+                this.intake = this.shoot_on = this.shoot_off = this.bridge_up = this.bridge_down = this.lift_on = this.lift_off = this.net_up = this.net_down = false;
                 break;
         }
         // Button 6, arcade drive 2 joysticks

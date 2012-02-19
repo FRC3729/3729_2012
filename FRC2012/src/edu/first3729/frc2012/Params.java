@@ -18,13 +18,14 @@ public class Params {
     public static final int bl_port = 2;
     //! Port # of the back right Jaguar on the drive train
     public static final int br_port = 4;
-    public static final int shooter1_relay_port = 1;
-    public static final int shooter2_relay_port = 2;
-    public static final int intake_relay_port = 3;
-    public static final int elevator_relay_port = 4;
-    public static final int bridge_relay_port = 5;
-    public static final int net_relay_port = 6;
-    public static final int intake_limit_digin_port = 1;
+    public static final int shooter1_victor_port = 5;
+    public static final int shooter2_victor_port = 6;
+    public static final int intake_relay_port = 1;
+    public static final int elevator_relay_port = 2;
+    public static final int bridge_relay_port = 3;
+    public static final int net_relay_port = 4;
+    public static final int intake_sensor_digin_port = 1;
+    public static final int bridge_limit_digin_port = 2;
     public static final double drive_creep_scale_factor = 0.2;
     public static final String camera_IP = "10.37.29.11";
     public static final AxisCamera.ResolutionT camera_resolution = AxisCamera.ResolutionT.k640x480;
@@ -38,6 +39,8 @@ public class Params {
     public static final double auto_turn_speed = 0.65;
     //! Speed at which we brake in Autonomous
     public static final double auto_brake_speed = -0.6;
+    public static final double shooter1_speed = 0.8;
+    public static final double shooter2_speed = 0.8;
     //! Increment at which we ramp output from the x-axis
     public static final double x_ramp_increment = 0.1;
     //! Increment at which we ramp output from the y-axis

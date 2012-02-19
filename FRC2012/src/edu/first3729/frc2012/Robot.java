@@ -10,10 +10,8 @@ package edu.first3729.frc2012;
  * mandated by WPILib
  *
  */
-import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DriverStationLCD;
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.camera.AxisCamera;
 import edu.wpi.first.wpilibj.Timer;
 
@@ -31,9 +29,8 @@ public class Robot extends IterativeRobot {
     private Drive drive;
     private Teleoperated teleop;
     private Manipulator manip;
-    private DigitalInput intake_limit;
     private AxisCamera camera;
-
+    
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.

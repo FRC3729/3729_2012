@@ -208,33 +208,4 @@ public class Input {
     public double get_twist() {
         return get_twist(0);
     }
-
-    public int get_boolean_input(int side) {
-        int i;
-        switch (side) {
-            case 0:
-                for (i = 1; i <= 11; i++) {
-                    this.booleanInputs ^= Utility.to_int(this._joy0.getRawButton(i)) << (i - 1);
-                }
-                break;
-            case 1:
-                for (i = 1; i <= 11; i++) {
-                    this.booleanInputs ^= Utility.to_int(this._joy1.getRawButton(i)) << (i - 1);
-                }
-                break;
-            case 2:
-                for (i = 1; i <= 11; i++) {
-                    this.booleanInputs ^= Utility.to_int(this._controller.getRawButton(i)) << (i - 1);
-                }
-                break;
-            case 3:
-                for (i = 1; i <= 11; i++) {
-                    this.booleanInputs ^= Utility.to_int(this._controller2.getRawButton(i)) << (i - 1);
-                }
-                break;
-            default:
-                return get_boolean_input(0);
-        }
-        return this.booleanInputs;
-    }
 }

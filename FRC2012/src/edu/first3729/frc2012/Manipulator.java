@@ -6,6 +6,7 @@
 package edu.first3729.frc2012;
 
 import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.Victor;
 
 /**
  *
@@ -15,16 +16,16 @@ import edu.wpi.first.wpilibj.Relay;
  */
 public class Manipulator {
 
-    private Relay shooter1;
-    private Relay shooter2;
+    private Victor shooter1;
+    private Victor shooter2;
     private Relay elevator;
     private Relay bridge;
     private Relay intake;
     private Relay net;
 
     public Manipulator() {
-        shooter1 = new Relay(Params.shooter1_relay_port);
-        shooter2 = new Relay(Params.shooter2_relay_port);
+        shooter1 = new Victor(Params.shooter1_victor_port);
+        shooter2 = new Victor(Params.shooter2_victor_port);
         elevator = new Relay(Params.elevator_relay_port);
         bridge = new Relay(Params.bridge_relay_port);
         intake = new Relay(Params.intake_relay_port);
@@ -32,10 +33,6 @@ public class Manipulator {
     }
 
     public void init() {
-        shooter1.setDirection(Relay.Direction.kBoth);
-        shooter1.set(Relay.Value.kOff);
-        shooter2.setDirection(Relay.Direction.kBoth);
-        shooter2.set(Relay.Value.kOff);
         elevator.setDirection(Relay.Direction.kBoth);
         elevator.set(Relay.Value.kOff);
         bridge.setDirection(Relay.Direction.kBoth);
@@ -46,11 +43,11 @@ public class Manipulator {
 
     public void shoot(boolean state) {
         if (state) {
-            shooter1.set(Relay.Value.kForward);
-            shooter2.set(Relay.Value.kReverse);
+            shooter1.set(Params.shooter1_speed);
+            shooter2.set(Params.shooter2_speed);
         } else {
-            shooter1.set(Relay.Value.kOff);
-            shooter2.set(Relay.Value.kOff);
+            shooter1.set(0.0);
+            shooter2.set(0.0);
         }
 
     }
