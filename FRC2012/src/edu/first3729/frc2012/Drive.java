@@ -5,7 +5,6 @@
  */
 package edu.first3729.frc2012;
 
-import com.sun.squawk.util.MathUtils;
 import edu.wpi.first.wpilibj.Jaguar;
 
 public class Drive {
@@ -74,11 +73,12 @@ public class Drive {
             
             double left = x+y;
             double right = y-x;
-
+            
+            /*
             //make speeds less sensitive so driving is easier
             left = left*Math.abs(left);
             right = right*Math.abs(right);
-            
+            */
 
             // Keep everything within the confines of [-1.0, 1.0]
             left = Utility.clamp(left, -1.0, 1.0);
