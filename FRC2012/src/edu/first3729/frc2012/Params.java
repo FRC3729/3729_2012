@@ -79,4 +79,13 @@ public class Params {
     public static final double ROTEXPO = 0.6;
     //! Exponential constant for modifying input from a joystick
     public static final double JOYEXPO = 0.5;
+    /*
+    // Image target-tracking stuff
+    public static final int target_hue_low;
+    public static final int target_hue_high;
+    public static final int target_saturation_low;
+    public static final int target_saturation_high;
+    public static final int target_luminence_low;
+    public static final int target_luminence_high;
+    */
 }

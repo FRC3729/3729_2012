@@ -28,6 +28,7 @@ public class Robot extends IterativeRobot {
     private DriverStationLCD screen;
     private Drive drive;
     private Teleoperated teleop;
+    private Autonomous auto;
     private Manipulator manip;
     private AxisCamera camera;
     
@@ -60,6 +61,7 @@ public class Robot extends IterativeRobot {
         this.manip = new Manipulator();
         this.manip.init();
         this.teleop = new Teleoperated(input_manager, drive, manip);
+        this.auto = new Autonomous(drive, camera, manip);
         this.camera = AxisCamera.getInstance(Params.camera_IP);
         this.camera.writeResolution(Params.camera_resolution);
         this.camera.writeMaxFPS(Params.camera_FPS);
@@ -96,47 +98,17 @@ public class Robot extends IterativeRobot {
 
     public void teleopContinuous() {
     }
-    /*
+    
     public void autonomousInit()
     {
         System.out.println("Going autonomous.");
-        
-        this.getWatchdog().feed();
-        this.manip.shoot(true);
-        this.manip.intake(Relay.Value.kForward);
-        while (!this.intake_limit.get()) { continue; }
-        this.manip.intake(Relay.Value.kOff);
-        try {
-            this.wait(2);
-        }
-        catch (InterruptedException ex) {
-            
-        }
-        this.manip.intake(Relay.Value.kForward);
-        while (!this.intake_limit.get()) { continue; }
-        this.manip.intake(Relay.Value.kOff);
-        try {
-            this.wait(2);
-        }
-        catch (InterruptedException ex) {
-            
-        }
-        this.manip.intake(Relay.Value.kForward);
-        while (!this.intake_limit.get()) { continue; }
-        this.manip.intake(Relay.Value.kOff);
-        try {
-            this.wait(2);
-        }
-        catch (InterruptedException ex) {
-            
-        }
-        this.manip.intake(Relay.Value.kOff);
-        this.manip.shoot(false);
+        auto.init();
     }
     
     public void autonomousPeriodic()
     {
         this.getWatchdog().feed();
+        auto.run();
     }
-    * */
+    
 }

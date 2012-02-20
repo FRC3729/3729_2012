@@ -25,7 +25,7 @@ public class Teleoperated {
     private Manipulator _manip;
     private DigitalInput bridge_limit, intake_sensor;
     private double x = 0.0, y = 0.0, z = 0.0, left = 0.0, right = 0.0, scale_factor = 0.0;
-    private boolean net_down = false, net_up = false, intake = false, bridge_down = false, bridge_up = false;
+    private boolean polarity = false, net_down = false, net_up = false, intake = false, bridge_down = false, bridge_up = false;
     private boolean shoot_on = false, shoot_off = false, lift_on = false, lift_off = false;
 
     /**
@@ -88,6 +88,8 @@ public class Teleoperated {
             this._manip.intake(false);
         }
         if (this.intake) {
+            if (!this.shoot_on)
+                this._manip.shoot(true);
             this._manip.intake(true);
         }
 
@@ -153,7 +155,10 @@ public class Teleoperated {
         }
 
         this.x = this._input_manager.get_x() * scale_factor;
-        this.y = this._input_manager.get_y() * scale_factor;
+        if (polarity)
+            this.y = this._input_manager.get_y() * scale_factor * -1.0;
+        else
+            this.y = this._input_manager.get_y() * scale_factor;
         this.z = this._input_manager.get_z() * scale_factor;
 
         switch (mode) {
@@ -169,6 +174,7 @@ public class Teleoperated {
                 this.bridge_up = this._input_manager.check_button(1, 5);
                 this.net_up = this._input_manager.check_button(1, 3);
                 this.net_down = this._input_manager.check_button(1, 2);
+                this.polarity = this._input_manager.check_button(2, 2);
                 break;
             case Input.tank:  // Tank drive and
             case Input.mecanum:  // Mecanum drive - both input from joystick 3

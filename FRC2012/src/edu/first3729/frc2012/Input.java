@@ -64,7 +64,7 @@ public class Input {
             case arcade_joy:
                 return Utility.expo(Utility.normalize(this._joy1.getX(), -1.0, 1.0), Params.JOYEXPO);
             case arcade_controller:
-                return Utility.expo(Utility.normalize(this._controller.getX(), Params.XMIN, Params.XMAX), Params.XEXPO);
+                return Utility.expo(Utility.normalize(this._controller.getX(), Params.XMIN, Params.XMAX), Params.XEXPO) * -1.0;
             case tank:
                 return Utility.expo(Utility.normalize(this._joy0.getY(), -1.0, 1.0) * -1.0, Params.JOYEXPO);
             case locked:
@@ -82,7 +82,7 @@ public class Input {
             case arcade_joy:
                 return Utility.expo(Utility.normalize(this._joy1.getY(), -1.0, 1.0) * -1.0, Params.JOYEXPO);
             case arcade_controller:
-                return Utility.expo(Utility.normalize(this._controller.getY(), Params.YMIN, Params.YMAX) * -1.0, Params.YEXPO);
+                return Utility.expo(Utility.normalize(this._controller.getY(), Params.YMIN, Params.YMAX), Params.YEXPO);
             case tank:
                 return Utility.expo(Utility.normalize(this._joy1.getY(), -1.0, 1.0) * -1.0, Params.JOYEXPO);
             case locked:

@@ -69,24 +69,16 @@ public class Drive {
         // If not pushing forward much, switch to tank mode to turn in place
         if ((y <= 0.1 && y > 0) || (y >= -0.1 && y < 0)) {
             this.drive_tank(x * 0.75, -x * 0.75);
-        } else {
-            double left, right;
-            // If turning left:
-            if (x < 0) {
-                double mag = MathUtils.log(-y);
-                double ratio = (mag - 0.5) / (mag + 0.5) + .0000000001;
-                left = y / ratio;
-                right = y;
-            } // If turning right:
-            else if (x > 0) {
-                double mag = MathUtils.log(y);
-                double ratio = (mag - 0.5) / (mag + 0.5) + .0000000001;
-                left = y;
-                right = y / ratio;
-            } else {
-                left = y;
-                right = y;
-            }
+        }
+        else {
+            
+            double left = x+y;
+            double right = y-x;
+
+            //make speeds less sensitive so driving is easier
+            left = left*Math.abs(left);
+            right = right*Math.abs(right);
+            
 
             // Keep everything within the confines of [-1.0, 1.0]
             left = Utility.clamp(left, -1.0, 1.0);
