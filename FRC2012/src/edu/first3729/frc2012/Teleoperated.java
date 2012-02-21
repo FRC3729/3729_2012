@@ -84,7 +84,7 @@ public class Teleoperated {
             this._manip.intake(Relay.Value.kForward);
         }
         */
-        if (this.intake_sensor.get()) {
+        if (!this.intake_sensor.get()) {
             this._manip.intake(false);
         }
         if (this.intake) {
