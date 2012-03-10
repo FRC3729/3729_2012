@@ -58,7 +58,7 @@ public class Robot extends IterativeRobot {
         this.input_manager.set_mode(Params.default_drive_mode);
         this.drive = new Drive();
         this.drive.lock_motors();
-        this.manip = new Manipulator();
+        this.manip = new Manipulator_practice();
         this.manip.init();
         this.teleop = new Teleoperated(input_manager, drive, manip);
         this.auto = new Autonomous(drive, camera, manip);
