@@ -35,8 +35,7 @@ public class Robot extends IterativeRobot {
     private boolean auto_complete;
     
     /**
-     * This function is run when the robot is first started up and should be
-     * used for any initialization code.
+     * This function is run when the robot is first started up and contains 
      */
     public void robotInit() {
         // Initialization timer
@@ -95,7 +94,7 @@ public class Robot extends IterativeRobot {
     }
 
     /**
-     * This function is called periodically during operator control
+     * This function is called periodically during teleoperated mode
      */
     public void teleopPeriodic() {
         this.getWatchdog().feed();
