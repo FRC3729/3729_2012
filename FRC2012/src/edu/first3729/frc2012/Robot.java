@@ -41,6 +41,8 @@ public class Robot extends IterativeRobot {
         // Initialization timer
         Timer init_timer = new Timer();
         
+        
+        
         // Print banner
         System.out.println(" ______ ______ ______ ______\n|__    |      |__    |  __  |\n|__    |_     |    __|__    |\n|______| |____|______|______|\n");
  
@@ -75,7 +77,7 @@ public class Robot extends IterativeRobot {
         // Stop timer
         init_timer.stop();
         
-        System.out.println("=== DONE IN " + init_timer.get() * .001 + " MS ===");
+        System.out.println("=== DONE IN " + init_timer.get() + " MICROSECONDS ===");
     }
 
     public void disabledInit() {

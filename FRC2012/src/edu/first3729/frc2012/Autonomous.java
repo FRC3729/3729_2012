@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.camera.AxisCamera;
 import edu.wpi.first.wpilibj.camera.AxisCameraException;
 import edu.wpi.first.wpilibj.image.*;
+import edu.wpi.first.wpilibj.communication.FRCControl;
 
 /**
  *
@@ -93,7 +94,7 @@ public class Autonomous {
         /*
         try {
         this._image = this._camera.getImage().thresholdHSL(Params.target_hue_low, Params.target_hue_high, Params.target_saturation_low, Params.target_saturation_high, Params.target_luminence_low, Params.target_luminence_high);
-        
+         
         }
         catch (AxisCameraException ex) {
             

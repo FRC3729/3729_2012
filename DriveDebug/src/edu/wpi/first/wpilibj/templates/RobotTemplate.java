@@ -9,6 +9,7 @@ package edu.wpi.first.wpilibj.templates;
 
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.RobotDrive;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -23,11 +24,12 @@ public class RobotTemplate extends IterativeRobot {
      * used for any initialization code.
      */
     
-    private Drive drive;
+    private RobotDrive drive;
     private Input input;
     
     public void robotInit() {
-        drive = new Drive();
+        drive = new RobotDrive(Params.fr_port, Params.br_port, Params.fl_port, Params.bl_port);
+        input = new Input();
     }
 
     /**
@@ -37,17 +39,17 @@ public class RobotTemplate extends IterativeRobot {
 
     }
 
-    public void teleopInit()
-    {
-        drive.lock_motors();
+    public void teleopInit() {
+        drive.arcadeDrive(0, 0);
     }
     
     /**
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-        this.getWatchdog().feed();
-        this.drive.drive_arcade(this.input.get_x(), this.input.get_y());
+        //this.drive.arcadeDrive(0.5, 0.5);
+        this.drive.arcadeDrive(this.input.get_x(), this.input.get_y());
+        System.out.println("X: " + this.input.get_x() + "Y: " + this.input.get_y());
     }
     
 }
