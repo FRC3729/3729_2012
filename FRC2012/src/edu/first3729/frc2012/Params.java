@@ -20,6 +20,8 @@ public class Params {
     public static final int br_port = 4;
     public static final int shooter1_victor_port = 5;
     public static final int shooter2_victor_port = 6;
+    public static final int shooter1_Jaguar_port = 5;
+    public static final int shooter2_Jaguar_port = 6;
     public static final int intake_relay_port = 1;
     public static final int elevator_relay_port = 2;
     public static final int bridge_relay_port = 3;
@@ -88,4 +90,5 @@ public class Params {
     public static final int target_luminence_low;
     public static final int target_luminence_high;
     */
+
 }

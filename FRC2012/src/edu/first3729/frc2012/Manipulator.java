@@ -18,10 +18,10 @@ public class Manipulator {
 
     private Victor shooter1;
     private Victor shooter2;
-    private Relay elevator;
-    private Relay bridge;
-    private Relay intake;
-    private Relay net;
+    protected Relay elevator;
+    protected Relay bridge;
+    protected Relay intake;
+    protected Relay net;
 
     public Manipulator() {
         shooter1 = new Victor(Params.shooter1_victor_port);
