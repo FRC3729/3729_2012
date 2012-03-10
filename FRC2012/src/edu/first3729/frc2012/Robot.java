@@ -32,6 +32,8 @@ public class Robot extends IterativeRobot {
     private Manipulator manip;
     private AxisCamera camera;
     
+    private boolean auto_complete;
+    
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -66,6 +68,8 @@ public class Robot extends IterativeRobot {
         this.camera.writeResolution(Params.camera_resolution);
         this.camera.writeMaxFPS(Params.camera_FPS);
         
+        this.auto_complete = false;
+        
         // Set up Watchdog
         this.getWatchdog().setExpiration(Params.default_watchdog_time);
         
@@ -77,6 +81,7 @@ public class Robot extends IterativeRobot {
 
     public void disabledInit() {
         System.out.println("Going disabled.");
+        this.getWatchdog().setEnabled(false);
     }
 
     public void disabledPeriodic() {
@@ -85,6 +90,7 @@ public class Robot extends IterativeRobot {
 
     public void teleopInit() {
         System.out.println("Going teleoperated.");
+        this.getWatchdog().setEnabled(true);
         teleop.init();
     }
 
@@ -102,13 +108,13 @@ public class Robot extends IterativeRobot {
     public void autonomousInit()
     {
         System.out.println("Going autonomous.");
+        this.getWatchdog().setEnabled(false);
         auto.init();
     }
     
     public void autonomousPeriodic()
     {
-        this.getWatchdog().feed();
-        auto.run();
+        while(!auto_complete) { auto_complete = auto.run(); }
     }
     
 }
