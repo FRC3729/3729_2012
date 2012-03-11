@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.DriverStationLCD;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.camera.AxisCamera;
 import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.RobotDrive;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -26,7 +27,7 @@ public class Robot extends IterativeRobot {
 
     private Input input_manager;
     private DriverStationLCD screen;
-    private Drive drive;
+    private RobotDrive drive;
     private Teleoperated teleop;
     private Autonomous auto;
     private Manipulator manip;
@@ -58,9 +59,8 @@ public class Robot extends IterativeRobot {
         // Start timer
         init_timer.start();
         this.input_manager = new Input();
-        this.input_manager.set_mode(Params.default_drive_mode);
-        this.drive = new Drive();
-        this.drive.lock_motors();
+        this.drive = new RobotDrive(Params.fl_port, Params.bl_port, Params.fr_port, Params.br_port);
+        this.drive.tankDrive(0, 0);
         this.manip = new Manipulator_practice();
         this.manip.init();
         this.teleop = new Teleoperated(input_manager, drive, manip);

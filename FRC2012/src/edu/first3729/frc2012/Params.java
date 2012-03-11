@@ -41,8 +41,8 @@ public class Params {
     public static final double auto_turn_speed = 0.65;
     //! Speed at which we brake in Autonomous
     public static final double auto_brake_speed = -0.6;
-    public static final double shooter1_speed = 0.8;
-    public static final double shooter2_speed = 0.8;
+    public static final double shooter1_speed = 1.0;
+    public static final double shooter2_speed = 1.0;
     //! Increment at which we ramp output from the x-axis
     public static final double x_ramp_increment = 0.1;
     //! Increment at which we ramp output from the y-axis

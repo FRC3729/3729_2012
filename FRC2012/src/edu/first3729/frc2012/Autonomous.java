@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.camera.AxisCamera;
 import edu.wpi.first.wpilibj.camera.AxisCameraException;
 import edu.wpi.first.wpilibj.image.*;
 import edu.wpi.first.wpilibj.communication.FRCControl;
+import edu.wpi.first.wpilibj.RobotDrive;
 
 /**
  *
@@ -16,14 +17,14 @@ import edu.wpi.first.wpilibj.communication.FRCControl;
  */
 public class Autonomous {
     
-    private Drive _drive;
+    private RobotDrive _drive;
     private AxisCamera _camera;
     private Manipulator _manip;
     //private BinaryImage _image;
     
     private int stage = 0;
     
-    public Autonomous(Drive drv, AxisCamera cam, Manipulator manip)
+    public Autonomous(RobotDrive drv, AxisCamera cam, Manipulator manip)
     {
         
     }
@@ -60,16 +61,16 @@ public class Autonomous {
             case 4:
                 this._manip.intake(false);
                 this._manip.shoot(false);
-                this._drive.drive_tank(0, 1);
+                this._drive.tankDrive(0, 1);
                 stage = 5;
                 this.wait(1000);
             case 5:
-                this._drive.lock_motors();
-                this._drive.drive_tank(-.5, -.5);
+                this._drive.tankDrive(0, 0);
+                this._drive.tankDrive(-.5, -.5);
                 stage = 6;
                 this.wait(1750);
             case 6:
-                this._drive.lock_motors();
+                this._drive.tankDrive(0, 0);
                 this._manip.bridge(Relay.Value.kForward);
                 stage = 7;
                 this.wait(1500);

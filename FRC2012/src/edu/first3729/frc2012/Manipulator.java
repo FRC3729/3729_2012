@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.Victor;
  *
  * @class Manipulator @brief Class that abstracts manipulator
  *
- * Manages a bunch of relays that do stuff.
+ * Manages assorted motor controllers to put balls in nets.   Mmmmm.  Oh yeah.
  */
 public class Manipulator {
 
