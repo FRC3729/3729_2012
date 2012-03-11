@@ -3,7 +3,7 @@
 
 # If no args, print usage
 if [ "$#" = "0" ]; then
-    echo "Usage: genMan XY, where XY are the last two digits of the year for which you want to generate documentation";
+    echo "Usage: manual.sh XY, where XY are the last two digits of the year for which you want to generate documentation";
     exit;
 else
     # Otherwise, the first arg is the year
