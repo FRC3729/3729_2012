@@ -1,4 +1,4 @@
-/*  ______ ______ ______ ______
+ /*  ______ ______ ______ ______
  * |__    |      |__    |  __  |
  * |__    |_     |    __|__    |
  * |______| |____|______|______|
@@ -20,7 +20,6 @@ import edu.wpi.first.wpilibj.RobotDrive;
  * input based on controller layout mode and sets outputs accordingly.
  */
 public class Teleoperated {
-
     private Input _input_manager;
     private RobotDrive _drive;
     private Manipulator _manip;

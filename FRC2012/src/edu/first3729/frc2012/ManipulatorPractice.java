@@ -1,6 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/*  ______ ______ ______ ______
+ * |__    |      |__    |  __  |
+ * |__    |_     |    __|__    |
+ * |______| |____|______|______|
  */
 package edu.first3729.frc2012;
 

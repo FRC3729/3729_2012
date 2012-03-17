@@ -26,7 +26,9 @@ public class Autonomous {
     
     public Autonomous(RobotDrive drv, AxisCamera cam, Manipulator manip)
     {
-        
+        this._drive = drv;
+        this._camera = cam;
+        this._manip = manip;
     }
     
     public void init()
