@@ -11,13 +11,13 @@ import edu.wpi.first.wpilibj.Relay;
  *
  * @author Teddy
  */
-public class Manipulator_practice extends Manipulator {
+public class ManipulatorPractice extends Manipulator {
     
     private Jaguar shooter1;
     private Jaguar shooter2;
 
 
-    public Manipulator_practice()
+    public ManipulatorPractice()
     {
         shooter1 = new Jaguar(Params.shooter1_Jaguar_port);
         shooter2 = new Jaguar(Params.shooter2_Jaguar_port);

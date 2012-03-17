@@ -42,8 +42,6 @@ public class Robot extends IterativeRobot {
         // Initialization timer
         Timer init_timer = new Timer();
         
-        
-        
         // Print banner
         System.out.println(" ______ ______ ______ ______\n|__    |      |__    |  __  |\n|__    |_     |    __|__    |\n|______| |____|______|______|\n");
  
@@ -61,7 +59,7 @@ public class Robot extends IterativeRobot {
         this.input_manager = new Input();
         this.drive = new RobotDrive(Params.fl_port, Params.bl_port, Params.fr_port, Params.br_port);
         this.drive.tankDrive(0, 0);
-        this.manip = new Manipulator_practice();
+        this.manip = new ManipulatorPractice();
         this.manip.init();
         this.teleop = new Teleoperated(input_manager, drive, manip);
         this.auto = new Autonomous(drive, camera, manip);
