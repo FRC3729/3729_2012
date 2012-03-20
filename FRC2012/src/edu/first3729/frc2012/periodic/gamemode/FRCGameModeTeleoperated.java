@@ -21,9 +21,9 @@ import edu.wpi.first.wpilibj.Relay;
  * input based on controller layout mode and sets outputs accordingly.
  */
 public class FRCGameModeTeleoperated extends FRCGameMode {    
-    private double x = 0.0, y = 0.0, z = 0.0, left = 0.0, right = 0.0, scale_factor = 0.0;
+    /*private double x = 0.0, y = 0.0, z = 0.0, left = 0.0, right = 0.0, scale_factor = 0.0;
     private boolean polarity = false, net_down = false, net_up = false, intake = false, bridge_down = false, bridge_up = false;
-    private boolean shoot_on = false, shoot_off = false, lift_on = false, lift_off = false;
+    private boolean shoot_on = false, shoot_off = false, lift_on = false, lift_off = false;*/
 
     public FRCGameModeTeleoperated(FRCRobot robot) {
         super(robot);
@@ -33,8 +33,6 @@ public class FRCGameModeTeleoperated extends FRCGameMode {
      * @brief Initializes manipulator, locks drive, locks input
      */
     public void setup() {
-        this._drive.tankDrive(0, 0);
-        this._manipulator.begin(this);
     }
 
     /**
@@ -43,7 +41,7 @@ public class FRCGameModeTeleoperated extends FRCGameMode {
      * Runs FRCGameModeTeleoperated period
      */
     public void loop_periodic() {
-        // Update input fields
+        /* Update input fields
         this.getInput();
         
         // FRCDrive teh robot
@@ -58,7 +56,7 @@ public class FRCGameModeTeleoperated extends FRCGameMode {
         if (this.intake) {
             this._manipulator.intake(Relay.Value.kForward);
         }
-        */
+        
         if (!this._manipulator.get_intake_sensor()) {
             this._manipulator.intake(false);
         }
@@ -102,16 +100,16 @@ public class FRCGameModeTeleoperated extends FRCGameMode {
         // If up and down both requested, do nothing
         if (bridge_up && bridge_down) {
             this._manipulator.bridge(Relay.Value.kOff);
-        }
+        }*/
         
+        // Run drive and manipulator loops
         this._drive.loop_periodic();
         this._manipulator.loop_periodic();
     }
     
     public void loop_continuous() {
+        // Run continuous drive and manipulator loops
         this._drive.loop_continuous();
         this._manipulator.loop_continuous();
     }
-
-
 }
