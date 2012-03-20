@@ -1,6 +1,6 @@
 MIDlet-Name: Test
 MIDlet-Version: 1.0.0
 MIDlet-Vendor: FIRST
-MIDlet-1: Robot, , edu.first3729.frc2012.Robot
+MIDlet-1: FRCRobot, , edu.first3729.frc2012.FRCRobot
 MicroEdition-Profile: IMP-1.0
 MicroEdition-Configuration: CLDC-1.1

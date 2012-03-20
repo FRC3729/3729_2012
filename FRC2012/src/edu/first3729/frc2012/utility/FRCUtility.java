@@ -3,9 +3,9 @@
  * |__    |_     |    __|__    |
  * |______| |____|______|______|
  */
-package edu.first3729.frc2012;
+package edu.first3729.frc2012.utility;
 
-public class Utility {
+public class FRCUtility {
 
     /**
      * @brief Clamp a value between a minimum and maximum
