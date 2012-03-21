@@ -79,11 +79,15 @@ public class FRCDrive implements FRCLoopable {
     
     public void setup() {
         this._input = new FRCInputInterLink(DRIVE_JOYSTICK);
-        this._drive = new RobotDrive(FR_JAGUAR, RL_JAGUAR, FR_JAGUAR, RR_JAGUAR);
+        this._drive = new RobotDrive(FL_JAGUAR, RL_JAGUAR, FR_JAGUAR, RR_JAGUAR);
         this._bridger = new Relay(BRIDGE_RELAY_PORT);
+        this._drive.setSafetyEnabled(false);
+        this._drive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
+        this._drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
     }
     
     public void loop_periodic() {
+        System.out.println("X: " + _x + "Y: " + _y);
         this.get_input();
         this.arcade_drive();
         if (this._input.get_z() < -0.25)
@@ -101,8 +105,8 @@ public class FRCDrive implements FRCLoopable {
      */
     public void get_input() {
         // Get X and Y for the right stick
-        this._x = this._input.get_x() * INPUT_SCALE;
-        this._y = this._input.get_y() * INPUT_SCALE;
+        this._x = -this._input.get_x() * INPUT_SCALE;
+        this._y = -this._input.get_y() * INPUT_SCALE;
     }
     
     public void tank_drive() {
@@ -111,8 +115,14 @@ public class FRCDrive implements FRCLoopable {
     
     public void arcade_drive() {
         if (Math.abs(this._y) < 0.1)
-            this._drive.tankDrive(this._x * TANK_SCALE, this._x * TANK_SCALE);
+            this._drive.tankDrive(this._x * TANK_SCALE, -this._x * TANK_SCALE);
         this._drive.arcadeDrive(this._y, this._x);
+    }
+    
+    public void rive() {
+        if (Math.abs(this._y) < 0.1)
+            this._drive.tankDrive(this._x * TANK_SCALE, -this._x * TANK_SCALE);
+        this._drive.drive(this._y, this._x);
     }
     
     public void tank_drive(double left, double right) {

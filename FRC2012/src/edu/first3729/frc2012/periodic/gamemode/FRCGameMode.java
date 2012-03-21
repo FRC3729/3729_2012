@@ -41,8 +41,8 @@ public abstract class FRCGameMode implements FRCLoopable {
         } else {
             ret._drive = new FRCDrive(ret);
             ret._manipulator = new FRCManipulator(ret);
+            ret.setup();
         }
-        ret.setup();
         return ret;
     }
     
@@ -58,8 +58,8 @@ public abstract class FRCGameMode implements FRCLoopable {
         } else {
             ret._drive = new FRCDrive(ret);
             ret._manipulator = new FRCManipulator(ret);
+            ret.setup();
         }
-        ret.setup();
         return ret;
     }
     
@@ -75,8 +75,8 @@ public abstract class FRCGameMode implements FRCLoopable {
         } else {
             ret._drive = new FRCDrive(ret);
             ret._manipulator = new FRCManipulator(ret);
+            ret.setup();
         }
-        ret.setup();
         return ret;
     }
     

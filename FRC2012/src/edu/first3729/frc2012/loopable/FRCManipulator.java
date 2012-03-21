@@ -12,7 +12,7 @@ import edu.first3729.frc2012.input.FRCInputXbox;
 import edu.first3729.frc2012.periodic.gamemode.*;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Relay;
-import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.Jaguar;
 
 /**
  *
@@ -27,10 +27,14 @@ public class FRCManipulator implements FRCLoopable {
     // Relays!
     protected Relay _elevator, _intake;
     
-    private Victor _shooter_top;
-    private Victor _shooter_bottom;
+    private Jaguar _shooter_top;
+    private Jaguar _shooter_bottom;
     
     private static final int MANIP_JOYSTICK = 2;
+    private static final int INTAKE_PORT = 1;
+    private static final int ELEVATOR_PORT = 2;
+    private static final int SHOOTER_TOP_PORT = 5;
+    private static final int SHOOTER_BOTTOM_PORT = 6;
     
     private boolean shooter_state = false, shooter_edge = false;
     private boolean intake_state = false, intake_edge = false;
@@ -46,6 +50,11 @@ public class FRCManipulator implements FRCLoopable {
     }
         
     public void setup() {
+        this._intake = new Relay(this.INTAKE_PORT);
+        this._elevator = new Relay(this.ELEVATOR_PORT);
+        this._shooter_top = new Jaguar(this.SHOOTER_TOP_PORT);
+        this._shooter_bottom = new Jaguar(this.SHOOTER_BOTTOM_PORT);
+        
         // Don't lift stuff
         this._elevator.setDirection(Relay.Direction.kBoth);
         this.lift(0);
@@ -73,6 +82,7 @@ public class FRCManipulator implements FRCLoopable {
     
     public void get_input() {
         // Shooter toggle mapped to left trigger
+        System.out.println("Shooter: " + shooter_state + " Intake: " + intake_state + " Elevator: " + elevator_state);
         if (this._input.get_button(FRCInputXbox.LEFT_TRIGGER) && shooter_edge != shooter_state) {
             this.shooter_state = !this.shooter_state;
             shooter_edge = shooter_state;

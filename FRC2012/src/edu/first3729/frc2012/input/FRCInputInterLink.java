@@ -18,16 +18,21 @@ public class FRCInputInterLink extends FRCInput {
     private static final double X_EXPONENT = 0.4;
     private static final double Y_EXPONENT = 0.4;
     
+    private static final double YMAX = 0.4480142593383789;
+    private static final double YMIN = -0.4447765871909697;
+    private static final double XMAX = 0.5488231448903843;
+    private static final double XMIN = -0.5244430541992188;
+    
     public FRCInputInterLink(int number) {
         super(number);
     }
     
     public double get_x() {
-        return FRCUtility.expo(FRCUtility.normalize(super.get_x(), -1.0, 1.0), X_EXPONENT) * -1.0;
+        return FRCUtility.expo(FRCUtility.normalize(super.get_x(), XMIN, XMAX), X_EXPONENT) * -1.0;
     }
 
     public double get_y() {
-         return FRCUtility.expo(FRCUtility.normalize(super.get_y(), -1.0, 1.0), Y_EXPONENT);
+         return FRCUtility.expo(FRCUtility.normalize(super.get_y(), YMIN, YMAX), Y_EXPONENT);
     }
 
     public double get_z() {
