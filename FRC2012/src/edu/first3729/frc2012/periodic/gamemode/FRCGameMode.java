@@ -51,7 +51,7 @@ public abstract class FRCGameMode implements FRCLoopable {
     }
     
     public static FRCGameMode to_teleoperated(FRCGameMode mode, FRCRobot robot) {
-        FRCGameMode ret = new FRCGameModeDisabled(robot);
+        FRCGameMode ret = new FRCGameModeTeleoperated(robot);
         if (mode != null) {
             ret._drive = mode._drive;
             ret._manipulator = mode._manipulator;
@@ -68,7 +68,7 @@ public abstract class FRCGameMode implements FRCLoopable {
     }
     
     public static FRCGameMode to_disabled(FRCGameMode mode, FRCRobot robot) {
-        FRCGameMode ret = new FRCGameModeTeleoperated(robot);
+        FRCGameMode ret = new FRCGameModeDisabled(robot);
         if (mode != null) {
             ret._drive = mode._drive;
             ret._manipulator = mode._manipulator;
@@ -81,9 +81,6 @@ public abstract class FRCGameMode implements FRCLoopable {
     }
     
     public void setup() {
-        this._drive = new FRCDrive(this);
-        this._manipulator = new FRCManipulator(this);
-        
         this._drive.setup();
         this._manipulator.setup();
     }

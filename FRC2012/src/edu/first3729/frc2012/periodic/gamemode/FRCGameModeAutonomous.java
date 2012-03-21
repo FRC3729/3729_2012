@@ -34,7 +34,7 @@ public class FRCGameModeAutonomous extends FRCGameMode {
     }
     
     public void loop_periodic() {
-        try {
+        /*try {
             switch (this._stage)
             {
             case 0:
@@ -81,11 +81,11 @@ public class FRCGameModeAutonomous extends FRCGameMode {
                 this._stage = 0;
                 return;
             }
-            
+
             this._stage++;
-        }
-        catch (InterruptedException ex) {
-            System.out.println("Autonomous timer interrupted! Restarting...");
-        }
+        }*/
+        
+        this._drive.loop_periodic();
+        this._manipulator.loop_periodic();
     }
 }
