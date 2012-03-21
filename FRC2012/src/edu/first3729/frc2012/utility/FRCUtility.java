@@ -58,6 +58,14 @@ public class FRCUtility {
             return 0;
         }
     }
+    
+    public static boolean to_boolean(int val) {
+        if (val != 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     /**
      * @brief Exponential function that makes the controller more sensitive

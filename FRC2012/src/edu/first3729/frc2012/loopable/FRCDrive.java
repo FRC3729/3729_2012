@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.first3729.frc2012.loopable.FRCLoopable;
 import edu.first3729.frc2012.periodic.gamemode.FRCGameMode;
 import edu.first3729.frc2012.input.*;
+import edu.wpi.first.wpilibj.DigitalInput;
 
 /**
  *
@@ -29,6 +30,8 @@ public class FRCDrive implements FRCLoopable {
     
     // Bridger
     protected Relay _bridger;
+    
+    protected DigitalInput _bridge_limit;
     
     // X, Y, and Z
     protected double _x, _y, _z;
@@ -70,7 +73,8 @@ public class FRCDrive implements FRCLoopable {
     }
 
     public void bridge(Relay.Value state) {
-        this._bridger.set(state);
+        if (!this._bridge_limit.get())
+            this._bridger.set(state);
     }
     
     public void setup() {
@@ -81,6 +85,11 @@ public class FRCDrive implements FRCLoopable {
     
     public void loop_periodic() {
         this.get_input();
+        this.arcade_drive();
+        if (this._input.get_z() < -0.25)
+            this.bridge(true);
+        else if (this._input.get_z() > 0.25)
+            this.bridge(false);
     }
     
     public void loop_continuous() {
@@ -107,6 +116,10 @@ public class FRCDrive implements FRCLoopable {
     }
     
     public void tank_drive(double left, double right) {
-        
+        this._drive.tankDrive(left, right);
+    }
+    
+    public void arcade_drive(double speed, double turn) {
+        this._drive.arcadeDrive(speed, turn);
     }
 }

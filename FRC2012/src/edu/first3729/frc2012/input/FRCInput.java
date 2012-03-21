@@ -30,6 +30,10 @@ public class FRCInput {
     public double get_z() {
         return this._joy.getZ();
     }
+    
+    public double get_axis(int axis) {
+        return this._joy.getRawAxis(axis);
+    }
 
     public double get_throttle() {
         return this._joy.getThrottle();
