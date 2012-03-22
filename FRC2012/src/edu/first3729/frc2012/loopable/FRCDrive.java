@@ -22,7 +22,7 @@ public class FRCDrive implements FRCLoopable {
     protected FRCGameMode _mode;
     
     // FRCInput system
-    protected FRCInput _input;
+    protected FRCInputInterLink _input;
     
     // FRCDrive system
     protected RobotDrive _drive;
@@ -37,6 +37,8 @@ public class FRCDrive implements FRCLoopable {
     
     //! Which number the Drive Joystick is
     private static final int DRIVE_JOYSTICK = 1;
+    
+    private static final int BRIDGE_LIMIT_PORT = 2;
     
     //! The bridge relay port
     private static final int BRIDGE_RELAY_PORT = 3;
@@ -63,16 +65,18 @@ public class FRCDrive implements FRCLoopable {
         this._mode = mode;
     }
     
-    public void bridge(boolean state) {
-        if (state) {
+    public void bridge(int state) {
+        if (state == 1) {
             this.bridge(Relay.Value.kForward);
+        } else if (state == -1) {
+            this.bridge(Relay.Value.kReverse);
         } else {
             this.bridge(Relay.Value.kOff);
         }
     }
 
     public void bridge(Relay.Value state) {
-        if (!this._bridge_limit.get())
+        if (this._bridge_limit.get())
             this._bridger.set(state);
     }
     
@@ -80,19 +84,21 @@ public class FRCDrive implements FRCLoopable {
         this._input = new FRCInputInterLink(DRIVE_JOYSTICK);
         this._drive = new RobotDrive(FL_JAGUAR, RL_JAGUAR, FR_JAGUAR, RR_JAGUAR);
         this._bridger = new Relay(BRIDGE_RELAY_PORT);
-        this._drive.setSafetyEnabled(false);
-        this._drive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
-        this._drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
+        this._bridge_limit = new DigitalInput(BRIDGE_LIMIT_PORT);
+        this._bridger.setDirection(Relay.Direction.kBoth);
     }
     
     public void loop_periodic() {
-        System.out.println("X: " + _x + "Y: " + _y);
         this.get_input();
         this.arcade_drive();
-        if (this._input.get_z() < -0.25)
-            this.bridge(true);
-        else if (this._input.get_z() > 0.25)
-            this.bridge(false);
+        System.out.println("X: " + _x + "Y: " + _y);
+        if (this._input.get_button(1)) {
+            this.bridge(1);
+        } else if (this._input.get_button(2)){ 
+            this.bridge(-1);
+        } else {
+            this.bridge(0);
+        }
     }
     
     public void loop_continuous() {

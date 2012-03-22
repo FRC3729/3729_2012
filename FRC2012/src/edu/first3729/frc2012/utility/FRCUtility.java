@@ -42,7 +42,7 @@ public class FRCUtility {
         } else if (val > 0.0) {
             retVal = Math.abs(val) / max;
         }
-        return clamp(val, -1.0, 1.0);
+        return clamp(retVal, -1.0, 1.0);
     }
 
     /**

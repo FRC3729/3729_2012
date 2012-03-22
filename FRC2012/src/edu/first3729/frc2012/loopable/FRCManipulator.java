@@ -22,7 +22,7 @@ public class FRCManipulator implements FRCLoopable {
     // Parent game mode
     protected FRCGameMode _mode;
     
-    protected FRCInput _input;
+    protected FRCInputXbox _input;
     
     // Relays!
     protected Relay _elevator, _intake;
@@ -84,17 +84,14 @@ public class FRCManipulator implements FRCLoopable {
         // Shooter toggle mapped to left trigger
         System.out.println("Shooter: " + shooter_state + " Intake: " + intake_state + " Elevator: " + elevator_state);
         shooter_edge = this._input.get_button(FRCInputXbox.LEFT_TRIGGER);
-        if (shooter_edge) {
-            if (shooter_edge == shooter_state) {
-                this.shooter_state = !this.shooter_state;
-                shooter_edge = !shooter_state;
-            }
+        if (shooter_edge != shooter_state) {
+            shooter_state = !shooter_state;
         }
         
         // Intake toggle mapped to right trigger
-        if (this._input.get_button(FRCInputXbox.RIGHT_TRIGGER)) {
-            this.intake_state = !this.shooter_state;
-            intake_edge = intake_state;
+        intake_edge = this._input.get_button(FRCInputXbox.RIGHT_TRIGGER);
+        if (intake_edge != intake_state) {
+            intake_state = !intake_state;
         }
         
         // Elevator on = Y, elevator off = A
@@ -102,8 +99,9 @@ public class FRCManipulator implements FRCLoopable {
             this.elevator_state = 1;
         } else if (this._input.get_y() < -0.25) {
             this.elevator_state = -1;
-        } else
+        } else {
             this.elevator_state = 0;
+        }
         
         // Net on = X, net off = B
         if (this._input.get_button(FRCInputXbox.X_BUTTON)) {
