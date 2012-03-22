@@ -83,13 +83,16 @@ public class FRCManipulator implements FRCLoopable {
     public void get_input() {
         // Shooter toggle mapped to left trigger
         System.out.println("Shooter: " + shooter_state + " Intake: " + intake_state + " Elevator: " + elevator_state);
-        if (this._input.get_button(FRCInputXbox.LEFT_TRIGGER) && shooter_edge != shooter_state) {
-            this.shooter_state = !this.shooter_state;
-            shooter_edge = shooter_state;
+        shooter_edge = this._input.get_button(FRCInputXbox.LEFT_TRIGGER);
+        if (shooter_edge) {
+            if (shooter_edge == shooter_state) {
+                this.shooter_state = !this.shooter_state;
+                shooter_edge = !shooter_state;
+            }
         }
         
         // Intake toggle mapped to right trigger
-        if (this._input.get_button(FRCInputXbox.RIGHT_TRIGGER) && intake_edge != intake_state) {
+        if (this._input.get_button(FRCInputXbox.RIGHT_TRIGGER)) {
             this.intake_state = !this.shooter_state;
             intake_edge = intake_state;
         }

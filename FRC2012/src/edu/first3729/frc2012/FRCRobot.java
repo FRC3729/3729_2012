@@ -27,7 +27,7 @@ import edu.first3729.frc2012.periodic.gamemode.*;
 public class FRCRobot extends IterativeRobot {
     
     private FRCGameMode _mode = null;
-    
+
     /**
      * This function is run when the robot is first started up
      */

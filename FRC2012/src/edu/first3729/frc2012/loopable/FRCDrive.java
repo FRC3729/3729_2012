@@ -8,7 +8,6 @@ package edu.first3729.frc2012.loopable;
 
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.RobotDrive;
-
 import edu.first3729.frc2012.loopable.FRCLoopable;
 import edu.first3729.frc2012.periodic.gamemode.FRCGameMode;
 import edu.first3729.frc2012.input.*;
@@ -116,13 +115,15 @@ public class FRCDrive implements FRCLoopable {
     public void arcade_drive() {
         if (Math.abs(this._y) < 0.1)
             this._drive.tankDrive(this._x * TANK_SCALE, -this._x * TANK_SCALE);
-        this._drive.arcadeDrive(this._y, this._x);
+        else
+            this._drive.arcadeDrive(this._y, this._x);
     }
     
-    public void rive() {
+    public void drive() {
         if (Math.abs(this._y) < 0.1)
             this._drive.tankDrive(this._x * TANK_SCALE, -this._x * TANK_SCALE);
-        this._drive.drive(this._y, this._x);
+        else
+            this._drive.drive(this._y, this._x);
     }
     
     public void tank_drive(double left, double right) {
