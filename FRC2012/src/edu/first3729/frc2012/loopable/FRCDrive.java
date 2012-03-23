@@ -105,7 +105,7 @@ public class FRCDrive implements FRCLoopable {
     }
     
     public void tank_drive(double left, double right) {
-        this._drive.tankDrive(left, right);
+        this._drive.tankDrive(-left, -right);
     }
     
     public void arcade_drive(double speed, double turn) {
