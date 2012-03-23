@@ -92,14 +92,14 @@ public class FRCDrive implements FRCLoopable {
     
     public void arcade_drive() {
         if (Math.abs(this._y) < 0.1)
-            this._drive.tankDrive(this._x * TANK_SCALE, -this._x * TANK_SCALE);
+            this._drive.tankDrive(-this._x * TANK_SCALE, this._x * TANK_SCALE);
         else
             this._drive.arcadeDrive(this._y, this._x);
     }
     
     public void drive() {
-        if (Math.abs(this._y) < 0.1)
-            this._drive.tankDrive(this._x * TANK_SCALE, -this._x * TANK_SCALE);
+        if (Math.abs(this._y) < 0.05)
+            this._drive.tankDrive(-this._x * TANK_SCALE, this._x * TANK_SCALE);
         else
             this._drive.drive(this._y, this._x);
     }
