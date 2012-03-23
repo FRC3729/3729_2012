@@ -40,9 +40,6 @@ public class FRCDrive implements FRCLoopable {
     
     private static final int BRIDGE_LIMIT_PORT = 2;
     
-    //! The bridge relay port
-    private static final int BRIDGE_RELAY_PORT = 3;
-    
     //! Port # of the front left Jaguar on the drive train
     private static final int FL_JAGUAR = 1;
     
@@ -65,40 +62,15 @@ public class FRCDrive implements FRCLoopable {
         this._mode = mode;
     }
     
-    public void bridge(int state) {
-        if (state == 1) {
-            this.bridge(Relay.Value.kForward);
-        } else if (state == -1) {
-            this.bridge(Relay.Value.kReverse);
-        } else {
-            this.bridge(Relay.Value.kOff);
-        }
-    }
-
-    public void bridge(Relay.Value state) {
-        if (this._bridge_limit.get())
-            this._bridger.set(state);
-    }
-    
     public void setup() {
         this._input = new FRCInputInterLink(DRIVE_JOYSTICK);
         this._drive = new RobotDrive(FL_JAGUAR, RL_JAGUAR, FR_JAGUAR, RR_JAGUAR);
-        this._bridger = new Relay(BRIDGE_RELAY_PORT);
         this._bridge_limit = new DigitalInput(BRIDGE_LIMIT_PORT);
-        this._bridger.setDirection(Relay.Direction.kBoth);
     }
     
     public void loop_periodic() {
         this.get_input();
         this.arcade_drive();
-        System.out.println("X: " + _x + "Y: " + _y);
-        if (this._input.get_button(1)) {
-            this.bridge(1);
-        } else if (this._input.get_button(2)){ 
-            this.bridge(-1);
-        } else {
-            this.bridge(0);
-        }
     }
     
     public void loop_continuous() {
@@ -114,26 +86,22 @@ public class FRCDrive implements FRCLoopable {
         this._y = -this._input.get_y() * INPUT_SCALE;
     }
     
-    public void tank_drive() {
-        this._drive.tankDrive(this._x, this._y);
-    }
-    
     public void arcade_drive() {
         if (Math.abs(this._y) < 0.1)
-            this._drive.tankDrive(this._x * TANK_SCALE, -this._x * TANK_SCALE);
+            this._drive.tankDrive(-this._x * TANK_SCALE, this._x * TANK_SCALE);
         else
             this._drive.arcadeDrive(this._y, this._x);
     }
     
     public void drive() {
-        if (Math.abs(this._y) < 0.1)
-            this._drive.tankDrive(this._x * TANK_SCALE, -this._x * TANK_SCALE);
+        if (Math.abs(this._y) < 0.05)
+            this._drive.tankDrive(-this._x * TANK_SCALE, this._x * TANK_SCALE);
         else
             this._drive.drive(this._y, this._x);
     }
     
     public void tank_drive(double left, double right) {
-        this._drive.tankDrive(left, right);
+        this._drive.tankDrive(-left, -right);
     }
     
     public void arcade_drive(double speed, double turn) {

@@ -66,6 +66,9 @@ public class FRCRobot extends IterativeRobot {
     public void teleopInit() {
         System.out.println("Going teleoperated.");
         
+        // WAtchdog expiration
+        this.getWatchdog().setExpiration(5);
+        
         // Enable the watchdog
         this.getWatchdog().setEnabled(true);
         
@@ -91,8 +94,11 @@ public class FRCRobot extends IterativeRobot {
     public void autonomousInit() {
         System.out.println("Going autonomous.");
 
+        // Up watchdog expiration for autonomous
+        this.getWatchdog().setExpiration(15);
+        
         // Disable the watchdog
-        this.getWatchdog().setEnabled(true);
+        this.getWatchdog().setEnabled(false);
         
         // Initialize autonomous
         this._mode = FRCGameMode.to_autonomous(this._mode, this);
@@ -103,7 +109,7 @@ public class FRCRobot extends IterativeRobot {
         this._mode.loop_periodic();
         
         // Feed the watchdog
-        this.getWatchdog().feed();
+        //this.getWatchdog().feed();
     }
     
     public void autonomousContinuous() {
