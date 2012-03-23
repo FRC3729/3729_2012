@@ -81,11 +81,8 @@ public class FRCGameModeAutonomous extends FRCGameMode {
                 this._stage = 0;
                 return;
             }
-
             this._stage++;
         }*/
-        
-        this._drive.loop_periodic();
-        this._manipulator.loop_periodic();
+
     }
 }

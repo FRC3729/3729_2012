@@ -33,36 +33,12 @@ public class FRCInputXbox extends FRCInput {
     public static final int LEFT_STICK_Y = Joystick.AxisType.kY.value;
     public static final int TRIGGER_AXIS = Joystick.AxisType.kZ.value;
     
-    private int get_trigger_left() {
-        if (this.get_axis(this.TRIGGER_AXIS) == 1.0) {
-            return 1;
-        }
-        return 0;
-    }
-    
-    private int get_trigger_right() {
-        if (this.get_axis(this.TRIGGER_AXIS) == -1.0) {
-            return 1;
-        }
-        return 0;
-    }
-    
-    private int get_trigger(int id) {
-        switch (id) {
-            case LEFT_TRIGGER:
-                return get_trigger_left();
-            case RIGHT_TRIGGER:
-                return get_trigger_right();
-            default:
-                return 0;
-        }
+    public double get_triggers() {
+        return this.get_z();
     }
     
     public boolean get_button(int id) {
-        if (id == RIGHT_TRIGGER || id == LEFT_TRIGGER)
-            return FRCUtility.to_boolean(this.get_trigger(id));
-        else
-            return this._joy.getRawButton(id);
+        return this._joy.getRawButton(id);
     }
     
 }

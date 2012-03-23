@@ -25,10 +25,13 @@ public class FRCManipulator implements FRCLoopable {
     protected FRCInputXbox _input;
     
     // Relays!
-    protected Relay _elevator, _intake;
+    protected Relay _elevator, _intake, _bridger;
     
     private Jaguar _shooter_top;
     private Jaguar _shooter_bottom;
+    
+    private double SHOOTER_SPEED = 0.5;
+    private static final double SHOOTER_SPEED_INCREMENT = 0.05;
     
     private static final int MANIP_JOYSTICK = 2;
     private static final int INTAKE_PORT = 1;
@@ -36,9 +39,15 @@ public class FRCManipulator implements FRCLoopable {
     private static final int SHOOTER_TOP_PORT = 5;
     private static final int SHOOTER_BOTTOM_PORT = 6;
     
+    //! The bridge relay port
+    private static final int BRIDGE_RELAY_PORT = 3;
+    
     private boolean shooter_state = false, shooter_edge = false;
-    private boolean intake_state = false, intake_edge = false;
-    private int elevator_state = 0;
+    private double intake_state = 0;
+    private boolean intake_edge = false;
+    private int elevator_state = 0, bridge_state = 0;
+    private boolean back_edge = false;
+    private boolean start_edge = false;
     // PROLLY NOT THIS
     private boolean net_state = true;
     
@@ -54,6 +63,8 @@ public class FRCManipulator implements FRCLoopable {
         this._elevator = new Relay(this.ELEVATOR_PORT);
         this._shooter_top = new Jaguar(this.SHOOTER_TOP_PORT);
         this._shooter_bottom = new Jaguar(this.SHOOTER_BOTTOM_PORT);
+        this._bridger = new Relay(BRIDGE_RELAY_PORT);
+        this._bridger.setDirection(Relay.Direction.kBoth);
         
         // Don't lift stuff
         this._elevator.setDirection(Relay.Direction.kBoth);
@@ -61,12 +72,12 @@ public class FRCManipulator implements FRCLoopable {
 
         // Disable intake
         this._intake.setDirection(Relay.Direction.kBoth);
-        this.intake(false);
+        this.intake(0);
         
         this._input = new FRCInputXbox(MANIP_JOYSTICK);
         
         // Don't shoot, just to be 100% safe
-        this.shoot(0.0);
+        this.shoot(0);
     }
     
     public void loop_periodic() {
@@ -74,6 +85,7 @@ public class FRCManipulator implements FRCLoopable {
         this.lift(this.elevator_state);
         this.intake(this.intake_state);
         this.shoot(this.shooter_state);
+        this.bridge(this.bridge_state);
     }
     
     public void loop_continuous() {
@@ -82,34 +94,78 @@ public class FRCManipulator implements FRCLoopable {
     
     public void get_input() {
         // Shooter toggle mapped to left trigger
-        System.out.println("Shooter: " + shooter_state + " Intake: " + intake_state + " Elevator: " + elevator_state);
-        shooter_edge = this._input.get_button(FRCInputXbox.LEFT_TRIGGER);
-        if (shooter_edge != shooter_state) {
+        if (this._input.get_button(FRCInputXbox.L_BUTTON) && !shooter_edge) {
             shooter_state = !shooter_state;
+            shooter_edge = true;
+        }
+        else if (!this._input.get_button(FRCInputXbox.L_BUTTON)) {
+            shooter_edge = false;
         }
         
         // Intake toggle mapped to right trigger
-        intake_edge = this._input.get_button(FRCInputXbox.RIGHT_TRIGGER);
-        if (intake_edge != intake_state) {
-            intake_state = !intake_state;
-        }
+        this.intake_state = this._input.get_triggers();
         
         // Elevator on = Y, elevator off = A
-        if (this._input.get_y() > 0.25) {
+        if (this._input.get_button(FRCInputXbox.Y_BUTTON)) {
             this.elevator_state = 1;
-        } else if (this._input.get_y() < -0.25) {
+        } else if (this._input.get_button(FRCInputXbox.L3_BUTTON)) {
             this.elevator_state = -1;
-        } else {
+        } else if (this._input.get_button(FRCInputXbox.A_BUTTON)) {
             this.elevator_state = 0;
         }
         
-        // Net on = X, net off = B
+        // Bridge on = X, bridge off = B
         if (this._input.get_button(FRCInputXbox.X_BUTTON)) {
-            this.net_state = true;
+            this.bridge_state = 1;
         } else if (this._input.get_button(FRCInputXbox.B_BUTTON)) {
-            this.net_state = false;
+            this.bridge_state = -1;
+        } else {
+            this.bridge_state = 0;
+        }
+        
+        // Back button - reduce shooter speed
+        if (this._input.get_button(FRCInputXbox.BACK_BUTTON) && !back_edge) {
+            SHOOTER_SPEED -= SHOOTER_SPEED_INCREMENT;
+            back_edge = true;
+        }
+        else if (!this._input.get_button(FRCInputXbox.BACK_BUTTON)) {
+            back_edge = false;
+        }
+        
+        // Start button - reduce shooter speed
+        if (this._input.get_button(FRCInputXbox.START_BUTTON) && !start_edge) {
+            SHOOTER_SPEED += SHOOTER_SPEED_INCREMENT;
+            start_edge = true;
+        }
+        else if (!this._input.get_button(FRCInputXbox.START_BUTTON)) {
+            start_edge = false;
+        }
+        
+        // Shooter speed presets - axes 4 and 5
+        if (this._input.get_axis(4) < -0.25) {
+            SHOOTER_SPEED = 0.65;
+        } else if (this._input.get_axis(4) > 0.25) {
+            SHOOTER_SPEED = 0.7;
+        } else if (this._input.get_axis(5) < -0.25) {
+            SHOOTER_SPEED = 0.625;
+        } else if (this._input.get_axis(5) > 0.25) {
+            SHOOTER_SPEED = 0.725;
         }
                
+    }
+    
+    public void bridge(int state) {
+        if (state == 1) {
+            this.bridge(Relay.Value.kForward);
+        } else if (state == -1) {
+            this.bridge(Relay.Value.kReverse);
+        } else {
+            this.bridge(Relay.Value.kOff);
+        }
+    }
+
+    public void bridge(Relay.Value state) {
+        this._bridger.set(state);
     }
     
     // Public instance methods
@@ -138,12 +194,14 @@ public class FRCManipulator implements FRCLoopable {
         this._elevator.set(state);
     }
 
-    public void intake(boolean state) {
-        // Turn on until limit switch is pressed, then off
-        if (state) {
-            this.lift(Relay.Value.kForward);
+    public void intake(double state) {
+        // Turn on until limit switch is pressed, then off (ideally)
+        if (state > 0) {
+            this.intake(Relay.Value.kForward);
+        } else if (state < 0) {
+            this.intake(Relay.Value.kReverse);
         } else {
-            this.lift(Relay.Value.kOff);
+            this.intake(Relay.Value.kOff);
         }
     }
     
@@ -153,13 +211,14 @@ public class FRCManipulator implements FRCLoopable {
     
     public void shoot(boolean state) {
         if (state) {
-            this.shoot(1.0);
+            this.shoot(SHOOTER_SPEED);
         } else {
             this.shoot(0.0);
         }
     }
     
     public void shoot(double speed) {
+        System.out.println(speed);
         this._shooter_top.set(speed);
         this._shooter_bottom.set(speed);
     }
