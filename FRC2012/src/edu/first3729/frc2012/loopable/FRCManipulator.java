@@ -11,6 +11,7 @@ import edu.first3729.frc2012.input.FRCInputAttack3;
 import edu.first3729.frc2012.input.FRCInputXbox;
 import edu.first3729.frc2012.periodic.gamemode.*;
 import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.DriverStationLCD;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.Jaguar;
 
@@ -23,6 +24,8 @@ public class FRCManipulator implements FRCLoopable {
     protected FRCGameMode _mode;
     
     protected FRCInputXbox _input;
+    
+    protected DriverStationLCD dsl;
     
     // Relays!
     protected Relay _elevator, _intake, _bridger;
@@ -41,6 +44,7 @@ public class FRCManipulator implements FRCLoopable {
     
     //! The bridge relay port
     private static final int BRIDGE_RELAY_PORT = 3;
+    private static final int BRIDGE_LIMIT_PORT = 1;
     
     private boolean shooter_state = false, shooter_edge = false;
     private double intake_state = 0;
@@ -52,7 +56,7 @@ public class FRCManipulator implements FRCLoopable {
     private boolean net_state = true;
     
     // Digital inputs for intake sensor and bridge limit switch.
-    protected DigitalInput _intake_sensor;
+    protected DigitalInput _bridge_limit;
     
     public FRCManipulator(FRCGameMode mode) {
         this._mode = mode;
@@ -65,6 +69,7 @@ public class FRCManipulator implements FRCLoopable {
         this._shooter_bottom = new Jaguar(this.SHOOTER_BOTTOM_PORT);
         this._bridger = new Relay(BRIDGE_RELAY_PORT);
         this._bridger.setDirection(Relay.Direction.kBoth);
+        this.dsl = DriverStationLCD.getInstance();
         
         // Don't lift stuff
         this._elevator.setDirection(Relay.Direction.kBoth);
@@ -75,7 +80,7 @@ public class FRCManipulator implements FRCLoopable {
         this.intake(0);
         
         this._input = new FRCInputXbox(MANIP_JOYSTICK);
-        
+        this._bridge_limit = new DigitalInput(1);
         // Don't shoot, just to be 100% safe
         this.shoot(0);
     }
@@ -93,6 +98,13 @@ public class FRCManipulator implements FRCLoopable {
     }
     
     public void get_input() {
+        dsl.println(DriverStationLCD.Line.kUser2, 1, "Shooter speed: " + SHOOTER_SPEED);
+        dsl.println(DriverStationLCD.Line.kUser3, 1, "Shooter speed: " + SHOOTER_SPEED);
+        dsl.println(DriverStationLCD.Line.kUser4, 1, "Shooter speed: " + SHOOTER_SPEED);
+        dsl.println(DriverStationLCD.Line.kUser5, 1, "Shooter speed: " + SHOOTER_SPEED);
+        dsl.println(DriverStationLCD.Line.kUser6, 1, "Shooter speed: " + SHOOTER_SPEED);
+        dsl.println(DriverStationLCD.Line.kMain6, 1, "Shooter speed: " + SHOOTER_SPEED);
+        dsl.updateLCD();
         // Shooter toggle mapped to left trigger
         if (this._input.get_button(FRCInputXbox.L_BUTTON) && !shooter_edge) {
             shooter_state = !shooter_state;
@@ -155,7 +167,7 @@ public class FRCManipulator implements FRCLoopable {
     }
     
     public void bridge(int state) {
-        if (state == 1) {
+        if (state == 1 && !_bridge_limit.get()) {
             this.bridge(Relay.Value.kForward);
         } else if (state == -1) {
             this.bridge(Relay.Value.kReverse);
@@ -166,11 +178,6 @@ public class FRCManipulator implements FRCLoopable {
 
     public void bridge(Relay.Value state) {
         this._bridger.set(state);
-    }
-    
-    // Public instance methods
-    public boolean get_intake_sensor() {
-        return this._intake_sensor.get();
     }
     
     public void lift(int state) {
@@ -218,7 +225,6 @@ public class FRCManipulator implements FRCLoopable {
     }
     
     public void shoot(double speed) {
-        System.out.println(speed);
         this._shooter_top.set(speed);
         this._shooter_bottom.set(speed);
     }

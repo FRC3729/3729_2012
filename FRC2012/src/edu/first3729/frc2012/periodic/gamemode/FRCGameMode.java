@@ -80,6 +80,10 @@ public abstract class FRCGameMode implements FRCLoopable {
         return ret;
     }
     
+    public void init() {
+        
+    }
+    
     public void setup() {
         this._drive.setup();
         this._manipulator.setup();

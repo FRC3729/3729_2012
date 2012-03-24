@@ -100,6 +100,8 @@ public class FRCRobot extends IterativeRobot {
         // Disable the watchdog
         this.getWatchdog().setEnabled(false);
         
+        this._mode.init();
+        
         // Initialize autonomous
         this._mode = FRCGameMode.to_autonomous(this._mode, this);
     }

@@ -56,7 +56,7 @@ public class FRCDrive implements FRCLoopable {
     private static final double INPUT_SCALE = 1.0;
     
     //! Tank drive dead-turn output factor
-    private static final double TANK_SCALE = 0.75;
+    private static final double TANK_SCALE = 1.0;
     
     public FRCDrive(FRCGameMode mode) {
         this._mode = mode;
@@ -82,7 +82,7 @@ public class FRCDrive implements FRCLoopable {
      */
     public void get_input() {
         // Get X and Y for the right stick
-        this._x = -this._input.get_x() * INPUT_SCALE;
+        this._x = this._input.get_x() * INPUT_SCALE;
         this._y = -this._input.get_y() * INPUT_SCALE;
     }
     
