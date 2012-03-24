@@ -7,7 +7,6 @@ package edu.first3729.frc2012.input;
 
 import edu.first3729.frc2012.utility.*;
 
-import edu.first3729.frc2012.FRCParams;
 import edu.wpi.first.wpilibj.Joystick;
 
 public class FRCInputInterLink extends FRCInput {

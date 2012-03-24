@@ -10,7 +10,6 @@ import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Timer;
 import edu.first3729.frc2012.FRCRobot;
-import edu.first3729.frc2012.FRCParams;
 import edu.first3729.frc2012.input.*;
 import edu.first3729.frc2012.loopable.*;
 import edu.wpi.first.wpilibj.DriverStationLCD;

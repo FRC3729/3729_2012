@@ -7,7 +7,6 @@
 package edu.first3729.frc2012.periodic.gamemode;
 
 import edu.first3729.frc2012.FRCRobot;
-import edu.first3729.frc2012.FRCParams;
 import edu.first3729.frc2012.loopable.*;
 import edu.first3729.frc2012.input.*;
 
