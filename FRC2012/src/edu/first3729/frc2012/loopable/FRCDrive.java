@@ -107,4 +107,5 @@ public class FRCDrive implements FRCLoopable {
     public void arcade_drive(double speed, double turn) {
         this._drive.arcadeDrive(speed, turn);
     }
+    public void loop_periodic(int state) { }
 }

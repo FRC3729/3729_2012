@@ -13,6 +13,7 @@ import edu.first3729.frc2012.FRCRobot;
 import edu.first3729.frc2012.FRCParams;
 import edu.first3729.frc2012.input.*;
 import edu.first3729.frc2012.loopable.*;
+import edu.wpi.first.wpilibj.DriverStationLCD;
 
 /**
  *
@@ -21,20 +22,20 @@ import edu.first3729.frc2012.loopable.*;
 public class FRCGameModeAutonomous extends FRCGameMode {
     private AxisCamera _cam;
     
-    private int _stage = 0;
+    private int state = 0;
     
-    private Timer timer;
+    private Timer _timer;
     
     public FRCGameModeAutonomous(FRCRobot robot) {
         // Initialize superclass
         super(robot);
-        this.timer = new Timer();
     }
     
     public void init() {
-        timer.stop();
-        timer.reset();
-        timer.start();
+        this._timer = new Timer();
+        _timer.stop();
+        _timer.reset();
+        _timer.start();
     }
     
     public void loop_continuous() {
@@ -43,22 +44,66 @@ public class FRCGameModeAutonomous extends FRCGameMode {
     }
     
     public void loop_periodic() {
-        /*
-        if (this.timer.get() < .5) { 
-            this._drive.tank_drive(-0.5, 0);
-        } else if (this.timer.get() < 1.5) {
-            System.out.println("More aStuff");
-            this._drive.tank_drive(-0.5, -0.5);
-        } else if (this.timer.get() < 2) {
-            this._drive.tank_drive(0, 0);
-        } else if (this.timer.get() < 3) {
-            this._manipulator.bridge(1);
-        } else if (this.timer.get() < 3.5) {
-            this._manipulator.bridge(0);
+        if (this._timer.get() < 0.5) {
+            state = 1;
+        } else if (this._timer.get() < 1.75) {
+            state = 2;
+        } else if (this._timer.get() < 2.5) {
+            state = 3;
+        } else if (this._timer.get() < 3.75) {
+            state = 4;
+        } else if (this._timer.get() < 4.5) {
+            state = 5;
+        } else if (this._timer.get() < 5) {
+            state = 6;
+        } else if (this._timer.get() < 6) {
+            state = 7;
+        } else if (this._timer.get() < 7.5) {
+            state = 8;
+        } else if (this._timer.get() < 8) {
+            state = 9;
+        } else if (this._timer.get() < 9) {
+            state = 10;
         } else {
-            // WOOOOOO!
+            state = 0;
         }
-        * 
-        */
+        
+        switch (state) {
+            case 1:
+                this._manipulator.shoot(0.6);
+                break;
+            case 2:
+                this._manipulator.intake(1);
+                break;
+            case 3:
+                this._manipulator.intake(0);
+                break;
+            case 4:
+                this._manipulator.intake(1);
+                break;
+            case 5:
+                this._manipulator.intake(0);
+                this._manipulator.shoot(0);
+                break;
+                /*
+            case 6:
+                this._drive.tank_drive(-0.5, 0);
+                break;
+            case 7:
+                this._drive.tank_drive(-0.5, -0.5);
+                break;
+            case 8:
+                this._drive.tank_drive(0, 0);
+                this._manipulator.bridge(1);
+                break;
+            case 9:
+                this._manipulator.bridge(0);
+                break;
+                * */
+            default:
+                this._manipulator.bridge(0);
+                this._drive.tank_drive(0, 0);
+        }
+        
     }
 }

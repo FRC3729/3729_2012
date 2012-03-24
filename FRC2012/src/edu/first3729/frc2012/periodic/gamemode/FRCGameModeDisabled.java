@@ -26,4 +26,6 @@ public class FRCGameModeDisabled extends FRCGameMode {
     public void loop_periodic() {
         // Nothing
     }
+    
+    public void loop_periodic(int state) { }
 }

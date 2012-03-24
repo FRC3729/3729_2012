@@ -60,6 +60,7 @@ public abstract class FRCGameMode implements FRCLoopable {
             ret._manipulator = new FRCManipulator(ret);
             ret.setup();
         }
+        ret._manipulator.lift(0);
         return ret;
     }
     

@@ -25,7 +25,7 @@ public class FRCManipulator implements FRCLoopable {
     
     protected FRCInputXbox _input;
     
-    protected DriverStationLCD dsl;
+    public DriverStationLCD dsl;
     
     // Relays!
     protected Relay _elevator, _intake, _bridger;
@@ -33,7 +33,7 @@ public class FRCManipulator implements FRCLoopable {
     private Jaguar _shooter_top;
     private Jaguar _shooter_bottom;
     
-    private double SHOOTER_SPEED = 0.5;
+    private double SHOOTER_SPEED = 0.6;
     private static final double SHOOTER_SPEED_INCREMENT = 0.05;
     
     private static final int MANIP_JOYSTICK = 2;
@@ -228,4 +228,6 @@ public class FRCManipulator implements FRCLoopable {
         this._shooter_top.set(speed);
         this._shooter_bottom.set(speed);
     }
+    
+    public void loop_periodic(int state) { }
 }

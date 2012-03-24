@@ -27,6 +27,10 @@ import edu.first3729.frc2012.periodic.gamemode.*;
 public class FRCRobot extends IterativeRobot {
     
     private FRCGameMode _mode = null;
+    
+    private Timer auto_timer;
+    
+    private int state = 0;
 
     /**
      * This function is run when the robot is first started up
@@ -94,16 +98,17 @@ public class FRCRobot extends IterativeRobot {
     public void autonomousInit() {
         System.out.println("Going autonomous.");
 
+        auto_timer = new Timer();
+        
         // Up watchdog expiration for autonomous
         this.getWatchdog().setExpiration(15);
         
         // Disable the watchdog
         this.getWatchdog().setEnabled(false);
         
-        this._mode.init();
-        
         // Initialize autonomous
         this._mode = FRCGameMode.to_autonomous(this._mode, this);
+        this._mode.init();
     }
     
     public void autonomousPeriodic() {

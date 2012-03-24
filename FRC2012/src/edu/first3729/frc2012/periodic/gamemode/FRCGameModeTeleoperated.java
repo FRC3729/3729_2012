@@ -112,4 +112,6 @@ public class FRCGameModeTeleoperated extends FRCGameMode {
         this._drive.loop_continuous();
         this._manipulator.loop_continuous();
     }
+    
+    public void loop_periodic(int state) { }
 }
