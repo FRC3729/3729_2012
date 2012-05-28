@@ -50,7 +50,7 @@ public class FRCRobot extends IterativeRobot {
     }
 
     public void disabledInit() {
-        System.out.println("Going disabled.");
+        System.out.println("Going disabled.  Yes, the code is being updated.");
         
         // Disable the watchdog, because we don't need it
         this.getWatchdog().setEnabled(false);

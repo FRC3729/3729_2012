@@ -69,7 +69,7 @@ public class FRCGameModeAutonomous extends FRCGameMode {
         
         switch (state) {
             case 1:
-                this._manipulator.shoot(0.6);
+                this._manipulator.shoot(0.625);
                 break;
             case 2:
                 this._manipulator.intake(1);
