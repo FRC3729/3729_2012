@@ -51,7 +51,7 @@ public class FRCManipulator implements FRCLoopable {
     private double intake_state = 0;
     private boolean intake_edge = false;
     private int elevator_state = 0, bridge_state = 0;
-    private boolean back_edge = false, R3_edge = false, L3_edge = false;
+    private boolean back_edge = false, ll_edge = false, lr_edge = false;
     private boolean start_edge = false;
     
     // Digital inputs for intake sensor and bridge limit switch.
@@ -148,20 +148,20 @@ public class FRCManipulator implements FRCLoopable {
             start_edge = false;
         }
         
-        if (this._input.get_button(FRCInputXbox.R3_BUTTON) && !R3_edge) {
+        if (this._input.get_x() > 0.25 && !lr_edge) {
             SHOOTER_SPEED_BOTTOM += SHOOTER_SPEED_INCREMENT;
-            R3_edge = true;
+            lr_edge = true;
         }
-        else if (!this._input.get_button(FRCInputXbox.R3_BUTTON)) {
-            R3_edge = false;
+        else if (this._input.get_x() < 0.25) {
+            lr_edge = false;
         }
         
-        if (this._input.get_button(FRCInputXbox.L3_BUTTON) && !L3_edge) {
-            SHOOTER_SPEED_BOTTOM += SHOOTER_SPEED_INCREMENT;
-            L3_edge = true;
+        if (this._input.get_x() < -0.25 && !ll_edge) {
+            SHOOTER_SPEED_BOTTOM -= SHOOTER_SPEED_INCREMENT;
+            ll_edge = true;
         }
-        else if (!this._input.get_button(FRCInputXbox.L3_BUTTON)) {
-            L3_edge = false;
+        else if (this._input.get_x() > -0.25) {
+            ll_edge = false;
         }
         
         // Shooter speed presets - axes 4 and 5
@@ -178,7 +178,6 @@ public class FRCManipulator implements FRCLoopable {
             SHOOTER_SPEED_TOP = 0.4;
             SHOOTER_SPEED_BOTTOM = 0.65;
         }
-               
     }
     
     public void bridge(int state) {
