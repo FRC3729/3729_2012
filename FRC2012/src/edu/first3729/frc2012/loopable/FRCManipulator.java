@@ -33,7 +33,8 @@ public class FRCManipulator implements FRCLoopable {
     private Jaguar _shooter_top;
     private Jaguar _shooter_bottom;
     
-    private double SHOOTER_SPEED = 0.6;
+    private double SHOOTER_SPEED_TOP = 0.6;
+    private double SHOOTER_SPEED_BOTTOM = 0.6;
     private static final double SHOOTER_SPEED_INCREMENT = 0.05;
     
     private static final int MANIP_JOYSTICK = 2;
@@ -50,10 +51,8 @@ public class FRCManipulator implements FRCLoopable {
     private double intake_state = 0;
     private boolean intake_edge = false;
     private int elevator_state = 0, bridge_state = 0;
-    private boolean back_edge = false;
+    private boolean back_edge = false, R3_edge = false, L3_edge = false;
     private boolean start_edge = false;
-    // PROLLY NOT THIS
-    private boolean net_state = true;
     
     // Digital inputs for intake sensor and bridge limit switch.
     protected DigitalInput _bridge_limit;
@@ -82,7 +81,7 @@ public class FRCManipulator implements FRCLoopable {
         this._input = new FRCInputXbox(MANIP_JOYSTICK);
         this._bridge_limit = new DigitalInput(1);
         // Don't shoot, just to be 100% safe
-        this.shoot(0);
+        this.shoot(0.0, 0.0);
     }
     
     public void loop_periodic() {
@@ -98,12 +97,8 @@ public class FRCManipulator implements FRCLoopable {
     }
     
     public void get_input() {
-        dsl.println(DriverStationLCD.Line.kUser2, 1, "Shooter speed: " + SHOOTER_SPEED);
-        dsl.println(DriverStationLCD.Line.kUser3, 1, "Shooter speed: " + SHOOTER_SPEED);
-        dsl.println(DriverStationLCD.Line.kUser4, 1, "Shooter speed: " + SHOOTER_SPEED);
-        dsl.println(DriverStationLCD.Line.kUser5, 1, "Shooter speed: " + SHOOTER_SPEED);
-        dsl.println(DriverStationLCD.Line.kUser6, 1, "Shooter speed: " + SHOOTER_SPEED);
-        dsl.println(DriverStationLCD.Line.kMain6, 1, "Shooter speed: " + SHOOTER_SPEED);
+        dsl.println(DriverStationLCD.Line.kUser2, 1, "Shooter speed top: " + SHOOTER_SPEED_TOP);
+        dsl.println(DriverStationLCD.Line.kUser3, 1, "Shooter speed low: " + SHOOTER_SPEED_BOTTOM);
         dsl.updateLCD();
         // Shooter toggle mapped to left trigger
         if (this._input.get_button(FRCInputXbox.L_BUTTON) && !shooter_edge) {
@@ -137,7 +132,7 @@ public class FRCManipulator implements FRCLoopable {
         
         // Back button - reduce shooter speed
         if (this._input.get_button(FRCInputXbox.BACK_BUTTON) && !back_edge) {
-            SHOOTER_SPEED -= SHOOTER_SPEED_INCREMENT;
+            SHOOTER_SPEED_TOP -= SHOOTER_SPEED_INCREMENT;
             back_edge = true;
         }
         else if (!this._input.get_button(FRCInputXbox.BACK_BUTTON)) {
@@ -146,22 +141,42 @@ public class FRCManipulator implements FRCLoopable {
         
         // Start button - reduce shooter speed
         if (this._input.get_button(FRCInputXbox.START_BUTTON) && !start_edge) {
-            SHOOTER_SPEED += SHOOTER_SPEED_INCREMENT;
+            SHOOTER_SPEED_TOP += SHOOTER_SPEED_INCREMENT;
             start_edge = true;
         }
         else if (!this._input.get_button(FRCInputXbox.START_BUTTON)) {
             start_edge = false;
         }
         
+        if (this._input.get_button(FRCInputXbox.R3_BUTTON) && !R3_edge) {
+            SHOOTER_SPEED_BOTTOM += SHOOTER_SPEED_INCREMENT;
+            R3_edge = true;
+        }
+        else if (!this._input.get_button(FRCInputXbox.R3_BUTTON)) {
+            R3_edge = false;
+        }
+        
+        if (this._input.get_button(FRCInputXbox.L3_BUTTON) && !L3_edge) {
+            SHOOTER_SPEED_BOTTOM += SHOOTER_SPEED_INCREMENT;
+            L3_edge = true;
+        }
+        else if (!this._input.get_button(FRCInputXbox.L3_BUTTON)) {
+            L3_edge = false;
+        }
+        
         // Shooter speed presets - axes 4 and 5
         if (this._input.get_axis(4) < -0.25) {
-            SHOOTER_SPEED = 0.65;
+            SHOOTER_SPEED_TOP = 0.65;
+            SHOOTER_SPEED_BOTTOM = 0.65;
         } else if (this._input.get_axis(4) > 0.25) {
-            SHOOTER_SPEED = 0.7;
+            SHOOTER_SPEED_TOP = 9.5;
+            SHOOTER_SPEED_BOTTOM = 9.5;
         } else if (this._input.get_axis(5) < -0.25) {
-            SHOOTER_SPEED = 0.625;
+            SHOOTER_SPEED_TOP = 0.65;
+            SHOOTER_SPEED_BOTTOM = 0.4;
         } else if (this._input.get_axis(5) > 0.25) {
-            SHOOTER_SPEED = 0.725;
+            SHOOTER_SPEED_TOP = 0.4;
+            SHOOTER_SPEED_BOTTOM = 0.65;
         }
                
     }
@@ -218,15 +233,15 @@ public class FRCManipulator implements FRCLoopable {
     
     public void shoot(boolean state) {
         if (state) {
-            this.shoot(SHOOTER_SPEED);
+            this.shoot(SHOOTER_SPEED_TOP, SHOOTER_SPEED_BOTTOM);
         } else {
-            this.shoot(0.0);
+            this.shoot(0.0, 0.0);
         }
     }
     
-    public void shoot(double speed) {
-        this._shooter_top.set(speed);
-        this._shooter_bottom.set(speed);
+    public void shoot(double speed_top, double speed_bottom) {
+        this._shooter_top.set(speed_top);
+        this._shooter_bottom.set(speed_bottom);
     }
     
     public void loop_periodic(int state) { }
